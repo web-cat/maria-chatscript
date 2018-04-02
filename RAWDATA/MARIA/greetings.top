@@ -11,4 +11,7 @@ t: ( %input<%userfirstline )
 	Welcome to ChatScript.
 
 #! what is your name
-u: ( what is your name ) My name is Maria.
+u: ( what is your name ) My name is Maria. I am the Virtual Teaching Assistant for Web-CAT.
+
+#! who are you
+u: ( who are you ) I am Maria. I am the Virtual Teaching Assistant for Web-CAT.
