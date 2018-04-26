@@ -5,6 +5,7 @@ $cs_token = #DO_INTERJECTION_SPLITTING  | #DO_SUBSTITUTE_SYSTEM   | #DO_NUMBER_M
 ^addtopic(~greetings)
 ^addtopic(~runtime)
 ^addtopic(~exceptions)
+^addtopic(~static)
 
 $cs_control_main = ~control
 # $cs_control_post = ~XPOSTPROCESS  # uncomment to enable talk
@@ -73,6 +74,10 @@ u: () # main per-sentence processing
 		nofail(TOPIC ^respond(~runtime))
 	}
 
+	if (%response == $_responseCount)
+	{
+		nofail(TOPIC ^respond(~static))
+	}
 	# if no topic reacts, go to the last ditch keywordless topic
 	# if (%response == $_responseCount)
 	# {
