@@ -1,0 +1,248 @@
+topic: ~java keep repeat [java how what when]
+
+u: (how * for loop)
+The most basic type of <code>for</code> loop is called and arithmetically controlled for loop. This type of loop usually follows this type of structure:
+<pre>
+for (int i = 0; i &lt NUM_TIMES_TO_RUN_LOOP; i++)
+{
+   //Preform some action.
+}</pre>
+For example, the following code will print out the numbers 0 through 9:
+<pre>
+for (int i = 0; i &lt 10; i++)
+{
+   System.out.println(i);
+}</pre>
+<br/>...
+
+	a: (tell me more)
+	<p>However, <code>for</code> loops can also be much more complicated. You can put any statements in the three parts of the <code>for</code> loop you want. Notice how the following <code>for</code> loop is designed to go to the end of a linked list:
+	<pre>
+for (Node cur = node; cur.next != null; cur = cur.next)
+{
+   System.out.println(cur.data);
+}</pre>
+	This loop will traverse a linked list, printing out the data in each node, as it goes.
+	^refine() b: () ^reuse(~feedback.FEEDBACK)
+
+u: (how * for each loop)
+A for each loop is a special kind of loop that is related to the <code>for</code> loop. For each loops are much more specialized than their normal <code>for</code> loop counterparts. They can only be used to iterate over a list or collection. For each loops are structured like this:
+<pre>
+for (/*Type of thing in list*/ /*Name*/ : /*Name of a list or collection*/)
+{
+   //Do something.
+}</pre>
+For example, say you wanted to add every String from <code>listOne</code> into <code>listTwo</code>. You could do that using a for each loop like this:
+<pre>
+for (String str : listOne)
+{
+   listTwo.add(str);
+}</pre>
+Note that the Object stored in <code>str</code> changes with every iteration of the loop. In the first iteration, it holds the first element in <code>listOne</code>. In the second iteration, it holds the second element. So, <code>str</code> is a name for "every" element in <code>listOne</code>.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (what * primitive)
+In Java, a primitive type is a type that is not an Object. These are types like <code>int</code>, <code>double</code>, and <code>boolean</code>. You cannot call methods on primitive variables.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (what * object)
+In Java, an Object is a data type that can be created in classes and can have methods called on it. String is an Object type that you will frequently interact with. Note that unlike <code>int</code> variables, you can call methods on String variables, like <code>substring()</code>. All Object types you make through the creation of your own classes are subclasses of the Java Object class. More info on the Jave Object class can be found <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>in the Java documentation.<a>
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (what * ternary {operator})
+In Java, the ternary operator is a way to condense an <code>if</code> statement and an <code>else</code> statement into one convenient line. If you have this if-else structure:
+<pre>
+\if ( /*condition*/ )
+{
+   /*some action*/
+}
+else
+{
+   /*some other action*/
+}</pre>
+You can translate it into this line:
+<pre>
+/*condition*/ ? /*some action*/ : /*some other action*/</pre>
+The question mark and colon together are the ternary operator. You an think of it as asking if the condition is true and if it is, it will do the first thing. Otherwise, it will do what's after the colon.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: ([what how] * super)
+In Java, the <code>super</code> keyword can be used to access methods or constructors from the super class. For example, look at the following classes:
+<pre>
+public class Parent
+{
+   private int number;
+   
+   public Parent()
+   {
+      number = 5;
+   }
+   
+   public method()
+   {
+      number = 10;
+   }
+}
+
+public class Child
+{
+   public Child()
+   {
+       super(); //Calls constructor in Parent. 
+                //number is set equal to 5.	
+       super.method(); //Calls method() in Parent.
+                       //number is set equal to 10.	   
+   }
+}<pre>
+Remember that a call to <code>super()</code> must be the very first line in a subclass's constructor.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (what is * generic {class})
+In Java, generic classes are classes that deal specifically with one type of Object. A great example is the List class. Usually, you'll want a List of one specific type of Object, like Strings. Because you are able to specify that the List class only contains Strings, you can then call String methods directly on List items without needing a cast.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (how [make create] generic class)
+Creating a generic class is very similar to creating a regular class. In the class header, you'll want to include some angle brackets, like this:
+<pre>
+public class GenericClass&ltT&gt
+{
+   //Some code.
+}</pre>
+The thing in the angle brackets can be anything. It is a placeholder for some Object that will be specified when a <code>GenericClass</code> Object is instantiated. You can then use this placeholder type later in your code. For example, you can create fields of type <code>T</code> and you can make methods return <code>T</code>. 
+<br/>...
+
+	a: (tell me more)
+	You can restrict the type of Objects that <code>T</code> can be by using <code>extends</code> and <code>super</code>. If use said <code>T extends SomeClass</code> instead of just <code>T</code>, then your class could only be used with classes that extend (or are subclasses of <code>SomeClass</code>. Using <code>super</code> does the "opposite", requiring a class that is a superclass of the specified class.
+	^refine() b: () ^reuse(~feedback.FEEDBACK)
+
+u: (what is * wrapper {class})
+In Java, wrapper classes are Object types that correspond to each of the primitive data types (there is <code>Integer</code> for <code>int</code>, <code>Boolean</code> for <code>boolean</code>, etc.). The main point of wrapper classes is to allow you use primitive types in places you can usually only use Objects. For example, if you wanted to create a List of <code>int</code>s, you can't because you can only create Lists of Objects. But, you can create a List of Integer Objects! Java also uses a special magic trick called auto-boxing to automatically convert primitive types to their wrapper Objects when necessary. So, saying <code>Integer i = 6;</code> is fine. You don't need to say <code>new Integer()</code>.
+<br/>...
+
+	a: (tell me more)
+	^reuse(AUTOBOXING)
+
+u: AUTOBOXING (what is [autoboxing autobox auto-box auto-boxing])
+Auto-boxing is a cool feature of Java that automatically converts primitive types to their wrapper Object equivalent and vice versa when necessary. So, you can use Integers and <code>int</code>s interchangeably.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (what is * int)
+In Java, <code>int</code>s are primitive types that store can store integer (non-decimal) numbers.
+<br/>...
+
+	a: (tell me more)
+	The biggest number an <code>int</code> can store is 2^31 - 1 and the smallest number is -2^31. If you really need to store a number like 10 zillion, you could try using the BigInteger class....
+	
+		b: (tell me more)
+		The BigInteger class is used to store REALLY big numbers. You can read about it on <a href="https://docs.oracle.com/javase/7/docs/api/java/math/BigInteger.html">the Java website.</a>
+
+u: (what is * boolean)
+The <code>boolean</code> data type can hold 2 values: true and false. This type of variable is usually used for simple conditions like if something can be done or if something has happened. 
+<br/>If you have a yes or no question, a <code>boolean</code> is the perfect type of variable to store the result!
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (what is * double)
+The <code>double</code> data type can hold decimal values. You'll want to use this type to store numbers that can have decimal (non-integer) values. If a number never has a decimal (it is always an integer), you should probably use an <code>int</code> instead.
+<br/>...
+
+	a: (tell me more)
+	On a technical level, <code>double</code>s are stored as a number times ten to a power (x * 10^y). So, these numbers are not 100% accurate. They also have a limited amount of space in which to store their numbers, so they also get less precise as the number gets very big or very small (more digits are devoted to the power and less to the number multiplied by the exponential).
+	^refine() b: () ^reuse(~feedback.FEEDBACK)
+
+u: (what is * float)
+The <code>float</code> data type is very similar to the <code>double</code> type but, <code>float</code>s take up less space and so are less precise.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: INT_MATH ([int integer] * [math multiplication])
+When doing math with <code>int</code>s, first the math is done and then the answer is truncated (has its decimal chopped off). So, the answer is not rounded. The decimal is just cut off (so, 5.9 becomes 5).
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: ([what how] * multiply * int [by with] int)
+^reuse(INT_MATH)
+
+u: INT_TIMES_DOUBLE ([what how] * multiply * int [by with] double)
+When you multiply an <code>int</code> by a <code>double</code>, the answer will be a <code>double</code>. So, the decimal will be preserved.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: ([what how] * multiply * double [by with] int)
+^reuse(INT_TIMES_DOUBLE)
+
+u: CASTING (what is * [cast casting])
+In Java, casting is when you forcibly change the type of a variable. For example, if I wanted Java to perverse the decimal when I was dividing 2 <code>int<code>s, I could use this line:
+<pre>
+int i1 = 2;
+int i2 = 4;
+double result = (double)i1 / (double)i2;</pre>
+The <code>(double)</code> (which is the cast) tells Java that even though <code>i1</code> and <code>i2</code> are <code>int</code>s, I want Java to pretend they're <code>double</code>s and go from there. 
+<br/>Using a cast is you saying you are smarter than Java so, make sure you are in fact smarter than Java. Be sure that your cast will not cause any problems.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: ([how what] [is to] cast)
+^reuse(CASTING)
+
+u: ABSTRACT_CLASS (what is abstract class)
+An abstract class is similar to an interface in that not every method needs to have a body. So, some of the methods in an abstract class can just be headers (like <code>public abstract void method();</code>). Note that abstract classes cannot be instantiated (you can't create new Objects of that class). This makes sense because they're not finished! They still need to have some of their methods defined!
+<br/>You'll want to make a class abstract when some of the methods (but not all) will need to be implemented by a subclass.
+<br/>All abstract methods in an abstract class should have the word <code>abstract</code> in their header and should have a semicolon after their parentheses.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (what is abstract method)
+An abstract method is like a method you could find in an interface. It has no body (no curly braces). Instead, it looks like this:
+<pre>
+public abstract void method();</pre>
+Note the word <code>abstract</code> and the semicolon at the end. Both of these are required!
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (switch statement)
+A switch statement is a special way to combine a lot of <code>if</code>s and else-if statements together. First you'll need one variable that can have many values, like an <code>int</code> or a String. Then, you'll want a bunch of different things that can happen based on the value of that variable. Then, put it together like this:
+<pre>
+int i = Random.generator().nextInt(1, 10); // i is a value from 1 to 10
+switch(i) {
+   case 1: // if i == 1
+      System.out.println("Hi");
+	  break;
+   case 2: // else if i == 2
+      System.out.println("Hello");
+	  break;
+   default: // else (if i is anything other than 1 or 2)
+      System.out.println("Hey!");
+	  break;
+}</pre>
+Make sure to include <code>break</code>s at the end of each case.
+<br/>...
+
+	a: (tell me more)
+	If you don't include the <code>break</code>s, the code will still compile, but something weird will happen. Once a case is selected, all of the code in that case will be run. Then, all of the code in the next case will also be run. This will continue all the way to the end of the <code>switch</code> statement. For example, look at this code:
+	<pre>
+int i = 1;
+switch(i)
+{
+   case 1: System.out.println("1");
+   case 2: System.out.println("2");
+   default: System.out.println("3");
+}</pre>
+	<pre>
+OUTPUT:
+1
+2
+3</pre>
+	Execution will "fall through" all remaining cases. You can sometimes use this affect to your advantage. For example, think about how you could use this to make a simple countdown clock that will countdown from any number between 1 and 10!
+	^refine() b: () ^reuse(~feedback.FEEDBACK)
+
+u: (what is * interface)
+An interface is like a class but it only contains method headers and not the actual code that will go into the method. Usually you'll want to make an interface if many classes will have the same methods and do the same things but the different classes will do the same things in different ways. A great example is the <code>List</code> interface. Both the <code>ArrayList</code> class and the <code>LinkedList</code> class implement this interface so they both have methods like <code>add()</code> and <code>remove()</code> but because the different Lists have different structures, they implement the methods in different ways.
+<br/>An interface should get its own class that looks like this:
+<pre>
+public interface InterfaceName
+{
+   public void methodHeader();
+   //more methods...
+}</pre>
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+
+# u: (what is * [superclass "super class" parent])
+
+# u: (what is * [subclass "sub class" child])
+
+# u: (what does this do)

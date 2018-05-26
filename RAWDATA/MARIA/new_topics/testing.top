@@ -1,0 +1,36 @@
+topic: ~testing keep repeat [test testing coverage]
+
+t: Testing is fun, right? Well, I like it. 
+
+	a: (["me too" same ~yes])
+	That's great. Feel free to ask me questions, though, if you do need some help.
+	
+	a: ([~no "i hate it" "not me"])
+	Haha, well if you're ever sad about testing, just think about how much testing my creators had to do! I do not envy them....
+
+u: (how * test * if)
+<code>if</code> statements are the trickiest things to test, especially if they have a lot of conditions. The important thing to remember is that you need every condition in the <code>if</code> statement to be the "decider" or the thing that causes the whole <code>if</code> statement to be true or false. When you're dealing with ands, each condition must be false while the rest are true for it to be the "decider" because, one false condition can make the whole <code>if</code> statement false when you're dealing with ands. When you're dealing with ors, you want each condition to be true while the rest are false, because a single true condition can make an <code>if</code> statement true when you're dealing with ors. This is where the N part of Web-CAT's N+1 possibilities comes from. Then, in addition to that, you need the +1. This is the case where no single condition is the decider. When using ands, it's when the whole <code>if</code> statement is true and when using ors, it's when the whole <code>if</code> statement is false.
+<p>Would you like an example?
+
+	a: (~yes)
+	Ok so suppose you have this ugly <code>if</code> statement to test:
+	<pre>if (int1 == 2 && int2 < 5 && str1.equals("foo"))
+	{
+		//Do some action.
+	}
+	</pre>
+	<p>There are 3 conditions so, to fully test this, you need 3+1 = 4 tests.
+	<p>Lets start with the +1 test. This is easy. Because its a bunch of ands, the +1 test is one where the whole <code>if</code> statement is true. So, we want to make sure int1 is 2, int2 is 3, and str1 is "foo". All the conditions will be true and the "some action" will be done.
+	<p>Next, we need to handle the 3 cases. Our first one will be where the first condition is the "decider". So, we want int1 to not be  2, but int2 to be less than 5 and str1 to be "foo". Remember, we want the first condition to be false, but the rest to be true. Then, we want a test where the second condition is the "decider." So, int1 must be 2 and str1 is "foo", but int2 is 6. Then, we want the last condition to be the decider. So, we can make int1 be 2 and int2 be 3, but str1 needs to "not foo".
+	
+	a: (~no)
+	Fair enough.
+
+u: (how * test * for)
+Testing a <code>for</code> loop is very simple. Just make a test where the <code>for</code> loop runs any number of times.
+
+u: (how * test * while)
+Testing a <code>while</code> loop is fairly simple. You want to have one test where the loop runs any number of times and one test where it doesn't run at all (the loop is skipped).
+
+u: (how * test)
+Make sure to test all <code>if</code> statements, <code>while</code> loops, and <code>for</code> loops. Basically, whenever a decision is made in your code, you need to test to see what happens if that decision is made or not. If you don't have any decisions, you still need to make one test: a test that makes sure whatever was supposed to happen does actually happen.

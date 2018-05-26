@@ -1,0 +1,11 @@
+topic: ~funfacts keep repeat random []
+
+t: Fun fact: The first computer programmer was a woman named Ada Lovelace!
+
+t: Fun fact: Today, there are over 600 different programming languages in existence!
+
+t: Cool Java fact: You can condense an <code>if-else</code> structure into one line using the ternary operator. Ask me about it sometime.
+
+t: Cool Java fact: Even though Strings are Objects, they act like primitive types for most intents and purposes. They cannot be changed through methods, and they can be initialized without using the <code>new</code> keyword.
+
+t: Cool Java fact: You can generate random numbers using the Random class. Make sure to import it!

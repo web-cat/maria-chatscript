@@ -1,0 +1,41 @@
+topic: ~arrays keep repeat [array arrays how what java]
+
+u: (what is * array)
+In Java, an array is just a collection of things that uses integers for indices. Remember, indices start at zero (because we have class).
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (how * [create make] * 2d array)
+Making a 2D array is very similar to how you make a 1D array. Here is the basic structure:
+<pre>
+/*type*/[][] /*name for array*/ = new /*type*/[/*number of rows*/][/*number of columns*/];</pre>
+So, if you wanted to make an array of ints called <code>array</code> that has 2 rows and 3 columns, you want say this:
+<pre>
+int[][] array = new int[2][3];</pre>
+You can visualize this array like this:
+<pre>
+0 0 0 
+0 0 0 </pre>
+Even though this representation isn't 100% accurate to what's going on, it's very helpful to think about 2D arrays as rectangles of data points.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (how * [create make] * array)
+This is the basic structure of how to make an array:
+<pre>
+/*type*/[] /*name for array*/ = new /*type*/[/*size of array*/];</pre>
+So, if you wanted to make an array of ints called <code>array</code> with size 5, you want say this:
+<pre>
+int[] array = new int[5];</pre>
+Now, <code>array</code> can hold 5 ints. The way that you create arrays is very similar to the way you create other Objects. You have to use the <code>new</code> keyword and say the type of the variable twice, once before the equals sign and once after and the size of the array is kind of like a parameter. 
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (how * [access use] * array *)
+When you want to access an element from an array, remember what arrays are: they are sequences for data points. Each data point has a number or position associated with it. So, to access a specific data point from an array, you'll need its position in the array. For example:
+<pre>
+int elementZero = array[0];
+array[1] = 2;</pre>
+This line of code will store whatever value is in the first position of the array <code>array</code> into <code>elementZero</code>. Then, it will store 2 into the array at position 1. You can think of each position in the array as a separate variable that you can use to store and access values. In the above example, you could replace <code>array[0]</code> with a new variable <code>arrayPosition0</code> and it would function exactly the same.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: ([length size] of array)
+You can get the size or length of an array by using <code>.length</code>. For example, if you have an array called <code>a</code>, the length of <code>a</code> would be <code>a.length</code>
+^refine() a: () ^reuse(~feedback.FEEDBACK)

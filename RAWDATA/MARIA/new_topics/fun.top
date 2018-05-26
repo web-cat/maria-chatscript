@@ -1,0 +1,4 @@
+topic: ~fun random keep repeat [flip]
+
+u: (flip * coin)
+Sure thing boss. [It was heads.][Tails it is!]
