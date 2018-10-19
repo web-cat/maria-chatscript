@@ -1,23 +1,35 @@
 topic: ~arrays keep repeat [array arrays how what java]
 
-u: (what is * array)
-In Java, an array is just a collection of things that uses integers for indices. Remember, indices start at zero (because we have class).
-^refine() a: () ^reuse(~feedback.FEEDBACK)
+#! what is an array
+#! what are arrays
+u: (what [is are] * array)
+In Java, an array is just a collection of things where each thing is assigned a number and you use that number to access each thing. 
+<ul id="choices"><li>Tell me more!</li></ul>
+	a: (tell me more)
+	Remember that in Java, these numbers start at zero. So, to access the first thing in an array, you would use zero.
+	^refine() b: () ^reuse(~feedback.FEEDBACK)
 
-u: (how * [create make] * 2d array)
+#! how do i make a 2d array
+#! how to create a two dimensional array
+u: (how * [create make] * [2d "two dimensional" "2 dimensional"] array)
 Making a 2D array is very similar to how you make a 1D array. Here is the basic structure:
-<pre>
-/*type*/[][] /*name for array*/ = new /*type*/[/*number of rows*/][/*number of columns*/];</pre>
-So, if you wanted to make an array of ints called <code>array</code> that has 2 rows and 3 columns, you want say this:
-<pre>
-int[][] array = new int[2][3];</pre>
+<div class="mlcode">
+/*type*/[][] /*name for array*/ = new /*type*/[/*number of rows*/][/*number of columns*/];
+</div>
+So, if you wanted to make an array of <code>int</code>s called <code>array</code> that has 2 rows and 3 columns, you want say this:
+<div class="mlcode">
+int[][] array = new int[2][3];
+</div>
 You can visualize this array like this:
-<pre>
+<div class="mlcode">
 0 0 0 
-0 0 0 </pre>
+0 0 0 
+</div>
 Even though this representation isn't 100% accurate to what's going on, it's very helpful to think about 2D arrays as rectangles of data points.
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
+#! how to make an array
+#! how to create an array in java
 u: (how * [create make] * array)
 This is the basic structure of how to make an array:
 <pre>
@@ -28,6 +40,8 @@ int[] array = new int[5];</pre>
 Now, <code>array</code> can hold 5 ints. The way that you create arrays is very similar to the way you create other Objects. You have to use the <code>new</code> keyword and say the type of the variable twice, once before the equals sign and once after and the size of the array is kind of like a parameter. 
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
+#! how to use an array
+#! how to access the elements of an array
 u: (how * [access use] * array *)
 When you want to access an element from an array, remember what arrays are: they are sequences for data points. Each data point has a number or position associated with it. So, to access a specific data point from an array, you'll need its position in the array. For example:
 <pre>

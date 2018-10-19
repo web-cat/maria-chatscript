@@ -1,122 +1,79 @@
 # This topic is just for holding questions about feedback.
-
-topic: ~feedback keep repeat []
-
+# Paste the following line after any gambit to get feedback:
+#  ^refine() a: () ^reuse(~feedback.FEEDBACK)
+#
 # This feedback request only has a 50% chance of actually asking for feedback. It also alternates between four questions.
+
+topic: ~feedback keep repeat [feedback rate review suggestion]
+
 u: FEEDBACK (0=1) 
-$rand=%rand % 8
-if ($rand < 4) { <p style="color:blue">FEEDBACK REQUEST - TYPE "quit" TO OPT OUT</p> }
+$rand=%rand % 4
 ^refine()
-
 	a: FEEDBACK_GOOD_BAD ($rand=0)
-	<p style="color:blue">Did my response answer your question?</p>
-	
+	\<span class="feedback">Hey, quick question. Did that answer your question?</span>
+	<ul id="choices"><li>Yes</li><li>No</li><li>I'd prefer not to answer.</li></ul>
 		b: (~yes)
-		<p style="color:blue">Cool! Glad to hear it!
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - GOOD</p>
-		
+		\<span class="feedback">Cool! Glad to hear it!</span>
 		b: (~no)
-		<p style="color:blue">Dang. Well, I'll try to work on that.
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - BAD</p>
-		
-		b: ([quit exit])
-		<p style="color:blue">YOU HAVE OPTED TO NOT GIVE FEEDBACK</p>
-		
+		\<span class="feedback">Dang. Well, I'll try to work on that.</span>
 		b: ()
-		[<p style="color:blue">I was kind of looking for a "yes" or a "no"....</p>]
-		^reuse(FEEDBACK_GOOD_BAD)
-	
+		\<span class="feedback">That's ok, I understand.</span>
 	a: FEEDBACK_1_TO_5 ($rand=1)
-	<p style="color:blue">Hey, so I'm still new at this. On a scale from 1 to 5 (with 5 being EXTREMELY helpful), how helpful was my response?</p>
-	
+	\<span class="feedback">Hey, so I'm still new at this. On a scale from 1 to 5 (with 5 being EXTREMELY helpful), how helpful was my response?</span>
+	<ul id="choices"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>I'd prefer not to answer.</li></ul>
 		b: (1)
-		<p style="color:blue">Dang. I'll have to try harder.
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - 1/5</p>
-		
+		\<span class="feedback">Dang. I'll have to try harder.</span>
 		b: (2)
-		<p style="color:blue">Hmm... not great. Noted.
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - 2/</p>
-		
+		\<span class="feedback">Hmm... not great. Noted.</span>
 		b: (3)
-		<p style="color:blue">What's that, a C? Well, C's get degrees, right?
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - 3/5</p>
-		
+		\<span class="feedback">What's that, a C? Well, C's get degrees, right?</span>
 		b: (4)
-		<p style="color:blue">Wow. I guess I'm pretty good at this, eh?
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - 4/5</p>
-		
+		\<span class="feedback">Wow. I guess I'm pretty good at this, eh?</span>
 		b: (5)
-		<p style="color:blue">A prefect 5??? That's awesome. Glad I could be of help.
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - 5/5</p>
-		
-		b: ([quit exit])
-		<p style="color:blue">YOU HAVE OPTED TO NOT GIVE FEEDBACK</p>
-		
+		<span class="feedback">A prefect 5??? That's awesome. Glad I could be of help.</span>
 		b: ()
-		[<p style="color:blue">I'm looking for a number from 1 to 5.</p>]
-		^reuse(FEEDBACK_1_TO_5)
-		
+		\<span class="feedback">That's ok, I understand.</span>
 	a: FEEDBACK_TOO_VERBOSE ($rand=2)
-	<p style="color:blue">Was my response too wordy?</p>
-		
+	\<span class="feedback">Was my response too wordy?</span>
+	<ul id="choices"><li>Yes</li><li>No</li><li>I'd prefer not to answer.</li></ul>
 		b: (~yes)
-		<p style="color:blue">I'll try to work on that.
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - TOO VERBOSE</p>
-		
+		\<span class="feedback">I'll try to work on that.</span>
 		b: (~no)
-		<p style="color:blue">Excellent!
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - NOT TOO VERBOSE</p>
-		
-		b: ([quit exit])
-		<p style="color:blue">YOU HAVE OPTED TO NOT GIVE FEEDBACK</p>
-		
+		\<span class="feedback">Excellent!</span>
 		b: ()
-		[<p style="color:blue">I was kind of looking for a "yes" or a "no"....</p>]
-		^reuse(FEEDBACK_TOO_VERBOSE)
-		
+		\<span class="feedback">That's ok, I understand.</span>
 	a: FEEDBACK_BAD_FORMATTING ($rand=3)
-	<p style="color:blue">Was my response incorrectly formatted? (Did you see any HTML tags?)</p>
-	
+	\<span class="feedback">Was my response incorrectly formatted? (Did you see any HTML tags?)</span>
+	<ul id="choices"><li>Yes</li><li>No</li><li>I'd prefer not to answer.</li></ul>
 		b: (~yes)
-		<p style="color:blue">I'll try to work on that.
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - BAD FORMATTING</p>
-		
+		\<span class="feedback">I'll try to work on that.</span>
 		b: (~no)
-		<p style="color:blue">Excellent!
-		<br/>YOUR FEEDBACK HAS BEEN RECORDED - GOOD FORMATTING</p>
-		
-		b: ([quit exit])
-		<p style="color:blue">YOU HAVE OPTED TO NOT GIVE FEEDBACK</p>
-		
+		\<span class="feedback">Excellent!</span>
 		b: ()
-		[<p style="color:blue">I was kind of looking for a "yes" or a "no"....</p>]
-		^reuse(FEEDBACK_BAD_FORMATTING)
-
+		\<span class="feedback">That's ok, I understand.</span>
+		
 u: (want * rate)
 ^reuse(RATE)
 		
-u: RATE (want * give * [feedback][review])
-<p style="color:blue">YOU HAVE REQUESTED TO GIVE FEEDBACK - TYPE "quit" TO OPT OUT
-<br/>Is this positive or negative feedback?<p>
-
+#! i want to give some feedback on this system
+u: RATE (want * give * [feedback review])
+\<span class="feedback">So, you want to give feedback, eh? Is this positive or negative feedback?</span>
+<ul id="choices"><li>Positive</li><li>Negative</li><li>I didn't want to give feedback.</li></ul>
 	a: ([good][positive])
-	<p style="color:blue">Great! Tell me what I did and why you thought it was good.</p>
-	
+	\<span class="feedback">Great! Tell me what I did and why you thought it was good.</span>
 		b: ()
-		<p style="color:blue">FEEDBACK RECORDED - GOOD QUALITY
-		<br/>Thanks! Duly noted.</p>
-		
+		\<span class="feedback">Thanks! Duly noted.</span>
 	a: ([bad][negative])
-	<p style="color:blue">I'm sorry that I messed up, but thank you for helping me improve. What's the issue?</p>
-	
+	\<span class="feedback">I'm sorry that I messed up, but thank you for helping me improve. What's the issue?</span>
 		b: ()
-		<p style="color:blue">FEEDBACK RECORDED - BAD QUALITY
-		<br/>Duly noted.</p>
+		\<span class="feedback">Duly noted.</span>
+	a: ()
+	\<span class="feedback">Sorry, I don't know why I thought you wanted to give me some feedback.</span>
 	
 u: (suggestion)
-<p style="color:blue">YOU HAVE REQUESTED TO GIVE FEEDBACK - TYPE "quit" TO OPT OUT
-<br/>What would you like to suggest?</p>
-
+\<span class="feedback">You have a suggestion for me? What would you like to suggest?</span>
+<ul id="choices"><li>I didn't want to give feedback.</li></ul>
+	a: (didn't * feedback)
+	<span class="feedback">Sorry, I don't know why I thought you wanted to give me a suggestion.</span>
 	a: ()
-	<p style="color:blue">FEEDBACK RECORDED - SUGGESTION
-	<br/>Duly noted.<p>
+	<span class="feedback">Duly noted.</span>

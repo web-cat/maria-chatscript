@@ -246,3 +246,17 @@ public interface InterfaceName
 # u: (what is * [subclass "sub class" child])
 
 # u: (what does this do)
+
+#! what is inheritance
+u: WHAT_INHERITANCE (what is inheritance)
+Inheritance occurs when one class extends another. This means the new class is a child of the other class. Children classes can access data and methods from their parent.
+<ul id="choices">
+<li>When is it useful?</li>
+</ul>
+	a: (when * useful)
+	It can be used when multiple classes share some functions. For example, a Truck object and a Minivan object may share features. You could group these common features into another class, the Car class, and make both children of the Car class.
+	
+#! how does inheritance work
+u: (how * inheritance work)
+^reuse(WHAT_INHERITANCE)
+	
