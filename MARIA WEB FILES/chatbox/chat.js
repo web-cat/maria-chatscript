@@ -80,6 +80,10 @@ window.onload = function () {
         var user = document.getElementById("userName").value;
         document.getElementById("chat-history").innerHTML += "<div class='chat-bubble chat-message-sent clearfix'>" + userText + "</div>";
         document.getElementById("chatbox-input").value = "";
+
+        //===========================================================================
+        //TODO: This URL needs to be pointed to the correct location of the PHP file.
+        //===========================================================================
         xmlhttp.open("GET", "http://localhost/chatbot/chatbot.php?action=request&user=" + user + "&message=" + userText, true);
         xmlhttp.send();
         xmlhttp.onreadystatechange = function () {
@@ -175,6 +179,10 @@ window.onload = function () {
             event.preventDefault();
             var userText = event.target.getAttribute('href');
             var user = document.getElementById("userName").value;
+
+            //===========================================================================
+            //TODO: This URL needs to be pointed to the correct location of the PHP file.
+            //===========================================================================
             xmlhttp.open("GET", "http://localhost/chatbot/chatbot.php?action=request&user=" + user + "&message=" + userText, true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = function () {
