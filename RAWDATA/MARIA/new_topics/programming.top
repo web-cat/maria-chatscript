@@ -1,0 +1,4 @@
+topic: ~programming keep repeat []
+
+u: (what is abstraction)
+Abstraction is basically when you remove details. For example, you make a method that sorts a list with some for loops. But, int he description, you can abstract away the details of how you sort the list and just say that the method sorts a list. Abstraction is caring about what is getting done, not how.

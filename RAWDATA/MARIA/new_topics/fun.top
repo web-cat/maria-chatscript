@@ -10,9 +10,6 @@ Sure thing boss.
 	a: ()
 	[It was heads.][Looks like tails to me.]
 
-u: (flip a coin 100 times)
-To save processor power, I'll just say it came up heads 50 of the 100 times.
-
 #! let's play rock paper scissors
 #! i want to play rock paper scissors
 u: (play rock paper scissors)
