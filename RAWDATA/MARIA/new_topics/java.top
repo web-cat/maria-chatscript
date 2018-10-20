@@ -130,7 +130,7 @@ In Java, generic classes are classes that deal specifically with one type of Obj
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
 #! how to make a generic class
-u: (how [make create] generic class)
+u: (how * [make create] * generic class)
 Creating a generic class is very similar to creating a regular class. In the class header, you'll want to include some angle brackets, like this:
 <div class="mlcode">
 public class GenericClass&ltT&gt
@@ -228,65 +228,76 @@ u: ([how what] [is to] cast)
 ^reuse(CASTING)
 
 #! what is an abstract class
-u: ABSTRACT_CLASS (what is abstract class)
-An abstract class is similar to an interface in that not every method needs to have a body. So, some of the methods in an abstract class can just be headers (like <code>public abstract void method();</code>). Note that abstract classes cannot be instantiated (you can't create new Objects of that class). This makes sense because they're not finished! They still need to have some of their methods defined!
-<br/>You'll want to make a class abstract when some of the methods (but not all) will need to be implemented by a subclass.
-<br/>All abstract methods in an abstract class should have the word <code>abstract</code> in their header and should have a semicolon after their parentheses.
+u: ABSTRACT_CLASS (what is * abstract class)
+An abstract class is similar to an interface in that not every method needs to have a body. So, some of the methods in an abstract class can just be headers (like <code>public abstract void method();</code>). Note that abstract classes cannot be instantiated (you can't create new Objects of that class). This makes sense because they're not finished! They still need to have some of their methods defined! You'll want to make a class abstract when some of the methods (but not all) will need to be implemented by a subclass. All abstract methods in an abstract class should have the word <code>abstract</code> in their header and should have a semicolon after their parentheses.
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
-u: (what is abstract method)
+#! what is an abstract method 
+u: (what is * abstract method)
 An abstract method is like a method you could find in an interface. It has no body (no curly braces). Instead, it looks like this:
-<pre>
-public abstract void method();</pre>
+<div class="mlcode">
+public abstract void method();
+</div>
 Note the word <code>abstract</code> and the semicolon at the end. Both of these are required!
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
+#! how do i use a switch statement
 u: (switch statement)
-A switch statement is a special way to combine a lot of <code>if</code>s and else-if statements together. First you'll need one variable that can have many values, like an <code>int</code> or a String. Then, you'll want a bunch of different things that can happen based on the value of that variable. Then, put it together like this:
-<pre>
+A switch statement is a special way to combine a lot of if statements and else-if statements together. First you'll need one variable that can have many values, like an <code>int</code> or a String. Then, you'll want a bunch of different things that can happen based on the value of that variable. Then, put it together like this:
+<div class="mlcode">
 int i = Random.generator().nextInt(1, 10); // i is a value from 1 to 10
 switch(i) {
-   case 1: // if i == 1
-      System.out.println("Hi");
-	  break;
-   case 2: // else if i == 2
-      System.out.println("Hello");
-	  break;
-   default: // else (if i is anything other than 1 or 2)
-      System.out.println("Hey!");
-	  break;
-}</pre>
+&emsp;case 1: // if i == 1
+&emsp;&emsp;System.out.println("Hi");
+&emsp;&emsp;break;
+&emsp;&emsp;case 2: // else if i == 2
+&emsp;&emsp;System.out.println("Hello");
+&emsp;&emsp;break;
+&emsp;default: // else (if i is anything other than 1 or 2)
+&emsp;&emsp;System.out.println("Hey!");
+&emsp;&emsp;break;
+}
+</div>
 Make sure to include <code>break</code>s at the end of each case.
-<br/>...
-
+<ul id="choices">
+<li>Tell me more!</li>
+</ul>
 	a: (tell me more)
 	If you don't include the <code>break</code>s, the code will still compile, but something weird will happen. Once a case is selected, all of the code in that case will be run. Then, all of the code in the next case will also be run. This will continue all the way to the end of the <code>switch</code> statement. For example, look at this code:
-	<pre>
-int i = 1;
-switch(i)
-{
-   case 1: System.out.println("1");
-   case 2: System.out.println("2");
-   default: System.out.println("3");
-}</pre>
-	<pre>
-OUTPUT:
-1
-2
-3</pre>
+	<div class="mlcode">
+	int i = 1;
+	switch(i)
+	{
+	&emsp;case 1: System.out.println("1");
+	&emsp;case 2: System.out.println("2");
+	&emsp;default: System.out.println("3");
+	}
+	</div>
+	The output will be:
+	<div class="mlcode">
+	1
+	2
+	3
+	</div>
 	Execution will "fall through" all remaining cases. You can sometimes use this affect to your advantage. For example, think about how you could use this to make a simple countdown clock that will countdown from any number between 1 and 10!
 	^refine() b: () ^reuse(~feedback.FEEDBACK)
 
+#! what is an interface
 u: (what is * interface)
-An interface is like a class but it only contains method headers and not the actual code that will go into the method. Usually you'll want to make an interface if many classes will have the same methods and do the same things but the different classes will do the same things in different ways. A great example is the <code>List</code> interface. Both the <code>ArrayList</code> class and the <code>LinkedList</code> class implement this interface so they both have methods like <code>add()</code> and <code>remove()</code> but because the different Lists have different structures, they implement the methods in different ways.
-<br/>An interface should get its own class that looks like this:
-<pre>
-public interface InterfaceName
-{
-   public void methodHeader();
-   //more methods...
-}</pre>
-^refine() a: () ^reuse(~feedback.FEEDBACK)
+An interface is like a class but it only contains method headers and not the actual code that will go into the methods. Usually you'll want to make an interface if many classes will have the same methods and do the same things but the different classes will do the same things in different ways. A great example is the <code>List</code> interface. Both the <code>ArrayList</code> class and the <code>LinkedList</code> class implement this interface so they both have methods like <code>add()</code> and <code>remove()</code> but because the different Lists have different structures, they implement the methods in different ways.
+<ul id="choices">
+<li>Could you give me an example?</li>
+</ul>
+	a: (example)
+	An interface should get its own class that looks like this:
+	<div class="mlcode">
+	public interface InterfaceName
+	{
+	&emsp;public void methodHeader();
+	&emsp;//more methods...
+	}
+	</div>
+	^refine() b: () ^reuse(~feedback.FEEDBACK)
 
 
 # u: (what is * [superclass "super class" parent])

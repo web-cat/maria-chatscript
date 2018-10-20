@@ -52,11 +52,11 @@ $rand=%rand % 20
 		b: ()
 		\<span class="feedback">That's ok, I understand.</span>
 		
+#! i want to rate the system	
 u: (want * rate)
 ^reuse(RATE)
 		
 #! i want to give some feedback on this system
-#! i want to rate the system
 u: RATE (want * give * [feedback review])
 \<span class="feedback">So, you want to give feedback, eh? Is this positive or negative feedback?</span>
 <ul id="choices"><li>Positive</li><li>Negative</li><li>I didn't want to give feedback.</li></ul>

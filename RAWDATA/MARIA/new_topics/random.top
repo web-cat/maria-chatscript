@@ -1,6 +1,6 @@
 topic: ~random keep repeat [random generator]
 
-u: SOFIA_RANDOM_IMPORT ([how what] * import * [sofia greenfoot])
+u: SOFIA_RANDOM_IMPORT ([how what] * import * [Sofia greenfoot])
 To import the sofia/greenfoot Random class, put this line at the top of your Java class:
 <pre>
 import sofia.util.Random;</pre>

@@ -106,7 +106,7 @@ u: (LineLength) Checks for long lines.
 
 Rationale: Long lines are hard to read in printouts or if developers have limited screen space for the source code, e.g. if the IDE displays additional information like project tree, class hierarchy, etc.
 
-u: (Indentation) Checks correct indentation of Java code.
+u: (indentation) Checks correct indentation of Java code.
 
 The idea behind this is that while pretty printers are sometimes convenient for bulk reformats of legacy code, they often either aren't configurable enough or just can't anticipate how format should be done. Sometimes this is personal preference, other times it is practical experience. In any case, this check should just ensure that a minimal set of indentation rules is followed.
 
@@ -960,7 +960,7 @@ u: (AvoidMultipleUnaryOperators) Using multiple unary operators may be a bug, an
             // These are typo bugs, or at best needlessly complex and confusing:
             int i = - -1;
             int j = + - +1;
-            int z = ~~2;
+            int z = \~\~2;
             boolean b = !!true;
             boolean c = !!!true;
 
@@ -972,8 +972,8 @@ u: (AvoidMultipleUnaryOperators) Using multiple unary operators may be a bug, an
             boolean c = false;
 
             // And these just make your brain hurt:
-            int i = ~-2;
-            int j = -~7;
+            int i = \~-2;
+            int j = -\~7;
 
 
             </pre></div>
