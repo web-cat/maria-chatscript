@@ -19,6 +19,7 @@ To import Java's default Random class, use this line:
 import java.util.Random;</pre>
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
+#! how do i import the random class
 u: ([how what] * import)
 Which Random class are you using? Sofia's (greenfoot's) Random class, the TestableRandom class, or the classic Java Random class?
 <ul id="choices"><li>Sofia's Random class</li><li>TestableRandom</li><li>Java's normal Random class</li></ul>
@@ -66,6 +67,7 @@ This example generates a random number between 0 and 9. Remember that the range 
 	^refine() a: () ^reuse(~feedback.FEEDBACK)
 	
 u: JAVA_RANDOM_GENERATE (how * generate * [number int] * java)
+\<div id="title">Using Java's Random Class</div>
 To generate a random number using the normal Java Random class, follow this example:
 <pre>
 Random gen = new Random();

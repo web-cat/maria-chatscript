@@ -29,13 +29,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var userText = this.getAttribute('href');
         var user = document.getElementById("userName").value;
         console.log(userText);
-        xmlhttp.open("GET", "http://localhost/chatbot/chatbot.php?action=request&user=" + user + "&message=" + userText, true);
+        xmlhttp.open("GET", "http://localhost/chatbot/chatbot.php?action=request&user=" + user + "_error_explain&message=" + userText, true);
         xmlhttp.send();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var data = JSON.parse(this.responseText);
+
+                var answer = document.createElement('div');
+                answer.innerHTML += data.response;
+
+                var title = answer.querySelector('#title');
+
+                if (title != null) {
+                    title.remove();
+                    document.getElementById('modal-title-text').innerHTML = title.innerHTML;
+                }
+                else {
+                    document.getElementById('modal-title-text').innerHTML = "Here's What I Found";
+                }
+
                 modal.style.display = "block";
-                document.getElementById("modal-text").innerHTML = data.response;
+                document.getElementById("modal-text").innerHTML = answer.innerHTML;
             }
         };
     }
@@ -48,6 +62,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     document.getElementById("closePopup").onclick = function () {
+        modal.style.display = "none";
+    }
+
+    document.getElementById("closePopupButton").onclick = function () {
         modal.style.display = "none";
     }
 

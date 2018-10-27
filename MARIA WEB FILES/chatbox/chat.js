@@ -94,6 +94,18 @@ window.onload = function () {
 
                 var answer = document.createElement('div');
                 answer.innerHTML += data.response;
+                var title = answer.querySelector('#title');
+
+                if (title != null) {
+                    title.remove();
+                    document.getElementById('modal-title-text').innerHTML = title.innerHTML;
+                }
+
+                else {
+                    document.getElementById('modal-title-text').innerHTML = "Here's What I Found";
+                }
+
+
                 var choices = answer.querySelectorAll('ul#choices li');
                 choices.forEach(function (choice) {
                     choice.addEventListener('click', function () {
@@ -116,17 +128,22 @@ window.onload = function () {
 
                 if(answer.firstElementChild) {
                     //answer.innerHTML = "Click <a class='explainPopup' href='" + userText + "'> here</a> to know the answer."
-                    answer.innerHTML = "<span style='cursor:pointer; color:blue;text-decoration:underline;'>Click here to know the answer.</span>";
+
+                    answer.innerHTML = "<span style='cursor:pointer;'>Let me see what I can find....</span>";
 
                     answer.addEventListener('click', function() {
                         modal.style.display = "block";
                         document.getElementById("modal-text").innerHTML = data.response;
                     });
+
+                    modal.style.display = "block";
+                    document.getElementById("modal-text").innerHTML = data.response;
                 }
 
-                console.log(answer.innerHTML.length);
+                console.log('"' + answer.innerHTML + '"');
 
-                if (answer.innerHTML.length > 0) {
+                if (!(/^\s*$/.test(answer.innerHTML))) {
+                    console.log('hi')
                     document.getElementById('chat-history').appendChild(answer);
                 }
 

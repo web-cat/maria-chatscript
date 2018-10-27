@@ -14,11 +14,11 @@ u: (how * test * if)
 
 	a: (~yes)
 	Ok so suppose you have this ugly <code>if</code> statement to test:
-	<pre>if (int1 == 2 && int2 < 5 && str1.equals("foo"))
-	{
-		//Do some action.
-	}
-	</pre>
+<pre>if (int1 == 2 && int2 < 5 && str1.equals("foo"))
+{
+	//Do some action.
+}
+</pre>
 	<p>There are 3 conditions so, to fully test this, you need 3+1 = 4 tests.
 	<p>Lets start with the +1 test. This is easy. Because its a bunch of ands, the +1 test is one where the whole <code>if</code> statement is true. So, we want to make sure int1 is 2, int2 is 3, and str1 is "foo". All the conditions will be true and the "some action" will be done.
 	<p>Next, we need to handle the 3 cases. Our first one will be where the first condition is the "decider". So, we want int1 to not be  2, but int2 to be less than 5 and str1 to be "foo". Remember, we want the first condition to be false, but the rest to be true. Then, we want a test where the second condition is the "decider." So, int1 must be 2 and str1 is "foo", but int2 is 6. Then, we want the last condition to be the decider. So, we can make int1 be 2 and int2 be 3, but str1 needs to "not foo".

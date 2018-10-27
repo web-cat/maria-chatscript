@@ -70,14 +70,13 @@ NullPointerExceptions can be a bit tricky to fix, but let's give it a try. First
 						^refine() g: () ^reuse(~feedback.FEEDBACK)
 						f: (~no)
 						^reuse(NPE_EXPLAINATION)
-	a :(~no)
+	a: (~no)
 	Ok, then the best way to debug the issue is probably to use the debugger in your IDE. 
 	<ul id="choices"><li>Ok, go on.</li></ul>
 		b: (~yes)
 		If you're using Eclipse, you can click to the left of the line numbers to create a breakpoint. Then, instead of running the program normally, you need to run it in debug mode. Most IDEs use a similar method.
 		<ul id="choices"><li>How do I use the debugger?</li></ul>
-			c: (how * use debugger)
-			Hi
+			c: (how * use * debugger)
 			^reuse(~debuging.HOW_USE)
 
 #! how to fix NullPointerException

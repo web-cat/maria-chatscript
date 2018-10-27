@@ -60,11 +60,12 @@ u: (want * rate)
 u: RATE (want * give * [feedback review])
 \<span class="feedback">So, you want to give feedback, eh? Is this positive or negative feedback?</span>
 <ul id="choices"><li>Positive</li><li>Negative</li><li>I didn't want to give feedback.</li></ul>
-	a: ([good][positive])
+	#! positive
+	a: ([good positive])
 	\<span class="feedback">Great! Tell me what I did and why you thought it was good.</span>
 		b: ()
 		\<span class="feedback">Thanks! Duly noted.</span>
-	a: ([bad][negative])
+	a: ([bad negative])
 	\<span class="feedback">I'm sorry that I messed up, but thank you for helping me improve. What's the issue?</span>
 		b: ()
 		\<span class="feedback">Duly noted.</span>

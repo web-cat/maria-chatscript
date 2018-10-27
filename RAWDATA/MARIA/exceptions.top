@@ -1673,7 +1673,8 @@ slavishly copied C syntax. For example, getting your semicolons wrong in a
 <span class="k">for</span> loop will generally not generate an error,
 just give surprising results.</li></ul>
 
-u: (closebraceexpected) \<ul><li><a class="jgloss" target="_blank" href="http://mindprod.com/jgloss/balancing.html">Missing \}</a> at the end of a
+u: (closebraceexpected)
+\<ul><li><a class="jgloss" target="_blank" href="http://mindprod.com/jgloss/balancing.html">Missing \}</a> at the end of a
 class.</li>
 <li>Missing \} is on a line containing // before the \}.</li>
 <li>Failure to enclose initialiser code in \{\} or <span class="k">static</span> \{\}.</li>
