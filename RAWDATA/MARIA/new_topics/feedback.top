@@ -52,9 +52,11 @@ $rand=%rand % 20
 		b: ()
 		\<span class="feedback">That's ok, I understand.</span>
 		
+		
 #! i want to rate the system	
 u: (want * rate)
 ^reuse(RATE)
+		
 		
 #! i want to give some feedback on this system
 u: RATE (want * give * [feedback review])
@@ -71,6 +73,7 @@ u: RATE (want * give * [feedback review])
 		\<span class="feedback">Duly noted.</span>
 	a: ()
 	\<span class="feedback">Sorry, I don't know why I thought you wanted to give me some feedback.</span>
+	
 	
 #! i have a suggestion
 u: (suggestion)

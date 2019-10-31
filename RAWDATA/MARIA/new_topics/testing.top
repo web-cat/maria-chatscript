@@ -1,12 +1,107 @@
+concept: ~turnin (code solution program "my program" "my solution" "my code" "the program" "the solution" "the code")
 topic: ~testing keep repeat [test testing coverage]
 
-t: Testing is fun, right? Well, I like it. 
+# =============================================================================
+# This topic contains help for testing.
+# =============================================================================
 
+
+t: Testing is fun, right? Well, I like it. 
 	a: (["me too" same ~yes])
 	That's great. Feel free to ask me questions, though, if you do need some help.
 	
 	a: ([~no "i hate it" "not me"])
 	Haha, well if you're ever sad about testing, just think about how much testing my creators had to do! I do not envy them....
+
+	
+#! how do i test my code
+u: HOW_TEST (how * test ~turnin)
+Testing is a tricky process. To start, you should have one test class for each regular class you have and at least one test method for each regular method you have.
+
+
+#! how do i make tests for my code
+#! how to i write tests
+#! how can i make tests for my solution
+u: (how * [write make] tests * ~turnin)
+^reuse(HOW_TEST)
+
+
+#! what do i name my test class
+#! how do i name my test class
+u: ([how what] * name * test class)
+If your normal class is called <code>SomeClass</code>, you should name your test class <code>SomeClassTest</code>. Make sure the word "Test" is at the end.
+<ul id="choices">
+<li>How do I create a test class?</li>
+<ul>
+	#! How do I create a test class?
+	a: (how * [make create] * test class)
+	^reuse(CREATE_TEST_CLASS)
+
+
+#! how to make a test class
+#! how do i create a test class
+u: CREATE_TEST_CLASS (how * [make create] * test class)
+If you're using Greenfoot, simply right-click on on the class you want to make a test class for and click on the option that says "Create test class". Otherwise simply create a new class. Make sure to import all of the necessary things.
+
+
+#! how to write a test method
+#! how do i make a test method
+#! how do i test a method
+#! how to create a test method
+u: (how * [write create make] * test method)
+First, go to your test class. Then make a new method that looks like this:
+<div class="mlcode">
+public void testMethod() {
+nbsp;   //Part 1: Set up a situation to test.
+nbsp;   //Part 2: Call the method you are testing.
+nbsp;   //Part 3: Make assertions about what should happen.
+}
+</div>
+<ul id="choices">
+<li>Ok, go on.</li>
+</ul>
+	a: (~yes)
+	Great, now that you've got that done, you'll want to look at the method you're testing. Pick one situation that you want to test. For example, this is the method I'm testing:
+	<div class="mlcode">
+	public void method(boolean go, Jerro jeroo) {
+	nbsp;   \if (jeroo.getGridX() == 2) {
+	nbsp;       jeroo.hop();
+	nbsp;   }
+	}
+	</div>
+	This method has two situations to test: when the Jeroo hops and when it doesn't.
+	</div>
+	<ul id="choices">
+	<li>Ok, go on.</li>
+	</ul>
+		b: (~yes)
+		First let's test a situation when the Jeroo will hop. For the Jeroo to hop, its x-coordinate must be 2. So, let's make that happen. In the test, we want our Jeroo to be at x = 2. In order for it to be anywhere, we need to create it.
+		<div class="mlcode">
+		public void testMethod() {
+		nbsp;   //Part 1: Set up a situation to test.
+		nbsp;   Jerro jeroo = new Jeroo();
+		nbsp;   //Part 2: Call the method you are testing.
+		nbsp;   //Part 3: Make assertions about what should happen.
+		}
+		</div>
+		<ul id="choices">
+		<li>Ok, go on.</li>
+		</ul>
+			c: (~yes)
+			Next, we need to create a world for this Jeroo live in. We'll also add him to the world.
+			<div class="mlcode">
+			public void testMethod() {
+			nbsp;   //Part 1: Set up a situation to test.
+			nbsp;   Jerro jeroo = new Jeroo();
+			nbsp;   World world = new World();
+			nbsp;   //Part 2: Call the method you are testing.
+			nbsp;   //Part 3: Make assertions about what should happen.
+			}
+			</div>
+			<ul id="choices">
+			<li>Ok, go on.</li>
+			</ul>
+
 
 u: (how * test * if)
 \<code>if</code> statements are the trickiest things to test, especially if they have a lot of conditions. The important thing to remember is that you need every condition in the <code>if</code> statement to be the "decider" or the thing that causes the whole <code>if</code> statement to be true or false. When you're dealing with ands, each condition must be false while the rest are true for it to be the "decider" because, one false condition can make the whole <code>if</code> statement false when you're dealing with ands. When you're dealing with ors, you want each condition to be true while the rest are false, because a single true condition can make an <code>if</code> statement true when you're dealing with ors. This is where the N part of Web-CAT's N+1 possibilities comes from. Then, in addition to that, you need the +1. This is the case where no single condition is the decider. When using ands, it's when the whole <code>if</code> statement is true and when using ors, it's when the whole <code>if</code> statement is false.

@@ -77,7 +77,7 @@ NullPointerExceptions can be a bit tricky to fix, but let's give it a try. First
 		If you're using Eclipse, you can click to the left of the line numbers to create a breakpoint. Then, instead of running the program normally, you need to run it in debug mode. Most IDEs use a similar method.
 		<ul id="choices"><li>How do I use the debugger?</li></ul>
 			c: (how * use * debugger)
-			^reuse(~debuging.HOW_USE)
+			^reuse(~debugging.HOW_USE)
 
 #! how to fix NullPointerException
 #! how do i fix a NullPointerException

@@ -1,7 +1,13 @@
+//===========================================================================
+//TODO: This URL needs to be pointed to the correct location of the PHP file.
+//===========================================================================
+var PHP_FILE_PATH = "http://localhost/chatbot.php";
+
 var open = false;
 var heightChecked = false;
 var initHeight = 0;
 var intval = null;
+var firstChatOpen = true;
 
 var SavedResponse = function(responseText) {
     this.prototype = {handleEvent: function (event) {
@@ -9,9 +15,8 @@ var SavedResponse = function(responseText) {
             document.getElementById("modal-text").innerHTML = data.response;
         }};
     this.responseText = responseText;
-}
+};
 
-// document.addEventListener("DOMContentLoaded", function(event) {
 window.onload = function () {
     if (window.XMLHttpRequest) {
         // code for modern browsers
@@ -41,55 +46,114 @@ window.onload = function () {
     heightChecked = true;
     elem.style.height = '0';
 
-    function slideToggle() {
-        window.clearInterval(intval);
-        var mdiv = document.getElementsByClassName('chat')[0];
-        if (!heightChecked) {
-            initHeight = mdiv.offsetHeight;
-            heightChecked = true;
-        }
-        if (open) {
-            var h = initHeight;
-            open = false;
-            intval = setInterval(function () {
-                    h--;
-                    mdiv.style.height = h + 'px';
-                    if (h <= 0)
-                        window.clearInterval(intval);
-                }, 0.5
-            );
-        }
-        else {
-            var h = 0;
-            open = true;
-            intval = setInterval(function () {
-                    h++;
-                    mdiv.style.height = h + 'px';
-                    if (h >= initHeight)
-                        window.clearInterval(intval);
-                }, 0.5
-            );
-        }
-    }
+    // Setup the bot. Send log info and signal the bot that the page has loaded.
+    sendUserInfoToChatbot();
 
-    var askChatbot  = function(userText) {
+    // Add onClick functions to initial question suggestions.
+    var startingChoices = document.getElementById('choices');
+    var choices = startingChoices.querySelectorAll('ul#choices li');
+    choices.forEach(function (choice) {
+        choice.addEventListener('click', function () {
+            var userText = choice.innerHTML;
+            askChatbot(userText);
+        });
+    });
+
+    document.getElementById("chatForm").onsubmit = function (e) {
+        e.preventDefault();
+        var userText = document.getElementById("chatbox-input").value;
+        askChatbot(userText);
+    };
+
+    document.getElementById('chat-header').onclick = function () {
+        slideToggle();
+
+        if (firstChatOpen) {
+            chatWithBot('getfirstresponse');
+        }
+
+        firstChatOpen = false;
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    // Set up explain links.
+    document.querySelector("#chat-history").addEventListener('click', function (event) {
+        if (event.target.classList.contains('explainPopup')) {
+            event.preventDefault();
+            var userText = event.target.getAttribute('href');
+
+            xmlhttp.open("GET", PHP_FILE_PATH + "?action=request&user=" + getUser() + "__explain&message=" + userText, true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    modal.style.display = "block";
+                    document.getElementById("modal-text").innerHTML = data.response;
+                }
+            };
+        }
+    });
+
+    /**
+     * Send the bot the message and updates the chat window by adding the user's message and showing the bot's
+     * response.
+     *
+     * @param userText The text sent in by the user.
+     */
+    function askChatbot(userText) {
         var oldChoices = document.getElementById('choices');
         if (oldChoices != null){
             oldChoices.remove();
         }
-        var user = document.getElementById("userName").value;
         document.getElementById("chat-history").innerHTML += "<div class='chat-bubble chat-message-sent clearfix'>" + userText + "</div>";
         document.getElementById("chatbox-input").value = "";
 
-        //===========================================================================
-        //TODO: This URL needs to be pointed to the correct location of the PHP file.
-        //===========================================================================
-        xmlhttp.open("GET", "http://localhost/chatbot/chatbot.php?action=request&user=" + user + "&message=" + userText, true);
+        chatWithBot(userText)
+    }
+
+    /**
+     * Gets the name of the current user that should be sent to the bot. Format: <user>__<assignment>
+     *
+     * @returns {string} The current user that should be sent to the bot.
+     */
+    function getUser() {
+        var userName = document.getElementById("userName").value;
+        var assignmentId = document.getElementById("assignmentId").value;
+
+        return userName + "__" + assignmentId;
+    }
+
+    /**
+     * Send a message to the bot and ignore the response. This should be used to signal the bot of certain events
+     * like page load and users opening the chat window.
+     *
+     * @param message The message to send to the bot.
+     */
+    function signalBot(message) {
+        xmlhttp.open("GET", PHP_FILE_PATH + "?action=request&user=" + getUser() +
+            "&message=" + message, true);
+        xmlhttp.send();
+    }
+
+    /**
+     * Send a message to the bot and process the response. This should be used to chat with the bot. The responses will
+     * be added to the chat window.
+     *
+     * @param message The message to send to the bot.
+     */
+    function chatWithBot(message) {
+        xmlhttp.open("GET", PHP_FILE_PATH + "?action=request&user=" + getUser() +
+            "&message=" + message, true);
         xmlhttp.send();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 // document.getElementById("txtHint").innerHTML = this.responseText;
-                console.log(JSON.parse(this.responseText));
+                console.log(this.responseText);
                 var data = JSON.parse(this.responseText);
 
                 var answer = document.createElement('div');
@@ -161,54 +225,56 @@ window.onload = function () {
             var chatHistory = document.getElementById("chat-history");
             chatHistory.scrollTop = chatHistory.scrollHeight - chatHistory.clientHeight;
         };
-    };
-
-    // Add onClick functions to initial question suggestions.
-    var startingChoices = document.getElementById('choices');
-    var choices = startingChoices.querySelectorAll('ul#choices li');
-    console.log(choices);
-    choices.forEach(function (choice) {
-        console.log(choice);
-        choice.addEventListener('click', function () {
-            var userText = choice.innerHTML;
-            askChatbot(userText);
-        });
-    });
-
-    document.getElementById("chatForm").onsubmit = function (e) {
-        e.preventDefault();
-        var userText = document.getElementById("chatbox-input").value;
-        askChatbot(userText);
-    };
-
-    document.getElementById('chat-header').onclick = function () {
-        slideToggle();
-    };
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
     }
 
-    document.querySelector("#chat-history").addEventListener('click', function (event) {
-        if (event.target.classList.contains('explainPopup')) {
-            event.preventDefault();
-            var userText = event.target.getAttribute('href');
-            var user = document.getElementById("userName").value;
+    /**
+     * Sends information about the user to the chatbot so that it can be recorded in the logs. This should be called
+     * on page load.
+     */
+    function sendUserInfoToChatbot() {
+        // TODO: Need these fields from the HTML.
+        var userName = document.getElementById("userName").value;
+        var userFirstName = document.getElementById("userFirstName").value;
+        var userLastName = document.getElementById("userLastName").value;
+        var assignmentId = document.getElementById("assignmentId").value;
+        var assignmentName = document.getElementById("assignmentName").value;
+        var submissionNumber = document.getElementById("submissionNumber").value;
 
-            //===========================================================================
-            //TODO: This URL needs to be pointed to the correct location of the PHP file.
-            //===========================================================================
-            xmlhttp.open("GET", "http://localhost/chatbot/chatbot.php?action=request&user=" + user + "&message=" + userText, true);
-            xmlhttp.send();
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    var data = JSON.parse(this.responseText);
-                    modal.style.display = "block";
-                    document.getElementById("modal-text").innerHTML = data.response;
-                }
-            };
+        var message = "setchatvars user_name is " + userName + " and user_first_name is " +
+            userFirstName + " and user_last_name is " + userLastName + " and assignment_id is " + assignmentId +
+            " and assignment_name is " + assignmentName + " and submission_number is " + submissionNumber;
+
+        signalBot(message);
+    }
+
+    function slideToggle() {
+        window.clearInterval(intval);
+        var mdiv = document.getElementsByClassName('chat')[0];
+        if (!heightChecked) {
+            initHeight = mdiv.offsetHeight;
+            heightChecked = true;
         }
-    });
+        if (open) {
+            var h = initHeight;
+            open = false;
+            intval = setInterval(function () {
+                    h--;
+                    mdiv.style.height = h + 'px';
+                    if (h <= 0)
+                        window.clearInterval(intval);
+                }, 0.5
+            );
+        }
+        else {
+            var h = 0;
+            open = true;
+            intval = setInterval(function () {
+                    h++;
+                    mdiv.style.height = h + 'px';
+                    if (h >= initHeight)
+                        window.clearInterval(intval);
+                }, 0.5
+            );
+        }
+    }
 };

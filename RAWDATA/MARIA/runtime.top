@@ -1469,7 +1469,7 @@ libraries are replaced while the application is running.
 
 u: STACK_OVERFLOW_ERROR (stackoverflowerror) 
 \<h2>What is the StackOverflowError?</h2>
-This error mainly happens when you have a method that calls itself. This is called recursion. If you are intentionally trying to write a recursive function, make sure you have a valid base case so that the recursion can end. If you aren't trying to make a recursive method or you didn't know what recursion is, don't call a method inside itself.
+This error mainly happens when you have a method that calls itself. This is called recursion. If you are intentionally trying to write a recursive function, make sure you have a valid base case so that the recursion can end. If you aren't trying to make a recursive method or you didn't know what recursion is, don't call a method inside itself. Make sure you are also not creating an object in its own constructor.
 <div class="mlcode">
 public boolean isOnEdge() {
 &nbsp;   return isOnEdge() && this.isFacing(EAST);

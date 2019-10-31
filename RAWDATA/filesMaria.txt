@@ -4,9 +4,10 @@ RAWDATA/MARIA/greetings.top
 RAWDATA/MARIA/exceptions.top
 RAWDATA/MARIA/runtime.top
 RAWDATA/MARIA/staticanalysiserrors.top
+RAWDATA/MARIA/mariatechnical.top
 
 RAWDATA/MARIA/new_topics/arrays.top
-RAWDATA/MARIA/new_topics/debuging.top
+RAWDATA/MARIA/new_topics/debugging.top
 RAWDATA/MARIA/new_topics/feedback.top
 RAWDATA/MARIA/new_topics/fun.top
 RAWDATA/MARIA/new_topics/funfacts.top

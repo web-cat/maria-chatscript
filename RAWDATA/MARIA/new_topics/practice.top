@@ -1,0 +1,37 @@
+topic: ~practice[practice]
+
+# =============================================================================
+# This topic contains practice questions relating to anything.
+# =============================================================================
+
+
+#! give me a practice questions
+#! ask me something
+#! help me practice
+u: (practice)
+$rand = %rand
+^refine()
+	a: ($rand=1)
+	Look at this code:
+	<div class="mlcode">
+	public class PracticeClass {
+	nbsp;   private int number = 0;
+	
+	nbsp;   public PracticeClass() {
+	nbsp;       int number = 4;
+	nbsp;   }
+	
+	nbsp;   public getNumber() {
+    nbsp;       return number;
+	nbsp;   }
+	}
+	</div>
+	If I create a new <code>PracticeClass</code> object and then call <code>getNumber()</code> what will be returned?
+		b: (4)
+		That's not right, sadly. If you repeat the type name in the constructor, Java thinks you're trying to create a whole new variable rather than just assigning a value to the variable you already have. So the line <code>int number = 4;</code> creates a whole new number variable and gives it a value of 4. The field's value is unchanged from 0. 
+		
+		b: (0)
+		Right!
+		
+		b: ()
+		Sadly, that's not right, The answer was 0.

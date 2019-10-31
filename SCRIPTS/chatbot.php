@@ -25,7 +25,7 @@ class ChatBot {
   }
 
   public function request() {
-		$host = "128.173.41.41";  //  CHATSCRIPT SERVER IP ADDRESS GOES HERE
+		$host = "localhost";  //  CHATSCRIPT SERVER IP ADDRESS GOES HERE
 		$port = 1024;     // <<<<<<< portnumber if different from 1024
 		$bot  = "Maria";  // <<<<<<< desired botname, or "" for default bot
 		$null = "\x00";

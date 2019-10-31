@@ -62,7 +62,7 @@ for (/*Type of thing in list*/ /*Name*/ : /*Name of a list or collection*/)
 
 #! what is a primitive type
 #! what is a primitive
-u: (what * primitive)
+u: WHAT_PRIMITIVE (what * primitive)
 In Java, a primitive type is a type that is not an Object. These are types like <code>int</code>, <code>double</code>, and <code>boolean</code>. You cannot call methods on primitive variables.
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
@@ -180,7 +180,7 @@ The <code>boolean</code> data type can hold 2 values: true and false. This type 
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
 #! what is a double
-u: (what is * double)
+u: WHAT_DOUBLE (what is * double)
 The <code>double</code> data type can hold decimal values. You'll want to use this type to store numbers that can have decimal (non-integer) values. If a number never has a decimal (it is always an integer), you should probably use an <code>int</code> instead.
 <ul id="choices">
 <li>Tell me more!</li>
@@ -220,7 +220,7 @@ int i1 = 2;
 int i2 = 4;
 double result = (double)i1 / (double)i2;
 </div>
-The <code>(double)</code> (which is the cast) tells Java that even though <code>i1</code> and <code>i2</code> are <code>int</code>s, I want Java to pretend they're <code>double</code>s and go from there. Using a cast is you saying you are smarter than Java so, make sure you are in fact smarter than Java. Be sure that your cast will not cause any problems.
+The <code>(double)</code> (which is the cast) tells Java that even though <code>i1</code> and <code>i2</code> are <code>int</code>s, I want Java to pretend they're <code>double</code>s and go from there. Using a cast is you saying you are smarter than Java so, before you use one, make sure you are in fact smarter than Java. Be sure that your cast will not cause any problems.
 ^refine() a: () ^reuse(~feedback.FEEDBACK)
 
 #! how to cast a variable 
@@ -283,7 +283,7 @@ Make sure to include <code>break</code>s at the end of each case.
 	^refine() b: () ^reuse(~feedback.FEEDBACK)
 
 #! what is an interface
-u: (what is * interface)
+u: WHAT_INTERFACE (what is * interface)
 An interface is like a class but it only contains method headers and not the actual code that will go into the methods. Usually you'll want to make an interface if many classes will have the same methods and do the same things but the different classes will do the same things in different ways. A great example is the <code>List</code> interface. Both the <code>ArrayList</code> class and the <code>LinkedList</code> class implement this interface so they both have methods like <code>add()</code> and <code>remove()</code> but because the different Lists have different structures, they implement the methods in different ways.
 <ul id="choices">
 <li>Could you give me an example?</li>
@@ -300,11 +300,64 @@ An interface is like a class but it only contains method headers and not the act
 	^refine() b: () ^reuse(~feedback.FEEDBACK)
 
 
-# u: (what is * [superclass "super class" parent])
+#! what is a superclass
+#! what is a super class
+u: (what is * [superclass "super class" parent])
+A superclass is the class that another class inherits some functionality functionality from. In Java, every class has a superclass. The superclass is usually a more generic class that has less functionality. For example, the Pet class may be the superclass of Fish. In this case, Fish is a more specific class that has more unique functionality (like swimming) and Pet is a more generic class that has features universal to all pets (like moving or interacting with their owner).
+<ul id="choices">
+<li>How do I know which class is the superclass is?</li>
+<li>When could I use a superclass?</li>
+<li>What do you mean by "inherits functionality"?</li>
+</ul>
+	a: (which class * superclass)
+	In Java, if you are in a class, you can find out the superclass by scrolling to the top of the file and looking at the class declaration line:
+	<div class="mlcode">
+	public class Fish extends Pet
+	</div>
+	The superclass is the class that comes after the word <code>extends</code>. If there is no <code>extends</code>, then the class uses the default superclass: <code>Object</code>.
+	
+	a: (when * use * superclass)
+	If you are working on two different classes that share a lot of functionality (they have some of the same methods), then you can take the methods that are the same and move them to a super class that both of your classes inherit from. That way, both of the classes can still use the methods and you only have to write them once, in one place.
+	
+	a: (what * inherits functionality)
+	^reuse(WHAT_INHERITANCE)
 
-# u: (what is * [subclass "sub class" child])
 
-# u: (what does this do)
+#! what is a subclass
+#! what is a child class
+#! what does a subclass do
+u: WHAT_SUBCLASS (what is * [subclass "sub class" child])
+A subclass is a class that inherits functionality from another class. A subclass is usually a more specific type of thing than its super class that has more specific functionality. For example, I may create a class called Pet. This is a very generic class that does things any pet can do. For example, it can speak and love its owner so it might have methods like <code>speak()</code> and <code>love()</code>. Then, I might create a subclass of Pet that is a specific type of pet. Say I create a class called Dog. Dogs will have specific functionality that general pets do not. For example, I might implement a <code>fetch()</code> method.
+<ul id="choices">
+<li>How do I know if a class is a subclass?</li>
+<li>What do you mean by "inherits functionality"?</li>
+</ul>
+	a: (which class * superclass)
+	In Java, if you are in a class, you can find out if it is a subclass by scrolling to the top of the file and looking at the class declaration line:
+	<div class="mlcode">
+	public class Fish extends Pet
+	</div>
+	If you see the word <code>extends</code>, then you are in a subclass and it is a subclass of the class to the right of the word <code>extends</code>. If there is no <code>extends</code>, then the class is a subclass of <code>Object</code> by default.
+	
+	a: (what * inherits functionality)
+	^reuse(WHAT_INHERITANCE)
+
+#! what is this
+#! what does this do
+u: (what * this)
+In Java, the <code>this</code> keyword is used to reference the object that called the method you are in. For example, if I write this in one class:
+<div class="mlcode">
+HarvesterJeroo dave = new HavesterJeroo();
+dave.hopAndPick();
+</div>
+And I declared the <code>hopAndPick</code> in a Jeroo subclass called HarvesterJeroo like this:
+<div class="mlcode">
+public void hopAndPick() {
+&emsp;this.hop();
+&emsp;this.pick();
+}
+</div>
+Then, the <code>this</code> in <code>hopAndPick()</code> refers to <code>dave</code> because I called the <code>hopAndPick()</code> method on <code>dave</code>. Again, <code>this</code> refers to the object that called the method.
 
 #! what is inheritance
 u: WHAT_INHERITANCE (what is inheritance)
@@ -318,4 +371,32 @@ Inheritance occurs when one class extends another. This means the new class is a
 #! how does inheritance work
 u: (how * inheritance work)
 ^reuse(WHAT_INHERITANCE)
+
+#! how does integer division work
+u: INT_DIVISION ([what how] * [int integer] division)
+In Java, when you divide two <code>int</code> variables, the result will be a whole number. Java will not store the decimal even if the numbers do not evenly divide. Java does not round the numbers, it just throws away the decimal. So, if we do 3/4, the result is 0.75 but Java will throw away the decimal and just give us 0 as the answer. This is called truncation.
+
+#! what happens when you divide ints in java
+u: (how * divide [int ints])
+^reuse(INT_DIVISION)
+
+#! what is truncation
+#! when does java truncate values
+u: ([what when] * [truncate truncation])
+Truncation is a way of turning decimal numbers into integer numbers. If a decimal exists, it will be discarded. So, 4.7 truncated is 4. It is basically like rounding, but always rounding down.
+
+#! what are pointers
+u: WHAT_POINTER (what * pointers)
+Say you create a new object: 
+<div class="mlcode">
+Object obj1 = new Object();
+</div>
+There are really 2 parts to this line. First, we create a new object (the right side of the equals sign). This object is separate from the variable <code>obj1</code>. Java has an internal name for it that is probably not "obj1". The other part is creating a variable called <code>obj1</code> that will store a reference or "pointer" to the newly created object. In this way, the variable <code>obj1</code> is not an object itself, but a pointer to the real object. Now if we do this:
+<div class="mlcode">
+Object obj2 = obj1;
+</div>
+We are not creating a new object here. Rather, we are making a new variable called <code>obj2</code> that will also point to the object that <code>obj1</code> points to.
 	
+#! how do object references work
+u: ([what how] * object reference)
+^reuse(WHAT_POINTER)

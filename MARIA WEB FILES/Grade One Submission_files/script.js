@@ -1,3 +1,8 @@
+//===========================================================================
+//TODO: This URL needs to be pointed to the correct location of the PHP file.
+//===========================================================================
+var PHP_FILE_PATH = "http://localhost/chatbot.php";
+
 document.addEventListener("DOMContentLoaded", function (event) {
     // Your code to run since DOM is loaded and ready
     var isOpen = true;
@@ -22,14 +27,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
         explainLinks[i].addEventListener('click', showPopup.bind(explainLinks[i]), false);
     }
 
+    /**
+     * Gets the name of the current user that should be sent to the bot. Format: <user>__<assignment>
+     *
+     * @returns {string} The current user that should be sent to the bot.
+     */
+    function getUser() {
+        var userName = document.getElementById("userName").value;
+        var assignmentId = document.getElementById("assignmentId").value;
+
+        return userName + "__" + assignmentId;
+    }
+
     //Event handler for the click event on explain links which will display the popup
     function showPopup(event) {
         event.preventDefault();
 
         var userText = this.getAttribute('href');
         var user = document.getElementById("userName").value;
-        console.log(userText);
-        xmlhttp.open("GET", "http://localhost/chatbot/chatbot.php?action=request&user=" + user + "_error_explain&message=" + userText, true);
+        xmlhttp.open("GET", PHP_FILE_PATH + "?action=request&user=" + getUser() + "__explain&message=" + userText, true);
         xmlhttp.send();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
