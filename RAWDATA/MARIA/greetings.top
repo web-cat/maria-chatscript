@@ -1,4 +1,4 @@
-topic: ~greetings keep repeat (~emogoodbye ~emohello ~emohowzit name here)
+topic: ~greetings keep repeat (name how you doing hi hello ~emogoodbye ~emohello ~emohowzit)
 
 #!x will match on every return start of a conversation
 t: ( %input<%userfirstline %input>0 )
@@ -15,3 +15,16 @@ u: ( what is your name ) My name is Maria. I am the Virtual Teaching Assistant f
 
 #! who are you
 u: ( who are you ) I am Maria. I am the Virtual Teaching Assistant for Web-CAT.
+
+#! how are you
+u: ( how be you ) [Doing well, thank you.] [Very well, thanks.] [I am good. Thank you.]
+
+u: ( how you do ) [Doing well, thank you.] [Very well, thanks.] [I am good. Thank you.]
+
+u: ( how you doing ) [Doing well, thank you.] [Very well, thanks.] [I am good. Thank you.]
+
+u: ( [hi hello] ) hello to you too.
+
+u: (how do you feel) Good.
+
+u: (what be your age) Same as yours

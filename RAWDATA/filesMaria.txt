@@ -1,7 +1,8 @@
 RAWDATA/MARIA/simplecontrol.top # default bot control
 RAWDATA/MARIA/greetings.top
-RAWDATA/MARIA/rules_test.top
-RAWDATA/MARIA/rules_runtime.top
+RAWDATA/MARIA/exceptions.top
+RAWDATA/MARIA/runtime.top
+RAWDATA/MARIA/staticanalysiserrors.top
 
 
 
