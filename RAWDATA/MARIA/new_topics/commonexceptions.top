@@ -1,0 +1,36 @@
+topic: ~commonexceptions keep repeat [exception error]
+
+concept: ~ae [arithmeticexcpetion "arithmetic exception"]
+concept: ~aioobe [arrayindexoutofboundsexception "array index out of bounds exception" "array index out of bounds" arrayindexoutofbounds]
+
+#! what causes an arithmetic excpetion
+#! what causes the arithmeticexcpetion
+#! why did i get an arithmetic exception
+#! why did the arithmeticexcpetion happen
+#! what is an ArithmeticException
+#! what is an arithmetic exception
+#! what does arithmetic exception mean
+u: ([what why] * ~ae)
+In Java, the most common cause of the ArithmeticExcpetion is trying to divide by zero. Make sure you're not dividing by zero!
+<ul id="choices"><li>I'm not dividing by zero!</li></ul>
+	a: (not dividing by zero)
+	Make sure none of the variables you're diving by can be zero. For example, the following code will cause an error because <code>i</code> is zero at some point!
+	<div class="mlcode">
+	for (int i = 0; i < 10; i++)
+	{
+	&emsp;System.out.println(10.0 / i);
+	}
+	</div>
+	
+#! what causes an array index out of bounds exception
+#! what causes the arrayindexoutofboundsexception
+#! why did i get an array index out of bounds
+#! why did the arrayindexoutofboundsexception happen
+#! what is an arrayindexoutofboundsexception
+#! what is an array index out of bounds exception
+#! what does array index out of bounds mean
+u: The ArrayIndexOutOfBoundsException happens when you try to access an array at an index that doesn't exist in the array. This can happen if the index you try to access is too big or too small. If you create an array like <code>int[] array = new int[10]'</code>, then saying <code>array[-1] = 1</code> or <code>array[11] = 1</code> will give you an error because the array is indexed from 0 to 9.
+<ul id="choices"><li>What are the valid indices of an array?</li></ul
+	a: (what are valid indices of an array)
+	The valid indices of an array are all the whole numbers from 0 to the length of the array minus 1. For example, if I make an array <code>int[] array = new int[n]</code>, the valid indices are all the whole numbers from 0 to n-1.
+

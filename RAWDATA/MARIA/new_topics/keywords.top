@@ -1,0 +1,266 @@
+topic: ~keywords keep repeat [keyword "reserved word"]
+
+u: (abstract)
+The <code>abstract</code> keyword is used make abstract classes and methods. You should put the word in the class or method declaration. Abstract classes are just classes that contain abstract methods. Abstract methods are methods with no body. They should only be a method header with a semicolon after.
+<ul id="choices"><li>Tell me more!</li></ul>
+	a: (tell me more)
+	^reuse(~java.ABSTRACT_CLASS)
+
+u: (assert)
+You'll probably never use this word.
+<br/>But, if you're curious, it is used to make assertions (like the ones you make in test files) in less refined way. You use it like this:
+<pre>
+assert /*condition*/ : /*message to print if condition is false*/ </pre>
+Java should also generate a runtime error if the condition is false, but these runtime errors are sometimes turned off in some compliers.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (boolean)
+The <code>boolean</code> keyword is used to create boolean variables. Pretty simple.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (break)
+The <code>break</code> keyword is used to in a few places. In a <code>switch</code> statement, they are used to separate different cases if you don't want code to fall through. It is also used in loops to break out of the loop. This allows you to end a loop before the loop condition is false. For example, in the following loop, the loop will end when <code>i</code>=2, instead of when <code>i</code>=5, as you would expect.
+[<pre>
+for(int i = 0; i < 5; i++)
+{
+   if (i == 2)
+   {
+      break; 
+   }
+}</pre>]
+It is generally bad practice to use break statements in loops.
+<ul id="choices"><li>Tell me more!</li></ul>
+
+	a: (tell me more)
+	Interestingly, you can name loops in Java and you can use <code>break</code> statements to break out of specific loops. This makes <code>break</code> statements almost able to do everything <code>goto</code> statements are able to do. Here's an example:
+	<pre>
+outer: //name for outer loop
+for(int i = 0; i < 5; i++)
+{
+   inner:
+   for(int j = 0; j < 5; j++)
+   {
+	  System.out.println("foo");
+      break outer;
+   }
+}</pre>
+	Here, "foo" is only printed once, because we break out of the outer loop after we first get into the inner loop. If we omitted the <code>outer</code> from the <code>break</code> statement, then, "foo" would be printed 5 times because we would only break out of the inner loop.
+	^refine() b: () ^reuse(~feedback.FEEDBACK)
+	
+u: (byte)
+The <code>byte</code> keyword is just used to create variables of type <code>byte</code>. 
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (case)
+The <code>case</code> keyword is used inside of switch statements to specify all of the different values that the variable can be and the actions that should be taken for each of the values. 
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (catch)
+The <code>catch</code> keyword is used to used in try-catch statements (obviously to make the catch part of the try-catch statement.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (const)
+The <code>const</code> keyword is not currently used in Java. It may be a relic of Java's C origins. In C, <code>const</code> is used like <code>final</code> is used in Java. 
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (class)
+The <code>class</code> keyword is used to define classes. 
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (continue)
+The <code>continue</code> keyword is used in loops. It is similar to <code>break</code> but, when it is used, the loop does not exit. Instead, the loop's current iteration will end and it will move on to the next iteration. For example, in the following code, only the numbers 1 and 3 will be printed because the <code>continue</code> makes the loop miss the print statement that would have printed 2:
+<pre>
+for (int i = 1; i <= 3; i++)
+{
+   if (i == 2)
+   {
+      continue;
+   }
+   System.out.println(i);
+}</pre>
+<pre>
+OUTPUT:
+1
+3</pre>
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (default)
+The <code>default</code> keyword is used in a few interesting places. 
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (extends)
+To make one class a subclass of another class, you use <code>extends</code>, like this:
+<div class="mlcode">
+public class Class extends AnotherClass
+</div>
+This means that Class will get access to all of the methods defined in AnotherClass. You can also do this with interfaces.
+<ul id="choices">
+<li>What about using it with generics?</li>
+<li>What is a subclass?</li>
+<li>What is an interface?</li>
+</ul>
+	a: (generics)
+	Ah yes, you're right. You can use it one other place: with generics. When defining a generic type, you can say that the type must be a subclass of some other class. For example, if I want my type T to be a subclass of Integer, so I can use Integer methods on it, I would declare my generic type like this:
+	<div class="mlcode">
+	&lt;T extends Integer>
+	</div>
+	a: (subclass)
+	^reuse(~java.WHAT_SUBCLASS)
+	a: (interface)
+	^reuse(~java.WHAT_INTERFACE)
+
+u: (finally)
+The keyword <code>finally<code> is used after a try-catch statement. You should put a block of code after the <code>finally</code> keyword. This code will always be run, regardless of whether or not an exception was caught.
+<br/>The key takeaway: Code in a <code>finally</code> block is ALWAYS executed.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (final)
+Basically, you use <code>final</code> to create constants like this:
+<pre>
+final int one = 1;
+</pre>
+<br/>Now, <code>one</code>'s value cannot be changed from 1. 
+<ul id="choices"><li>Tell me more!</li></ul>
+
+	a: (tell me more)
+	You can use <code>final</code> in these many ways:
+	<p>1. To create primitives with constant values.
+	<br/>As I said above, you can use <code>final</code> in front of a primitive declaration to create a variable whose value cannot be changed.
+	<p>2. To create a constant reference to an Object.
+	<br/>In the case of Objects (<code>final Object obj = ...</code>), the behavior is a little more complicated. The use of <code>final</code> in this case makes it so that <code>obj</code> can never be made to reference another Object. This means you can call methods on <code>obj</code> and "alter" the Object, but you cannot say <code>obj = /*some new, different Object*/</code>. If you understand pointers, this makes sense. The real "value" of <code>obj</code> is just a pointer. So, this pointer is never allowed to change, but attributes of the Object being pointed to can be changed.
+	<p>3. To make methods that cannot be overridden in subclasses.
+	<br/>If you put <code>final</code> in a method header (<code>public final void ...</code>), then, this method cannot be overridden in any subclass. There can never be another <code>method()</code> method that does anything else.
+	<p>4. To make classes that cannot be subclassed.
+	<br/>If you use <code>final</code> in a class declaration (<code>public final class ...</code>), then that class can never have any subclasses. It can never be the parent to another class.
+	^refine() b: () ^reuse(~feedback.FEEDBACK)
+
+u: (float)
+\<code>float</code>s are a Java primitive type. They represent decimal numbers, so they are like <code>int</code>s with decimals. This type has half the precision of the <code>double</code> type. You will usually want to use <code>double</code> instead.
+<ul id="choices">
+<li>Why is it called a float?</li>
+<li>What is precision?</li>
+</ul>
+	a: (why * float)
+	The name float is derived from the term floating point number. This type of number is stored as D*10^E where D is a decimal value of the form 0.1205 and E is a whole number. This means that it can store decimal values, but it can only be so precise because there is only so much space to store D and E.
+	a: (what * precision)
+	Precision is the number of decimal places a number can have. The number 4.905 is more precise than 5 because we have more decimal places.
+	
+u: (for)
+\<code>for</code> is used to declare for loops. There are two different types of for loops. Iterative for loops that look like this:
+<div class="mlcode">
+for (int i = 0; i < NUMBER_OF_TIMES_TO_RUN; i++)
+{
+&emsp;/* Take some action. */
+}
+</div>
+And, for-each loops that look like this:
+<div class="mlcode">
+for (/* Type of thing in collection */ element : COLLECTION_NAME)
+{
+&emsp;/* Take some action. */
+}
+</div>
+
+u: (if)
+You use <code>if</code> to make choices in your code. You can do stuff like this:
+<div class="mlcode">
+if (counter < 5)
+{
+&emsp;System.out.println("Too low!");
+}
+</div>
+In this case, <code>"Too low!"</code> will only be printed out if <code>counter</code> is less than 5. Otherwise, nothing will happen.
+
+u: (implements)
+When you are declaring a class, you can make it implement an interface by using the <code>implements</code> keyword in the class declaration. It will look like this:
+<div class="mlcode">
+public class Class implements Interface
+</div>
+This means that Class must provide a definition for all the methods listed in Interface.
+<ul id="choices">
+<li>Can a class implement multiple interfaces?</li>
+<li>What is an interface?</li>
+</ul>
+	a: (multiple interfaces)
+	Yes. You can use a comma separated list of interfaces instead of just one if you want. This is a way to get some of the benefits of multiple inheritance in Java (because Java only allows each class to be a subclass of one other class).
+	a: (what * interface)
+	^reuse(~java.WHAT_INTERFACE)
+	
+u: (import)
+You use <code>import</code> to use code written in other places. For example, if you ever need to use random numbers, you will need to import that functionality. To import Java's Random class, you need to put <code>import java.util.Random;</code> at the top of your file.
+
+u: (instanceof)
+\<code>instanceof</code> is a binary operator like + or -. You use it to find out if an object is an instance of a certain class. It will return either <code>true</code> or <code>false</code>. To better understand, let's look at this example:
+<div class="mlcode">
+Jeroo pete = new Jeroo();
+
+System.out.println(pete instanceof Jeroo); // prints true
+System.out.println(pete instanceof Island); // prints false
+</div>
+<ul id="choices">
+<li>How does it work with superclasses?</li>
+</ul>
+	a: (superclasses)
+	\<code>instanceof</code> will also return <code>true</code> for any type that is superclass of the object's type. Again, let's look at an example:
+	<div class="mlcode">
+	Jeroo pete = new Jeroo();
+
+	System.out.println(pete instanceof Actor); // prints true
+	System.out.println(pete instanceof Object); // prints true
+	</div>
+	
+u: (int)
+\<code>int</code> is a primitive type that is used to store integer numbers. These are negative and positive numbers that do not have a decimal (-1, 0, 1, but not 2.4).
+<ul id="choices">
+<li>What is a primitive type?</li>
+<li>How do I store decimal numbers?</li>
+<li>How does division work with ints if there are no decimals?</li>
+</ul>
+	a: (primitive type)
+	^reuse(~java.WHAT_PRIMITIVE)
+	
+	a: (store decimal)
+	^reuse(~java.WHAT_DOUBLE)
+	
+	a: (division)
+	^reuse(~java.INT_DIVISION)
+	
+u: (interface)
+The <code>interface</code> keyword is used to declare an interface. Interfaces are declared in a very similar way to classes. For example, if I want to declare an interface called Pet, I would write this in a new Java file:
+<div class="mlcode">
+public interface Pet
+</div>
+<ul id="choices">
+<li>What is an interface?</li>
+</ul>
+	a: (what * interface)
+	^reuse(~java.WHAT_INTERFACE)
+	
+u: (long)
+\<code>long</code> is a primitive type that can hold whole, non-decimal numbers like an <code>int</code>. But, a <code>long</code> can hold much larger numbers than an <code>int</code>. Specifically, it can hold numbers from -2<sup>63</sup> to 2<sup>63</sup>-1. An <code>int</code> can only hold numbers from -2<sup>31</sup> to 2<sup>31</sup>-1. 
+<ul id="choices">
+<li>Why can a long hold bigger numbers?</li>
+<li>What is a primitive type?</li>
+</ul>
+	a: (why * bigger)
+	A <code>long</code> can store larger numbers because each <code>long</code> variable is stored with 64 bits and <code>int</code>s are only stored with 32 bits. The more bits are used to store the variable, the larger the number can be.
+	
+	a: (what * primitive)
+	^reuse(~java.WHAT_PRIMITIVE)
+
+u: (new)
+The <code>new</code> keyword is used to create a new instance of an object. This word is used once every time a new object is created. This means that to figure out the number of objects that are created in a certain piece of code, you can simply count the number of <code>new</code>s! For example:
+<div class="mlcode">
+Object obj1 = new Object(); // New object!
+Object obj2 = obj1;         // No new object.
+obj1 = new Object();        // New object!
+</div>
+This code instantiates 2 new objects. No new object is created for <code>obj2</code>, because it simply points to the already existing object <code>obj1</code>. A new object is created in the third line because the old <code>obj1</code> still exists, we have just lost access to it because we changed the value of the variable <code>obj1</code>.
+<ul id="choices">
+<li>What do you mean by "points"?</li>
+</ul>
+	a: (points)
+	^reuse(~java.WHAT_POINTER)
+
+	
+

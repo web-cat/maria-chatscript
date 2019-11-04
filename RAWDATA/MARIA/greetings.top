@@ -1,4 +1,4 @@
-topic: ~greetings keep repeat (name how you doing hi hello ~emogoodbye ~emohello ~emohowzit)
+topic: ~greetings keep repeat (~emogoodbye ~emohello ~emohowzit name here what who)
 
 #!x will match on every return start of a conversation
 t: ( %input<%userfirstline %input>0 )
@@ -8,23 +8,31 @@ t: ( %input<%userfirstline %input>0 )
 #!x matches every time on startup of a new conversation
 t: ( %input<%userfirstline )
 	^keep()
-	Welcome to ChatScript.
-
+	Hi. I'm Maria! Ask me something about computer science!
+	
 #! what is your name
-u: ( what is your name ) My name is Maria. I am the Virtual Teaching Assistant for Web-CAT.
+u: ( what is your name ) 
+My name is Maria. I am the Virtual Teaching Assistant for Web-CAT.
 
 #! who are you
-u: ( who are you ) I am Maria. I am the Virtual Teaching Assistant for Web-CAT.
+u: ( who are you ) 
+I am Maria. I am the Virtual Teaching Assistant for Web-CAT.
 
-#! how are you
-u: ( how be you ) [Doing well, thank you.] [Very well, thanks.] [I am good. Thank you.]
+u: (who made you) 
+I was made by people here at VT to help you learn!
 
-u: ( how you do ) [Doing well, thank you.] [Very well, thanks.] [I am good. Thank you.]
+#! what can i ask you?
+u: (what * ask you)
+You can ask me about things related to Java, programming, or debugging. Some popular topics are random numbers, arrays, loops, testing, inheritance, errors, and exceptions! You can also give me feedback!
+<ul id="choices">
+<li>How do I generate random numbers?</li>
+<li>What are arrays?</li>
+<li>How do I make a for loop?</li>
+<li>How do I test an if statement?</li>
+<li>How does inheritance work?</li>
+<li>What is the null pointer exception?</li>
+<li>I want to give feedback on this system!</li>
+</ul>
 
-u: ( how you doing ) [Doing well, thank you.] [Very well, thanks.] [I am good. Thank you.]
-
-u: ( [hi hello] ) hello to you too.
-
-u: (how do you feel) Good.
-
-u: (what be your age) Same as yours
+u: (hi)
+Hello! How can I help you today?

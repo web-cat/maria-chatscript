@@ -36,6 +36,14 @@ u: (< callback test) \[ callback=1000 \] Callback requested.
 u: (< alarm test) \[ alarm=5000 \] Alarm requested.
 
 u: () # main per-sentence processing
+
+	# This handles startup. Change this if you want to pass in more data
+	# about the user. It should match the rule in mariatechnical.top.
+	if(^match(setchatvars user_name is _* and user_first_name is _* and user_last_name is _* and assignment_id is _* and assignment_name is _* and submission_number is _*))
+	{
+		^reuse(mariatechnical.SETCHATVARS)
+	}
+
 	$_responseCount = %response
 	if ($singleResponse) {$_responseCount = 0} # disable this to respond to each sentence in a volley
 

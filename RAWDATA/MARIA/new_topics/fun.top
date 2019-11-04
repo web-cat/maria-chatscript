@@ -1,0 +1,66 @@
+topic: ~fun random keep repeat [flip play]
+
+#! flip a coin
+u: (flip a coin)
+$rand = %rand
+Sure thing boss. 
+^refine()
+	a: ($rand=1)
+	It landed on its side... weird.
+	a: ()
+	[It was heads.][Looks like tails to me.]
+
+#! let's play rock paper scissors
+#! i want to play rock paper scissors
+u: (play rock paper scissors)
+$rand=%rand % 3
+Ok. You go first....
+	a: RPS ([rock paper scissors])
+	^refine()
+		b: (rock $rand=0)
+		I had paper. Ha! I win.
+		b: (rock $rand=1)
+		I had scissors. Dang. You win.
+		b: (rock $rand=2)
+		I also had rock. Guess no one wins.
+		b: (paper $rand=0)
+		I also had paper. Guess I'll have to win next time.
+		b: (paper $rand=1)
+		I had scissors. That's a win for me and a LOSS for YOU!
+		b: (paper $rand=2)
+		I had rock. Let's not talk about it. Want to ask a Java question?
+		b: (scissors $rand=0)
+		I had paper. I... um... I lost. I'm so sad right now.
+		b: (scissors $rand=1)
+		I also had scissors. Let's just say I won.
+		b: (scissors $rand=2)
+		I had rock. Guess what? I won!
+	a: ()
+	I'm serious. I literally can't go at the same time as you. Don't worry, I won't cheat.
+		b: ()
+		$rand=%rand % 3
+		^reuse(RPS)
+		
+#! i want to play high low
+#! let's play hi lo
+u: (play ["high low" "hi lo" "higher lower"])
+$rand=%rand
+Ok, I'm thinking of a number between 1 and 100. Take a guess! $rand
+	a: GUESS (_~number)
+	$guess=_0
+	^refine()
+		b: ($guess<$rand)
+		Higher! 
+			c: (_~number)
+			$guess=_0
+			^reuse(GUESS)
+		b: ($guess>$rand)
+		Lower!
+			c: (_~number)
+			$guess=_0
+			^reuse(GUESS)
+		b: ($guess=$rand)
+		You got it!
+	
+
+	

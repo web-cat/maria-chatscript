@@ -1,0 +1,85 @@
+# This topic is just for holding questions about feedback.
+# Paste the following line after any gambit to get feedback:
+#  ^refine() a: () ^reuse(~feedback.FEEDBACK)
+#
+# This feedback request only has a 50% chance of actually asking for feedback. It also alternates between four questions.
+
+topic: ~feedback keep repeat [feedback rate review suggestion]
+
+u: FEEDBACK (0=1) 
+$rand=%rand % 20
+^refine()
+	a: FEEDBACK_GOOD_BAD ($rand=0)
+	\<span class="feedback">Hey, quick question. Did that answer your question?</span>
+	<ul id="choices"><li>Yes</li><li>No</li><li>I'd prefer not to answer.</li></ul>
+		b: (~yes)
+		\<span class="feedback">Cool! Glad to hear it!</span>
+		b: (~no)
+		\<span class="feedback">Dang. Well, I'll try to work on that.</span>
+		b: ()
+		\<span class="feedback">That's ok, I understand.</span>
+	a: FEEDBACK_1_TO_5 ($rand=1)
+	\<span class="feedback">Hey, so I'm still new at this. On a scale from 1 to 5 (with 5 being EXTREMELY helpful), how helpful was my response?</span>
+	<ul id="choices"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>I'd prefer not to answer.</li></ul>
+		b: (1)
+		\<span class="feedback">Dang. I'll have to try harder.</span>
+		b: (2)
+		\<span class="feedback">Hmm... not great. Noted.</span>
+		b: (3)
+		\<span class="feedback">What's that, a C? Well, C's get degrees, right?</span>
+		b: (4)
+		\<span class="feedback">Wow. I guess I'm pretty good at this, eh?</span>
+		b: (5)
+		<span class="feedback">A prefect 5??? That's awesome. Glad I could be of help.</span>
+		b: ()
+		\<span class="feedback">That's ok, I understand.</span>
+	a: FEEDBACK_TOO_VERBOSE ($rand=2)
+	\<span class="feedback">Would you be able to give me so feedback really quick? Was my response too wordy?</span>
+	<ul id="choices"><li>Yes</li><li>No</li><li>I'd prefer not to answer.</li></ul>
+		b: (~yes)
+		\<span class="feedback">I'll try to work on that.</span>
+		b: (~no)
+		\<span class="feedback">Excellent!</span>
+		b: ()
+		\<span class="feedback">That's ok, I understand.</span>
+	a: FEEDBACK_BAD_FORMATTING ($rand=3)
+	\<span class="feedback">Hey, could you answer this question really quick like? Was my response incorrectly formatted? (Did you see any HTML tags?)</span>
+	<ul id="choices"><li>Yes</li><li>No</li><li>I'd prefer not to answer.</li></ul>
+		b: (~yes)
+		\<span class="feedback">I'll try to work on that.</span>
+		b: (~no)
+		\<span class="feedback">Excellent!</span>
+		b: ()
+		\<span class="feedback">That's ok, I understand.</span>
+		
+		
+#! i want to rate the system	
+u: (want * rate)
+^reuse(RATE)
+		
+		
+#! i want to give some feedback on this system
+u: RATE (want * give * [feedback review])
+\<span class="feedback">So, you want to give feedback, eh? Is this positive or negative feedback?</span>
+<ul id="choices"><li>Positive</li><li>Negative</li><li>I didn't want to give feedback.</li></ul>
+	#! positive
+	a: ([good positive])
+	\<span class="feedback">Great! Tell me what I did and why you thought it was good.</span>
+		b: ()
+		\<span class="feedback">Thanks! Duly noted.</span>
+	a: ([bad negative])
+	\<span class="feedback">I'm sorry that I messed up, but thank you for helping me improve. What's the issue?</span>
+		b: ()
+		\<span class="feedback">Duly noted.</span>
+	a: ()
+	\<span class="feedback">Sorry, I don't know why I thought you wanted to give me some feedback.</span>
+	
+	
+#! i have a suggestion
+u: (suggestion)
+\<span class="feedback">You have a suggestion for me? What would you like to suggest?</span>
+<ul id="choices"><li>I didn't want to give feedback.</li></ul>
+	a: (didn't * feedback)
+	<span class="feedback">Sorry, I don't know why I thought you wanted to give me a suggestion.</span>
+	a: ()
+	<span class="feedback">Duly noted.</span>

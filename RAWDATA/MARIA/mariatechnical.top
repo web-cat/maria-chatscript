@@ -1,0 +1,31 @@
+topic: ~mariatechnical priority nostay repeat keep [setchatvars marsig getfirstresponse]
+
+# =============================================================================
+# This topic contains technical rules that allow the Web-CAT client to send
+#  information to the ChatScript server. This includes sending student 
+#  information, sending signals when various events occurring (student opens
+#  the chat window), and getting the starting response. One benefit to
+#  sending this information to the server is that it will appear in the logs
+#  and it can be stored in ChatScript variables.
+# =============================================================================
+
+u: SETCHATVARS (setchatvars user_name is _* and user_first_name is _* and user_last_name is _* and assignment_id is _* and assignment_name is _* and submission_number is _*) 
+$user_name='_0
+$user_first_name='_1
+$user_last_name='_2
+$assignment_id='_3
+$assignment_name='_4
+$submission_number=_5
+Set chat variables.
+
+u: (< marsig _*1 >)
+Received signal: '_0
+
+u: (getfirstresponse)
+What can I help you with today, $user_first_name? Try clicking a question below, or type your own!
+<ul id="choices">
+<li>What is a null pointer exception?</li>
+<li>How do I generate a random number?</li>
+<li>What kind of questions can I ask you?</li>
+</ul>
+

@@ -1,0 +1,97 @@
+topic: ~random keep repeat [random generator]
+
+u: SOFIA_RANDOM_IMPORT ([how what] * import * [Sofia greenfoot])
+To import the sofia/greenfoot Random class, put this line at the top of your Java class:
+<pre>
+import sofia.util.Random;</pre>
+Note that you do not need a <code>.*</code> because you are only importing one class: the Random class. You use the <code>.*</code> when you want to import many classes from the same package.
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: TESTABLE_RANDOM_IMPORT ([how what] * import * TestableRandom)
+To import the TestableRandom class, in Java, use this line:
+<pre>
+import student.TestableRandom;</pre>
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: JAVA_RANDOM_IMPORT ([how what] * import * java random {class})
+To import Java's default Random class, use this line:
+<pre>
+import java.util.Random;</pre>
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+#! how do i import the random class
+u: ([how what] * import)
+Which Random class are you using? Sofia's (greenfoot's) Random class, the TestableRandom class, or the classic Java Random class?
+<ul id="choices"><li>Sofia's Random class</li><li>TestableRandom</li><li>Java's normal Random class</li></ul>
+
+	a: ([sofia greenfoot])
+	^reuse(SOFIA_RANDOM_IMPORT)
+	
+	a: ([TestableRandom testable])
+	^reuse(TESTABLE_RANDOM_IMPORT)
+	
+	a: ()
+	^reuse(JAVA_RANDOM_IMPORT)
+
+u: (how * test) 
+In order to test random numbers, you'll need to use sofia's Random class or the TestableRandom class. Then, in your test class, call the <code>setNextInts()</code> method. (Remember the "s"!).
+<br/> For example, if you wanted to test the case where 5 is randomly generated, use this line:
+<pre>
+Random.setNextInts(5);
+/* call method that generates the random number */</pre>
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: SOFIA_RANDOM_GENERATE (how * generate * [number int] * [sofia greenfoot]) 
+To generate a random number using sofia's Random class, you'll want to use a line like this: 
+<pre>
+int /*random variable name*/ = Random.generator().nextInt(/*lower bound*/, /*upper bound*/);</pre>
+So, if you wanted to make a variable called <code>rand</code> equal a number between 1 and 10, you would use this line:
+<pre>
+int rand = Random.generator().nextInt(1, 10);</pre>
+^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: TESTABLE_RANDOM_GENERATE (how * generate * [number int] * TestableRandom)
+To generate a random number using the TestableRandom class, follow this example:
+<pre>
+TestableRandom gen = new TestableRandom();
+int rand = gen.nextInt(10);</pre>
+This example generates a random number between 0 and 9. Remember that the range for your number is from 0 to one less than the number you give it as a parameter. 
+<br/>If you don't want your range to start at 0, you'll have to get creative. Try adding another number to the generated random number.
+<ul id="choices"><li>Tell me more!</li></ul>
+
+	a: (tell me more)
+	Say I wanted to generate a number between 5 and 6. How can you get this to be a range from 0 to something? Well, we can start with a range from 0 to 1. Then, to get from 0 to 5, we want to add 5. So, we can use a line like this:
+	<pre>
+	int rand = gen.nextInt(2) + 5; 
+	</pre>
+	^refine() a: () ^reuse(~feedback.FEEDBACK)
+	
+u: JAVA_RANDOM_GENERATE (how * generate * [number int] * java)
+\<div id="title">Using Java's Random Class</div>
+To generate a random number using the normal Java Random class, follow this example:
+<pre>
+Random gen = new Random();
+int rand = gen.nextInt(10);</pre>
+This example generates a random number between 0 and 9. Remember that the range for your number is from 0 to one less than the number you give it as a parameter. 
+<br/>If you don't want your range to start at 0, you'll have to get creative. Try adding another number to the generated random number.
+<ul id="choices"><li>Tell me more!</li></ul>
+
+	a: (tell me more)
+	Say I wanted to generate a number between 5 and 6. How can you get this to be a range from 0 to something? Well, we can start with a range from 0 to 1. Then, to get from 0 to 5, we want to add 5. So, we can use a line like this:
+	<pre>
+	int rand = gen.nextInt(2) + 5; 
+	</pre>
+	^refine() a: () ^reuse(~feedback.FEEDBACK)
+
+u: (how * generate * [number int])
+Which Random class are you using? Sofia's (greenfoot's) Random class, the TestableRandom class, or the classic Java Random class?
+<ul id="choices"><li>Sofia's Random class</li><li>TestableRandom</li><li>Java's Random class</li></ul>
+
+	a: ([sofia greenfoot])
+	^reuse(SOFIA_RANDOM_GENERATE)
+	
+	a: ([TestableRandom testable])
+	^reuse(TESTABLE_RANDOM_GENERATE)
+	
+	a: ()
+	^reuse(JAVA_RANDOM_GENERATE)	
