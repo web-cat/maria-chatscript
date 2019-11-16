@@ -1,7 +1,8 @@
-topic: ~commonexceptions keep repeat [exception error]
-
 concept: ~ae [arithmeticexcpetion "arithmetic exception"]
-concept: ~aioobe [arrayindexoutofboundsexception "array index out of bounds exception" "array index out of bounds" arrayindexoutofbounds]
+concept: ~aioobe [arrayindexoutofboundsexception "array index out of bounds exception" "array index out of bounds" arrayindexoutofbounds "index out of bounds" indexoutofbounds "array bounds error" "bounds error"]
+concept: ~sioobe [stringindexoutofboundsexcpetion "string index out of bounds exception" "string index out of bounds" stringindexoutofbounds "string bounds error"]
+
+topic: ~commonexceptions keep repeat [what why exception error]
 
 #! what causes an arithmetic excpetion
 #! what causes the arithmeticexcpetion
@@ -10,9 +11,12 @@ concept: ~aioobe [arrayindexoutofboundsexception "array index out of bounds exce
 #! what is an ArithmeticException
 #! what is an arithmetic exception
 #! what does arithmetic exception mean
-u: ([what why] * ~ae)
+u: A_EXP ([what why when how] * ~ae)
 In Java, the most common cause of the ArithmeticExcpetion is trying to divide by zero. Make sure you're not dividing by zero!
-<ul id="choices"><li>I'm not dividing by zero!</li></ul>
+<ul id="choices">
+<li>I'm not dividing by zero!</li>
+<li>Show me the documentation!</li>
+</ul>
 	a: (not dividing by zero)
 	Make sure none of the variables you're diving by can be zero. For example, the following code will cause an error because <code>i</code> is zero at some point!
 	<div class="mlcode">
@@ -22,6 +26,10 @@ In Java, the most common cause of the ArithmeticExcpetion is trying to divide by
 	}
 	</div>
 	
+	a: (documentation)
+	\<atarget="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/lang/ArithmeticException.html">Official Java Documentation on the ArithmeticException</a>
+	
+	
 #! what causes an array index out of bounds exception
 #! what causes the arrayindexoutofboundsexception
 #! why did i get an array index out of bounds
@@ -29,8 +37,29 @@ In Java, the most common cause of the ArithmeticExcpetion is trying to divide by
 #! what is an arrayindexoutofboundsexception
 #! what is an array index out of bounds exception
 #! what does array index out of bounds mean
-u: The ArrayIndexOutOfBoundsException happens when you try to access an array at an index that doesn't exist in the array. This can happen if the index you try to access is too big or too small. If you create an array like <code>int[] array = new int[10]'</code>, then saying <code>array[-1] = 1</code> or <code>array[11] = 1</code> will give you an error because the array is indexed from 0 to 9.
-<ul id="choices"><li>What are the valid indices of an array?</li></ul
+u: AIOOB_EXP ([what why when how] * ~aioobe)
+The ArrayIndexOutOfBoundsException happens when you try to access an array at an index that doesn't exist in the array. This can happen if the index you try to access is too big or too small. If you create an array like <code>int[] array = new int[10]</code>, then saying <code>array[-1] = 1</code> or <code>array[11] = 1</code> will give you an error because the array is indexed from 0 to 9. If you are accessing the array in a for loop, make sure you aren't using a <= instead of <.
+<ul id="choices">
+<li>What are the valid indices of an array?</li>
+<li>Show me the documentation!</li>
+<li>Tell me more!</li>
+</ul>
 	a: (what are valid indices of an array)
 	The valid indices of an array are all the whole numbers from 0 to the length of the array minus 1. For example, if I make an array <code>int[] array = new int[n]</code>, the valid indices are all the whole numbers from 0 to n-1.
-
+	
+	a: (documentation)
+	\<atarget="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/lang/ArrayIndexOutOfBoundsException.html">Official Java Documentation on the ArrayIndexOutOfBoundsException</a>
+	
+	a: (tell me more)
+	You can see more info on common array problems <a class="jgloss" target="_blank" href="http://mindprod.com/jgloss/array.html#ARRAYINITGOTCHAS">here</a>!
+	
+	
+#! what causes an string index out of bounds exception
+#! what causes the stringindexoutofboundsexception
+#! why did i get an string index out of bounds
+#! why did the stringindexoutofboundsexception happen
+#! what is an stringindexoutofboundsexception
+#! what is an string index out of bounds exception
+#! what does string index out of bounds mean
+u: SIOOB_EXP ([what why when how] * ~sioobe)
+The StringIndexOutOfBoundsException happens when you try to use an index of  string that does not exist. For example, if I have <code>String str = "012";</code>, then <code>str</code> has a length of 3 and the valid indices are 0, 1, and 2. I can't say <code>str.charAt(3)</code> or <code>str.substring(-1)</code> because the indices 3 and -1 do not exist.

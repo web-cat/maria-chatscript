@@ -39,9 +39,13 @@ u: () # main per-sentence processing
 
 	# This handles startup. Change this if you want to pass in more data
 	# about the user. It should match the rule in mariatechnical.top.
-	if(^match(setchatvars user_name is _* and user_first_name is _* and user_last_name is _* and assignment_id is _* and assignment_name is _* and submission_number is _*))
+	if(^match(setchatvars user_name is _* and user_first_name is _* and user_last_name is _* and assignment_id is _* and assignment_name is _* and submission_number is _* and course_id is _* and section_id is _* and user_role is _* and author_id is _*))
 	{
 		^reuse(mariatechnical.SETCHATVARS)
+	}
+	else if(^match(setchatvars user_name is _* and user_first_name is _* and user_last_name is _* and assignment_id is _* and assignment_name is _* and submission_number is _*))
+	{
+		^reuse(mariatechnical.OLD_SETCHATVARS)
 	}
 
 	$_responseCount = %response

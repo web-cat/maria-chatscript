@@ -19,5 +19,6 @@ RAWDATA/MARIA/new_topics/random.top
 RAWDATA/MARIA/new_topics/string.top
 RAWDATA/MARIA/new_topics/testing.top
 RAWDATA/MARIA/new_topics/webcatfeedback.top
+RAWDATA/MARIA/new_topics/commonexceptions.top
 
 RAWDATA/MARIA/alice_stuff/knowledge.top
