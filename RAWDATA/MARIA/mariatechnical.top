@@ -18,7 +18,8 @@ $assignment_name='_4
 $submission_number='_5
 OLD -- Set chat variables.
 
-u: SETCHATVARS (setchatvars user_name is _* and user_first_name is _* and user_last_name is _* and assignment_id is _* and assignment_name is _* and submission_number is _* and course_id is _* and section_id is _* and user_role is _* and author_id is _*) 
+#! setchatvars user_name is dkfinch and user_first_name is dylan and user_last_name is finch and assignment_id is p4 and assignment_name is program 4 and submission_number is 3 and course_id is cs1114 and section_id is 1 and user_role is student and author_id is otherstudent
+u: SETCHATVARS_GRADER (setchatvars user_name is _* and user_first_name is _* and user_last_name is _* and assignment_id is _* and assignment_name is _* and submission_number is _* and course_id is _* and section_id is _* and user_role is _* and author_id is _*) 
 $user_name='_0
 $user_first_name='_1
 $user_last_name='_2
@@ -29,7 +30,22 @@ $course_id='_6
 $section_id='_7
 $user_role='_8
 $author_id='_9
+$is_grader=1
 Set chat variables. '_0 '_1 '_2 '_3 '_4 '_5 '_6 '_7 '_8 '_9 
+
+#! setchatvars user_name is dkfinch and user_first_name is dylan and user_last_name is finch and assignment_id is p4 and assignment_name is program 4 and submission_number is 3 and course_id is cs1114 and section_id is 1 and user_role is student
+u: SETCHATVARS_NORMAL (setchatvars user_name is _* and user_first_name is _* and user_last_name is _* and assignment_id is _* and assignment_name is _* and submission_number is _* and course_id is _* and section_id is _* and user_role is _*) 
+$user_name='_0
+$user_first_name='_1
+$user_last_name='_2
+$assignment_id='_3
+$assignment_name='_4
+$submission_number='_5
+$course_id='_6
+$section_id='_7
+$user_role='_8
+$is_grader=0
+Set chat variables. '_0 '_1 '_2 '_3 '_4 '_5 '_6 '_7 '_8 
 
 u: (< marsig _*1 >)
 Received signal: '_0

@@ -1,6 +1,6 @@
 topic: ~string keep repeat [string java how what when]
 
-u: ([how what] * substring) ^keep() ^repeat()
+u: SUBSTRING ([how what] * substring) ^keep() ^repeat()
 The substring method is in the String class. It must be called on a String Object. It takes two parameters, a start index and an end index. The end index is not included in the substring, but the start index is. For example, in the following code, <code>substr</code> will be "ello". 
 <pre>
 String str = "Hello.";
