@@ -127,5 +127,24 @@ Testing a <code>for</code> loop is very simple. Just make a test where the <code
 u: (how * test * while)
 Testing a <code>while</code> loop is fairly simple. You want to have one test where the loop runs any number of times and one test where it doesn't run at all (the loop is skipped).
 
+u: (how * test * constructor)
+To test a constructor, you simply have to call the constructor somewhere in you test code. If the constructor sets field values, you should probably assert that the field values are set correctly. For example, if I have this constructor and method:
+<div class="mlcode">
+public MyObject(int param) {
+nbsp;   this.field = param;
+}
+
+public int getField() {
+nbsp;   return this.field;
+}
+</div>
+I can test it by making a test method like this:
+<div class="mlcode">
+public void testMyObject() {
+nbsp;   MyObject obj = new MyObject(2);
+nbsp;   assertEquals(2, obj.getField();
+}
+</div>
+
 u: (how * test)
 Make sure to test all <code>if</code> statements, <code>while</code> loops, and <code>for</code> loops. Basically, whenever a decision is made in your code, you need to test to see what happens if that decision is made or not. If you don't have any decisions, you still need to make one test: a test that makes sure whatever was supposed to happen does actually happen.

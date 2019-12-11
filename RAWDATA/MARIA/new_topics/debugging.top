@@ -59,3 +59,55 @@ The debugger is a powerful tool, much more powerful than PRINT statements. If yo
 #! why should i use a debugger
 u: (why * [need use] * ~debug)
 ^reuse(WHAT_FOR)
+
+#! my code doesn't work
+#! my code won't work
+#! why won't my code work
+u: (code * ["does not" "will not" "won't" "doesn't" "isn't" "not"] [work working])
+That's very unfortunate. There's many things that could be causing that. What's the issue? (You can select an option or type your own.)
+<ul id="choices">
+<li>I'm getting an exception when I run my code.</li>
+<li>My code won't compile!</li>
+<li>My tests are failing.</li>
+<li>My code isn't doing the right thing.</li>
+</ul>
+
+	a: (exception)
+	What exception are you getting?
+	
+	a: ([no "won't" not] compile)
+	Often times, the complier error will tell you what is wrong. Read the complier error message carefully and see if you can figure it out from there. Otherwise, tell me what error you're getting.
+	
+	a: (test * falling)
+	Ok. That's unfortunate. First, is the test failing because of an exception or because of a failed assertion?
+	<ul id="choices">
+	<li>Exception.</li>
+	<li>Failed assertion.</li>
+	
+		b: (exception)
+		That's great! So, testing is actually supposed to help you find bugs, like ones that cause exceptions. You've found a bug! Now, you just need to fix it. First, you'll want to isolate the problem as much as possible. Look at the error you're getting. If you see multiple non-test method you wrote in the error message, you may want to write another test for the method highest up on the list.
+		<ul id="choices">
+		<li>Ok.</li>
+		<li>I figured it out.</li>
+		</ul>
+			c: (~yes)
+			Awesome. Now that you've isolated the problem, you just need to figure out what's causing it. You can use <code>System.out.println( /* some variable */ );</code> to help you figure out what is going wrong. Print out a lot of variables and see where the variable's values go wrong. Other than that, you can also ask me about the exception you are getting.  
+				d: (~yes)
+				Hope that helped.
+			
+			c: ()
+			Ok, I'll stop my explanation.
+	
+		b: (assertion)
+		First make sure that you are expecting the right value. Go through your test and make sure you correctly calculated all the expected values. 
+		<ul id="choices">
+		<li>Ok, what next?</li>
+		<li>I figured it out.</li>
+		</ul>
+			c: (~yes)
+			Awesome. Now, look at the error message and see where it's happening. Look in that method and use <code>System.out.println( /* some variable */ );</code> to print out the variables in your method to see what is going wrong. You can also add those print statements to other methods called by the one that's giving the wrong result.
+				d: (~yes)
+				Hope that helped.
+			
+			c: ()
+			Ok, I'll stop my explanation.
