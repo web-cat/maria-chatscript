@@ -476,7 +476,6 @@ What's the name of the exception you got? (You can also type the name if it's no
 	^reuse(IM_EXP)
 	
 	a: ()
-	# ^fail(SENTENCE)
 	^input(what is %originalinput)
 
 	

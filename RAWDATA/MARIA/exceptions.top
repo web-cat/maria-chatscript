@@ -1,4 +1,4 @@
-topic: ~exceptions keep repeat [what exception error]
+topic: ~exceptions keep repeat [how when why get what exception error]
 
 u: PAREN_EXPECTED (parenexpected) 
 <!-- macro JDisplay errormessages.paren1.javafrag --><!-- generated --><pre class="java"><span class="commentslashslash">// oops missing \[ \] in attempt to define an array literal</span>

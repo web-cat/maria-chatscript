@@ -73,10 +73,13 @@ That's very unfortunate. There's many things that could be causing that. What's 
 </ul>
 
 	a: (exception)
-	What exception are you getting?
+	^reuse(~commonexceptions.EXP_HELP)
 	
 	a: ([no "won't" not] compile)
 	Often times, the complier error will tell you what is wrong. Read the complier error message carefully and see if you can figure it out from there. Otherwise, tell me what error you're getting.
+		
+		b: ()
+		^input(what is %originalinput error)
 	
 	a: (test * falling)
 	Ok. That's unfortunate. First, is the test failing because of an exception or because of a failed assertion?
