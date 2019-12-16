@@ -34,5 +34,14 @@ You can ask me about things related to Java, programming, or debugging. Some pop
 <li>I want to give feedback on this system!</li>
 </ul>
 
-u: (hi)
+#! hello
+#! hi
+#! what's up
+u: (~emohello)
 Hello! How can I help you today?
+	a: ([~yes good ~emohappy])
+	Nice. I'm doing pretty good, myself.
+	
+	a: ([~no bad ~emosad])
+	Sorry to hear. Maybe writing some more code will help you feel better...?
+	

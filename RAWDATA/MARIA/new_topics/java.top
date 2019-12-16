@@ -373,7 +373,8 @@ u: (how * inheritance work)
 ^reuse(WHAT_INHERITANCE)
 
 #! how does integer division work
-u: INT_DIVISION ([what how] * [int integer] division)
+#! integer division
+u: INT_DIVISION ({[what how]} * [int integer] division)
 In Java, when you divide two <code>int</code> variables, the result will be a whole number. Java will not store the decimal even if the numbers do not evenly divide. Java does not round the numbers, it just throws away the decimal. So, if we do 3/4, the result is 0.75 but Java will throw away the decimal and just give us 0 as the answer. This is called truncation.
 
 #! what happens when you divide ints in java

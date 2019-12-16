@@ -149,7 +149,7 @@ u: () # main per-sentence processing
 	if (%response == $_responseCount)
 	{
 		 ^repeat()
-		 I don't know what to say.
+		 Sorry, I don't know how to answer that. Maybe try re-phrasing the question?
 	}
 
 

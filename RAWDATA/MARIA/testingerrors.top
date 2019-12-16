@@ -1,0 +1,1011 @@
+concept: ~helpwith ["i got" "what is" "understand" "help with" "what causes" "when" "how" "why" explain explainlink]
+concept: ~turnin (code solution program "my program" "my solution" "my code" "the program" "the solution" "the code")
+
+topic: ~testingerrors [error testing exception webcat "web cat" "web-cat" ~helpwith test coverage]
+
+#! This method or constructor was not executed by any of your software tests. Add more tests to check its behavior.
+u: EXPLAINLINK_METHOD_NOT_TESTED ([method constructor] * not executed)
+You never call this method or constructor in your tests. You need to test the method.
+^refine() 
+	a: METHOD_NOT_TESTED ()
+	 To test a method, you will want to make a new test method. If the method you need to test is called <code>methodName()</code>, you should create a test method called <code>testMethodName()</code> and call <code>methodName()</code> somewhere in that test method.
+	<ul id="choices">
+	<li>Give me an example.</li>
+	</ul>
+		b: (example)
+		Let's say I'm not testing <code>doSomething()</code> in my MyObject class. Then, I should create a test method that looks like this:
+		<div class="mlcode">
+		public void testDoSomething() {
+		&nbsp;   MyObject obj = new MyObject();
+		&nbsp;   // ... code that needs to be called before doSomething() ...
+		&nbsp;   obj.doSomething();
+		&nbsp;   assertTrue(obj.didSomething()); // assert something right after calling the method
+	}
+
+#! Condition not executed
+#! The decision(s) on this line were not tested.  Make sure you have separate tests for each way the decision can be true or false.
+u: LINE_NOT_TESTED ([condition decision] * not * [executed tested])
+This means you never run this line in your tests. If the rest of this method is highlighted in red, you don't have a test for this method. If only part of the method is highlighted in red, you need more tests for this method. 
+<ul id="choices">
+<li>The whole method is highlighted.</li>
+<li>Only part of the method is highlighted.</li>
+<li>I got it.</li>
+</ul>
+	a: (whole)
+	^reuse(METHOD_NOT_TESTED)
+	
+	a: (part)
+	Ok, look to the top of the red highlighted part of the method. You should see an if statement. You need a test where the condition in this if statement is true so the code inside it will run (including the condition that wasn't executed!).
+	<ul id="choices">
+	<li>Give me an example.</li>
+	<li>How do I test an if statement?<li>
+	</ul>
+		b: (test if)
+		^reuse(IF_NOT_TESTED)
+	
+		b: (example)
+		Let's say I have this code in a class called <code>Person</code>, with line 3 being highlighted by Web-CAT for not being testing. Then, I will need to write a test where I create a situation where the if condition is true.
+		<div class="mlcode">
+		public void myMethod() {
+		&nbsp;   \if (this.getAge() == 21)      // line 1
+		&nbsp;   {    
+		&nbsp;        this.canDrink = true;    // line 3
+		&nbsp;   }
+		}
+		</div>
+		<ul id="choices">
+		<li>Go on.</li>
+		<li>Stop.</li>
+		</ul>
+			c: (stop)
+			Will do.
+			
+			c: (go on)
+			Ok, so in your test, I want <code>getAge()</code> to return 21 so that my if condition is true. In my case, I can do that by using another method I wrote called <code>setAge()</code> but in your code it might be a bit more complicated. Think about what methods you can call to get the if condition to be true. Here's my test:
+			<div class="mlcode">
+			public void testMyMethod() {
+			&nbsp;   // Setup the situation I want.
+			&nbsp;   Person tom = new Person();
+			&nbsp;   tom.setAge(21);    // This will make my if condition true!
+			&nbsp;   // Call the method I'm testing.
+			&nbsp;   tom.myMethod();
+			&nbsp;   // Assert something.
+			&nbsp;   assertTrue(tom.canDrink());
+			}
+			</div>
+			<ul id="choices">
+			<li>My if condition is more complicated than that!</li>
+			</ul>
+				d: (condition * complicated)
+				^reuse(IF_NOT_TESTED)
+	
+	a: (got it)
+	Nice.
+	
+
+#! Statements not executed
+#! This line was never executed by your tests.
+u: ([statement statements line] * [not never] * executed)
+^reuse(LINE_NOT_TESTED)
+
+
+#! Not all possibilities for this decision were tested.  Remember that when you have N simple conditions combined, you must test all N+1 possibilities.
+u: CONDITION_NOT_TESTED (not all possibilities * tested)
+This is definitely one of the harder Web-CAT errors to fix. But don't worry, we can get through this together. What type of line are you getting this error on?
+<ul id="choices">
+<li>An if statement.</li>
+<li>A for loop.</li>
+<li>A while/do-while loop.</li>
+</ul>
+	a: IF_NOT_TESTED (if)
+	To test an if statement, where you need to test all the different possibilities for your if condition. For example, if your if condition looks like this <code>if (this.canMove() && this.age == 2)</code>, there are 2 conditions (the things separated by <code>&&</code>'s or <code>||</code>'s) and so you need to test 2+1 = 3 possibilities.<br>
+	So, first, how many conditions do you have?
+	<ul id="choices">
+	<li>Just 1</li>
+	<li>More than 1</li>
+	</ul>
+		b: (just 1)
+		Nice. You are very lucky. You only need to test 2 possibilities: one where the condition of your if statement is true and one where the condition of your if statement is true. This means you'll have to set up 2 different situations in 2 different tests: 1 situation where that condition is true and one where that situation is false.
+		<ul id="choices">
+		<li>Give me an example.</li>
+		</ul>
+			c: (example)
+			Let's say I have this code in a class called <code>Person</code>, and I want to test all the possibilities for the if statement on line 1. Then, I will need to write two tests: one where I create a situation where the if condition is true and one where it is false.
+			<div class="mlcode">
+			public void myMethod() {
+			&nbsp;   \if (this.getAge() == 21)      // line 1
+			&nbsp;   {    
+			&nbsp;       this.canDrink = true;    
+			&nbsp;   }
+			&nbsp;   else 
+			&nbsp;   {
+			&nbsp;       this.canDrink = false;
+			&nbsp;   }
+			}
+			</div>
+			<ul id="choices">
+			<li>Go on.</li>
+			<li>Stop.</li>
+			</ul>
+				d: (stop)
+				Will do.
+				
+				d: (go on)
+				Ok, let's start with the case where the if condition is true. So in the test, I want <code>getAge()</code> to return 21 so that my if condition is true. In my case, I can do that by using another method I wrote called <code>setAge()</code> but in your code it might be a bit more complicated. Think about what methods you can call to get the if condition to be true. Here's my test:
+				<div class="mlcode">
+				public void testMyMethodCanDrink() {
+				&nbsp;   // Setup the situation I want.
+				&nbsp;   Person tom = new Person();
+				&nbsp;   tom.setAge(21);    // This will make my if condition true!
+				&nbsp;   // Call the method I'm testing.
+				&nbsp;   tom.myMethod();
+				&nbsp;   // Assert something.
+				&nbsp;   assertTrue(tom.canDrink());
+				}
+				<ul id="choices">
+				<li>Go on.</li>
+				<li>Stop.</li>
+				</ul>
+					e: (stop)
+					Will do.
+					
+					e: (go on)
+					Now I need the false case. So in the test, I want <code>getAge()</code> to not return 21 so that my if condition is false. Here's my second test:
+					<div class="mlcode">
+					public void testMyMethodCannotDrink() {
+					&nbsp;   // Setup the situation I want.
+					&nbsp;   Person tom = new Person();
+					&nbsp;   tom.setAge(10);    // This will make my if condition false!
+					&nbsp;   // Call the method I'm testing.
+					&nbsp;   tom.myMethod();
+					&nbsp;   // Assert something.
+					&nbsp;   assertFalse(tom.canDrink());
+					}
+					<ul id="choices">
+					<li>That helped!</li>
+					<li>I still don't get it.</li>
+					</ul>
+						f: (that helped)
+						Great!
+						
+						f: (still don't get it)
+						Sorry to hear. You may want to talk to a human TA.
+	
+		b: (more than 1)
+		That's a little sad, but I'm sure we can get through this. Is the if statement using and's or or's?
+		<ul id="choices">
+		<li>and's</li>
+		<li>or's</li>
+		<li>A combination of both.</li>
+		</ul>
+			c: TEST_AND (and's)
+			Ok so, if you have N conditions in your if statement, you'll need to write N+1 tests. For and's, one of these tests will be when all of the conditions are true so that whole if statement is true. In this test, the code inside the if statement should be run. Then, you need N tests, one where each condition is false and rest are true.
+			<ul id="choices">
+			<li>Why?</li>
+			<li>Give me an example.</li>
+			<li>I got it.</li>
+			</li>
+				d: (got it)
+				Nice!
+			
+				d: (why)
+				You basically need one test where each condition is the "deciding factor". If any of the conditions in an and statement are false, the whole thing is false. So, you need one test where each condition is the reason the and statement is false. Then, you need one where they're all true and none of them is the "deciding factor".
+				<ul id="choices">
+				<li>Ok, now, give me an example.</li>
+				<li>I got it.</li>
+				</il>
+					e: (got it)
+					Nice!
+					
+					e: (example)
+					^reuse(MULTIPLE_AND_EXAMPLE)
+				
+				d: MULTIPLE_AND_EXAMPLE (example)
+				Ok, so let's say you have this method in the <code>Person</code> class and I want to test <code>myMethod()</code>.
+				<div class="mlcode">
+				public void myMethod() {
+				&nbsp;   \if (this.getAge() == 16 && this.hasLicense)
+				&nbsp;   {    
+				&nbsp;       this.canDrive = true;    
+				&nbsp;   }
+				&nbsp;   else 
+				&nbsp;   {
+				&nbsp;       this.canDrive = false;
+				&nbsp;   }
+				}
+				</div>
+				We need 3 tests! One where both conditions are true, one where the first condition is false and the second is true, and one where the first is true and the second is false.
+				<ul id="choices">
+				<li>Go on.</li>
+				<li>Stop.</li>
+				</ul>
+					e: (stop)
+					Will do.
+					
+					e: (go on)
+					Let's start with the test where both conditions are true. So, we need <code>getAge()</code> to return 16 and <code>hasLicense</code> to be true. Here's our test:
+					<div class="mlcode">
+					public void testMyMethodCanDrive() {
+					&nbsp;   // Setup the situation I want.
+					&nbsp;   Person tom = new Person();
+					&nbsp;   tom.setAge(16);          // First condition is true!
+					&nbsp;   tom.setHasLicense(true); // Second condition is true!
+					&nbsp;   // Call the method I'm testing.
+					&nbsp;   tom.myMethod();
+					&nbsp;   // Assert something.
+					&nbsp;   assertTrue(tom.canDrive());
+					}
+					<ul id="choices">
+					<li>Go on.</li>
+					<li>Stop.</li>
+					</ul>
+						f: (stop)
+						Will do.
+						
+						f: (go on)
+						Now, we can do the test where the first condition is false and the second is true. So, we need <code>getAge()</code> not to return 16 and <code>hasLicense</code> to be true. We're testing when the first condition is the deciding factor. Here's our test:
+						<div class="mlcode">
+						public void testMyMethodNot16() {
+						&nbsp;   // Setup the situation I want.
+						&nbsp;   Person tom = new Person();
+						&nbsp;   tom.setAge(10);          // First condition is false!
+						&nbsp;   tom.setHasLicense(true); // Second condition is true!
+						&nbsp;   // Call the method I'm testing.
+						&nbsp;   tom.myMethod();
+						&nbsp;   // Assert something.
+						&nbsp;   assertFalse(tom.canDrive());
+						}
+						<ul id="choices">
+						<li>Go on.</li>
+						<li>Stop.</li>
+						</ul>
+							g: (stop)
+							Will do.
+							
+							g: (go on)
+							Finally, we can do the test where the first condition is true and the second is false. So, we need <code>getAge()</code> to return 16 and <code>hasLicense</code> to be false. We're testing when the second condition is the deciding factor. Here's our test:
+							<div class="mlcode">
+							public void testMyMethodNoLicense() {
+							&nbsp;   // Setup the situation I want.
+							&nbsp;   Person tom = new Person();
+							&nbsp;   tom.setAge(16);          // First condition is true!
+							&nbsp;   tom.setHasLicense(false); // Second condition is false!
+							&nbsp;   // Call the method I'm testing.
+							&nbsp;   tom.myMethod();
+							&nbsp;   // Assert something.
+							&nbsp;   assertFalse(tom.canDrive());
+							}
+							<ul id="choices">
+							<li>Go on.</li>
+							<li>Stop.</li>
+							</ul>
+								h: (stop)
+								Will do.
+								
+								h: (go on)
+								Now we're done! We have all 3 tests! If you have more than 3 conditions, simply repeat this process for the other conditions, making testing where each condition is false and the others are true.
+								<ul id="choices">
+								<li>That helped!</li>
+								<li>I still don't get it.</li>
+								</ul>
+									i: (that helped)
+									Great!
+									
+									i: (still don't get it)
+									Sorry to hear. You may want to talk to a human TA.
+									
+			c: TEST_OR (or's)
+			Ok so, if you have N conditions in your if statement, you'll need to write N+1 tests. For or's, one of these tests will be when all of the conditions are false so that whole if statement is false. In this test, the code inside the if statement will not run. Then, you need N tests, one where each condition is true and rest are false.
+			<ul id="choices">
+			<li>Why?</li>
+			<li>Give me an example.</li>
+			<li>I got it.</li>
+			</li>
+				d: (got it)
+				Nice!
+			
+				d: (why)
+				You basically need one test where each condition is the "deciding factor". If any of the conditions in an or statement are true, the whole thing is true. So, you need one test where each condition is the reason the and statement is true. Then, you need one where they're all false and none of them is the "deciding factor".
+				<ul id="choices">
+				<li>Ok, now, give me an example.</li>
+				<li>I got it.</li>
+				</il>
+					e: (got it)
+					Nice!
+					
+					e: (example)
+					^reuse(MULTIPLE_OR_EXAMPLE)
+				
+				d: MULTIPLE_OR_EXAMPLE (example)
+				Ok, so let's say you have this method in the <code>Person</code> class and I want to test <code>myMethod()</code>.
+				<div class="mlcode">
+				public void myMethod() {
+				&nbsp;   \if (this.getAge() < 18 || this.isInCollege)
+				&nbsp;   {    
+				&nbsp;       this.isInSchool = true;    
+				&nbsp;   }
+				&nbsp;   else 
+				&nbsp;   {
+				&nbsp;       this.isInSchool = false;
+				&nbsp;   }
+				}
+				</div>
+				We need 3 tests! One where both conditions are false, one where the first condition is true and the second is false, and one where the first is false and the second is true.
+				<ul id="choices">
+				<li>Go on.</li>
+				<li>Stop.</li>
+				</ul>
+					e: (stop)
+					Will do.
+					
+					e: (go on)
+					Let's start with the test where both conditions are false. So, we need <code>getAge()</code> to not be less than 18 and <code>isInCollege</code> to be false. Here's our test:
+					<div class="mlcode">
+					public void testMyMethodNotInSchool() {
+					&nbsp;   // Setup the situation I want.
+					&nbsp;   Person tom = new Person();
+					&nbsp;   tom.setAge(25);            // First condition is false!
+					&nbsp;   tom.setIsInCollege(false); // Second condition is false!
+					&nbsp;   // Call the method I'm testing.
+					&nbsp;   tom.myMethod();
+					&nbsp;   // Assert something.
+					&nbsp;   assertFalse(tom.isInSchool());
+					}
+					<ul id="choices">
+					<li>Go on.</li>
+					<li>Stop.</li>
+					</ul>
+						f: (stop)
+						Will do.
+						
+						f: (go on)
+						Now, we can do the test where the first condition is true and the second is false. So, we need <code>getAge()</code> to be less than 18 and <code>isInCollege</code> to be false. We're testing when the first condition is the deciding factor. Here's our test:
+						<div class="mlcode">
+						public void testMyMethodYoung() {
+						&nbsp;   // Setup the situation I want.
+						&nbsp;   Person tom = new Person();
+						&nbsp;   tom.setAge(10);            // First condition is true!
+						&nbsp;   tom.setIsInCollege(false); // Second condition is false!
+						&nbsp;   // Call the method I'm testing.
+						&nbsp;   tom.myMethod();
+						&nbsp;   // Assert something.
+						&nbsp;   assertTrue(tom.isInSchool());
+						}
+						<ul id="choices">
+						<li>Go on.</li>
+						<li>Stop.</li>
+						</ul>
+							g: (stop)
+							Will do.
+							
+							g: (go on)
+							Finally, we can do the test where the first condition is false and the second is true. So, we need <code>getAge()</code> to not be less than 18 and <code>isInCollege</code> to be true. We're testing when the second condition is the deciding factor. Here's our test:
+							<div class="mlcode">
+							public void testMyMethodInCollege() {
+							&nbsp;   // Setup the situation I want.
+							&nbsp;   Person tom = new Person();
+							&nbsp;   tom.setAge(25);           // First condition is false!
+							&nbsp;   tom.setIsInCollege(true); // Second condition is true!
+							&nbsp;   // Call the method I'm testing.
+							&nbsp;   tom.myMethod();
+							&nbsp;   // Assert something.
+							&nbsp;   assertTrue(tom.isInSchool());
+							}
+							</div>
+							<ul id="choices">
+							<li>Go on.</li>
+							<li>Stop.</li>
+							</ul>
+								h: (stop)
+								Will do.
+								
+								h: (go on)
+								Now we're done! We have all 3 tests! If you have more than 3 conditions, simply repeat this process for the other conditions, making testing where each condition is true and the others are false.
+								<ul id="choices">
+								<li>That helped!</li>
+								<li>I still don't get it.</li>
+								</ul>
+									i: (that helped)
+									Great!
+									
+									i: (still don't get it)
+									Sorry to hear. You may want to talk to a human TA.
+			
+			c: (combination)
+			That's really sad. This makes testing a lot harder, but we can do it! So, the best way to deal with combine and's and or's is to break it up into just one or the other. Let's say we have a condition that looks like this:
+			<div class="mlcode">
+			\if (a && b && c || d || e && f)
+			</div>
+			We can break this up into conditions that are just and's or just or's. 
+			<ul id="choices">
+			<li>Go on.</li>
+			<li>Stop.</li>
+			</ul>
+				d: (stop)
+				Will do.
+				
+				d: (go on)
+				So, looking at this, it seems like it would be easier to break this up into just and's. We can do that with parentheses:
+				<div class="mlcode">
+				\if ( a && b && (c || d || e) && f)
+				</div>
+				Now, we only need to things that are on the outermost level of parentheses. In this case, that's and's. 
+				<ul id="choices">
+				<li>Go on.</li>
+				<li>Stop.</li>
+				</ul>
+					e: (stop)
+					Will do.
+					
+					e: (go on)
+					Because we're testing and's, we need one test where every part of the condition is true and 4 tests where each part of the condition is false and the rest of the parts are true. So, here are our tests:
+					<ul>
+					<li> <code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is true, <code>f</code> is true</li>
+					<li> <code>a</code> is false, <code>b</code> is true, <code>(c || d || e)</code> is true, <code>f</code> is true</li>
+					<li> <code>a</code> is true, <code>b</code> is false, <code>(c || d || e)</code> is true, <code>f</code> is true</li>
+					<li> <code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is false, <code>f</code> is true</li>
+					<li> <code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is true, <code>f</code> is false</li>
+					</ul>
+					<ul id="choices">
+					<li>Go on.</li>
+					<li>Stop.</li>
+					</ul>
+						f: (stop)
+						Will do.
+						
+						f: (go on)
+						We're almost done, but we've forgotten something! There are multiple ways for <code>(c || d || e)</code> to be true! So, we need to add a few more tests. We only need to add these extra tests to one of the cases listed before, so we can add these tests to the case where the whole condition is true:
+						<code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is true, <code>f</code> is true</li>. 
+						<ul id="choices">
+						<li>Go on.</li>
+						<li>Stop.</li>
+						</ul>
+							g: (stop)
+							Will do.
+							
+							g: (go on)
+							Let's think about how <code>(c || d || e)</code> can be true. Now, you'll want to think about how we test or statements. We'll want one case where each part of the condition is true and the rest are false. It's true in these cases:
+							<ul>
+							<li><code>c</code> is true, <code>c</code> is false, <code>c</code> is false</li>
+							<li><code>c</code> is false, <code>c</code> is true, <code>c</code> is false</li>
+							<li><code>c</code> is false, <code>c</code> is false, <code>c</code> is true</li>
+							</ul>
+							<ul id="choices">
+							<li>Go on.</li>
+							<li>Stop.</li>
+							</ul>
+								h: (stop)
+								Will do.
+								
+								h: (go on)
+								Nice. So, now we can combine it altogether. Altogether, we'll need tests where:
+								<ul>
+								<li> <code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is true (<code>c</code> is true, <code>d</code> is false, and <code>e</code> is false), <code>f</code> is true</li>
+								<li> <code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is true (<code>c</code> is false, <code>d</code> is true, and <code>e</code> is false), <code>f</code> is true</li>
+								<li> <code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is true (<code>c</code> is false, <code>d</code> is false, and <code>e</code> is true), <code>f</code> is true</li>
+								<li> <code>a</code> is false, <code>b</code> is true, <code>(c || d || e)</code> is true, <code>f</code> is true</li>
+								<li> <code>a</code> is true, <code>b</code> is false, <code>(c || d || e)</code> is true, <code>f</code> is true</li>
+								<li> <code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is false, <code>f</code> is true</li>
+								<li> <code>a</code> is true, <code>b</code> is true, <code>(c || d || e)</code> is true, <code>f</code> is false</li>
+								</ul>
+								<ul id="choices">
+								<li>Go on.</li>
+								<li>Stop.</li>
+								</ul>
+									i: (stop)
+									Will do.
+									
+									i: (go on)
+									That's it! We did it. Now, we have N+1 tests and we have tested all the possibilities. Whoa, that was a journey. Hope that helped.
+									<ul id="choices">
+									<li>That helped!</li>
+									<li>I still don't get it.</li>
+									<li>Tell me more about testing just and's.</li>
+									<li>Tell me more about testing just or's.</li>
+									</ul>
+										j: (that helped)
+										Great!
+										
+										j: (still don't get it)
+										Sorry to hear. You may want to talk to a human TA.
+										
+										j: (just and's)
+										^reuse(TEST_AND)
+										
+										j: (just or's)
+										^reuse(TEST_OR)
+				
+	a: FOR_NOT_TESTED (for)
+	Test for loops is actually pretty easy. Just make sure to that the for loop runs in one of your tests. Usually, you'll only need one test case for for loops because they always run the same number of times.
+	<ul id="choices">
+	<li>That helped!</li>
+	<li>I still don't get it.</li>
+	</ul>
+		b: (that helped)
+		Great!
+		
+		b: (still don't get it)
+		Sorry to hear. You may want to talk to a human TA.
+				
+	a: WHILE_NOT_TESTED ([while "do-while"])
+	Testing while loops is pretty easy, compared to if statements. Basically, for each while loop, you need 2 tests: 1 where the loop doesn't run at all and 1 where the while loop runs any number of times. 
+	<ul id="choices">
+	<li>Give me an example.</li>
+	</ul>
+		b: (example)
+		So let's say I want to test the while loop in this method in the <code>Person</code> class:
+		<div class="mlcode">
+		public void myMethod() {
+		&nbsp;   while (this.age < 18)
+		&nbsp;   {    
+		&nbsp;       this.age++;
+		&nbsp;   }
+		}
+		</div>
+		I need 2 tests, 1 where the while loop doesn't run at all (so <code>age</code> starts out not being less than 18) and 1 where the loop runs at least once (so <code>age</code> starts out being less than 18).
+		<ul id="choices">
+		<li>Go on.</li>
+		<li>Stop.</li>
+		</ul>
+			c: (stop)
+			Will do.
+			
+			c: (go on)
+			First we'll handle the test where the loop doesn't run at all. Our test will look like this:
+			<div class="mlcode">
+			public void testMyMethodAgeSame() {
+			&nbsp;   // Setup the situation I want.
+			&nbsp;   Person tom = new Person();
+			&nbsp;   tom.setAge(25);           // The while loop condition will start false.
+			&nbsp;   // Call the method I'm testing.
+			&nbsp;   tom.myMethod();
+			&nbsp;   // Assert something.
+			&nbsp;   assertEquals(25, tom.getAge());
+			}
+			</div>
+			<ul id="choices">
+			<li>Go on.</li>
+			<li>Stop.</li>
+			</ul>
+				d: (stop)
+				Will do.
+				
+				d: (go on)
+				Now, we'll handle the test where the loop runs any number of times. Our test will look like this:
+				<div class="mlcode">
+				public void testMyMethodAgeChanges() {
+				&nbsp;   // Setup the situation I want.
+				&nbsp;   Person tom = new Person();
+				&nbsp;   tom.setAge(16);           // The while loop condition will start true.
+				&nbsp;   // Call the method I'm testing.
+				&nbsp;   tom.myMethod();
+				&nbsp;   // Assert something.
+				&nbsp;   assertEquals(18, tom.getAge());
+				}
+				</div>
+				<ul id="choices">
+				<li>Go on.</li>
+				<li>Stop.</li>
+				</ul>
+					e: (stop)
+					Will do.
+					
+					e: (go on)
+					Now, we're done! We've tested both cases!
+					<ul id="choices">
+					<li>That helped!</li>
+					<li>I still don't get it.</li>
+					</ul>
+						f: (that helped)
+						Great!
+						
+						f: (still don't get it)
+						Sorry to hear. You may want to talk to a human TA.
+					
+
+u: (n+1 possibilities)
+^reuse(CONDITION_NOT_TESTED)
+
+
+#! Only part of this line was executed by your tests.  Add tests to exercise all of the line.
+u: (part * line * executed * tests)
+This means that a line can do multiple things, but you're not testing all of those things. You might be doing something that looks like one of these lines:
+<div id="mlcode">
+boolean bool = var1 == var2;                // type A
+boolean bool = var1 < var2 ? true : false;  // type B
+</div>
+In both cases, <code>bool</code> can be true or false. You'll need to make 1 test where <code>bool</code> is true and 1 test where <code>bool</code> is false.
+<ul id="choices">
+<li>Give me an example of testing type A.</li>
+<li>Give me an example of testing type B.</li>
+</ul>
+	a: (type a)
+	So, let's say I want to test this code from the <code>Person</code> class:
+	<div class="mlcode">
+	public void myMethod() {
+	&nbsp;   this.canDrive = this.getAge() == 18;
+	}
+	</div>
+	I'll need to make 2 tests for this: 1 where <code>getAge()</code> returns 18 so the boolean statement is true and 1 where <code>getAge()</code> does not return 18, so the boolean statement is false. 
+	<ul id="choices">
+	<li>Go on.</li>
+	<li>Stop.</li>
+	</ul>
+		b: (stop)
+		Will do.
+		
+		b: (go on)
+		First we'll handle the test where the boolean statement is true. Our test will look like this:
+		<div class="mlcode">
+		public void testMyMethodCanDrive() {
+		&nbsp;   // Setup the situation I want.
+		&nbsp;   Person tom = new Person();
+		&nbsp;   tom.setAge(18);           // The boolean statement will be true.
+		&nbsp;   // Call the method I'm testing.
+		&nbsp;   tom.myMethod();
+		&nbsp;   // Assert something.
+		&nbsp;   assertTrue(tom.canDrive());
+		}
+		</div>
+		<ul id="choices">
+		<li>Go on.</li>
+		<li>Stop.</li>
+		</ul>
+			c: (stop)
+			Will do.
+			
+			c: (go on)
+			Now, we'll handle the test where the boolean statement is false. Our test will look like this:
+			<div class="mlcode">
+			public void testMyMethodCannotDrive() {
+			&nbsp;   // Setup the situation I want.
+			&nbsp;   Person tom = new Person();
+			&nbsp;   tom.setAge(16);           // The boolean statement will be false.
+			&nbsp;   // Call the method I'm testing.
+			&nbsp;   tom.myMethod();
+			&nbsp;   // Assert something.
+			&nbsp;   assertFalse(tom.canDrive());
+			}
+			</div>
+			<ul id="choices">
+			<li>Go on.</li>
+			<li>Stop.</li>
+			</ul>
+				d: (stop)
+				Will do.
+				
+				d: (go on)
+				Now, we're done! We've tested both cases!
+				<ul id="choices">
+				<li>That helped!</li>
+				<li>I still don't get it.</li>
+				<li>My boolean statement has more than 1 condition.</li>
+				</ul>
+					e: (that helped)
+					Great!
+					
+					e: (still don't get it)
+					Sorry to hear. You may want to talk to a human TA.
+					
+					e: (more than 1 condition)
+					That makes testing things a bit more tricky. In that case, you'll want to think of the line like an if statement and test it like one. Let's say we have this code:
+					<div class="mlcode">
+					public void myMethod() {
+					&nbsp;   this.canDrive = this.age == 18 && this.hasLicense;
+					}
+					</div>
+					We can think of this as an if statement!
+					<ul id="choices">
+					<li>Go on.</li>
+					<li>Stop.</li>
+					</ul>
+						f: (stop)
+						Will do.
+						
+						f: (go on)
+						As an if statement, this code would look like this:
+						<div class="mlcode">
+						public void myMethod() 
+						{
+						&nbsp;   \if (this.age == 18 && this.hasLicense) 
+						&nbsp;   {
+						&nbsp;       this.canDrive = true;
+						&nbsp;   }
+						&nbsp;   else 
+						&nbsp;   {
+						&nbsp;       this.canDrive = false;
+						&nbsp;   }
+						}
+						</div>
+						We don't actually have to rewrite the code to look like this, but we can think about it like this. Now, you just need to write tests the exact same way you would for an if statement!
+						<ul id="choices">
+						<li>That helped!</li>
+						<li>I still don't get it.</li>
+						<li>How do you test an if statement?</li>
+						</ul>
+							g: (that helped)
+							Great!
+							
+							g: (still don't get it)
+							Sorry to hear. You may want to talk to a human TA.
+							
+							g: (how * test * if)
+							^reuse(IF_NOT_TESTED)
+					
+	a: (type b)
+	So, let's say I want to test this code from the <code>Person</code> class:
+	<div class="mlcode">
+	public void myMethod() {
+	&nbsp;   this.canDrive = this.getAge() == 18 ? true : false;
+	}
+	</div>
+	I'll need to make 2 tests for this: 1 where <code>getAge()</code> returns 18 so the boolean statement is true and 1 where <code>getAge()</code> does not return 18, so the boolean statement is false. 
+	<ul id="choices">
+	<li>Go on.</li>
+	<li>Stop.</li>
+	</ul>
+		b: (stop)
+		Will do.
+		
+		b: (go on)
+		First we'll handle the test where the boolean statement is true. Our test will look like this:
+		<div class="mlcode">
+		public void testMyMethodCanDrive() {
+		&nbsp;   // Setup the situation I want.
+		&nbsp;   Person tom = new Person();
+		&nbsp;   tom.setAge(18);           // The boolean statement will be true.
+		&nbsp;   // Call the method I'm testing.
+		&nbsp;   tom.myMethod();
+		&nbsp;   // Assert something.
+		&nbsp;   assertTrue(tom.canDrive());
+		}
+		</div>
+		<ul id="choices">
+		<li>Go on.</li>
+		<li>Stop.</li>
+		</ul>
+			c: (stop)
+			Will do.
+			
+			c: (go on)
+			Now, we'll handle the test where the boolean statement is false. Our test will look like this:
+			<div class="mlcode">
+			public void testMyMethodCannotDrive() {
+			&nbsp;   // Setup the situation I want.
+			&nbsp;   Person tom = new Person();
+			&nbsp;   tom.setAge(16);           // The boolean statement will be false.
+			&nbsp;   // Call the method I'm testing.
+			&nbsp;   tom.myMethod();
+			&nbsp;   // Assert something.
+			&nbsp;   assertFalse(tom.canDrive());
+			}
+			</div>
+			<ul id="choices">
+			<li>Go on.</li>
+			<li>Stop.</li>
+			</ul>
+				d: (stop)
+				Will do.
+				
+				d: (go on)
+				Now, we're done! We've tested both cases!
+				<ul id="choices">
+				<li>That helped!</li>
+				<li>I still don't get it.</li>
+				<li>My boolean statement has more than 1 condition.</li>
+				</ul>
+					e: (that helped)
+					Great!
+					
+					e: (still don't get it)
+					Sorry to hear. You may want to talk to a human TA.
+					
+					e: (more than 1 condition)
+					That makes testing things a bit more tricky. In that case, you'll want to think of the line like an if statement and test it like one. Let's say we have this code:
+					<div class="mlcode">
+					public void myMethod() {
+					&nbsp;   this.canDrive = this.age == 18 && this.hasLicense ? true : false;
+					}
+					</div>
+					We can think of this as an if statement!
+					<ul id="choices">
+					<li>Go on.</li>
+					<li>Stop.</li>
+					</ul>
+						f: (stop)
+						Will do.
+						
+						f: (go on)
+						As an if statement, this code would look like this:
+						<div class="mlcode">
+						public void myMethod() 
+						{
+						&nbsp;   \if (this.age == 18 && this.hasLicense) 
+						&nbsp;   {
+						&nbsp;       this.canDrive = true;
+						&nbsp;   }
+						&nbsp;   else 
+						&nbsp;   {
+						&nbsp;       this.canDrive = false;
+						&nbsp;   }
+						}
+						</div>
+						We don't actually have to rewrite the code to look like this, but we can think about it like this. Now, you just need to write tests the exact same way you would for an if statement!
+						<ul id="choices">
+						<li>That helped!</li>
+						<li>I still don't get it.</li>
+						<li>How do you test an if statement?</li>
+						</ul>
+							g: (that helped)
+							Great!
+							
+							g: (still don't get it)
+							Sorry to hear. You may want to talk to a human TA.
+							
+							g: (how * test * if)
+							^reuse(IF_NOT_TESTED)
+
+
+#! how do i test my code
+u: HOW_TEST (how * test ~turnin)
+Testing is a tricky process. To start, you should have one test class for each regular class you have and at least one test method for each regular method you have.
+<ul id="choices">
+<li>How do I create a test class?</li>
+<li>How do I test a method?</li>
+<li>How do I test an if statement?</li>
+<li>How do I test a for loop?</li>
+<li>How do I test a while loop?<li>
+<li>Why does Web-CAT say a line is not tested?</li>
+<ul>
+	#! How do I create a test class?
+	a: (how * [make create] * test class)
+	^reuse(CREATE_TEST_CLASS) 
+	
+	a: (how * test * method)
+	^reuse(METHOD_NOT_TESTED)
+	
+	a: (how * test * if)
+	^reuse(IF_NOT_TESTED)
+	
+	a: (how * test * for)
+	^reuse(FOR_NOT_TESTED)
+	
+	a: (how * test * while)
+	^reuse(WHILE_NOT_TESTED)
+	
+	a: (line)
+	^reuse(LINE_NOT_TESTED)
+
+#! how do i make tests for my code
+#! how to i write tests
+#! how can i make tests for my solution
+u: (how * [write make] tests * ~turnin)
+^reuse(HOW_TEST)
+
+
+#! what do i name my test class
+#! how do i name my test class
+u: ([how what] * name * test class)
+If your normal class is called <code>SomeClass</code>, you should name your test class <code>SomeClassTest</code>. Make sure the word "Test" is at the end.
+<ul id="choices">
+<li>How do I create a test class?</li>
+<ul>
+	#! How do I create a test class?
+	a: (how * [make create] * test class)
+	^reuse(CREATE_TEST_CLASS)
+
+
+#! how to make a test class
+#! how do i create a test class
+u: CREATE_TEST_CLASS (how * [make create] * test class)
+If you're using Greenfoot, simply right-click on on the class you want to make a test class for and click on the option that says "Create test class". Otherwise simply create a new class. Make sure to import all of the necessary things.
+<ul id="choices">
+<li>How do I test a method?</li>
+<li>How do I test an if statement?</li>
+<li>How do I test a for loop?</li>
+<li>How do I test a while loop?<li>
+<li>Why does Web-CAT say a line is not tested?</li>
+<ul>
+	a: (how * test * method)
+	^reuse(METHOD_NOT_TESTED)
+	
+	a: (how * test * if)
+	^reuse(IF_NOT_TESTED)
+	
+	a: (how * test * for)
+	^reuse(FOR_NOT_TESTED)
+	
+	a: (how * test * while)
+	^reuse(WHILE_NOT_TESTED)
+	
+	a: (line)
+	^reuse(LINE_NOT_TESTED)
+
+
+#! how to write a test method
+#! how do i make a test method
+#! how do i test a method
+#! how to create a test method
+u: (how * [write create make] * test method)
+First, go to your test class. Then make a new method that looks like this:
+<div class="mlcode">
+public void testMethod() {
+nbsp;   //Part 1: Set up a situation to test.
+nbsp;   //Part 2: Call the method you are testing.
+nbsp;   //Part 3: Make assertions about what should happen.
+}
+</div>
+<ul id="choices">
+<li>Ok, go on.</li>
+</ul>
+	a: (~yes)
+	Great, now that you've got that done, you'll want to look at the method you're testing. Pick one situation that you want to test. For example, this is the method I'm testing:
+	<div class="mlcode">
+	public void method(boolean go, Jerro jeroo) {
+	nbsp;   \if (jeroo.getGridX() == 2) {
+	nbsp;       jeroo.hop();
+	nbsp;   }
+	}
+	</div>
+	This method has two situations to test: when the Jeroo hops and when it doesn't.
+	</div>
+	<ul id="choices">
+	<li>Ok, go on.</li>
+	</ul>
+		b: (~yes)
+		First let's test a situation when the Jeroo will hop. For the Jeroo to hop, its x-coordinate must be 2. So, let's make that happen. In the test, we want our Jeroo to be at x = 2. In order for it to be anywhere, we need to create it.
+		<div class="mlcode">
+		public void testMethod() {
+		nbsp;   //Part 1: Set up a situation to test.
+		nbsp;   Jerro jeroo = new Jeroo();
+		nbsp;   //Part 2: Call the method you are testing.
+		nbsp;   //Part 3: Make assertions about what should happen.
+		}
+		</div>
+		<ul id="choices">
+		<li>Ok, go on.</li>
+		</ul>
+			c: (~yes)
+			Next, we need to create a world for this Jeroo live in. We'll also add him to the world.
+			<div class="mlcode">
+			public void testMethod() {
+			nbsp;   //Part 1: Set up a situation to test.
+			nbsp;   Jerro jeroo = new Jeroo();
+			nbsp;   World world = new World();
+			nbsp;   //Part 2: Call the method you are testing.
+			nbsp;   //Part 3: Make assertions about what should happen.
+			}
+			</div>
+			<ul id="choices">
+			<li>Ok, go on.</li>
+			</ul>
+
+			
+u: (how * test * constructor)
+To test a constructor, you simply have to call the constructor somewhere in you test code. If the constructor sets field values, you should probably assert that the field values are set correctly. For example, if I have this constructor and method:
+<div class="mlcode">
+public MyObject(int param) {
+nbsp;   this.field = param;
+}
+
+public int getField() {
+nbsp;   return this.field;
+}
+</div>
+I can test it by making a test method like this:
+<div class="mlcode">
+public void testMyObject() {
+nbsp;   MyObject obj = new MyObject(2);
+nbsp;   assertEquals(2, obj.getField();
+}
+</div>
+
+
+u: HOW_TEST (how * test)
+^reuse(HOW_TEST)
+
+
+u: ([test testing])
+^reuse(HOW_TEST)
+
+

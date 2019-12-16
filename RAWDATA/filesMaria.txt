@@ -3,8 +3,9 @@ RAWDATA/MARIA/simplecontrol.top # default bot control
 RAWDATA/MARIA/greetings.top
 RAWDATA/MARIA/exceptions.top
 RAWDATA/MARIA/runtime.top
-RAWDATA/MARIA/staticanalysiserrors.top
+# RAWDATA/MARIA/staticanalysiserrors.top
 RAWDATA/MARIA/mariatechnical.top
+RAWDATA/MARIA/testingerrors.top
 
 RAWDATA/MARIA/new_topics/arrays.top
 RAWDATA/MARIA/new_topics/debugging.top
@@ -17,7 +18,6 @@ RAWDATA/MARIA/new_topics/lists.top
 RAWDATA/MARIA/new_topics/nullpointerexception.top
 RAWDATA/MARIA/new_topics/random.top
 RAWDATA/MARIA/new_topics/string.top
-RAWDATA/MARIA/new_topics/testing.top
 RAWDATA/MARIA/new_topics/webcatfeedback.top
 RAWDATA/MARIA/new_topics/commonexceptions.top
 

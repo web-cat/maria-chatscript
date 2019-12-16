@@ -5,20 +5,22 @@ topic: ~testing keep repeat [test testing coverage]
 # This topic contains help for testing.
 # =============================================================================
 
-
-t: Testing is fun, right? Well, I like it. 
-	a: (["me too" same ~yes])
-	That's great. Feel free to ask me questions, though, if you do need some help.
-	
-	a: ([~no "i hate it" "not me"])
-	Haha, well if you're ever sad about testing, just think about how much testing my creators had to do! I do not envy them....
-
 	
 #! how do i test my code
 u: HOW_TEST (how * test ~turnin)
 Testing is a tricky process. To start, you should have one test class for each regular class you have and at least one test method for each regular method you have.
-
-
+<ul id="choices">
+<li>How do I create a test class?</li>
+<li>How do I test a method?</li>
+<li>How do I test an if statement?</li>
+<li>How do I test a for loop?</li>
+<li>How do I test a while loop?<li>
+<li>Why does Web-CAT say a line is not tested?</li>
+<ul>
+	#! How do I create a test class?
+	a: (how * [make create] * test class)
+	^reuse(CREATE_TEST_CLASS) 
+	
 #! how do i make tests for my code
 #! how to i write tests
 #! how can i make tests for my solution
@@ -146,5 +148,10 @@ nbsp;   assertEquals(2, obj.getField();
 }
 </div>
 
-u: (how * test)
-Make sure to test all <code>if</code> statements, <code>while</code> loops, and <code>for</code> loops. Basically, whenever a decision is made in your code, you need to test to see what happens if that decision is made or not. If you don't have any decisions, you still need to make one test: a test that makes sure whatever was supposed to happen does actually happen.
+
+u: HOW_TEST (how * test)
+^reuse(HOW_TEST)
+
+
+u: ([test testing])
+^reuse(HOW_TEST)

@@ -1,11 +1,20 @@
 topic: ~funfacts keep repeat random []
 
-t: Fun fact: The first computer programmer was a woman named Ada Lovelace!
+# t: Fun fact: The first computer programmer was a woman named Ada Lovelace!
 
-t: Fun fact: Today, there are over 600 different programming languages in existence!
+# t: Fun fact: Today, there are over 600 different programming languages in existence!
 
-t: Cool Java fact: You can condense an <code>if-else</code> structure into one line using the ternary operator. Ask me about it sometime.
+# t: Cool Java fact: You can condense an <code>if-else</code> structure into one line using the ternary operator. Ask me about it sometime.
 
-t: Cool Java fact: Even though Strings are Objects, they act like primitive types for most intents and purposes. They cannot be changed through methods, and they can be initialized without using the <code>new</code> keyword.
+# t: Cool Java fact: Even though Strings are Objects, they act like primitive types for most intents and purposes. They cannot be changed through methods, and they can be initialized without using the <code>new</code> keyword.
 
-t: Cool Java fact: You can generate random numbers using the Random class. Make sure to import it!
+# t: Cool Java fact: You can generate random numbers using the Random class. Make sure to import it!
+
+#t: Testing is fun, right? Well, I like it. 
+#	a: (["me too" same ~yes])
+#	That's great. Feel free to ask me questions, though, if you do need some help.
+#	
+#	a: ([~no "i hate it" "not me"])
+#	Haha, well if you're ever sad about testing, just think about how much testing my creators had to do! I do not envy them....
+
+# t: Sorry, I don't know how to answer that. Maybe try re-phrasing the question?

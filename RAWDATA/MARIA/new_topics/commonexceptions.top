@@ -9,7 +9,6 @@ concept: ~soe [stackoverflowexception "stack overflow exception" "stack overflow
 concept: ~ncdfe [noclassdeffounderror "no class def found error" "no class definition found error" "no class def found" "no class definition found" noclassdeffound]
 concept: ~oome [outofmemoryerror "out of memory error" "out of memory" "out of memory exception" outofmemory] 
 concept: ~ime [inputmismatchexcpetion "input mismatch exception" "input mismatch" "input mismatch error" inputmismatch]
-concept: ~helpwith ["i got" "what is" "understand" "help with" "what causes" "when" "how" "why"]
 
 topic: ~commonexceptions keep repeat [what why exception error ~helpwith]
 
