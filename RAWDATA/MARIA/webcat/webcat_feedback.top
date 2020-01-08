@@ -1,0 +1,178 @@
+# =============================================================================
+# This topic contains questions students might ask about feedback Maria gives 
+#  them.
+# =============================================================================
+topic: ~webcat_feedback keep repeat [what why where how]
+
+# Adding More Methods
+# ===================
+
+#! what does modularized mean
+#! what is modularized
+#! what is modular
+#! what does modular mean
+u: (what [is does] [modular modularize modularized] {mean})
+Modular code is code that is split up into multiple methods, rather than having everything jammed into one or a few methods.
+
+#! why do i need to add more methods to my solution
+#! why should i add more methods
+u: (why * add {more} methods)
+Adding more methods helps break your code up, making it easier to read and debug.
+
+#! why do i need to make my solution modular
+#! why do i need to make my code modularized
+#! why should i make my code modular
+u: (why * make * ~turnin [modular modularized])
+Making your code more modular helps break your code up, making it easier to read and debug.
+
+#! what does refactor mean
+u: REFACTOR (what does refactor mean)
+Refactoring is simply restructuring your solution to accomplish some goal. For example, you may want to refactor your code if it has too many IF statements, or if you use too few methods.
+
+#! what is refactoring
+#! what is a refactor
+u: (what is * [refactor refactoring])
+^reuse(REFACTOR)
+
+#! why should i refactor my code
+#! why would i want to refactor my code
+#! why should i refactor code
+u: (why * refactor * ~turnin)
+You should refactor your code if it is too complicated or if you use to few methods to accomplish your task. When you refactor, you should try to break up big methods into smaller ones and try to reduce the number of IFs and loops.
+
+#! why reuse code
+#! why should i care about reusing my code
+#! why would i want to reuse my code
+u: (why * reuse * code)
+When you're working on bigger projects, you won't want to have to rewrite every bit of functionality where ever you need it. You should write it once and make it easy to use in all of the places you need it. Work smarter, not herder.
+
+# Reducing IFs and Loops
+# ======================
+
+#! how can i reduce logic in my program
+#! how to reduce the logic of code
+u: HOW_REDUCE_LOGIC (how * reduce {the} logic * ~turnin)
+You can reduce the logic of your code by eliminating IF statements (branches) and loops. Try eliminating special/edge cases. 
+
+#! why reduce logic in my solution
+#! why should i reduce the logic of my solution
+u: (why * reduce {the} logic * ~turnin)
+You should reduce the logic of your code to make it easier to read and easier to test. Remember, the more IFs and loops you have in your code, the more tests you have to write. 
+
+#! how to write code with minimal logic
+#! how to write code with minimum logic
+#! how to write code with less logic
+u: (how to * code * [minimum less minimal] logic)
+^reuse(HOW_REDUCE_LOGIC)
+
+#! how to simplify logic of code
+#! how can i simplify the logic of my code
+#! how could i simplify my logic 
+u: (how * simplify * logic)
+^reuse(HOW_REDUCE_LOGIC)
+
+#! how does simplifying code make testing easier
+u:([how why] * simplifying ~turnin make testing [easier faster])
+When you have fewer IFs and fewer loops, you have to write fewer tests. Remember that every IF and every loop needs at least 2 tests. Getting rid of just 1 IF could get rid of 2 test methods.
+
+# Reducing Method Size
+# ====================
+
+#! how can i make my methods smaller
+#! how to make methods smaller
+u: (how [to can] * make * methods smaller)
+You can make your methods smaller by breaking your big methods into many smaller methods. Look for distinct tasks that take up many lines and move those lines to their own separate method. 
+
+#! why should i make my methods smaller
+#! why do i have to make my methods smaller
+u: (why * make * methods smaller)
+Making your methods smaller is great for lost of reasons! It makes your code easier to debug, easier to test, and easier to read. It's much better to have lots of small methods than just a few huge ones. 
+
+# Adding More Comments
+# ====================
+
+#! why should i add more comments to my code
+#! why do i need to add more comments
+#! why should i have more comments in my code
+u: WHY_MORE_COMMENTS (why * [add have] more comments)
+Because adding comments is fun! Just kidding; it helps other people understand what your code is doing. This can be especially important if your code doesn't work. If you at least have good comments, your teacher/boss/coworkers might be able to figure out why your logic was wrong and give you partial credit, or fix the problem.
+
+	a: (my code always works)
+	I probably wouldn't put money on you. No one's perfect.
+	
+#! why supplement code with comments
+u: (why * supplement * ~turnin with comments)
+^reuse(WHY_MORE_COMMENTS)
+
+#! how many comments should i add
+#! how many comments do i need in my code
+u: (how many comments * [need add])
+There is no set number. Just make sure that any confusing lines of code have a comment to explain their purpose. 
+
+#! where should i add comments
+#! where should i put comments in my code
+u: (where * [put add] comments)
+Add them before confusing lines or blocks of code or anywhere you might think the reader might have trouble understanding what is going on. 
+
+# Adding More Classes
+# ===================
+
+#! what is object oriented programming
+u: (what is object oriented programming)
+Object oriented programming is a type of programming that prioritizes breaking a problem down into the distinct objects that make up a problem. Don't just put all of your methods in one class, come up with many objects that could each hold some of the methods. 
+
+#! why should i add more classes
+#! why should i use more classes
+#! why do i need more classes
+#! why do i need to use more objects 
+u: (why [should do] * [add use need] more [classes objects])
+You should use more classes for the same reason you should use more methods: to make your code simpler and easy to read. It also helps create a more logical structure for your code where actions are tied to some object that helps do that action.
+
+#! what is encapsulation
+u: (what is encapsulation)
+Encapsulation is the act of wrapping up data or methods into objects or classes. It may also be defined as the act of hiding certain parts of an object or class and replacing those parts with accessor methods. 
+
+#! how do i encapsulate functionality into more classes
+#! how do i do encapsulation
+u: (how * [encapsulation encapsulate])
+Make some more classes, putting methods and variables that go together together. Make sure that the only public things are things that need  to be public. Make as much stuff as possible private.
+
+# Increasing Solution Correctness
+# ===============================
+
+# Not a big help here.
+
+# Adding More Test Methods
+# ========================
+
+#! why should i add more tests
+#! why do i need to add more tests
+#! why should i add more test methods 
+u: (why * add {more} [tests "test methods"])
+You should add more tests to increase the of scenarios you are testing and to break up bigger test methods. Make sure you are only testing one scenario in each test method.
+
+#! why should i modularize my tests
+
+#! why do i need to modularize my tests
+u: WHY_MODULAR (why * modularize * [tests "test methods"])
+You should break up your tests so that they are easier to read and so that if any one of them is failing, you know exactly what is wrong. If you test many things in one method and that method fails, you won't know what the issue is.
+
+#! why should i make my test more modular 
+u: (why * make * test {more} modular)
+^reuse(WHY_MODULAR)
+
+# Adding New Statements to Tests
+# ==============================
+
+#! 
+
+
+
+
+
+
+
+
+
+
+

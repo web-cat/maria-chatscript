@@ -1,0 +1,8 @@
+#! how to split a string by slashes
+#! how to cut up a string
+#! what does the equals method do?
+#! how to compare objects?
+#! How to manually upload your program to Web-Cat
+#! index out of range - alias for StringIndexOutOfBounds
+#! tests won't run - computer is slow or infinite loop
+#! indexoutofbounds

@@ -1,8 +1,0 @@
-topic: ~lists keep repeat [list arraylist "array list"]
-
-u: (how * [create make] arraylist)
-ArrayLists are Objects, so you need to use the same basic structure you use to create any Object:
-<pre>
-ArrayList< /*type of Object in list*/ > /*name*/ = new ArrayList< /*type of Object in list*/ >();
-</pre>
-As you can see above, there is one important difference: those weird angle brackets. Those are there because the ArrayList class is generic. The main thing that means for you is that you should specific what type of Object you'll be storing in the ArrayList two times: once after each ArrayList. Note that I said Objects there. You cannot make ArrayLists of ints, doubles, or any other primitive types. You can however use wrapper classes like Integer and Double.

@@ -1,0 +1,150 @@
+# =============================================================================
+# This topic contains general information about Java Maps and HashMaps.
+# =============================================================================
+topic: ~maps keep repeat [java map hashmap]
+
+
+#! what is a hashmap?
+u: WHAT_HASHMAP (what is * [hashmap "hash map"])
+A HashMap is a data structure that stores keys and values. Each key is associated with one value and you can use the key to get the value. If you've ever used Python, they are basically dictionaries. 
+<ul id="choices">
+<li>How do you use HashMaps?</li>
+<li>What is the difference between a HashMap and a Map?</li>
+</ul>
+	a: (how * use * hashmap)
+	^reuse(HOW_USE_HASHMAP)
+
+	a: (what * difference between * [map hashmap] * [map hashmap])
+	^reuse(DIFF_MAP_AND_HASHMAP)
+
+
+#! how do I use a Map?
+u: (how * use * map)
+In Java, you can't actually instantiate a Map object. Instead, you should use a HashMap.
+<ul id="choices">
+<li>How do you use HashMaps?</li>
+<li>What is the difference between a HashMap and a Map?</li>
+</ul>
+	a: (how * use * hashmap)
+	^reuse(HOW_USE_HASHMAP)
+
+	a: (what * difference between * [map hashmap] * [map hashmap])
+	^reuse(DIFF_MAP_AND_HASHMAP)
+
+
+#! how do you use a hashmap?
+u: HOW_USE_HASHMAP (how * use * [hashmap "hash map"])
+The two most important methods when using HashMaps are <code>put()</code> and <code>get()</code>. You use <code>put()</code> to put things into the HashMap and <code>get()</code> to get things out of the HashMap. Every time we put something into our HashMap, we need a unique key and a value. We put them in together. Then later, we can get the value using the key (that's why the key must be unique).
+<ul id="choices">
+<li>Give me an example.</li>
+<li>What happens if I try to get a key that's not in the map?</li>
+</ul>
+	a: (example)
+	For example, let's say I'm a teacher and I want to store a grade for each of my students. The names of my students are unique, so I can use their names as keys and I can store their grades as values. 
+	<ul id="choices">
+	<li>Go on.</li>
+	<li>Stop.</li>
+	</ul>
+		b: (stop)
+		Will do.
+		
+		b: (go on)
+		Ok, so first I'll need to create my HashMap. I'll do that like this:
+		<div class="mlcode">
+		HashMap&lt;String, Double&gt; grades = new HashMap&lt;String, Double&gt;();
+		</div>
+		I need to tell Java what type of things I'll be storing in the Map. The keys (the students' names) will be Strings and the values (their grades) will be a double. So, after the second <code>HashMap</code> but before the parentheses, I'll put <code>&lt;String, Double&gt;</code> to tell Java about the types. 
+		<ul id="choices">
+		<li>Go on.</li>
+		<li>Stop.</li>
+		<li>Why did you say capital-D Double and not double?</li>
+		</ul>
+			b: (stop)
+			Will do.
+			
+			b: (why * double)
+			Sadly, you can't store primitive types like doubles and ints in Maps or Lists. So, if we want to store things like numbers, we need to use their object equivalents. If you want to store doubles in a Map or List, you should say "Double" and not "double". If you want to store an int, you should say "Integer" and not "int". Using these is very easy. You can basically treat them exactly like the primitive versions. 
+			<ul id="choices">
+			<li>Cool, finish the HashMap example.</li>
+			<li>Stop.</li>
+			</ul>
+				c: (stop)
+				Will do.
+
+				c: (finish * example)
+				^reuse(MORE_HASHMAP_EXAMPLE)
+
+			b: MORE_HASHMAP_EXAMPLE (go on)
+			Ok, so now that I've created the HashMap, I can add some students and some grades to it like this: 
+			<div class="mlcode">
+			grades.put("Tom", 99.6);
+			grades.put("Jim", 76.3);
+			grades.put("Zim", 43.2);
+			</div>
+			Now, if I ever want to get the grade of a student, I can just use the name and the map will tell me their grade.
+			<ul id="choices">
+			<li>Go on.</li>
+			<li>Stop.</li>
+			</ul>
+				c: (stop)
+				Will do.
+
+				c: (go on)
+				So now, let's say I want to change the grade of Tom. First, I need to get his grade, then I need to put in his updates grade. I can do that like this:
+				<div class="mlcode">
+				double tomsGrade = grades.get("Tom");
+				tomsGrade = (tomsGrade + 98) / 2;
+				grades.put("Tom", tomsGrade);
+				</div>
+				Notice how you also use <code>put()</code> to update values in the map.
+				<ul id="choices">
+				<li>Go on.</li>
+				<li>Stop.</li>
+				</ul>
+					d: (stop)
+					Will do.
+
+					d: (go on)
+					Ok now, let's say I want to get Tom's final grade and print it out. I can do that like this:
+					<div class="mlcode">
+					double tomsFinalGrade = grades.get("Tom");
+					System.out.println(tomsFinalGrade);
+					</div>
+					<ul id="choices">
+					<li>That helped!</li>
+					<li>I still don't get it.</li>
+					</ul>
+						e: (that helped)
+						Great!
+						
+						e: (still don't get it)
+						Sorry to hear. You may want to talk to a human TA.
+
+	a: (get * not * in)
+	If you try to use the <code>get()</code> method with a key that's not in the map, the method will return <code>null</code>. You can read more about the <code>get()</code> method in the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#get-java.lang.Object-">Java documentation</a>.
+	^refine() b: () ^reuse(~feedback.SIMPLE_FEEDBACK)
+
+
+
+#! what is the difference between a HashMap and a Map?
+u: DIFF_MAP_AND_HASHMAP (what * difference between * [map hashmap "hash map"] * [map hashmap "hash map"])
+A HashMap is a specific kind of a Map. A Map is the general idea of a map (something with keys linked to values). You cannot actually create a Map object (literally, Java will give you an error if you try). The Map class simply defines all of the things a Map should be able to do. Then, specific kinds of Maps actually implement those features. That's where HashMap comes in. It uses hashing to actually create a usable Map.
+<ul id="choices">
+<li>How do you use HashMaps?</li>
+</ul>
+	a: (how * use * hashmap)
+	^reuse(HOW_USE_HASHMAP)
+
+
+#! What is a map?
+u: (what * map)
+A Map is a data structure that stores keys and values. Each key is associated with one value and you can use the key to get the value. If you've ever used Python, they are basically dictionaries. In Java, if you actually want to use a Map, you'll actually need to use a HashMap.
+<ul id="choices">
+<li>How do you use HashMaps?</li>
+<li>What is the difference between a HashMap and a Map?</li>
+</ul>
+	a: (how * use * hashmap)
+	^reuse(HOW_USE_HASHMAP)
+
+	a: (what * difference between * [map hashmap] * [map hashmap])
+	^reuse(DIFF_MAP_AND_HASHMAP)

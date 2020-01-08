@@ -1,24 +1,32 @@
-RAWDATA/MARIA/simplecontrol.top # default bot control
+RAWDATA/MARIA/technical/simplecontrol.top # default bot control
+RAWDATA/MARIA/technical/concepts.top
+RAWDATA/MARIA/technical/macros.top
+RAWDATA/MARIA/technical/feedback.top
+RAWDATA/MARIA/technical/mariatechnical.top
 
-RAWDATA/MARIA/greetings.top
-RAWDATA/MARIA/exceptions.top
-RAWDATA/MARIA/runtime.top
-# RAWDATA/MARIA/staticanalysiserrors.top
-RAWDATA/MARIA/mariatechnical.top
-RAWDATA/MARIA/testingerrors.top
+RAWDATA/MARIA/java_concepts/arrays.top
+RAWDATA/MARIA/java_concepts/java.top
+RAWDATA/MARIA/java_concepts/keywords.top
+RAWDATA/MARIA/java_concepts/lists.top
+RAWDATA/MARIA/java_concepts/random_numbers.top
+RAWDATA/MARIA/java_concepts/strings.top
+RAWDATA/MARIA/java_concepts/math.top
+RAWDATA/MARIA/java_concepts/maps.top
+RAWDATA/MARIA/java_concepts/scanners.top
 
-RAWDATA/MARIA/new_topics/arrays.top
-RAWDATA/MARIA/new_topics/debugging.top
-RAWDATA/MARIA/new_topics/feedback.top
-RAWDATA/MARIA/new_topics/fun.top
-RAWDATA/MARIA/new_topics/funfacts.top
-RAWDATA/MARIA/new_topics/java.top 
-RAWDATA/MARIA/new_topics/keywords.top
-RAWDATA/MARIA/new_topics/lists.top
-RAWDATA/MARIA/new_topics/nullpointerexception.top
-RAWDATA/MARIA/new_topics/random.top
-RAWDATA/MARIA/new_topics/string.top
-RAWDATA/MARIA/new_topics/webcatfeedback.top
-RAWDATA/MARIA/new_topics/commonexceptions.top
+RAWDATA/MARIA/java_errors/common_exceptions.top
+RAWDATA/MARIA/java_errors/compiletime_exceptions.top
+RAWDATA/MARIA/java_errors/null_pointer_exception.top
+RAWDATA/MARIA/java_errors/runtime_exceptions.top
 
-RAWDATA/MARIA/alice_stuff/knowledge.top
+RAWDATA/MARIA/not_programming/fun.top
+RAWDATA/MARIA/not_programming/general_knowledge.top
+RAWDATA/MARIA/not_programming/greetings.top
+
+RAWDATA/MARIA/programming_concepts/debugging.top
+RAWDATA/MARIA/programming_concepts/programming.top
+
+# RAWDATA/MARIA/webcat/static_analysis_errors.top
+RAWDATA/MARIA/webcat/testing.top
+RAWDATA/MARIA/webcat/webcat_feedback.top
+RAWDATA/MARIA/webcat/coverage.top

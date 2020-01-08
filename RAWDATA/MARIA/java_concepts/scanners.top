@@ -1,0 +1,631 @@
+# =============================================================================
+# This topic contains information about how to use Scanners in Java.
+# =============================================================================
+topic: ~scanners keep repeat [java how what when scanner]
+
+
+#! what is a scanner
+u: WHAT_IS (what * scanner)
+A Scanner is a class in Java that makes it easier to deal with text input. It makes it easy to read one word or line at a time from an input source (like a String, a web page, a text file, or the console). 
+<ul id="choices">
+<li>How do I use a Scanner?</li>
+<li>How does a Scanner work?</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! How does a Scanner work?
+u: (how * scanner * work)
+You can think of a Scanner like a pointer. When you create a Scanner, the pointer starts by pointing before the first word. When we call <code>next()</code>, it moves the pointer forward and returns the word that the pointer moved over. Here's an example:
+<div class="mlcode">
+Scanner scan = new Scanner("I love programming!");
+// Our Scanner looks like this:
+// "I love programming!"
+// \^ <- This is our pointer.
+scan.next();  // = "I"
+// "I love programming!"
+//  \^
+scan.next();  // = "love"
+// "I love programming!"
+//        \^
+scan.next();  // = "programming!"
+// "I love programming!"
+//                     \^
+// Now our pointer is at the end of the String. There is no next!
+</div>
+<ul id="choices">
+<li>How do I use a Scanner?</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! Give me an example of how to use a Scanner.
+u: EXAMPLE (example * scanner)
+Ok, here's an example of how to use a Scanner. First, let's come up with a situation when we might need a scanner. Let's say that we want to count the number of times the word "cool" shows up in a String. A Scanner will be perfect for this!
+<ul>
+<li>Ok, go on.</li>
+<li>Stop.</li>
+</ul>
+	#! Stop.
+	a: (stop)
+	Will do!
+	<div class="feedback-info" data-feedback-type="early-stop-extended-example"></div>
+
+	#! Ok, go on.
+	a: (~yes)
+	So, first thing it first. Let's set up out method:
+	<div class="mlcode">
+	public int countCool(String str) {
+	&nbsp;   
+	}
+	</div>
+	<ul>
+	<li>Ok, go on.</li>
+	<li>Stop.</li>
+	</ul>
+		#! Stop.
+		b: (stop)
+		Will do!
+		<div class="feedback-info" data-feedback-type="early-stop-extended-example"></div>
+
+		#! Ok, go on.
+		b: (~yes)
+		Now, we'll need to create our Scanner. But, before we can use a Scanner, we need to import it! So, at the top of our class, we'll need to add this line:
+		<div class="mlcode">
+		import java.util.Scanner;
+		</div>
+		<ul>
+		<li>Ok, go on.</li>
+		<li>Stop.</li>
+		</ul>
+			#! Stop.
+			c: (stop)
+			Will do!
+			<div class="feedback-info" data-feedback-type="early-stop-extended-example"></div>
+
+			#! Ok, go on.
+			c: (~yes)
+			Now, we can create our Scanner! We want to count the number of times "cool" appears in <code>str</code>, so when we create our Scanner, we'll pass <code>str</code> as a parameter:
+			<div class="mlcode">
+			public int countCool(String str) {
+			&nbsp;   Scanner scan = new Scanner(str);
+			}
+			</div>
+			<ul>
+			<li>Ok, go on.</li>
+			<li>Stop.</li>
+			</ul>
+				#! Stop.
+				d: (stop)
+				Will do!
+				<div class="feedback-info" data-feedback-type="early-stop-extended-example"></div>
+
+				#! Ok, go on.
+				d: (~yes)
+				So, if we want to count the number of times "cool" appears in <code>str</code>, we'll could use a loop. Basically, as long as there is another word in the Scanner, we will keep going through our loop and keep checking for "cool". We want this loop to run while there is another thing in the Scanner. We can use the <code>hasNext()</code> method for this!
+				<div class="mlcode">
+				public int countCool(String str) {
+				&nbsp;   Scanner scan = new Scanner(str);
+				&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner
+				&nbsp;   
+				&nbsp;   }
+				}
+				</div>
+				<ul>
+				<li>Ok, go on.</li>
+				<li>Stop.</li>
+				</ul>
+					#! Stop.
+					e: (stop)
+					Will do!
+					<div class="feedback-info" data-feedback-type="early-stop-extended-example"></div>
+
+					#! Ok, go on.
+					e: (~yes)
+					Awesome! So, we only want to count a word if it is "cool". So, we'll want to add an if statement to our code. We want to know if the next word in the Scanner is "cool". We can use the <code>next()</code> method to get the next thing from the Scanner.
+					<div class="mlcode">
+					public int countCool(String str) {
+					&nbsp;   Scanner scan = new Scanner(str);
+					&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner
+					&nbsp;       String nextWord = scan.next();
+					&nbsp;       \if (nextWord.equals("cool")) {
+					&nbsp;           
+					&nbsp;       }
+					&nbsp;   }
+					}
+					</div>
+					<ul>
+					<li>Ok, go on.</li>
+					<li>Stop.</li>
+					</ul>
+						#! Stop.
+						f: (stop)
+						Will do!
+						<div class="feedback-info" data-feedback-type="early-stop-extended-example"></div>
+
+						#! Ok, go on.
+						f: (~yes)
+						We're almost there! Now, we just need to add a counter to count the number of times "cool" shows up in our String.
+						<div class="mlcode">
+						public int countCool(String str) {
+						&nbsp;   Scanner scan = new Scanner(str);
+						&nbsp;   int count = 0;
+						&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner
+						&nbsp;       String nextWord = scan.next();
+						&nbsp;       \if (nextWord.equals("cool")) {
+						&nbsp;           count++;
+						&nbsp;       }
+						&nbsp;   }
+						&nbsp;   return count;
+						}
+						</div>
+						<ul>
+						<li>Ok, go on.</li>
+						<li>Stop.</li>
+						</ul>
+							#! Stop.
+							g: (stop)
+							Will do!
+							<div class="feedback-info" data-feedback-type="early-stop-extended-example"></div>
+
+							#! Ok, go on.
+							g: (~yes)
+							Yay! We did it! Do you need more help?
+							<ul id="choices">
+							<li>How do I create a Scanner?</li>
+							<li>How do I get things from the Scanner?</li>
+							<li>I want to know how to use a Scanner method.</li>
+							<li>Give me an example of how to use a Scanner.</li>
+							</ul>
+							<div class="feedback-info" data-feedback-type="extended-example"></div>
+								#! I want to know how to use a Scanner method.
+								h: (scanner method)
+								Which method do want to hear about?
+								<ul id="choices">
+								<li>nextInt()</li>
+								<li>nextDouble()</li>
+								<li>next()</li>
+								<li>hasNext()</li>
+								<li>nextLine()</li>
+								<li>hasNextLine()</li>
+								</ul>
+									i: ()
+									^input(how to use scanner method %originalinput)
+
+
+#! How do I create a Scanner?
+u: CREATE (how * [create make] * scanner)
+Let's say you want to make a Scanner for a String, you would do that like this: 
+<div class="mlcode">
+Scanner s = new Scanner("1 2 3 4");
+</div>
+Make sure to import the Scanner class at the top of your Java file with this: <code>import java.util.Scanner;</code>
+<ul id="choices">
+<li>Show me the documentation!</li>
+<li>How do I create a Scanner?</li>
+<li>How do I get things from the Scanner?</li>
+<li>I want to know how to use a Scanner method.</li>
+<li>Give me an example of how to use a Scanner.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! Show me the documentation!
+	a: (documentation)
+	Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#Scanner-java.lang.String-">official Java documentation for this constructor</a>!
+	<div class="feedback-info" data-feedback-type="answer"></div>
+
+	#! I want to know how to use a Scanner method.
+	a: (scanner method)
+	Which method do want to hear about?
+	<ul id="choices">
+	<li>nextInt()</li>
+	<li>nextDouble()</li>
+	<li>next()</li>
+	<li>hasNext()</li>
+	<li>nextLine()</li>
+	<li>hasNextLine()</li>
+	</ul>
+		b: ()
+		^input(how to use scanner method %originalinput)
+
+
+#! How do I use the next method?
+#! how to use next with a scanner?
+u: NEXT (how * use * next)
+The <code>next()</code> method is a method you call on a Scanner. It gets the next word from the Scanner. In this case, a word is just a string of letters or numbers with whitespace on either side. 
+<ul id="choices">
+<li>Give me an example.</li>
+<li>I want to know how to do something else.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! I want to know how to do something else.
+	a: (something else)
+	^reuse(HOW_USE)
+
+	#! Give me an example.
+	a: (example)
+	For example:
+	<div class="mlcode">
+	Scanner scan = new Scanner("I love programming!");
+	String str1 = scan.next();  // str1 = "I"
+	String str2 = scan.next();  // str2 = "love"
+	</div>
+	<ul id="choices">
+	<li>Show me the documentation!</li>
+	<li>I want to know how to do something else.</li>
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! I want to know how to do something else.
+		b: (something else)
+		^reuse(HOW_USE)
+
+		#! Show me the documentation!
+		b: (documentation)
+		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#next--">official Java documentation for this method</a>!
+		<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what does the next method do?
+#! what is the next method?
+u: (what * next * method)
+^reuse(NEXT)
+
+
+#! How do I use the hasNext method?
+#! how to use hasNext with a scanner?
+u: HAS_NEXT (how * use * hasnext)
+The <code>hasNext()</code> method is a method you call on a Scanner. It will either return true or false. It will return true if there is another word left in the Scanner and it will return false if the Scanner is empty. 
+<ul id="choices">
+<li>Give me an example.</li>
+<li>I want to know how to do something else.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! I want to know how to do something else.
+	a: (something else)
+	^reuse(HOW_USE)
+
+	#! Give me an example.
+	a: (example)
+	For example:
+	<div class="mlcode">
+	Scanner scan = new Scanner("I love programming!");
+	\if (scan.hasNext()) {  // The Scanner has 3 words in it. So, this is true.
+	&nbsp;   System.out.println("foo");
+	}
+	scan.next();
+	scan.next();
+	scan.next();  // Now the Scanner is empty. 
+	\if (scan.hasNext()) {  // This is false.
+	&nbsp;   System.out.println("bar");
+	}
+	</div>
+	This code will print out "foo" but not "bar".
+	<ul id="choices">
+	<li>Show me the documentation!</li>
+	<li>I want to know how to do something else.</li>
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! I want to know how to do something else.
+		b: (something else)
+		^reuse(HOW_USE)
+
+		#! Show me the documentation!
+		b: (documentation)
+		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#hasNext--">official Java documentation for this method</a>!
+		<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what does the hasnext method do?
+#! what is the hasnext method?
+u: (what * hasnext * method)
+^reuse(HAS_NEXT)
+
+
+#! How do I use the nextInt method?
+#! how to use nextInt with a scanner?
+u: NEXT_INT (how * use * nextint)
+The <code>nextInt()</code> method is a method you call on a Scanner. It is similar to the <code>next()</code> method, but it will return an int instead of a String. So, you should call this method when you know for sure that the next thing in your Scanner is a String. This method gets the next thing from the Scanner if at is an int. If you call this method and the next thing isn't an int, you'll get an Exception.
+<ul id="choices">
+<li>Give me an example.</li>
+<li>I want to know how to do something else.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! I want to know how to do something else.
+	a: (something else)
+	^reuse(HOW_USE)
+
+	#! Give me an example.
+	a: (example)
+	For example:
+	<div class="mlcode">
+	Scanner scan = new Scanner("Total: 329 lines");
+	String str1 = scan.next();   // str1 = "Total:"
+	int lines = scan.nextInt();  // lines = 329
+	int i2 = scan.nextInt();     // Error! The next thing in the Scanner is a String!
+	</div>
+	This code will print out "foo" but not "bar".
+	<ul id="choices">
+	<li>Show me the documentation!</li>
+	<li>I want to know how to do something else.</li>
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! I want to know how to do something else.
+		b: (something else)
+		^reuse(HOW_USE)
+
+		#! Show me the documentation!
+		b: (documentation)
+		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#nextInt--">official Java documentation for this method</a>!
+	<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what does the nextint method do?
+#! what is the nextint method?
+u: (what * nextint * method)
+^reuse(NEXT_INT)
+
+
+#! How do I use the hasNextInt method?
+#! how to use hasNextInt with a scanner?
+u: HAS_NEXT_INT (how * use * hasnextint)
+The <code>hasNextInt()</code> method is a method you call on a Scanner. It is similar to the <code>hasNext()</code>, but it will only return true if there is something left in the Scanner and that something is an int. If the next thing is a word, this method will return false. You should use this method with <code>nextInt()</code>. 
+<ul id="choices">
+<li>Give me an example.</li>
+<li>I want to know how to do something else.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! I want to know how to do something else.
+	a: (something else)
+	^reuse(HOW_USE)
+
+	#! Give me an example.
+	a: (example)
+	Here's an example:
+	<div class="mlcode">
+	Scanner scan = new Scanner("Total: 329 lines");
+	\if (scan.hasNextInt()) {  // False because the first thing in the Scanner is a String. 
+	&nbsp;   System.out.println("foo");
+	}
+	scan.next();  // Now the next thing is an int, 329.
+	\if (scan.hasNextInt()) {  // This is false.
+	&nbsp;   System.out.println("bar");
+	}
+	</div>
+	This code will print out "bar" but not "foo". 
+	<ul id="choices">
+	<li>Show me the documentation!</li>
+	<li>I want to know how to do something else.</li>
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! I want to know how to do something else.
+		b: (something else)
+		^reuse(HOW_USE)
+
+		#! Show me the documentation!
+		b: (documentation)
+		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#hasNextInt--">official Java documentation for this method</a>!
+		<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what does the hasnextint method do?
+#! what is the hasnextint method?
+u: (what * hasnextint * method)
+^reuse(HAS_NEXT_INT)
+
+
+#! How do I use the nextDouble method?
+#! how to use nextDouble with a scanner?
+u: NEXT_DOUBLE (how * use * nextdouble)
+The <code>nextDouble()</code> method is a method you call on a Scanner. It is similar to the <code>next()</code> method, but it will return an double instead of a String. So, you should call this method when you know for sure that the next thing in your Scanner is a String. This method gets the next thing from the Scanner if at is an double. If you call this method and the next thing isn't an double, you'll get an Exception.
+<ul id="choices">
+<li>Give me an example.</li>
+<li>I want to know how to do something else.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! I want to know how to do something else.
+	a: (something else)
+	^reuse(HOW_USE)
+
+	#! Give me an example.
+	a: (example)
+	Here's an example:
+	<div class="mlcode">
+	Scanner scan = new Scanner("Total: 32.9 points");
+	String str1 = scan.next();   // str1 = "Total:"
+	double points = scan.nextDouble();  // lines = 32.9
+	double d2 = scan.nextDouble();      // Error! The next thing in the Scanner is a String!
+	</div>
+	<ul id="choices">
+	<li>Show me the documentation!</li>
+	<li>I want to know how to do something else.</li>
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! I want to know how to do something else.
+		b: (something else)
+		^reuse(HOW_USE)
+
+		#! Show me the documentation!
+		b: (documentation)
+		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#nextDouble--">official Java documentation for this method</a>!
+		<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what does the nextdouble method do?
+#! what is the nextdouble method?
+u: (what * nextdouble * method)
+^reuse(NEXT_DOUBLE)
+
+
+#! How do I use the hasNextDouble method?
+#! how to use hasNextDouble with a scanner?
+u: HAS_NEXT_DOUBLE (how * use * hasnextdouble)
+The <code>hasNextDouble()</code> method is a method you call on a Scanner. It is similar to the <code>hasNext()</code>, but it will only return true if there is something left in the Scanner and that something is an double. If the next thing is a word, this method will return false. You should use this method with <code>nextDouble()</code>. 
+<ul id="choices">
+<li>Give me an example.</li>
+<li>I want to know how to do something else.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! I want to know how to do something else.
+	a: (something else)
+	^reuse(HOW_USE)
+
+	#! Give me an example.
+	a: (example)
+	Here's an example:
+	<div class="mlcode">
+	Scanner scan = new Scanner("Total: 32.9 points");
+	\if (scan.hasNextDouble()) {  // False because the first thing in the Scanner is a String. 
+	&nbsp;   System.out.println("foo");
+	}
+	scan.next();  // Now the next thing is an double, 32.9.
+	\if (scan.hasNextDouble()) {  // This is false.
+	&nbsp;   System.out.println("bar");
+	}
+	</div>
+	This code will print out "bar" but not "foo". 
+	<ul id="choices">
+	<li>Show me the documentation!</li>
+	<li>I want to know how to do something else.</li>
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! I want to know how to do something else.
+		b: (something else)
+		^reuse(HOW_USE)
+
+		#! Show me the documentation!
+		b: (documentation)
+		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#hasNextDouble--">official Java documentation for this method</a>!
+		<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what does the hasnextdouble method do?
+#! what is the hasnextdouble method?
+u: (what * hasnextdouble * method)
+^reuse(HAS_NEXT_DOUBLE)
+
+
+#! How do I use the nextLine method?
+#! how to use nextLine with a scanner?
+u: NEXT_LINE (how * use * nextline)
+The <code>nextLine()</code> method is a method you call on a Scanner. It is similar to the <code>next()</code> method, but it will return the whole next line instead of just the next word. You'll want to use this to read through a Scanner one line at a time. 
+<ul id="choices">
+<li>Give me an example.</li>
+<li>I want to know how to do something else.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! I want to know how to do something else.
+	a: (something else)
+	^reuse(HOW_USE)
+
+	#! Give me an example.
+	a: (example)
+	Let's say I make a Scanner called <code>scan</code> for these two lines of \data:
+	<pre>1/6/2020: 5
+	1/7/2020: 7
+	</pre>
+	Then, I can use the Scanner like this:
+	<div class="mlcode">
+	String str1 = scan.nextLine();  // str1 = "1/6/2020: 5"
+	String str2 = scan.nextLine();  // str2 = "1/7/2020: 7"
+	</div>
+	<ul id="choices">
+	<li>Show me the documentation!</li>
+	<li>I want to know how to do something else.</li>
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! I want to know how to do something else.
+		b: (something else)
+		^reuse(HOW_USE)
+
+		#! Show me the documentation!
+		b: (documentation)
+		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#nextLine--">official Java documentation for this method</a>!
+		<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what does the nextline method do?
+#! what is the nextline method?
+u: (what * nextline * method)
+^reuse(NEXT_LINE)
+
+
+#! How do I use the hasNextLine method?
+#! how to use hasNextLine with a scanner?
+u: HAS_NEXT_LINE (how * use * hasnextline)
+The <code>hasNextLine()</code> method is a method you call on a Scanner. It is similar to the <code>hasNext()</code>, but it will only return true if there is another line in the Scanner. If the next. 
+<ul id="choices">
+<li>Give me an example.</li>
+<li>I want to know how to do something else.</li>
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! I want to know how to do something else.
+	a: (something else)
+	^reuse(HOW_USE)
+
+	#! Give me an example.
+	a: (example)
+	Let's say we have a Scanner called <code>scan</code> for this \data:
+	<pre>1/6/2020: 5
+	1/7/2020: 7
+	</pre>
+	Then, we can use the Scanner like this:
+	<div class="mlcode">
+	\if (scan.hasNextLine()) {  // True, there are 2 lines left in the Scanner.
+	&nbsp;   System.out.println("foo");
+	}
+	scan.nextLine();  
+	scan.nextLine();  // We use up both lines from the Scanner. Now it is empty.
+	\if (scan.hasNextLine()) {  // This is false.
+	&nbsp;   System.out.println("bar");
+	}
+	</div>
+	This code will print out "foo" but not "bar". 
+	<ul id="choices">
+	<li>Show me the documentation!</li>
+	<li>I want to know how to do something else.</li>
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! I want to know how to do something else.
+		b: (something else)
+		^reuse(HOW_USE)
+
+		#! Show me the documentation!
+		b: (documentation)
+		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#hasNextLine--">official Java documentation for this method</a>!
+
+
+#! what does the hasnextline method do?
+#! what is the hasnextline method?
+u: (what * hasnextline * method)
+^reuse(HAS_NEXT_LINE)
+
+
+#! How do I use a Scanner?
+u: HOW_USE (how * use * scanner)
+What would you like to know how to do?
+<ul id="choices">
+<li>How do I create a Scanner?</li>
+<li>How do I get things from the Scanner?</li>
+<li>I want to know how to use a Scanner method.</li>
+<li>Give me an example of how to use a Scanner.</li>
+</ul>
+	#! I want to know how to use a Scanner method.
+	a: (scanner method)
+	Which method do want to hear about?
+	<ul id="choices">
+	<li>nextInt()</li>
+	<li>nextDouble()</li>
+	<li>next()</li>
+	<li>hasNext()</li>
+	<li>nextLine()</li>
+	<li>hasNextLine()</li>
+	</ul>
+		b: ()
+		^input(how to use scanner method %originalinput)
+
+#! Show me a Scanner example.
+u: (scanner * example)
+^reuse(EXAMPLE)
+
+
+u: (scanner)
+^reuse(WHAT_IS)

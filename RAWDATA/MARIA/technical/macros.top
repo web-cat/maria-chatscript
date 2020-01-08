@@ -1,0 +1,9 @@
+# =============================================================================
+# This file contains macro definitions. If you define a ChatScript macro, place
+#  it here.
+# =============================================================================
+outputmacro: ^feedback()
+{
+	^reuse(~feedback.SIMPLE_FEEDBACK)
+}
+	

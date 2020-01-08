@@ -1,0 +1,22 @@
+# =============================================================================
+# This file contains concept definitions. If you need to make new concepts,
+#  define them here.
+# =============================================================================
+concept: ~ae [arithmeticexcpetion "arithmetic exception"]
+concept: ~aioobe [arrayindexoutofboundsexception "array index out of bounds exception" "array index out of bounds" arrayindexoutofbounds "index out of bounds" indexoutofbounds "array bounds error" "bounds error"]
+concept: ~sioobe [stringindexoutofboundsexcpetion "string index out of bounds exception" "string index out of bounds" stringindexoutofbounds "string bounds error"]
+concept: ~nfe [numberformatexception "number format exception" "number format error" "number format" numberformat]
+concept: ~cce [classcastexception "class cast exception" "class cast error" "cast exception" "cast error"]
+concept: ~iae [illegalargumentexception "illegal argument" "illegal argument exception" "illegal argument error" illegalargument]
+concept: ~ise [illegalstateexception "illegal state" "illegal state exception" "illegal state error" illegalstate]
+concept: ~soe [stackoverflowexception "stack overflow exception" "stack overflow" "stack overflow error" stackoverflow]
+concept: ~ncdfe [noclassdeffounderror "no class def found error" "no class definition found error" "no class def found" "no class definition found" noclassdeffound]
+concept: ~oome [outofmemoryerror "out of memory error" "out of memory" "out of memory exception" outofmemory] 
+concept: ~ime [inputmismatchexcpetion "input mismatch exception" "input mismatch" "input mismatch error" inputmismatch]
+concept: ~npe [nullpointerexception "null pointer exception" "null pointer"]
+concept: ~debug [debugger debugging debug debuger debuging]
+concept: ~helpwith ["i got" "what is" "understand" "help with" "what causes" "when" "how" "why" explain explainlink]
+concept: ~turnin [code solution program "my program" "my solution" "my code" "the program" "the solution" "the code"]
+concept: ~assertequals [assertequal assertequals "assert equals" "assert equal"]
+concept: ~arraylist [arraylist "array list" arraylists "array lists"]
+concept: ~linkedlist [linkedlist "linked list" linkedlists "linked lists"]

@@ -1,0 +1,31 @@
+# =============================================================================
+# This file contains information about concepts that go beyond just Java.
+# =============================================================================
+topic: ~programming keep repeat [what how when why]
+
+u: (what is abstraction)
+Abstraction is basically when you remove details. For example, you make a method that sorts a list with some for loops. But, int he description, you can abstract away the details of how you sort the list and just say that the method sorts a list. Abstraction is caring about what is getting done, not how.
+
+
+u: (what is c++) 
+C++ is a programming language descendant from C. It also serves as a basis for many other languages, like Java.
+
+
+u: (what is python)
+Python is a programming language that resembles pseudo-code. It is extremely easy and fun to write! I highly recommend it!
+
+
+u: (what * java)
+Java is a popular programming language with precise, verbose syntax.
+
+
+#! what are off-by-one errors?
+u: ([what how when why] * ["off-by-one" "off by one" offbyone] error)
+An off-by-one error is a bug that can happen when a loop runs one too many or one too few times. If Web-CAT is telling you that you have an off-by-one error in one of your for loops, you may need to change <code>&lt;</code> to <code>&lt;=</code> or change <code>&lt;=</code> to <code>&lt;</code>. You can also try add one or subtracting one from the bound. Like this:
+<div class="mlcode">
+for (int i = 0; i < variable; i++)
+// becomes
+for (int i = 0; i < variable + 1; i++)
+// or
+for (int i = 0; i < variable - 1; i++)
+</div>

@@ -1,0 +1,137 @@
+# =============================================================================
+# Greetings and other friendly conversational things, like "How are you?"
+# =============================================================================
+
+topic: ~greetings keep repeat (~emogoodbye ~emohello ~emohowzit name here what who help ta real yo)
+
+#!x will match on every return start of a conversation
+t: ( %input<%userfirstline %input>0 )
+	^keep()
+	[Welcome back] [Hello, again.][Glad you came back.][Hi.][Hi, again.]
+
+
+#!x matches every time on startup of a new conversation
+t: ( %input<%userfirstline )
+	^keep()
+	Hi. I'm Maria! Ask me something about computer science!
+	
+
+#! what is your name
+u: ( what is your name ) 
+My name is Maria. I am the Virtual Teaching Assistant for Web-CAT.
+
+
+#! who are you
+u: ( who are you ) 
+I am Maria. I am the Virtual Teaching Assistant for Web-CAT.
+
+
+u: (who made you) 
+I was made by people here at VT to help you learn!
+
+
+#! what can i ask you?
+u: (what * ask you)
+You can ask me about things related to Java, programming, or debugging. Some popular topics are random numbers, arrays, loops, testing, inheritance, errors, and exceptions! You can also give me feedback! Sadly, right now, you can't ask me project specific questions. Try to make your question general.
+<ul id="choices">
+<li>How do I generate random numbers?</li>
+<li>What are arrays?</li>
+<li>How do I make a for loop?</li>
+<li>How do I test an if statement?</li>
+<li>How does inheritance work?</li>
+<li>What is the null pointer exception?</li>
+<li>I want to give feedback on this system!</li>
+</ul>
+
+
+#! hello
+#! hi
+#! what's up
+u: (~emohello)
+Hello! How can I help you today?
+<ul id="choices">
+<li>What can I ask you?</li>
+</ul>
+
+
+#! is there a ta here?
+#! are you a real ta?
+#! are you real?
+u: NOT_REAL ([is are] * [real ta])
+I'm not a human TA, but I've been programmed with the knowledge of real TA's! Try asking me something.
+<ul id="choices">
+<li>What can I ask you?</li>
+</ul>
+
+
+u: (real ta)
+^reuse(NOT_REAL)
+
+
+u: (help)
+I will certainly try. Sadly, I can't give project-specific help, but I can give you general help with test, errors, and Java. What do you need help with?
+<ul id="choices">
+<li>Testing.</li>
+<li>Errors and exceptions.</li>
+<li>Doing something in Java.</li>
+<li>Something else.</li>
+</ul>
+	a: (testing)
+	^reuse(~testing.HOW_TEST)
+
+	a: ([errors exceptions])
+	What error are you getting?
+		b: ()
+		^input(what is %originalinput error)
+
+	a: (doing * something * java)
+	Sure! I'm great at answering those types of questions. Ask me a question like "How do I make a for loop?"
+
+	a: (something else)
+	I might be able to help you. Just ask a question. Try to keep it general, like "How do I make a for loop?" and not "How can I make the hopRight() method?"
+
+
+#! what am i doing wrong?
+u: (what * I do wrong)
+I'm not sure what you're doing wrong but I can try to help. What are you having an issue with?
+<ul id="choices">
+<li>Testing.</li>
+<li>Errors and exceptions.</li>
+<li>Doing something in Java.</li>
+<li>Something else.</li>
+</ul>
+	a: (testing)
+	^reuse(~testing.HOW_TEST)
+
+	a: ([errors exceptions])
+	What error are you getting?
+		b: ()
+		^input(what is %originalinput error)
+
+	a: (doing * something * java)
+	Sure! I'm great at answering those types of questions. Ask me a question like "How do I make a for loop?"
+
+	a: (something else)
+	I might be able to help you. Just ask a question. Try to keep it general, like "How do I make a for loop?" and not "How can I make the hopRight() method?"
+
+
+#! how are you
+u: ([~emohowzit])
+I'm doing pretty good. You?
+	#! good
+	a: ([~emohappy ~yes good great positive well])
+	Wonderful. What can I help you with today?
+
+	#! bad 
+	a: ([~emosad ~no bad "not good" "not well"])
+	Sorry to hear. I know when I'm feeling down answering questions about programming always makes me feel better. Maybe you should try asking one?
+
+
+#! yo
+u: (yo)
+Yo.
+
+
+#! my name is dylan
+u: (my name is _*)
+Hi, '_0, my name is Maria. How can I help you today?

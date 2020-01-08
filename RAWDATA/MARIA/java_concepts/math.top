@@ -1,0 +1,75 @@
+# =============================================================================
+# This topic contains information about math in Java.
+# =============================================================================
+topic: ~math keep repeat [java division multiplication math multiply divide truncate truncation modulus square]
+
+
+#! what is integer multiplication
+u: INT_MATH ([int integer] * [math multiplication])
+When doing math with <code>int</code>s, first the math is done and then the answer is truncated (has its decimal chopped off). Note that the answer is NOT rounded. The decimal is just cut off (so, 5.9 becomes 5). If you are doing math and are getting the wrong answers, you might want to try switching out some <code>int</code>s with some <code>double</code>s.
+^feedback()
+
+
+#! how to multiply an int by an int
+u: ([what how] * multiply * int [by with] * int)
+^reuse(INT_MATH)
+
+
+#! how to multiply an int by a double
+u: INT_TIMES_DOUBLE ([what how] * multiply * int [by with] * double)
+When you multiply an <code>int</code> by a <code>double</code>, the answer will be a <code>double</code>. So, the decimal will be preserved.
+^feedback()
+
+
+#! how to multiply a double by an int
+u: ([what how] * multiply * double [by with] * int)
+^reuse(INT_TIMES_DOUBLE)
+
+
+#! how does integer division work
+#! integer division
+u: INT_DIVISION ({[what how]} * [int integer] division)
+In Java, when you divide two <code>int</code> variables, the result will be a whole number. Java will not store the decimal even if the numbers do not evenly divide. Java does not round the numbers, it just throws away the decimal. So, if we do 3/4, the result is 0.75 but Java will throw away the decimal and just give us 0 as the answer. This is called truncation.
+^feedback()
+
+
+#! what happens when you divide ints in java
+u: (how * divide [int ints])
+^reuse(INT_DIVISION)
+
+
+#! improper integer division
+u: (improper [int integer] division)
+^reuse(INT_DIVISION)
+
+
+#! what is truncation
+#! when does java truncate values
+u: ([what when] * [truncate truncation])
+Truncation is a way of turning decimal numbers into integer numbers. If a decimal exists, it will be discarded. So, 4.7 truncated is 4. It is basically like rounding, but always rounding down.
+
+
+#! what is the modulus operator
+u: (what * modulus operator)
+In Java, you use the percent sign (%) as the modulus operator.
+<ul id="choices">
+<li>What is it used for?</li>
+</ul>
+	a: (what * it * for)
+	^reuse(WHAT_MODULUS)
+	
+
+#! what does modulus mean
+#! what does modulus do
+u: WHAT_MODULUS (what * modulus)
+The modulus operator (%) is used for remainder division. For example, when I divide 7 by 2, the answer is 3 with a remainder or 1, so <code>7 % 2 = 1</code>.
+
+
+#! when to use modulus
+u: (when * use * modulus)
+^reuse(WHAT_MODULUS)
+
+
+#! do i square a number in java
+u: (how * square * number)
+The easiest way to square a number is to just multiply the number by itself.
