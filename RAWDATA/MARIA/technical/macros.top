@@ -2,8 +2,7 @@
 # This file contains macro definitions. If you define a ChatScript macro, place
 #  it here.
 # =============================================================================
-outputmacro: ^feedback()
+outputmacro: ^feedback_options()
 {
-	^reuse(~feedback.SIMPLE_FEEDBACK)
+	<li>GIVE FEEDBACK</li>
 }
-	

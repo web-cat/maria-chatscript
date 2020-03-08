@@ -1,0 +1,12 @@
+# =============================================================================
+# This topic contains information about how to submit code through the Web-CAT 
+#  website.
+# =============================================================================
+topic: ~submitting keep repeat [java how what when tab]
+
+
+#! how do i manually submit my code?
+#! how do i manually submit a program
+u: (how * manually * [submit "turn in"] * ~turnin)
+You can submit code by uploading it directly to the Web-CAT website. First, go to the folder where your code is. Select every file that ends in ".java". If you can't see file extensions and you're using Windows, click "View" and then check "File name extensions". Right click and click "Send to" then "Compressed (zipped) folder". Then, go to the Web-CAT website. Once you login, click "Submit" in the upper right corner. Then, click "New Submission". Upload the zip folder you created. And, you're done!
+<div class="feedback-info" data-feedback-type="answer"></div>

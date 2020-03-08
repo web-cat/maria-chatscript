@@ -11,10 +11,14 @@ An ArrayList is a specific kind of a List. A List is the general idea of a list 
 <ul id="choices">
 <li>How do you use Lists?</li>
 <li>How does an ArrayList work?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! How do you use Lists?
 	a: (how * use * list)
 	^reuse(HOW_USE_LIST)
 
+	#! How does an ArrayList work?
 	a: (how * work)
 	^reuse(HOW_ARRAYLIST_WORK)
 
@@ -22,6 +26,10 @@ An ArrayList is a specific kind of a List. A List is the general idea of a list 
 #! how do arraylists work?
 u: HOW_ARRAYLIST_WORK (how * ~arraylist * work)
 An ArrayList is built using an array to store elements. When an element is added, it is put in the last empty index of the array. When an element is removed, all the other elements are moved down to fill in the hole so that the indexes remain consistent. And, because arrays have a fixed amount of space, if you try to add too many elements to an ArrayList, it will need to make a bigger array to hold them all. It will then copy over all the elements from the old array to the new array.
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 
 
 #! what is the difference between an LinkedList and a List?
@@ -30,10 +38,14 @@ An LinkedList is a specific kind of a List. A List is the general idea of a list
 <ul id="choices">
 <li>How do you use Lists?</li>
 <li>How does an LinkedList work?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! How do you use Lists?
 	a: (how * use * list)
 	^reuse(HOW_USE_LIST)
 
+	#! How does an LinkedList work?
 	a: (how * work)
 	^reuse(HOW_LINKEDLIST_WORK)
 
@@ -41,6 +53,10 @@ An LinkedList is a specific kind of a List. A List is the general idea of a list
 #! how does a linkedlist work?
 u: HOW_LINKEDLIST_WORK (how * [~linkedlist] * work)
 An LinkedList is built using object pointers. Each element in the List is stored in an Object that functions like a box. This Object contains both the element at that index and a pointer to the "box" that holds the next element. Basically each element in the List tells us where to find the next element in memory. This type of List can easily add and remove elements because there is no fixed order or size based on an array. We can simply move pointers around or delete them when we need to change the order of elements in the list.
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 
 
 #! what is an arraylist?
@@ -49,10 +65,14 @@ An ArrayList is a specific kind of List that you can instantiate. A List is a da
 <ul id="choices">
 <li>How do you use Lists?</li>
 <li>What is the difference between a List and an ArrayList?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! How do you use Lists?
 	a: (how * use * list)
 	^reuse(HOW_USE_LIST)
 
+	#! What is the difference between a List and an ArrayList?
 	a: (what * difference between * [list ~arraylist] * [list ~arraylist])
 	^reuse(DIFF_LIST_AND_ARRAYLIST)
 
@@ -71,10 +91,14 @@ An LinkedList is a specific kind of List that you can instantiate. A List is a d
 <ul id="choices">
 <li>How do you use Lists?</li>
 <li>What is the difference between a List and an LinkedList?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! How do you use Lists?
 	a: (how * use * list)
 	^reuse(HOW_USE_LIST)
 
+	#! What is the difference between a List and an LinkedList?
 	a: (what * difference between * [list ~linkedlist] * [list ~linkedlist])
 	^reuse(DIFF_LIST_AND_LINKEDLIST)
 
@@ -94,13 +118,18 @@ A List is a data structure that stores a collection of things, with each element
 <li>How do you use Lists?</li>
 <li>What is the difference between a List and an ArrayList?</li>
 <li>What is the difference between a List and an LinkedList?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! How do you use Lists?
 	a: (how * use * list)
 	^reuse(HOW_USE_LIST)
 
+	#! What is the difference between a List and an ArrayList?
 	a: (what * difference between * [list ~arraylist] * [list ~arraylist])
 	^reuse(DIFF_LIST_AND_ARRAYLIST)
 
+	#! What is the difference between a List and an LinkedList?
 	a: (what * difference between * [list ~linkedlist] * [list ~linkedlist])
 	^reuse(DIFF_LIST_AND_LINKEDLIST)
 
@@ -108,6 +137,10 @@ A List is a data structure that stores a collection of things, with each element
 #! how do you use a list?
 u: HOW_USE_LIST (how * use * list)
 The four most important methods when using Lists are <code>add(/*element*/)</code>, <code>remove(/*index or element*/)</code>, <code>get(/*index*/)</code>, and <code>size()</code>. You use <code>add()</code> to add things to the \end (the highest index) of the List, you can use <code>remove()</code> to remove things from your List, you can use <code>get()</code> to get the thing at a certain index, and you can use <code>size()</code> to get the number of things in the List. Each element in the List is stored at an index in the List (starting at 0).
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 ^refine()
 	a: LIST_EXAMPLES ()
 	<ul id="choices">
@@ -118,6 +151,7 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 	<li>Show me an example of the size() method.</li>
 	<li>When should I use a List?</li>
 	</ul>
+		#! Show me an example of creating a List.
 		b: (example * create)
 		Before you can create a List, you need to decide what you're going to put in your List. Note that you can only store Objects in a List (no ints or doubles!). Here's how I would create an array of Strings:
 		<div class="mlcode">
@@ -125,22 +159,31 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 		</div>
 		By putting String in the less than and greater than signs, I'm telling Java that I want to store Strings in my List.
 		<ul id="choices">
+		^feedback_options()
+		</ul>
+		<div class="feedback-info" data-feedback-type="example"></div>
+		<ul id="choices">
 		<li>What if I want a List of ints or doubles?</li>
 		<li>Why did you say ArrayList instead of List?</li>
 		<li>I want to see a another example.</li>
 		</ul>
+			#! I want to see a another example.
 			c: ANOTHER_LIST_EXAMPLE (another example)
 			What other example would you like to see?
 			^refine()
 				d: ()
 				^reuse(LIST_EXAMPLES)
 
+			#! What if I want a List of ints or doubles?
 			c: (list * [ints doubles])
 			If you want a List of a primitive type (like ints, doubles, or booleans), you'll need to use wrapper classes. There's <code>Integer</code> for ints, <code>Double</code> for doubles, and <code>Boolean</code> for booleans.
 			<ul id="choices">
 			<li>Give me an example.</li>
 			<li>What's a wrapper class?</li>
+			^feedback_options()
 			</ul>
+			<div class="feedback-info" data-feedback-type="answer"></div>
+				#! Give me an example.
 				d: (example)
 				Let's say I want to make a List of ints. I would do that like this:
 				<div class="mlcode">
@@ -154,17 +197,19 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 				<ul id="choices">
 				<li>What's a wrapper class?</li>
 				<li>I want to see a another List example.</li>
+				^feedback_options()
 				</ul>
+				<div class="feedback-info" data-feedback-type="example"></div>
 
+				#! What's a wrapper class?
 				d: (what * wrapper)
 				^reuse(~java.WHAT_WRAPPER)
 
-				d: (example)
-				^reuse(ANOTHER_LIST_EXAMPLE)
-
+			#! Why did you say ArrayList instead of List?
 			c: (why * arraylist)
 			^reuse(DIFF_LIST_AND_ARRAYLIST)
 
+		#! Show me an example of the add() method.
 		b: (example * add)
 		You use the <code>add(/*element*/)</code> method to add things to the end of your List. Let's say I have a List of Strings called <code>list</code>. I can add to it like this:
 		<div class="mlcode">
@@ -175,13 +220,17 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 		In this example, "a" is at the start of the List and "c" is at the end. 
 		<ul id="choices">
 		<li>I want to see a another example.</li>
+		^feedback_options()
 		</ul>
+		<div class="feedback-info" data-feedback-type="example"></div>
+			#! I want to see a another example.
 			c: ANOTHER_LIST_EXAMPLE (another example)
 			What other example would you like to see?
 			^refine()
 				d: ()
 				^reuse(LIST_EXAMPLES)
 
+		#! Show me an example of the remove() method.
 		b: (example * remove)
 		The <code>remove(/*index or thing*/)</code> method can be used in 2 ways. You can use it to remove a certain thing from the list or you can use it to remove the thing at a certain index in the list. Let's say I have the list <code>["a", "b", "c"]</code>. Then, I can use remove like this:
 		<div class="mlcode">
@@ -191,13 +240,17 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 		Remember that the indexes of a list start at 0, so when I say <code>remove(0)</code>, it will remove the first thing from the List. 
 		<ul id="choices">
 		<li>I want to see a another example.</li>
+		^feedback_options()
 		</ul>
+		<div class="feedback-info" data-feedback-type="example"></div>
+			#! I want to see a another example.
 			c: ANOTHER_LIST_EXAMPLE (another example)
 			What other example would you like to see?
 			^refine()
 				d: ()
 				^reuse(LIST_EXAMPLES)
 
+		#! Show me an example of the get() method.
 		b: (example * get)
 		The <code>get(/*index*/)</code> method can be used to get the element at the specified index in the List. For example, let's say I have the list <code>["a", "b", "c"]</code>. Them I can use get like this:
 		<div class="mlcode">
@@ -207,23 +260,31 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 		Remember that the indexes of a list start at 0, so when I say <code>get(0)</code>, it will get the first thing from the List. 
 		<ul id="choices">
 		<li>I want to see a another example.</li>
+		^feedback_options()
 		</ul>
+		<div class="feedback-info" data-feedback-type="example"></div>
 			c: ANOTHER_LIST_EXAMPLE (another example)
 			What other example would you like to see?
 			^refine()
 				d: ()
 				^reuse(LIST_EXAMPLES)
 
+		#! Show me an example of the size() method.
 		b: (example * size)
 		The <code>size()</code> method will get the number of things in the List. For example, let's say I have the list <code>["a", "b", "c"]</code>, then <code>list.size() = 3</code>. This method is helpful for making an iterative for loop to go through the List. 
 		<ul id="choices">
 		<li>I want to see a another example.</li>
+		^feedback_options()
 		</ul>
+		<div class="feedback-info" data-feedback-type="example"></div>
+			#! I want to see a another example.
 			c: ANOTHER_LIST_EXAMPLE (another example)
 			What other example would you like to see?
 			^refine()
 				d: ()
 				^reuse(LIST_EXAMPLES)
 
+		#! When should I use a List?
 		b: (when * use)
 		You should use a List when you need to store things in a certain order, but you do not know hoe many things you'll need to store. Lists are better than arrays because they do not have a fixed size. (However, they also take up more memory.)
+		<div class="feedback-info" data-feedback-type="answer"></div>

@@ -24,7 +24,7 @@ Never.
 #! when will i make mad cash
 #! when will i make sick cash
 #! when will i make lots of cash
-u: (when will make [good mad sick lots] {of} cash) 
+u: (when will * make [good mad sick lots] {of} cash) 
 Work hard and the money will come.
 
 
@@ -58,7 +58,6 @@ You should know. It's on like everything here. 1872. The CS department here was 
 
 #! when was Venice founded
 #! when was the US founded
-#! when was Virginia Tech founded
 u: (when was * founded)
 A long time ago.
 
@@ -128,8 +127,8 @@ u: (what people do if they get tired)
 Sleep.
 
 
-#! what * noon
-u: (what time of day is noon) 
+#! what time of day is noon
+u: (what * noon) 
 12pm.
 
 
@@ -161,8 +160,8 @@ u: ([who what] drives)
 Historically, people. Increasingly, robots.
 
 
-#! what do kangroos do
-u: (what * kangroo do) 
+#! what do kangaroos do
+u: (what * kangaroo do) 
 Hop.
 
 
@@ -197,7 +196,8 @@ White.
 
 
 #! what color is the sky on mars
-u: (what color is the sky on mars) Red.
+u: (what color is the sky on mars) 
+Red.
 
 
 #! what color is the sky in your world
@@ -395,8 +395,8 @@ u: (what is a joseki)
 A cool move from the game Go.
 
 
-#! what * yellow light mean
-u: (what does a yellow light mean) 
+#! what does a yellow light mean
+u: (what * yellow light mean) 
 It is supposed to mean "Stop, if it is safe to do do," but many people interpret it as "Speed up!"
 
 

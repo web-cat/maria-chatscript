@@ -56,6 +56,7 @@ You never call this method or constructor in your tests. You need to test the me
 	 To test a method, you will want to make a new test method. If the method you need to test is called <code>method()</code>, you should create a test method called <code>testMethod()</code> and call <code>method()</code> somewhere in that test method. Inside the test method, you'll need to do 3 things: (1) set things up, (2) call the method you're testing, and (3) assert something.
 	<ul id="choices">
 	<li>Give me an example.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="answer"></div>
 		#! Give me an example.
@@ -216,8 +217,9 @@ You never call this method or constructor in your tests. You need to test the me
 									<li>How do I test a for loop?</li>
 									<li>How do I test a while loop?</li>
 									<li>Why does Web-CAT say a line is not tested?</li>
+									^feedback_options()
 									</ul>
-									<div class="feedback-info" data-feedback-type="extended-example"></div>
+									<div class="feedback-info" data-feedback-type="example"></div>
 										#! How do I test an if statement?
 										j: (how * test * if)
 										^reuse(IF_NOT_TESTED)
@@ -255,6 +257,7 @@ This means you never run this line in your tests. If the rest of this method is 
 	<ul id="choices">
 	<li>Give me an example.</li>
 	<li>How do I test an if statement?</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="answer"></div>
 		#! How do I test an if statement?
@@ -298,8 +301,9 @@ This means you never run this line in your tests. If the rest of this method is 
 			</div>
 			<ul id="choices">
 			<li>My if condition is more complicated than that!</li>
+			^feedback_options()
 			</ul>
-			<div class="feedback-info" data-feedback-type="extended-example"></div>
+			<div class="feedback-info" data-feedback-type="example"></div>
 				d: (condition * complicated)
 				^reuse(IF_NOT_TESTED)
 	
@@ -346,6 +350,9 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 			<li>Give me an example.</li>
 			<li>I got it.</li>
 			</li>
+			<ul id="choices">
+			^feedback_options()
+			</ul>
 			<div class="feedback-info" data-feedback-type="answer"></div>
 				#! I got it.
 				d: (got it)
@@ -358,6 +365,9 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 				<li>Ok, now, give me an example.</li>
 				<li>I got it.</li>
 				</il>
+				<ul id="choices">
+				^feedback_options()
+				</ul>
 				<div class="feedback-info" data-feedback-type="answer"></div>
 					#! I got it.
 					e: (got it)
@@ -468,7 +478,10 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 								#! Go on.
 								h: (go on)
 								Now we're done! We have all 3 tests! If you have more than 3 conditions, simply repeat this process for the other conditions, making testing where each condition is false and the others are true.
-								<div class="feedback-info" data-feedback-type="extended-example"></div>
+								<ul id="choices">
+								^feedback_options()
+								</ul>
+								<div class="feedback-info" data-feedback-type="example"></div>
 				
 			#! ORs				
 			c: TEST_OR (ors)
@@ -478,6 +491,9 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 			<li>Give me an example.</li>
 			<li>I got it.</li>
 			</li>
+			<ul id="choices">
+			^feedback_options()
+			</ul>
 			<div class="feedback-info" data-feedback-type="answer"></div>
 				#! I got it.
 				d: (got it)
@@ -490,6 +506,9 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 				<li>Ok, now, give me an example.</li>
 				<li>I got it.</li>
 				</il>
+				<ul id="choices">
+				^feedback_options()
+				</ul>
 				<div class="feedback-info" data-feedback-type="answer"></div>
 					#! I got it.
 					e: (got it)
@@ -601,7 +620,10 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 								#! Go on.
 								h: (go on)
 								Now we're done! We have all 3 tests! If you have more than 3 conditions, simply repeat this process for the other conditions, making testing where each condition is true and the others are false.
-								<div class="feedback-info" data-feedback-type="extended-example"></div>
+								<ul id="choices">
+								^feedback_options()
+								</ul>
+								<div class="feedback-info" data-feedback-type="example"></div>
 			
 			#! A combination of both.
 			c: (combination)
@@ -712,8 +734,9 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 									<ul id="choices">
 									<li>Tell me more about testing just ANDs.</li>
 									<li>Tell me more about testing just ORs.</li>
+									^feedback_options()
 									</ul>
-									<div class="feedback-info" data-feedback-type="extended-example"></div>
+									<div class="feedback-info" data-feedback-type="example"></div>
 										#! Tell me more about testing just ANDs.
 										j: (just ands)
 										^reuse(TEST_AND)
@@ -727,6 +750,7 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 		Nice. You are very lucky. You only need to test 2 possibilities: one where the condition of your if statement is true and one where the condition of your if statement is true. This means you'll have to set up 2 different situations in 2 different tests: 1 situation where that condition is true and one where that situation is false.
 		<ul id="choices">
 		<li>Give me an example.</li>
+		^feedback_options()
 		</ul>
 		<div class="feedback-info" data-feedback-type="answer"></div>
 			#! Give me an example.
@@ -803,11 +827,17 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 						#! Go on.
 						f: (go on)
 						Well that's it! We did it!
-						<div class="feedback-info" data-feedback-type="extended-example"></div>
+						<ul id="choices">
+						^feedback_options()
+						</ul>
+						<div class="feedback-info" data-feedback-type="example"></div>
 	
 	#! A for loop.
 	a: FOR_NOT_TESTED (for)
 	Test for loops is actually pretty easy. Just make sure to that the for loop runs in one of your tests. Usually, you'll only need one test case for for loops because they always run the same number of times.
+	<ul id="choices">
+	^feedback_options()
+	</ul>
 	<div class="feedback-info" data-feedback-type="answer"></div>
 
 	#! A while/do-while loop.			
@@ -815,6 +845,7 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 	Testing while loops is pretty easy, compared to if statements. Basically, for each while loop, you need 2 tests: 1 where the loop doesn't run at all and 1 where the while loop runs any number of times. 
 	<ul id="choices">
 	<li>Give me an example.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="answer"></div>
 		#! Give me an example.
@@ -888,7 +919,10 @@ This is definitely one of the harder Web-CAT errors to fix. But don't worry, we 
 					#! Go on.
 					e: (go on)
 					Now, we're done! We've tested both cases!
-					<div class="feedback-info" data-feedback-type="extended-example"></div>
+					<ul id="choices">
+					^feedback_options()
+					</ul>
+					<div class="feedback-info" data-feedback-type="example"></div>
 					
 
 #! i have not tested all N+1 possibilities 
@@ -907,6 +941,7 @@ In both cases, <code>bool</code> can be true or false. You'll need to make 1 tes
 <ul id="choices">
 <li>Give me an example of testing type 1.</li>
 <li>Give me an example of testing type 2.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! Give me an example of testing type 1.
@@ -1017,8 +1052,9 @@ In both cases, <code>bool</code> can be true or false. You'll need to make 1 tes
 						We don't actually have to rewrite the code to look like this, but we can think about it like this. Now, you just need to write tests the exact same way you would for an if statement!
 						<ul id="choices">
 						<li>How do you test an if statement?</li>
+						^feedback_options()
 						</ul>
-						<div class="feedback-info" data-feedback-type="extended-example"></div>
+						<div class="feedback-info" data-feedback-type="example"></div>
 							#! How do you test an if statement?
 							g: (how * test * if)
 							^reuse(IF_NOT_TESTED)
@@ -1131,8 +1167,9 @@ In both cases, <code>bool</code> can be true or false. You'll need to make 1 tes
 						We don't actually have to rewrite the code to look like this, but we can think about it like this. Now, you just need to write tests the exact same way you would for an if statement!
 						<ul id="choices">
 						<li>How do you test an if statement?</li>
+						^feedback_options()
 						</ul>
-						<div class="feedback-info" data-feedback-type="extended-example"></div>
+						<div class="feedback-info" data-feedback-type="example"></div>
 							#! How do you test an if statement?
 							g: (how * test * if)
 							^reuse(IF_NOT_TESTED)
@@ -1186,6 +1223,7 @@ u: ([how what] * name * test class)
 If your normal class is called <code>SomeClass</code>, you should name your test class <code>SomeClassTest</code>. Make sure the word "Test" is at the end.
 <ul id="choices">
 <li>How do I create a test class?</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! How do I create a test class?
@@ -1203,6 +1241,7 @@ If you're using Greenfoot, simply right-click on on the class you want to make a
 <li>How do I test a for loop?</li>
 <li>How do I test a while loop?</li>
 <li>Why does Web-CAT say a line is not tested?</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! How do I test a method?
@@ -1232,6 +1271,7 @@ To test a constructor, you simply have to call the constructor somewhere in you 
 <ul id="choices">
 <li>Give me an example!</li>
 <li>Ok, I got it.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! Ok, I got it.
@@ -1257,12 +1297,18 @@ To test a constructor, you simply have to call the constructor somewhere in you 
 	nbsp;   assertEquals(2, obj.getField();
 	}
 	</div>
+	<ul id="choices">
+	^feedback_options()
+	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 
 
 #! how do i test a for loop with multiple conditions?
 u: (how * test * for * multiple)
 You probably shouldn't have multiple conditions in a for loop. It makes your code harder to read. Try to get rid of the extra condition or use a while loop instead.
+<ul id="choices">
+^feedback_options()
+</ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -1284,6 +1330,9 @@ u: (how * test * if)
 #! It tells me I haven't created any test cases but I did
 u: WEBCAT_SAYS_NO_TESTS ([tell say] * [have did] not [make create] * test)
 If have made a test but Web-CAT says you don't have a test, this may be because you named the test class or methods wrong. If you have a class called <code>Thing</code>, the test class must be named <code>ThingTest</code> and if you want to test a method called <code>doStuff()</code>, the test method must be called <code>testDoSomething()</code>.
+<ul id="choices">
+^feedback_options()
+</ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -1318,6 +1367,9 @@ String str = "I am a very long string and I need to be broken up onto 2 lines be
 String str = "I am a very long string and I need to be broken up onto " +
 	"2 lines because I am so long.";
 </div>
+<ul id="choices">
+^feedback_options()
+</ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -1334,11 +1386,12 @@ assertEquals(0.2, variable, 0.000001);
 </div>
 <ul id="choices">
 <li>How does the computer store double values?</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! How does the computer store double values?
 	a: (how * store)
-	^reuse(~java.DOUBLE_TECHNICAL)
+	^reuse(~primitive.DOUBLE_TECHNICAL)
 
 
 #! how to use assertequals with doubles

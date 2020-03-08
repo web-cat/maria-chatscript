@@ -1,8 +1,10 @@
-#! how to split a string by slashes
-#! how to cut up a string
 #! what does the equals method do?
 #! how to compare objects?
 #! How to manually upload your program to Web-Cat
-#! index out of range - alias for StringIndexOutOfBounds
 #! tests won't run - computer is slow or infinite loop
-#! indexoutofbounds
+ - Rules for importing: where to import how to import use of * what needs to be imported. 
+ - Rules for incompatible types 
+ - Rules for can't be applied to the given types.
+ - Rules for Greenfoot not responding inifinite loop, recursion, restart
+ submitting cds 
+ - Review NPE rules and see if any new paths need to be added.

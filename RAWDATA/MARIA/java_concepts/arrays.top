@@ -13,13 +13,15 @@ In Java, an array is just a collection of "spots". Each spot has a number and ca
 <li>What about 2D arrays?</li>
 <li>How do I access an array?</li>
 <li>How do I get the length of an array?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 	#! How do I create an array?
 	a: (create)
 	^reuse(CREATE)
 	
 	#! What about 2D arrays?
-	a: (2D)
+	a: (2d)
 	^reuse(2D)
 	
 	#! How do I access an array?
@@ -31,6 +33,7 @@ In Java, an array is just a collection of "spots". Each spot has a number and ca
 	^reuse(LENGTH)
 	
 
+#! How do I use an array?
 u: (how * use * array)
 ^reuse(ARRAY)
 
@@ -44,7 +47,10 @@ Making a 2D array is very similar to making a normal array. Here is the basic st
 </div>
 <ul id="choices">
 <li>Could you give me an example?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! Could you give me an example?
 	a: (example)
 	So, if you wanted to make an array of <code>int</code>s called <code>array</code> that has 2 rows and 3 columns, you want say this:
 	<div class="mlcode">
@@ -56,7 +62,10 @@ Making a 2D array is very similar to making a normal array. Here is the basic st
 	0 0 0 
 	</div>
 	Even though this representation isn't 100% accurate to what's going on, it's very helpful to think about 2D arrays like this.
-	^refine() b: () ^reuse(~feedback.FEEDBACK)
+	<ul id="choices">
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
 
 	
 #! how to make an array
@@ -68,40 +77,56 @@ This is the basic structure of how to make an array:
 <ul id="choices">
 <li>Could you give me an example?</li>
 <li>Tell me more!</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! Could you give me an example?
 	a: (example)
 	So, if you wanted to make an array of <code>int</code>s called <code>array</code> with size 5, you want say this:
 	<div class="mlcode">
 	int[] array = new int[5];
 	</div>
 	Now, <code>array</code> can hold 5 <code>int</code>s. The way that you create arrays is very similar to the way you create other Objects. You have to use the <code>new</code> keyword and say the type of the variable twice, once before the equals sign and once after and the size of the array is kind of like a parameter. 
-	^refine() b: () ^reuse(~feedback.FEEDBACK)
+	<ul id="choices">
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
 	
+	#! Tell me more!
 	a: (tell me more)
 	You can also create arrays using an initializer list like this:
 	<div class="mlcode">
 	int[] array = {1, 2, 3, 4, 5};
 	</div>
-	That lien will create an array of length 5 that holds the number 1 through 5. This is useful if you know exactly what you want to go in your array.
+	That line will create an array of length 5 that holds the number 1 through 5. This is useful if you know exactly what you want to go in your array.
+	<ul id="choices">
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
 
 	
-#! how to use an array
 #! how to access the elements of an array
-u: ACCESS (how * [access use] * array *)
+u: ACCESS (how * access * array *)
 When you want to access an element from an array, remember what arrays are: they are sequences for data points. Each data point has a number or position associated with it. So, to access a specific data point from an array, you'll need its position in the array. For example:
 <div class="mlcode">
 int elementZero = array[0];
 array[1] = 2;
 </div>
 The first line of code will store whatever value is in the first position of the array into the variable <code>elementZero</code>. Then, it will store the value 2 into the array at the second position in the array. You can think of each position in the array as a separate variable that you can use to store values. In the above example, you could replace <code>array[0]</code> with a new variable <code>arrayPosition0</code> and it would function exactly the same.
-^refine() a: () ^reuse(~feedback.FEEDBACK)
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 
 
 # how can i get the size of an array
 # how do i get the length of an array
 u: LENGTH (how * get * [length size] of array)
 You can get the size or length of an array by using <code>.length</code>. For example, if you have an array called <code>a</code>, the length of <code>a</code> would be <code>a.length</code>.
-^refine() a: () ^reuse(~feedback.FEEDBACK)
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 
 
 # how can i change the size of an array
@@ -109,10 +134,15 @@ You can get the size or length of an array by using <code>.length</code>. For ex
 # how to decrease the size of an array
 # can you change the size of an array
 u: CHANGE_SIZE ([how can] * [change increase decrease] * size * array)
-Sadly, in Java, you cannot change the size of an array once it is created. If you need a bigger or smaller array, you need to make a whole new array and copy all of the elements over. 
+Sadly, in Java, you cannot change the size of an array once it is created. If you need a bigger or smaller array, you need to make a whole new array and copy all of the elements over. You could also use a list instead of an array.
 <ul id="choices">
 <li>Could you give me an example?</li>
+<li>What is a list?</li>
+<li>How do I use a list?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! Could you give me an example?
 	a: (example)
 	Yes! So, pretend you declare an array like this:
 	<div class="mlcode">
@@ -128,6 +158,18 @@ Sadly, in Java, you cannot change the size of an array once it is created. If yo
 	</div>
 	Now, the everything that was in <code>array</code> is in <code>biggerArray</code> and you have space for 5! <br/>
 	This is more helpful when you're dealing with arrays that may lose or gain elements dynamically. 
+	<ul id="choices">
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+
+	#! What is a list?
+	a: (what * list)
+	^reuse(~lists.WHAT_LIST)
+
+	#! How do I use a list?
+	a: (how * use * list)
+	^reuse(~lists.HOW_USE_LIST)
 
 
 # how to make an array bigger

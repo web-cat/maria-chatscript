@@ -1,0 +1,295 @@
+# =============================================================================
+# This topic contains information about how to find and use Java documentation.
+# =============================================================================
+topic: ~documentation keep repeat [~helpwith documentation]
+
+
+#! how can i find the documentation for a class 
+#! where can i find documentation for this class
+u: FIND_CLASS_DOCS ([how where] * [find get "look up" see] * documentation * class)
+Are you looking for documentation on a Sofia class (Jeroo, Island, Actor, World, etc.) or a standard Java class (Scanner, ArrayList, HashMap, String, etc.)?
+<ul id="choices">
+<li>Sofia</li>
+<li>Java</li>
+<li>I'm not sure</li>
+</ul>
+	#! Sofia
+	a: FIND_SOFIA (Sofia)
+	In that case your best bet is to open Google and search for "java sofia library ClassName" where ClassName is the name of the class you want documentation for (Jeroo, Island, Actor, World, etc.). Then, open the first search result. It should have a title like "ClassName - Sofia Library | Sofia Library".
+	<ul id="choices">
+	<li>I didn't see that result.</li>
+	<li>How do I find info on a method?</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! I didn't see that result.
+		b: (did not * see)
+		The class you're looking for might be a Java class instead. 
+		^refine()
+			c: ()
+			^reuse(FIND_JAVA)
+
+		#! How do I find info on a method?
+		b: (info * method)
+		^reuse(FIND_METHOD_DOCS)
+
+	#! Java
+	a: FIND_JAVA (Java)
+	In that case your best bet is to open Google and search for "java 8 ClassName" where ClassName is the name of the class you want documentation for (Scanner, ArrayList, HashMap, String, etc.). Then, open the first search result. It should have a title like "ClassName (Java Platform SE 8) - Oracle Help Center".
+	<ul id="choices">
+	<li>I didn't see that result.</li>
+	<li>How do I find info on a method?</li>
+	<li>How do I read this documentation?</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! I didn't see that result.
+		b: (did not * see)
+		The class you're looking for might be a Sofia class instead. 
+		^refine()
+			c: ()
+			^reuse(FIND_SOFIA)
+
+		#! How do I find info on a method?
+		b: (info * method)
+		^reuse(FIND_METHOD_DOCS)
+
+		#! How do I read this documentation?
+		b: (how * read)
+		^reuse(READ_CLASS_DOCS)
+
+	#! I'm not sure
+	a: (not sure)
+	Ok, let's try looking for it as a Java class first.
+	^refine()
+		b: ()
+		^reuse(FIND_JAVA)
+
+
+#! how can i find some class documentation
+#! where can i find the class documentation
+u: ([how where] * [find get "look up" see] * class * documentation)
+^reuse(FIND_CLASS_DOCS)
+
+
+#! how can i find the documentation for a method 
+#! where can i find documentation for this method
+u: FIND_METHOD_DOCS_PRE ([how where] * [find get "look up" see] * documentation * method)
+If you want to find the documentation for a method, first you need to find the documentation for the class the method is in.
+<ul id="choices">
+<li>How do I do that?</li>
+<li>I've done that.</li>
+</ul>
+	#! How do I do that?
+	a: (how * that)
+	^reuse(FIND_CLASS_DOCS)
+
+	#! I've done that.
+	a: FIND_METHOD_DOCS (done that)
+	Excellent! Then, go to the page that has the class documentation. Then, scroll down until you see a section titled "Method Summary" or "Public Methods". These are arranged in alphabetical order. Scroll down until you find the method you want info on.
+	<ul id="choices">
+	<li>Ok, go on.</li>
+	<li>Stop.</li>
+	</ul>
+		#! Stop.
+		b: (stop)
+		Will do.
+
+		#! Ok, go on.
+		b: FIND_METHOD_DOCS_2 (~yes) 
+		Ok, now, click on the method name. This will take you to a much more detailed description of the method.
+		<ul id="choices">
+		<li>How do I read this documentation?</li>
+		^feedback_options()
+		</ul>
+		<div class="feedback-info" data-feedback-type="answer"></div>
+			#! How do I read this documentation?
+			c: (how * read)
+			^reuse(READ_METHOD_DOCS)
+
+
+#! how can i find some method documentation
+#! where can i find the method documentation
+u: ([how where] * [find get "look up" see] * method * documentation)
+^reuse(FIND_METHOD_DOCS_PRE)
+
+
+#! how can i find some documentation
+#! where can i find the documentation
+u: ([how where] * [find get "look up" see] * documentation)
+That depends. Do you want find the documentation for a method or for a class?
+<ul id="choices">
+<li>Method</li>
+<li>Class</li>
+</ul>
+	#! Method
+	a: (method)
+	^reuse(FIND_METHOD_DOCS_PRE)
+
+	#! Class
+	a: (class)
+	^reuse(FIND_CLASS_DOCS)
+
+
+#! how do i read class documentation?
+u: READ_CLASS_DOCS (how * read * class * documentation)
+At the very top of the page, you can find the full name of the class and the parents of the class. Take a look at this example for the Scanner class:
+<div class="mlcode">
+java.lang.Object
+&nbsp;   java.util.Scanner
+</div>
+This means that if you want to import this class, you should say <code>import java.util.Scanner;</code>. It also means that Scanner is a subclass of the Object class. If you can't find documentation for a method in one class, check it's parent.
+<ul id="choices">
+<li>Ok, go on.</li>
+<li>Stop.</li>
+</ul>
+	#! Stop.
+	a: (stop)
+	Will do.
+
+	#! Ok, go on.
+	a: (~yes)
+	Under that, you'll see a summary of how to use the class. If you don't know how to use the class, you should read through this. Below that, you'll see a list of constructors and then a list of methods for the class. If you want info on a method, you should look here.
+	<ul id="choices">
+	<li>How do I find info on a method?</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! How do I find info on a method?
+		b: (info * method)
+		^reuse(FIND_METHOD_DOCS_2)
+
+
+#! how do i read documentation for a class?
+u: (how * read * documentation * class)
+^reuse(READ_CLASS_DOCS)
+
+#! how do i read method documentation?
+u: READ_METHOD_DOCS (how * read * method * documentation)
+The documentation for a methods has 5 parts, in this order: (1) the method header, (2) a summary of how to use the method, (3) information about the parameters, (4) information about what the method returns, and (5) information on any exceptions this method throws. Which would you like to hear more about?
+<ul id="choices">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>Walk me through all of them.</li>
+</ul>
+	#! 1
+	a: P1 (1)
+	The first part of a method's documentation is the method header. It looks like this:
+	<div class="mlcode">
+	public String substring(int beginIndex, int endIndex)
+	</div>
+	This tells us a lot about the method.
+	<ul>
+	<li><code>public</code> - The method is public and we can use it.</li>
+	<li><code>String</code> - This is the return type. The method returns a String.</li>
+	<li><code>substring</code> - This is the name of the method.</li>
+	<li><code>int beginIndex, int endIndex</code> - These are the parameters that the method takes. This method requires us to put two ints in the parentheses.</li>
+	</ul>
+	<ul id="choices">
+	<li>Tell me about the next part.</li>
+	<li>Show me the list of parts again.</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! Tell me about the next part.
+		b: (next part)
+		^reuse(P2)
+
+		#! Show me the list of parts again.
+		b: (list * parts)
+		^reuse(READ_METHOD_DOCS)
+
+	#! 2
+	a: P2 (2)
+	The second part of a method's documentation is a description of how to use the method. It looks like this:
+	<div class="mlcode">
+	Returns a string that is a substring of this string. The substring begins at the specified beginIndex and extends to the character at index endIndex - 1. Thus the length of the substring is endIndex-beginIndex.
+	</div>
+	If you don't know how to use a method, you should read this. It will tell you the basics of what you need to know to use the method.
+	<ul id="choices">
+	<li>Tell me about the next part.</li>
+	<li>Show me the list of parts again.</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! Tell me about the next part.
+		b: (next part)
+		^reuse(P3)
+
+		#! Show me the list of parts again.
+		b: (list * parts)
+		^reuse(READ_METHOD_DOCS)
+
+	#! 3
+	a: P3 (3)
+	The third part of a method's documentation is a description of what each parameter. It looks like this:
+	<div class="mlcode">
+	Parameters:
+	beginIndex - the beginning index, inclusive.
+	endIndex - the ending index, exclusive.
+	</div>
+	This tells you what each parameter is used for and the kind of values that should be used for it. If you are confused about what a parameter does, you should look at this section.
+	<ul id="choices">
+	<li>Tell me about the next part.</li>
+	<li>Show me the list of parts again.</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! Tell me about the next part.
+		b: (next part)
+		^reuse(P4)
+
+		#! Show me the list of parts again.
+		b: (list * parts)
+		^reuse(READ_METHOD_DOCS)
+
+	#! 4
+	a: P4 (4)
+	The forth part of a method's documentation is a description of what the method returns. It looks like this:
+	<div class="mlcode">
+	Returns:
+	the specified substring.
+	</div>
+	This tells you what the method returns. If you are confused about what a method returns, you should look here. It doesn't just tell you the return type, it also tells you what the value means.
+	<ul id="choices">
+	<li>Tell me about the next part.</li>
+	<li>Show me the list of parts again.</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! Tell me about the next part.
+		b: (next part)
+		^reuse(P5)
+
+		#! Show me the list of parts again.
+		b: (list * parts)
+		^reuse(READ_METHOD_DOCS)
+
+	#! 5
+	a: P5 (5)
+	The fifth and last part of a method's documentation is a list of all the exceptions this method can throw. It looks like this:
+	<div class="mlcode">
+	Throws:
+	IndexOutOfBoundsException - if the beginIndex is negative, or endIndex is larger than the length of this String object, or beginIndex is larger than endIndex.
+	</div>
+	This tells you why the method will throw certain exceptions. If you are getting an exception and you don't know why, you should look here and then use the information to try and fix the problem. 
+	<ul id="choices">
+	<li>Show me the list of parts again.</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! Show me the list of parts again.
+		b: (list * parts)
+		^reuse(READ_METHOD_DOCS)
+
+	#! Walk me through all of them.
+	a: (all of them)
+	^reuse(P1)
+
+
+#! how do i read documentation for a method?
+u: (how * read * documentation * method)
+^reuse(READ_METHOD_DOCS)

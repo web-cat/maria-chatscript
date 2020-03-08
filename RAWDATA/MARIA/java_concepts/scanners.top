@@ -10,6 +10,7 @@ A Scanner is a class in Java that makes it easier to deal with text input. It ma
 <ul id="choices">
 <li>How do I use a Scanner?</li>
 <li>How does a Scanner work?</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 
@@ -35,9 +36,9 @@ scan.next();  // = "programming!"
 </div>
 <ul id="choices">
 <li>How do I use a Scanner?</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
-
 
 #! Give me an example of how to use a Scanner.
 u: EXAMPLE (example * scanner)
@@ -46,6 +47,7 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 <li>Ok, go on.</li>
 <li>Stop.</li>
 </ul>
+<div class="feedback-info" data-feedback-type="start-extended-example"></div>
 	#! Stop.
 	a: (stop)
 	Will do!
@@ -176,8 +178,9 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 							<li>How do I get things from the Scanner?</li>
 							<li>I want to know how to use a Scanner method.</li>
 							<li>Give me an example of how to use a Scanner.</li>
+							^feedback_options()
 							</ul>
-							<div class="feedback-info" data-feedback-type="extended-example"></div>
+							<div class="feedback-info" data-feedback-type="example"></div>
 								#! I want to know how to use a Scanner method.
 								h: (scanner method)
 								Which method do want to hear about?
@@ -206,11 +209,15 @@ Make sure to import the Scanner class at the top of your Java file with this: <c
 <li>How do I get things from the Scanner?</li>
 <li>I want to know how to use a Scanner method.</li>
 <li>Give me an example of how to use a Scanner.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! Show me the documentation!
 	a: (documentation)
 	Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#Scanner-java.lang.String-">official Java documentation for this constructor</a>!
+	<ul id="choices">
+	^feedback_options()
+	</ul>
 	<div class="feedback-info" data-feedback-type="answer"></div>
 
 	#! I want to know how to use a Scanner method.
@@ -235,6 +242,7 @@ The <code>next()</code> method is a method you call on a Scanner. It gets the ne
 <ul id="choices">
 <li>Give me an example.</li>
 <li>I want to know how to do something else.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want to know how to do something else.
@@ -252,6 +260,7 @@ The <code>next()</code> method is a method you call on a Scanner. It gets the ne
 	<ul id="choices">
 	<li>Show me the documentation!</li>
 	<li>I want to know how to do something else.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 		#! I want to know how to do something else.
@@ -261,6 +270,9 @@ The <code>next()</code> method is a method you call on a Scanner. It gets the ne
 		#! Show me the documentation!
 		b: (documentation)
 		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#next--">official Java documentation for this method</a>!
+		<ul id="choices">
+		^feedback_options()
+		</ul>
 		<div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -277,6 +289,7 @@ The <code>hasNext()</code> method is a method you call on a Scanner. It will eit
 <ul id="choices">
 <li>Give me an example.</li>
 <li>I want to know how to do something else.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want to know how to do something else.
@@ -302,6 +315,7 @@ The <code>hasNext()</code> method is a method you call on a Scanner. It will eit
 	<ul id="choices">
 	<li>Show me the documentation!</li>
 	<li>I want to know how to do something else.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 		#! I want to know how to do something else.
@@ -311,6 +325,9 @@ The <code>hasNext()</code> method is a method you call on a Scanner. It will eit
 		#! Show me the documentation!
 		b: (documentation)
 		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#hasNext--">official Java documentation for this method</a>!
+		<ul id="choices">
+		^feedback_options()
+		</ul>
 		<div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -327,6 +344,7 @@ The <code>nextInt()</code> method is a method you call on a Scanner. It is simil
 <ul id="choices">
 <li>Give me an example.</li>
 <li>I want to know how to do something else.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want to know how to do something else.
@@ -346,6 +364,7 @@ The <code>nextInt()</code> method is a method you call on a Scanner. It is simil
 	<ul id="choices">
 	<li>Show me the documentation!</li>
 	<li>I want to know how to do something else.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 		#! I want to know how to do something else.
@@ -355,6 +374,9 @@ The <code>nextInt()</code> method is a method you call on a Scanner. It is simil
 		#! Show me the documentation!
 		b: (documentation)
 		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#nextInt--">official Java documentation for this method</a>!
+	<ul id="choices">
+	^feedback_options()
+	</ul>
 	<div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -371,6 +393,7 @@ The <code>hasNextInt()</code> method is a method you call on a Scanner. It is si
 <ul id="choices">
 <li>Give me an example.</li>
 <li>I want to know how to do something else.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want to know how to do something else.
@@ -394,6 +417,7 @@ The <code>hasNextInt()</code> method is a method you call on a Scanner. It is si
 	<ul id="choices">
 	<li>Show me the documentation!</li>
 	<li>I want to know how to do something else.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 		#! I want to know how to do something else.
@@ -403,6 +427,9 @@ The <code>hasNextInt()</code> method is a method you call on a Scanner. It is si
 		#! Show me the documentation!
 		b: (documentation)
 		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#hasNextInt--">official Java documentation for this method</a>!
+		<ul id="choices">
+		^feedback_options()
+		</ul>
 		<div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -419,6 +446,7 @@ The <code>nextDouble()</code> method is a method you call on a Scanner. It is si
 <ul id="choices">
 <li>Give me an example.</li>
 <li>I want to know how to do something else.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want to know how to do something else.
@@ -437,6 +465,7 @@ The <code>nextDouble()</code> method is a method you call on a Scanner. It is si
 	<ul id="choices">
 	<li>Show me the documentation!</li>
 	<li>I want to know how to do something else.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 		#! I want to know how to do something else.
@@ -446,6 +475,9 @@ The <code>nextDouble()</code> method is a method you call on a Scanner. It is si
 		#! Show me the documentation!
 		b: (documentation)
 		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#nextDouble--">official Java documentation for this method</a>!
+		<ul id="choices">
+		^feedback_options()
+		</ul>
 		<div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -462,6 +494,7 @@ The <code>hasNextDouble()</code> method is a method you call on a Scanner. It is
 <ul id="choices">
 <li>Give me an example.</li>
 <li>I want to know how to do something else.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want to know how to do something else.
@@ -485,6 +518,7 @@ The <code>hasNextDouble()</code> method is a method you call on a Scanner. It is
 	<ul id="choices">
 	<li>Show me the documentation!</li>
 	<li>I want to know how to do something else.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 		#! I want to know how to do something else.
@@ -494,6 +528,9 @@ The <code>hasNextDouble()</code> method is a method you call on a Scanner. It is
 		#! Show me the documentation!
 		b: (documentation)
 		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#hasNextDouble--">official Java documentation for this method</a>!
+		<ul id="choices">
+		^feedback_options()
+		</ul>
 		<div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -510,6 +547,7 @@ The <code>nextLine()</code> method is a method you call on a Scanner. It is simi
 <ul id="choices">
 <li>Give me an example.</li>
 <li>I want to know how to do something else.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want to know how to do something else.
@@ -530,6 +568,7 @@ The <code>nextLine()</code> method is a method you call on a Scanner. It is simi
 	<ul id="choices">
 	<li>Show me the documentation!</li>
 	<li>I want to know how to do something else.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 		#! I want to know how to do something else.
@@ -539,6 +578,9 @@ The <code>nextLine()</code> method is a method you call on a Scanner. It is simi
 		#! Show me the documentation!
 		b: (documentation)
 		Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#nextLine--">official Java documentation for this method</a>!
+		<ul id="choices">
+		^feedback_options()
+		</ul>
 		<div class="feedback-info" data-feedback-type="answer"></div>
 
 
@@ -555,6 +597,7 @@ The <code>hasNextLine()</code> method is a method you call on a Scanner. It is s
 <ul id="choices">
 <li>Give me an example.</li>
 <li>I want to know how to do something else.</li>
+^feedback_options()
 </ul>
 <div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want to know how to do something else.
@@ -582,6 +625,7 @@ The <code>hasNextLine()</code> method is a method you call on a Scanner. It is s
 	<ul id="choices">
 	<li>Show me the documentation!</li>
 	<li>I want to know how to do something else.</li>
+	^feedback_options()
 	</ul>
 	<div class="feedback-info" data-feedback-type="example"></div>
 		#! I want to know how to do something else.

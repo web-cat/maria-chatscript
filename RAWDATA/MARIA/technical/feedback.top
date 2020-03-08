@@ -104,3 +104,33 @@ u: (suggestion)
 	<span class="feedback">Sorry, I don't know why I thought you wanted to give me a suggestion.</span>
 	a: ()
 	<span class="feedback">Duly noted.</span>
+
+u: ANSWER_FEEDBACK ("GIVE FEEDBACK")
+You're giving feedback on this answer. Is this feedback positive or negative?
+<ul id="choices">
+<li>Positive</li>
+<li>Negative</li>
+<li>I don't want to give feedback.</li>
+</ul>
+	#! Positive
+	a: (positive)
+	Ok. What was good? (Please type out your response.)
+		b: ()
+		Thanks for the feedback! 
+
+	#! Negative
+	a: ([negative ~no])
+	Ok. What was bad? (You can also type out your own response.)
+	<ul id="choices">
+	<li>The answer/example was not helpful.</li>
+	<li>The answer/example was not formatted correctly.</li>
+	<li>The answer/example was too long.</li>
+	<li>I did not understand the answer/example.</li>
+	</ul>
+		b: ()
+		Thanks for the feedback! 
+
+	#! I don't want to give feedback.
+	a: (not * feedback)
+	Ok. No worries!
+

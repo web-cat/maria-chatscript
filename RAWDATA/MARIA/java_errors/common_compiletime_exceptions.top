@@ -1,0 +1,76 @@
+# =============================================================================
+# This topic contains information about common Java compile-time errors.
+# =============================================================================
+topic: ~common_compiletime_exceptions keep repeat [what why exception error ~helpwith]
+
+#! what causes incompatible types
+#! what causes the incompatibletype error
+#! why did i get an incompatibletypes
+#! why did the incompatibletype happen
+#! what is an incompatible type
+u: INCOMPATIBLE_TYPE (~helpwith * ~incompatibletype)
+The error can happen for many reasons but the basic idea is that Java was expecting one type and it found another. You need to change the found type into the expected type. For example, if Java gives me this error:
+<div class="mlcode">
+Incompatible types: java.lang.String cannot be converted to int
+</div>
+This means I need to change the String on the highlighted line into an int.
+<ul id="choices">
+<li>Can you help me fix this error?</li>
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! Can you help me fix this error?
+	a: IT_Q1 (help * fix * error)
+	Sure! Is the error happening when you try to assign a value to a variable?
+	<ul id="choices">
+	<li>Yes</li>
+	<li>No</li>
+	</ul>
+		#! Yes
+		b: (~yes)
+		Ok, make sure that the type of the variable is correct. For example:
+		<div class="mlcode">
+		int i = "hi";
+		</div>
+		This code will not work because the I said that <code>i</code> was an int, but then I tried to give it a String value. Make sure you're not doing this. You may have to scroll up to find where you declared the variable. In this case, I either need to change <code>i</code> to be a String (<code>String i = "hi";</code>) or change "hi" to a number (<code>int i = 2;</code>).
+		<ul id="choices">
+		<li>Any other suggestions?</li>
+		^feedback_options()
+		</ul>
+		<div class="feedback-info" data-feedback-type="fix"></div>
+			#! Any other suggestions?
+			c: (suggestions)
+			^reuse(IT_Q2)
+
+		#! No
+		b: IT_Q2 (~no)
+		Ok, does the error show up on a line where you're calling a method?
+		<ul id="choices">
+		<li>Yes</li>
+		<li>No</li>
+		</ul>
+			#! Yes
+			c: (~yes)
+			Ok, make sure the method returns the type of thing you expect. For example:
+			<div class="mlcode">
+			\if (Random.nextInt())
+			</div>
+			In this code, I'm trying to use <code>nextInt()</code> in the if statement, but <code>nextInt()</code> returns an int and only booleans can be used inside an if statement. So, I would need to change the if statement to: <code>if (Random.nextInt() == 1)</code>. Look up the documentation for the method your using to find out what type of thing the method returns.
+			<ul id="choices">
+			<li>Any other suggestions?</li>
+			<li>How do I look up the documentation?</li>
+			^feedback_options()
+			</ul>
+			<div class="feedback-info" data-feedback-type="fix"></div>
+				#! How do I look up the documentation?
+				d: (how * documentation)
+				^reuse(~documentation.FIND_METHOD_DOCS_PRE)
+
+				#! Any other suggestions?
+				d: (suggestions)
+				^reuse(IT_Q1)
+
+			#! No
+			c: IT_Q2 (~no)
+
+u: CANNOT_BE_APPLIED_TO_TYPES (0=1)

@@ -1,1 +1,4 @@
  - Rules for importing: where to import how to import use of * what needs to be imported. 
+ - Rules for incompatible types 
+ - Rules for can't be applied to the given types.
+ - Rules for Greenfoot not responding inifinite loop, recursion, restart

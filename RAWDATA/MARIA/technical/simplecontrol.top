@@ -56,6 +56,9 @@ u: () # main per-sentence processing
 	{
 		^reuse(mariatechnical.OLD_SETCHATVARS)
 	}
+	else if (^match("GIVE FEEDBACK")) {
+		^reuse(feedback.ANSWER_FEEDBACK)
+	}
 
 	$_responseCount = %response
 	if ($singleResponse) {$_responseCount = 0} # disable this to respond to each sentence in a volley

@@ -46,7 +46,6 @@ You can ask me about things related to Java, programming, or debugging. Some pop
 
 #! hello
 #! hi
-#! what's up
 u: (~emohello)
 Hello! How can I help you today?
 <ul id="choices">
@@ -116,6 +115,7 @@ I'm not sure what you're doing wrong but I can try to help. What are you having 
 
 
 #! how are you
+#! what's up
 u: ([~emohowzit])
 I'm doing pretty good. You?
 	#! good

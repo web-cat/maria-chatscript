@@ -1,0 +1,78 @@
+# =============================================================================
+# This topic contains information about Java primitives (int, double, etc.).
+# =============================================================================
+topic: ~primitive keep repeat [how what ~primitives primitive]
+
+
+#! what is a primitive type
+#! what is a primitive
+u: WHAT_PRIMITIVE (what * primitive)
+In Java, a primitive type is a type that is not an Object. These are types like <code>int</code>, <code>double</code>, and <code>boolean</code>. You cannot call methods on primitive variables.
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what is an int
+u: (what is * int)
+In Java, <code>int</code>s are primitive types that store can store integer (non-decimal) numbers.
+<ul id="choices">
+<li>Tell me more!</li>
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! Tell me more!
+	a: (tell me more)
+	The biggest number an <code>int</code> can store is 2^31 - 1 and the smallest number is -2^31. If you really need to store a number like 10 zillion, you could try using the BigInteger class.
+	<ul id="choices">
+	<li>Tell me more!</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! Tell me more!
+		b: (tell me more)
+		The BigInteger class is used to store REALLY big numbers. You can read about it on <a href="https://docs.oracle.com/javase/7/docs/api/java/math/BigInteger.html">the Java website.</a>
+		<ul id="choices">
+		^feedback_options()
+		</ul>
+		<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what is a boolean
+u: (what is * boolean)
+The <code>boolean</code> data type can hold 2 values: true and false. This type of variable is usually used for simple conditions like if something can be done or if something has happened. If you have a yes or no question, a <code>boolean</code> is the perfect type of variable to store the result!
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what is a double
+u: WHAT_DOUBLE (what is * double)
+The <code>double</code> data type can hold decimal values. You'll want to use this type to store numbers that can have decimal (non-integer) values. If a number never has a decimal (it is always an integer), you should probably use an <code>int</code> instead.
+<ul id="choices">
+<li>How are doubles stored in memory?</li>
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! How are doubles stored in memory?
+	a: DOUBLE_TECHNICAL (doubles * store * memory)
+	On a technical level, <code>double</code>s are stored as a number times ten to a power (x * 10^y). So, these numbers are not 100% accurate. They also have a limited amount of space in which to store their numbers, so they also get less precise as the number gets very big or very small.
+	<ul id="choices">
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+
+
+#! what is a float
+u: (what is * float)
+The <code>float</code> data type is very similar to the <code>double</code> type but, <code>float</code>s take up less space and so are less precise. In most cases, you should probably just use a double.
+<ul id="choices">
+<li>What is a double?</li>
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! What is a double?
+	a: (what * double)
+	^reuse(WHAT_DOUBLE)

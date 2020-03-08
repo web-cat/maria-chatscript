@@ -3,6 +3,7 @@
 # =============================================================================
 topic: ~debugging keep repeat [~debug code how debug]
 
+
 #! how do I debug my code
 u: HOW_DEBUG (how * debug)
 There's a few different ways you can go about debugging your code. Here they are from easiest to hardest: (1) look through the code again, (2) add some print statements, and (3) use the debugger.
@@ -11,24 +12,33 @@ There's a few different ways you can go about debugging your code. Here they are
 <li>Tell me more about option 2.</li>
 <li>Tell me more about option 3.</li>
 </ul>
+	#! Tell me more about option 1.
 	a: LOOK_AT_CODE (1)
 	This one's pretty easy. Once you know where the problem is happening, just look at the code again. Try walking through the code in your head and pay close attention to your if statements and loops. Are the conditions correct? Does everything make sense?
 	<ul id="choices">
 	<li>I want to try using print statements.</li>
 	<li>I want to try using the debugger.</li>
+	^feedback_options()
 	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! I want to try using print statements.
 		b: (print statements)
 		^reuse(INSTRUMENT_CODE)
 
+		#! I want to try using the debugger.
 		b: (debugger)
 		^reuse(HOW_USE)
 
+	#! Tell me more about option 2.
 	a: INSTRUMENT_CODE (2)
 	You can use print statements to help figure out what is going wrong in your code. Use the print statements to print out the values of variables. This will let you see what is happening in the code and you can figure out why the code isn't working. 
 	<ul id="choices">
 	<li>How do I write a print statement?</li>
 	<li>Give me an example.</li>
+	^feedback_options()
 	</ul>
+	<div class="feedback-info" data-feedback-type="answer"></div>
+		#! How do I write a print statement?
 		b: (how * print statement)
 		A print statement will look like these:
 		<div class="mlcode">
@@ -39,10 +49,14 @@ There's a few different ways you can go about debugging your code. Here they are
 		You can print out plain strings to make sure certain code was executed, the return values of methods to make sure they are doing the right thing, and the value of variables to make sure they are assigned correctly. 
 		<ul id="choices">
 		<li>Ok, now give me an example.</li>
+		^feedback_options()
 		</ul>
-			c: (example)
+		<div class="feedback-info" data-feedback-type="answer"></div>
+			#! Ok, now give me an example.
+			c: (~yes)
 			^reuse(INSTRUMENT_CODE_EXAMPLE)
 
+		#! Give me an example.
 		b: INSTRUMENT_CODE_EXAMPLE (example)
 		Let's say I have this code:
 		<div class="mlcode">
@@ -69,9 +83,11 @@ There's a few different ways you can go about debugging your code. Here they are
 		<li>Go on.</li>
 		<li>Stop.</li>
 		</ul>
+			#! Stop.
 			b: (stop)
 			Ok, will do.
 
+			#! Go on.
 			b: (go on)
 			Ok, so let's add some print statements to help us see what is going on here. Now, the code looks like this:
 			<div class="mlcode">
@@ -99,9 +115,11 @@ There's a few different ways you can go about debugging your code. Here they are
 			<li>Go on.</li>
 			<li>Stop.</li>
 			</ul>
+				#! Stop.
 				c: (stop)
 				Ok, will do.
 
+				#! Go on.
 				c: (go on)
 				Now, let's add another print statement:
 				<div class="mlcode">
@@ -138,9 +156,11 @@ There's a few different ways you can go about debugging your code. Here they are
 				<li>Go on.</li>
 				<li>Stop.</li>
 				</ul>
+					#! Stop.
 					d: (stop)
 					Ok, will do.
 
+					#! Go on.
 					d: (go on)
 					Now, let's fix our code:
 					<div class="mlcode">
@@ -176,10 +196,14 @@ There's a few different ways you can go about debugging your code. Here they are
 					Now, test is printed out once, so we correctly change the value of lowest from 100 to 1! We did it! Our code works now! It will correctly return 1!
 					<ul id="choices">
 					<li>I want to try using the debugger.</li>
+					^feedback_options()
 					</ul>
+					<div class="feedback-info" data-feedback-type="example"></div>
+						#! I want to try using the debugger.
 						e: (debugger)
 						^reuse(HOW_USE)
 
+	#! Tell me more about option 3.
 	a: USE_DEBUGGER (3)
 	^reuse(HOW_USE)
 
@@ -192,33 +216,43 @@ Don't be intimidated by using a debugger. It's much easier than you think. Trust
 <ul id="choices">
 <li>Ok, go on.</li>
 </ul>
+	#! Ok, go on.
 	a: REAL_START_HOW_USE (~yes)
 	The first step to using a debugger is setting breakpoints. You can set a breakpoint in most IDEs by simply clicking (or double clicking) on (or near) the line numbers. You should see a circle of some kind when you do that. You can even do this in Greenfoot!
 	<ul id="choices">
 	<li>Ok, go on.</li>
 	</ul>
+		#! Ok, go on.
 		b: (~yes)
 		If you are debugging a specific error, you should probably set your breakpoint on the line that's causing the error or a line above it.
 		<ul id="choices">
 		<li>Ok, go on.</li>
 		</ul>
+			#! Ok, go on.
 			c: (~yes)
 			Once you have your breakpoints setup, you can run your code in debug mode. This is usually done by hitting a bug-shaped button near the normal run button. In Greenfoot, it is done by just hitting "Run".
 			<ul id="choices">
 			<li>Ok, go on.</li>
 			</ul>
+				#! Ok, go on.
 				d: (~yes)
 				Then, your code will run up until the line where you set the breakpoint. Once it stops running, you will see a list of the variables that are visible at that point in the code. There are also places where you can write expressions and evaluate them.
 				<ul id="choices">
 				<li>Ok, go on.</li>
 				</ul>
+					#! Ok, go on.
 					e: (~yes)
 					If you are done looking at the variables from the line where set the breakpoint, you can either Step Over, Step Into, Resume, or Terminate.
 					<ul id="choices">
 					<li>Ok, go on.</li>
 					</ul>
+						#! Ok, go on.
 						f: (~yes)
 						Step Over is just a normal step to the next line. Step Into means that if a function is called on the current line, you will step into that function. Resume means that the code will keep running until the next breakpoint or until it finishes. Terminate means that the code will just running, closing the debugger.
+						<ul id="choices">
+						^feedback_options()
+						</ul>
+						<div class="feedback-info" data-feedback-type="answer"></div>
 	
 
 #! what is the debugger used for
@@ -227,7 +261,10 @@ u: WHAT_FOR (what * ~debug * for)
 The debugger is a powerful tool, much more powerful than PRINT statements. If you ever run into a problem that you don't know how to solve, the first thing you should do is use the debugger.
 <ul id="choices">
 <li>How do I use it?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! How do I use it?
 	a: (how * use * [it ~debug])
 	^reuse(HOW_USE)
 
@@ -238,10 +275,15 @@ The debugger is a powerful tool, much more powerful than PRINT statements. If yo
 u: (why * [need use] * ~debug)
 ^reuse(WHAT_FOR)
 
+
+#! why won't my code work
+u: (why * not * code * work)
+^reuse(CODE_NO_WORK)
+
+
 #! my code doesn't work
 #! my code won't work
-#! why won't my code work
-u: (code * ["does not" "will not" "won't" "doesn't" "isn't" "not"] [work working])
+u: CODE_NO_WORK (code * [will do] not * [work working])
 That's very unfortunate. There's many things that could be causing that. What's the issue? (You can select an option or type your own.)
 <ul id="choices">
 <li>I'm getting an exception when I run my code.</li>
@@ -249,46 +291,57 @@ That's very unfortunate. There's many things that could be causing that. What's 
 <li>My tests are failing.</li>
 <li>My code isn't doing the right thing.</li>
 </ul>
-
+	#! I'm getting an exception when I run my code.
 	a: (exception)
 	^reuse(~common_exceptions.EXP_HELP)
 	
+	#! My code won't compile!
 	a: ([no "won't" not] compile)
 	Often times, the complier error will tell you what is wrong. Read the complier error message carefully and see if you can figure it out from there. Otherwise, tell me what error you're getting.
-		
 		b: ()
 		^input(what is %originalinput error)
 	
-	a: (test * falling)
+	#! My tests are failing.
+	a: (test * fail)
 	Ok. That's unfortunate. First, is the test failing because of an exception or because of a failed assertion?
 	<ul id="choices">
 	<li>Exception.</li>
 	<li>Failed assertion.</li>
 	</ul>
+		#! Exception.
 		b: (exception)
 		That's great! So, testing is actually supposed to help you find bugs, like ones that cause exceptions. You've found a bug! Now, you just need to fix it. First, you'll want to isolate the problem as much as possible. Look at the error you're getting. If you see multiple non-test method you wrote in the error message, you may want to write another test for the method highest up on the list.
 		<ul id="choices">
-		<li>Ok.</li>
+		<li>Ok, go on.</li>
 		<li>I figured it out.</li>
 		</ul>
+			#! Ok, go on.
 			c: (~yes)
 			Awesome. Now that you've isolated the problem, you just need to figure out what's causing it. You can use <code>System.out.println( /* some variable */ );</code> to help you figure out what is going wrong. Print out a lot of variables and see where the variable's values go wrong. Other than that, you can also ask me about the exception you are getting.  
-				d: (~yes)
-				Hope that helped.
+			<ul id="choices">
+			^feedback_options()
+			</ul>
+			<div class="feedback-info" data-feedback-type="answer"></div>
 			
-			c: ()
+			#! I figured it out.
+			c: (figure * out)
 			Ok, I'll stop my explanation.
 	
+		#! Failed assertion.
 		b: (assertion)
 		First make sure that you are expecting the right value. Go through your test and make sure you correctly calculated all the expected values. 
 		<ul id="choices">
 		<li>Ok, what next?</li>
 		<li>I figured it out.</li>
 		</ul>
+			#! Ok, what next?
 			c: (~yes)
 			Awesome. Now, look at the error message and see where it's happening. Look in that method and use <code>System.out.println( /* some variable */ );</code> to print out the variables in your method to see what is going wrong. You can also add those print statements to other methods called by the one that's giving the wrong result.
-				d: (~yes)
-				Hope that helped.
+			<ul id="choices">
+			^feedback_options()
+			</ul>
+			<div class="feedback-info" data-feedback-type="answer"></div>
 			
-			c: ()
+			#! I figured it out.
+			c: (figure * out)
 			Ok, I'll stop my explanation.

@@ -3,20 +3,40 @@
 # =============================================================================
 topic: ~programming keep repeat [what how when why]
 
+#! What is abstraction?
 u: (what is abstraction)
 Abstraction is basically when you remove details. For example, you make a method that sorts a list with some for loops. But, int he description, you can abstract away the details of how you sort the list and just say that the method sorts a list. Abstraction is caring about what is getting done, not how.
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 
 
+#! What is C++?
 u: (what is c++) 
 C++ is a programming language descendant from C. It also serves as a basis for many other languages, like Java.
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 
 
+#! What is Python?
 u: (what is python)
 Python is a programming language that resembles pseudo-code. It is extremely easy and fun to write! I highly recommend it!
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 
 
+#! What is Java?
 u: (what * java)
 Java is a popular programming language with precise, verbose syntax.
+<ul id="choices">
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 
 
 #! what are off-by-one errors?
@@ -29,3 +49,4 @@ for (int i = 0; i < variable + 1; i++)
 // or
 for (int i = 0; i < variable - 1; i++)
 </div>
+<div class="feedback-info" data-feedback-type="answer"></div>

@@ -14,7 +14,9 @@ Notice how <code>substr</code> does not contain the character at index 5 (the pe
 <ul id="choices">
 <li>Yes!</li>
 <li>No, thanks.</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 	a: SUBSTRING_QUESTIONS (~yes) 
 	[Try this one!][Give this one a shot.][I know you can get this one.][Try this.]
 	<p>What will be stored in the variable <code>substr</code> after the execution of the following code?</p>
@@ -28,11 +30,11 @@ Notice how <code>substr</code> does not contain the character at index 5 (the pe
 	String substr = str.substring(1, 2);
 	</pre>
 	$q=2]
-		
+		#! abcde
 		b: CORRECT ($q=1 abcde)
 		[Right!][Yep!][You got it!]
 		<p>Want to try another?</p>
-		
+			#! yes
 			c: (~yes)
 			^reuse(SUBSTRING_QUESTIONS)
 		
@@ -68,7 +70,9 @@ int i = Integer.parseInt("12");
 After running this code, <code>i</code> will have a value of <code>12</code>.
 <ul id="choices">
 <li>I want more info!</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want more info!
 	a: (more info)
 	Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#parseInt-java.lang.String-">official Java documentation for this method</a>.
@@ -86,7 +90,9 @@ double d = Double.parseDouble("12.5");
 After running this code, <code>d</code> will have a value of <code>12.5</code>.
 <ul id="choices">
 <li>I want more info!</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want more info!
 	a: (more info)
 	Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html#parseDouble-java.lang.String-">official Java documentation for this method</a>.
@@ -98,7 +104,9 @@ First, you'll need to get the number by itself. For example, if you have a Strin
 <ul id="choices">
 <li>How can I get the number by itself?</li>
 <li>How do I use parseInt?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 	#! How can I get the number by itself?
 	a: (how * number * by itself)
 	There are many things you could try! You could use the <code>substring()</code> method in the String class, the <code>split()</code> method in the String class, or a Scanner! 
@@ -130,7 +138,9 @@ First, you'll need to get the number by itself. For example, if you have a Strin
 <ul id="choices">
 <li>How can I get the number by itself?</li>
 <li>How do I use parseDouble?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 	#! How can I get the number by itself?
 	a: (how * number * by itself)
 	There are many things you could try! You could use the <code>substring()</code> method in the String class, the <code>split()</code> method in the String class, or a Scanner! 
@@ -151,7 +161,7 @@ First, you'll need to get the number by itself. For example, if you have a Strin
 		b: (how * scanner)
 		^reuse(~scanners.HOW_USE)
 
-	#! How do I use parseInt?
+	#! How do I use parseDouble?
 	a: (how * use * parseDouble)
 	^reuse(PARSE_DOUBLE)
 	
@@ -169,7 +179,9 @@ I split the String by the slashes, so the result was all the numbers around the 
 <ul id="choices">
 <li>I want more info!</li>
 <li>How do I access things in an array?</li>
+^feedback_options()
 </ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
 	#! I want more info!
 	a: (more info)
 	Check out the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-">official Java documentation for this method</a>.

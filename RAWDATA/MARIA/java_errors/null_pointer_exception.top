@@ -4,83 +4,141 @@
 # =============================================================================
 topic: ~null_pointer_exception keep repeat [nullpointerexception "null pointer exception" null pointer exception]
 
+
 #! what is a NullPointerException
 #! what is a null pointer exception
 u: WHAT_NPE (what is * ~npe)
 In Java, a NullPointerException happens when you try to call a method on an Object that is equal to null or an Object that hasn't been assigned a value yet.
-<ul id="choices"><li>Could you give me an example?</li><li>Can you help help me debug my NullPointerException?</li></ul>
+<ul id="choices">
+<li>Could you give me an example?</li>
+<li>Can you help help me debug my NullPointerException?</li>
+^feedback_options()
+</ul>
+<div class="feedback-info" data-feedback-type="answer"></div>
+	#! Could you give me an example?
 	a: (example)
 	For example, if you declare a variable <code>Jeroo jeroo;</code> and then, try to call a method <code>jeroo.hop();</code> this will give you a NullPointerException because <code>jeroo</code> was never given a value.
-	<ul id="choices"><li>Can you help help me debug my NullPointerException?</li></ul>
+	<ul id="choices">
+	<li>Can you help help me debug my NullPointerException?</li>
+	^feedback_options()
+	</ul>
+	<div class="feedback-info" data-feedback-type="example"></div>
+		#! Can you help help me debug my NullPointerException?
 		b: (debug)
 		^reuse(FIX_NPE)
+
+	#! Can you help help me debug my NullPointerException?
 	a: (debug)
 	^reuse(FIX_NPE)
+
 
 #! what does NullPointerException mean
 #! what does null pointer exception mean
 u: (what does ~npe mean)
 ^reuse(WHAT_NPE)
 
+
 #! why did i get a NullPointerException
 #! why did i get a null pointer exception
 u: FIX_NPE (why * get * ~npe)
 NullPointerExceptions can be a bit tricky to fix, but let's give it a try. First, are you using Greenfoot?
-<ul id="choices"><li>Yes</li><li>No</li></ul>
+<ul id="choices">
+<li>Yes</li>
+<li>No</li>
+</ul>
+	#! Yes
 	a: (~yes)
 	Ok, so go look at the error message you got. You should see a lot of lines with a bunch of words, some red and some gray. Start at the bottom and look up to the uppermost red line. 
-	<ul id="choices"><li>Ok, go on.</li></ul>
+	<ul id="choices">
+	<li>Ok, go on.</li>
+	</ul>
+		#! Ok, go on.
 		b: (~yes)
 		This line should list a Java file that you wrote and a line number. Go to the Java file at the listed line number. The problem should be there.
-		<ul id="choices"><li>Ok, go on.</li></ul>
+		<ul id="choices">
+		<li>Ok, go on.</li>
+		</ul>
+			#! Ok, go on.
 			c: (~yes)
 			Look for a pattern like this: <code>var.method();</code>. Is the method being called <code>hop()</code> or <code>pick()</code> or some other 
 			Jeroo method?
-			<ul id="choices"><li>Yes</li><li>No</li></ul>
+			<ul id="choices">
+			<li>Yes</li>
+			<li>No</li>
+			</ul>
+				#! No
 				d: (~no)
 				Is the problem in a test method?
-				<ul id="choices"><li>Yes</li><li>No</li><li>I don't know.</li></ul>
+				<ul id="choices">
+				<li>Yes</li>
+				<li>No</li>
+				<li>I don't know.</li>
+				</ul>
+					#! Yes
 					e: (~yes)
 					Make sure that any fields you're using are declared properly. Note the name of the variable that's causing the issue. Then, make sure the field declaration at the top of the file looks like <code>Type var;</code> and the setUp method has a line like <code>var = new Type();</code>. Do not Repeat the <code>Type</code> before the equals sign! 
-					<ul id="choices"><li>Ok, go on.</li></ul>
+					<ul id="choices">
+					<li>Ok, go on.</li>
+					</ul>
+						#! Ok, go on.
 						f: (~yes)
 						Did that fix the issue?
-						<ul id="choices"><li>Yes</li><li>No</li></ul>
+						<ul id="choices">
+						<li>Yes</li>
+						<li>No</li>
+						^feedback_options()
+						</ul>
+						<div class="feedback-info" data-feedback-type="fix"></div>
+							#! No
 							g: (~no)
 							^reuse(NPE_EXPLAINATION)
+
+							#! Yes
 							g: (~yes)
 							Excellent!
-							^refine() h: () ^reuse(~feedback.FEEDBACK)
-					e: NPE_EXPLAINATION ([~no "don't know"])
+					
+					#! No
+					#! I don't know.
+					e: NPE_EXPLAINATION ([~emoignorance ~no])
 					Then, NullPointerException happens when you try to call a method on an object that doesn't have a value. So, to fix your issue, look up through the file and make sure that <code>var</code> is assigned a value before the line where the error happened. 
-					<ul id="choices"><li>Ok, go on.</li></ul>
-						f: (~yes)
-						Did that fix the issue?
-						<ul id="choices"><li>Yes</li><li>No</li></ul>
-							g: (~yes)
-							Cool beans!
-							g: (~no)
-							Well, I'm out of ideas. Try asking another TA.
-							^refine() h: () ^reuse(~feedback.FEEDBACK)
+					<ul id="choices">
+					<li>That didn't fix my issue.</li>
+					^feedback_options()
+					</ul>
+					<div class="feedback-info" data-feedback-type="fix"></div>
+						#! That didn't fix my issue.
+						f: (fix * issue)
+						Well, I'm out of ideas. Try asking another TA.
+
+				#! Yes
 				d: (~yes)
 				Ok, then make sure that you added the jeroo to the world before the line where the error happened. Those jeroo methods will throw a NullPointerException if the jeroo is not in the world when the method is called. 
-				<ul id="choices"><li>Ok, go on.</li></ul>
-					e: (~yes)
-					Did that fix the issue?
-					<ul id="choices"><li>Yes</li><li>No</li></ul>
-						f: (~yes)
-						Excellent!
-						^refine() g: () ^reuse(~feedback.FEEDBACK)
-						f: (~no)
-						^reuse(NPE_EXPLAINATION)
+				<ul id="choices">
+				<li>That didn't fix my issue.</li>
+				^feedback_options()
+				</ul>
+				<div class="feedback-info" data-feedback-type="fix"></div>
+					#! That didn't fix my issue.
+					e: (fix * issue)
+					^reuse(NPE_EXPLAINATION)
+
+	#! No
 	a: (~no)
 	Ok, then the best way to debug the issue is probably to use the debugger in your IDE. 
-	<ul id="choices"><li>Ok, go on.</li></ul>
+	<ul id="choices">
+	<li>Ok, go on.</li>
+	</ul>
+		#! Ok, go on.
 		b: (~yes)
 		If you're using Eclipse, you can click to the left of the line numbers to create a breakpoint. Then, instead of running the program normally, you need to run it in debug mode. Most IDEs use a similar method.
-		<ul id="choices"><li>How do I use the debugger?</li></ul>
+		<ul id="choices">
+		<li>How do I use the debugger?</li>
+		^feedback_options()
+		</ul>
+		<div class="feedback-info" data-feedback-type="answer"></div>
 			c: (how * use * debugger)
 			^reuse(~debugging.HOW_USE)
+
 
 #! how to fix NullPointerException
 #! how do i fix a NullPointerException
@@ -88,14 +146,23 @@ NullPointerExceptions can be a bit tricky to fix, but let's give it a try. First
 u: (how * fix * ~npe)
 ^reuse(FIX_NPE)
 			
+
 #! i get a NullPointerException when i run my code
 #! i get a null pointer exception when i run my code
 u: (get * ~npe)
 I'm sorry to hear that. Do you want to know what a NullPointerException is or how you can fix it?
+<ul id="choices">
+<li>What is a NullPointerException?</li>
+<li>How can I fix a NullPointerException?</li>
+</ul>
+	#! What is a NullPointerException?
 	a: (what)
 	^reuse(WHAT_NPE)
+
+	#! How can I fix a NullPointerException?
 	a: (how)
 	^reuse(FIX_NPE)
+	
 	
 #! i hate the NullPointerException
 u: (hate * ~npe)
