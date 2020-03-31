@@ -42,9 +42,9 @@ There's a few different ways you can go about debugging your code. Here they are
 		b: (how * print statement)
 		A print statement will look like these:
 		<div class="mlcode">
-		System.out.println("test");
-		System.out.println(methodCall());
-		System.out.println(variable);
+		System.out.println("test");<br/>
+		System.out.println(methodCall());<br/>
+		System.out.println(variable);<br/>
 		</div>
 		You can print out plain strings to make sure certain code was executed, the return values of methods to make sure they are doing the right thing, and the value of variables to make sure they are assigned correctly. 
 		<ul id="choices">
@@ -60,23 +60,23 @@ There's a few different ways you can go about debugging your code. Here they are
 		b: INSTRUMENT_CODE_EXAMPLE (example)
 		Let's say I have this code:
 		<div class="mlcode">
-		/*
-		 * Returns the lowest value in the give array.
-		 */
-		public int lowestValue(int[] array)
-		{
-		&nbsp;   int lowest = 0;
-		&nbsp;
-		&nbsp;   for (int i = 0; i < array.length; i++) 
-		&nbsp;   {
-		&nbsp;	     \if (array[i] < lowest)
-		&nbsp;       {
-		&nbsp;           lowest = array[i];
-		&nbsp;       }
-		&nbsp;   }
-		&nbsp;
-		&nbsp;   return lowest;
-		}
+		/*<br/>
+		 * Returns the lowest value in the give array.<br/>
+		 */<br/>
+		public int lowestValue(int[] array)<br/>
+		{<br/>
+		&nbsp;   int lowest = 0;<br/>
+		&nbsp;<br/>
+		&nbsp;   for (int i = 0; i < array.length; i++) <br/>
+		&nbsp;   {<br/>
+		&nbsp;	     \if (array[i] < lowest)<br/>
+		&nbsp;       {<br/>
+		&nbsp;           lowest = array[i];<br/>
+		&nbsp;       }<br/>
+		&nbsp;   }<br/>
+		&nbsp;<br/>
+		&nbsp;   return lowest;<br/>
+		}<br/>
 		</div>
 		If I run this code with this array <code>{1, 2}</code>, I would expect this method to return 1, but it actually returns 0. This is weird because 0 isn't even in the array we gave it. 
 		<ul id="choices">
@@ -91,24 +91,24 @@ There's a few different ways you can go about debugging your code. Here they are
 			b: (go on)
 			Ok, so let's add some print statements to help us see what is going on here. Now, the code looks like this:
 			<div class="mlcode">
-			/*
-			 * Returns the lowest value in the give array.
-			 */
-			public int lowestValue(int[] array)
-			{
-			&nbsp;   int lowest = 0;
-			&nbsp;
-			&nbsp;   for (int i = 0; i < array.length; i++) 
-			&nbsp;   {
-			&nbsp;	     \if (array[i] < lowest)
-			&nbsp;       {
-			&nbsp;           System.out.println("test");
-			&nbsp;           lowest = array[i];
-			&nbsp;       }
-			&nbsp;   }
-			&nbsp;
-			&nbsp;   return lowest;
-			}
+			/*<br/>
+			 * Returns the lowest value in the give array.<br/>
+			 */<br/>
+			public int lowestValue(int[] array)<br/>
+			{<br/>
+			&nbsp;   int lowest = 0;<br/>
+			&nbsp;<br/>
+			&nbsp;   for (int i = 0; i < array.length; i++) <br/>
+			&nbsp;   {<br/>
+			&nbsp;	     \if (array[i] < lowest)<br/>
+			&nbsp;       {<br/>
+			&nbsp;           System.out.println("test");<br/>
+			&nbsp;           lowest = array[i];<br/>
+			&nbsp;       }<br/>
+			&nbsp;   }<br/>
+			&nbsp;<br/>
+			&nbsp;   return lowest;<br/>
+			}<br/>
 			</div>
 			Now, our code will print out "test" every time we update the lowest value. When we run this code, "test" is never printed out! This means lowest is never reassigned. This is very interesting. 
 			<ul id="choices">
@@ -123,33 +123,33 @@ There's a few different ways you can go about debugging your code. Here they are
 				c: (go on)
 				Now, let's add another print statement:
 				<div class="mlcode">
-				/*
-				 * Returns the lowest value in the give array.
-				 */
-				public int lowestValue(int[] array)
-				{
-				&nbsp;   int lowest = 0;
-				&nbsp;
-				&nbsp;   for (int i = 0; i < array.length; i++) 
-				&nbsp;   {
-				&nbsp;       System.out.println(array[i]);
-				&nbsp;       System.out.println(lowest);
-				&nbsp;	     \if (array[i] < lowest)
-				&nbsp;       {
-				&nbsp;           System.out.println("test");
-				&nbsp;           lowest = array[i];
-				&nbsp;       }
-				&nbsp;   }
-				&nbsp;
-				&nbsp;   return lowest;
-				}
+				/*<br/>
+				 * Returns the lowest value in the give array.<br/>
+				 */<br/>
+				public int lowestValue(int[] array)<br/>
+				{<br/>
+				&nbsp;   int lowest = 0;<br/>
+				&nbsp;<br/>
+				&nbsp;   for (int i = 0; i < array.length; i++) <br/>
+				&nbsp;   {<br/>
+				&nbsp;       System.out.println(array[i]);<br/>
+				&nbsp;       System.out.println(lowest);<br/>
+				&nbsp;	     \if (array[i] < lowest)<br/>
+				&nbsp;       {<br/>
+				&nbsp;           System.out.println("test");<br/>
+				&nbsp;           lowest = array[i];<br/>
+				&nbsp;       }<br/>
+				&nbsp;   }<br/>
+				&nbsp;<br/>
+				&nbsp;   return lowest;<br/>
+				}<br/>
 				</div>
 				Now, when we run our code, this is printed out:
 				<div class="mlcode">
-				1
-				0
-				2
-				0
+				1<br/>
+				0<br/>
+				2<br/>
+				0<br/>
 				</div>
 				We can see that the first time we print out <code>lowest</code>, it's already got a value of 0 before we even see a value from the array! Now, we can see why our code wasn't working. Neither 1 nor 2 is less than 0, so that if statement will never be true! We need to change the initial value of <code>lowest</code>.
 				<ul id="choices">
@@ -164,34 +164,34 @@ There's a few different ways you can go about debugging your code. Here they are
 					d: (go on)
 					Now, let's fix our code:
 					<div class="mlcode">
-					/*
-					 * Returns the lowest value in the give array.
-					 */
-					public int lowestValue(int[] array)
-					{
-					&nbsp;   int lowest = 100; //I changed 0 to 100!
-					&nbsp;
-					&nbsp;   for (int i = 0; i < array.length; i++) 
-					&nbsp;   {
-					&nbsp;       System.out.println(array[i]);
-					&nbsp;       System.out.println(lowest);
-					&nbsp;	     \if (array[i] < lowest)
-					&nbsp;       {
-					&nbsp;           System.out.println("test");
-					&nbsp;           lowest = array[i];
-					&nbsp;       }
-					&nbsp;   }
-					&nbsp;
-					&nbsp;   return lowest;
-					}
+					/*<br/>
+					 * Returns the lowest value in the give array.<br/>
+					 */<br/>
+					public int lowestValue(int[] array)<br/>
+					{<br/>
+					&nbsp;   int lowest = 100; //I changed 0 to 100!<br/>
+					&nbsp;<br/>
+					&nbsp;   for (int i = 0; i < array.length; i++) <br/>
+					&nbsp;   {<br/>
+					&nbsp;       System.out.println(array[i]);<br/>
+					&nbsp;       System.out.println(lowest);<br/>
+					&nbsp;	     \if (array[i] < lowest)<br/>
+					&nbsp;       {<br/>
+					&nbsp;           System.out.println("test");<br/>
+					&nbsp;           lowest = array[i];<br/>
+					&nbsp;       }<br/>
+					&nbsp;   }<br/>
+					&nbsp;<br/>
+					&nbsp;   return lowest;<br/>
+					}<br/>
 					</div>
 					Now, when we run our code, this is printed out:
 					<div class="mlcode">
-					1
-					100
-					test
-					2
-					1
+					1<br/>
+					100<br/>
+					test<br/>
+					2<br/>
+					1<br/>
 					</div>
 					Now, test is printed out once, so we correctly change the value of lowest from 100 to 1! We did it! Our code works now! It will correctly return 1!
 					<ul id="choices">

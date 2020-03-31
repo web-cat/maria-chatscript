@@ -23,10 +23,10 @@ In Java, the most common cause of the ArithmeticExcpetion is trying to divide by
 	a: (not dividing by zero)
 	Make sure none of the variables you're diving by can be zero. For example, the following code will cause an error because <code>i</code> is zero at some point!
 	<div class="mlcode">
-	for (int i = 0; i < 10; i++)
-	{
-	&emsp;System.out.println(10.0 / i);
-	}
+	for (int i = 0; i < 10; i++)<br/>
+	{<br/>
+	&emsp;System.out.println(10.0 / i);<br/>
+	}<br/>
 	</div>
 	<ul id="choices">
 	^feedback_options()
@@ -213,9 +213,9 @@ The StackOverflowError usually happens when you call a method or constructor ins
 	\<h2>What is the StackOverflowError?</h2>
 	This error mainly happens when you have a method that calls itself. This is called recursion. If you are intentionally trying to write a recursive function, make sure you have a valid base case so that the recursion can end. If you aren't trying to make a recursive method or you didn't know what recursion is, don't call a method inside itself. Make sure you are also not creating an object in its own constructor.
 	<div class="mlcode">
-	public boolean isOnEdge() {
-	&nbsp;   return isOnEdge() && this.isFacing(EAST);
-	}
+	public boolean isOnEdge() {<br/>
+	&nbsp;   return isOnEdge() && this.isFacing(EAST);<br/>
+	}<br/>
 	</div>
 	The above code will give a StackOverflowError because we are calling <code>isOnEdge()</code> inside itself. For more information, check <a class="jgloss" target="_blank" href="http://mindprod.com/jgloss/recursion.html">this</a> out or ask me some other questions!
 	
@@ -562,8 +562,8 @@ What's the name of the exception you got? (You can also type the name if it's no
 u: USE_DOCS (0=1)
 Another thing you can do to try and fix an exception is looking at the documentation for the method you're using. For example, let's consider the following code.
 <div class="mlcode">
-Scanner scan = new Scanner();  // line 1
-scan.nextInt("s");             // line 2
+Scanner scan = new Scanner();  // line 1<br/>
+scan.nextInt("s");             // line 2<br/>
 </div>
 I run it and get an exception. First, look at the error you got. The error information should tell you where the error happened. Look for a line number in a method that you wrote. For me, my error happened on line 2.
 <ul id="choices">

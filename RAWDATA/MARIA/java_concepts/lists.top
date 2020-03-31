@@ -155,7 +155,7 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 		b: (example * create)
 		Before you can create a List, you need to decide what you're going to put in your List. Note that you can only store Objects in a List (no ints or doubles!). Here's how I would create an array of Strings:
 		<div class="mlcode">
-		ArrayList&lt;String&gt; names = new ArrayList&lt;String&gt;();
+		ArrayList&lt;String&gt; names = new ArrayList&lt;String&gt;();<br/>
 		</div>
 		By putting String in the less than and greater than signs, I'm telling Java that I want to store Strings in my List.
 		<ul id="choices">
@@ -187,12 +187,12 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 				d: (example)
 				Let's say I want to make a List of ints. I would do that like this:
 				<div class="mlcode">
-				ArrayList&lt;Integer&gt; grades = new ArrayList&lt;Integer&gt;();
+				ArrayList&lt;Integer&gt; grades = new ArrayList&lt;Integer&gt;();<br/>
 				</div>
 				I can add and get ints from it like normal:
 				<div class="mlcode">
-				grades.add(99);
-				int myGrade = grades.get(0);
+				grades.add(99);<br/>
+				int myGrade = grades.get(0);<br/>
 				</div>
 				<ul id="choices">
 				<li>What's a wrapper class?</li>
@@ -213,9 +213,9 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 		b: (example * add)
 		You use the <code>add(/*element*/)</code> method to add things to the end of your List. Let's say I have a List of Strings called <code>list</code>. I can add to it like this:
 		<div class="mlcode">
-		list.add("a");  // list = ["a"]
-		list.add("b");  // list = ["a", "b"]
-		list.add("c");  // list = ["a", "b", "c"]
+		list.add("a");  // list = ["a"]<br/>
+		list.add("b");  // list = ["a", "b"]<br/>
+		list.add("c");  // list = ["a", "b", "c"]<br/>
 		</div>
 		In this example, "a" is at the start of the List and "c" is at the end. 
 		<ul id="choices">
@@ -234,8 +234,8 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 		b: (example * remove)
 		The <code>remove(/*index or thing*/)</code> method can be used in 2 ways. You can use it to remove a certain thing from the list or you can use it to remove the thing at a certain index in the list. Let's say I have the list <code>["a", "b", "c"]</code>. Then, I can use remove like this:
 		<div class="mlcode">
-		list.remove(0);    // list = ["b", "c"]
-		list.remove("b");  // list = ["c"]
+		list.remove(0);    // list = ["b", "c"]<br/>
+		list.remove("b");  // list = ["c"]<br/>
 		</div>
 		Remember that the indexes of a list start at 0, so when I say <code>remove(0)</code>, it will remove the first thing from the List. 
 		<ul id="choices">
@@ -254,8 +254,8 @@ The four most important methods when using Lists are <code>add(/*element*/)</cod
 		b: (example * get)
 		The <code>get(/*index*/)</code> method can be used to get the element at the specified index in the List. For example, let's say I have the list <code>["a", "b", "c"]</code>. Them I can use get like this:
 		<div class="mlcode">
-		list.get(0);  // returns "a"
-		String str = list.get(1);  // str = "b"
+		list.get(0);  // returns "a"<br/>
+		String str = list.get(1);  // str = "b"<br/>
 		</div>
 		Remember that the indexes of a list start at 0, so when I say <code>get(0)</code>, it will get the first thing from the List. 
 		<ul id="choices">

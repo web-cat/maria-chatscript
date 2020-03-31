@@ -43,10 +43,10 @@ Low problem coverage means that your code is not working correctly. Web-CAT will
 		b: (example)
 		Let's say that Web-CAT gives me this hint: "Your isEven() method returns true for 3, even though 3 is odd." Ok, so I should try to duplicate this issue in one of my tests for <code>isEven()</code>. I don't currently have a test where <code>isEven()</code> takes 3 as a parameter, so I'll make one:
 		<div class="mlcode">
-		public void testIsEvenOddNumber() {
-		&nbsp;   boolean isEven = obj.isEven(3);
-		&nbsp;   assertFalse(isEven);
-		}
+		public void testIsEvenOddNumber() {<br/>
+		&nbsp;   boolean isEven = obj.isEven(3);<br/>
+		&nbsp;   assertFalse(isEven);<br/>
+		}<br/>
 		</div>
 		This test will fail because <code>isEven(3)</code> returns true, even though I want it to return false. Now that I have one of my tests reproducing the error that Web-CAT told me about, I can start trying to figure out why the error is happening.
 		<ul id="choices">

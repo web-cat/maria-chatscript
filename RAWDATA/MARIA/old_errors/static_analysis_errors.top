@@ -7,47 +7,47 @@ topic: ~static_analysis_errors keep repeat (static analysis errors java messages
 
 u: (ConstantName) Validates identifiers for constants \(static, final fields \).
 
-u: (Constant Name) Validates identifiers for constants \(static, final fields \).
+u: (constant name) Validates identifiers for constants \(static, final fields \).
 
 u: (LocalVariableName) Checks that local, non-final variable names conform to a format specified by the format property.
 
-u: (Local Variable Name) Checks that local, non-final variable names conform to a format specified by the format property.
+u: (local variable name) Checks that local, non-final variable names conform to a format specified by the format property.
 
 u: (LocalFinalVariableName) Validates identifiers for local, final variables, including catch parameters and resources in try statements.
 
-u: (Local Final Variable Name) Validates identifiers for local, final variables, including catch parameters and resources in try statements.
+u: (local final variable name) Validates identifiers for local, final variables, including catch parameters and resources in try statements.
 
 u: (MemberName) Validates identifiers for non-static fields.
 
-u: (Member Name) Validates identifiers for non-static fields.
+u: (member name) Validates identifiers for non-static fields.
 
 u: (MethodName) Validates identifiers for methods.
 
-u: (Method Name) Validates identifiers for methods.
+u: (method name) Validates identifiers for methods.
 
 u: (ParameterName) Checks that method and catch parameter names conform to a format specified by the format property. By using accessModifiers property it is possible to specify different formats for methods at different visibility levels.
 
-u: (Parameter Name) Checks that method and catch parameter names conform to a format specified by the format property. By using accessModifiers property it is possible to specify different formats for methods at different visibility levels.
+u: (parameter name) Checks that method and catch parameter names conform to a format specified by the format property. By using accessModifiers property it is possible to specify different formats for methods at different visibility levels.
 
 u: (StaticVariableName) Validates identifiers for static, non-final fields.
 
-u: (Static Variable Name) Validates identifiers for static, non-final fields.
+u: (static variable name) Validates identifiers for static, non-final fields.
 
 u: (MethodTypeParameterName) Validates identifiers for method type parameters.
 
-u: (Method Type Parameter Name) Validates identifiers for method type parameters.
+u: (method type parameter name) Validates identifiers for method type parameters.
 
 u: (TypeName) Validates identifiers for classes, interfaces, enums, and annotations.
 
-u: (Type Name) Validates identifiers for classes, interfaces, enums, and annotations.
+u: (type name) Validates identifiers for classes, interfaces, enums, and annotations.
 
 u: (ClassTypeParameterName) Validates identifiers for class type parameters.
 
-u: (Class Type Parameter Name) Validates identifiers for class type parameters.
+u: (class type parameter name) Validates identifiers for class type parameters.
 
 u: (PackageName) Validates identifiers for packages.
 
-u: (Package Name) Validates identifiers for packages.
+u: (package name) Validates identifiers for packages.
 
 # Naming PMD
 
@@ -67,7 +67,7 @@ public class Something \{
 
             </pre></div>
 
-u: (Short Variable) Detects when a field, local, or parameter has a very short name.
+u: (short variable) Detects when a field, local, or parameter has a very short name.
 <div class="source"><pre>
 
 public class Something \{
@@ -99,7 +99,7 @@ public class Something \{
 
             </pre></div>
 
-u: (Long Variable) Detects when a field, formal or local variable is declared with a long name.
+u: (long variable) Detects when a field, formal or local variable is declared with a long name.
 <div class="source"><pre>
 
 public class Something \{
@@ -127,7 +127,7 @@ public class ShortMethod {
 
             </pre></div>
 
-u: (Short Method Name) Detects when very short method names are used.
+u: (short method name) Detects when very short method names are used.
 
 <div class="source"><pre>
 
@@ -152,7 +152,7 @@ public class MyClass \{
 
             </pre></div>
 
-u: (Method With Same Name As Enclosing Class) Non-constructor methods should not have the same name as the enclosing class.
+u: (method with same name as enclosing class) Non-constructor methods should not have the same name as the enclosing class.
 <div class="source"><pre>
 
 public class MyClass \{
@@ -176,7 +176,7 @@ public class Foo extends Bar \{
 
             </pre></div>
 
-u: (Avoid Field Name Matching Type Name) It is somewhat confusing to have a field name matching the declaring class name. This probably means that type and or field names could be more precise.
+u: (avoid field name matching type name) It is somewhat confusing to have a field name matching the declaring class name. This probably means that type and or field names could be more precise.
 <div class="source"><pre>
 
 public class Foo extends Bar \{
@@ -198,7 +198,7 @@ u: (FileTabCharacter) Checks that there are no tab characters \('\t' \) in the s
 <li>From the Apache jakarta coding standards: In a distributed development environment, when the commit messages get sent to a mailing list, they are almost impossible to read if you use tabs. </li>
 </ul>
 
-u: (File Tab Character) Checks that there are no tab characters \('\t' \) in the source code.
+u: (file tab character) Checks that there are no tab characters \('\t' \) in the source code.
 
 <h4>Rationale:</h4>
 <ul>
@@ -212,11 +212,11 @@ u: (LineLength) Checks for long lines.
 
 Rationale: Long lines are hard to read in printouts or if developers have limited screen space for the source code, e.g. if the IDE displays additional information like project tree, class hierarchy, etc.
 
-u: (Line Length) Checks for long lines.
+u: (line length) Checks for long lines.
 
 Rationale: Long lines are hard to read in printouts or if developers have limited screen space for the source code, e.g. if the IDE displays additional information like project tree, class hierarchy, etc.
 
-u: (Indentation) Checks correct indentation of Java code.
+u: (indentation) Checks correct indentation of Java code.
 
 The idea behind this is that while pretty printers are sometimes convenient for bulk reformats of legacy code, they often either aren't configurable enough or just can't anticipate how format should be done. Sometimes this is personal preference, other times it is practical experience. In any case, this check should just ensure that a minimal set of indentation rules is followed.
 
@@ -226,7 +226,7 @@ for \(Iterator foo = very.long.line.iterator \(\);
       foo.hasNext \(\);
      \)
 
-u: (Empty For Iterator Pad) Checks the padding of an empty for iterator; that is whether white space is required at an empty for iterator, or such white space is forbidden. No check occurs if there is a line wrap at the iterator, as in
+u: (empty for iterator pad) Checks the padding of an empty for iterator; that is whether white space is required at an empty for iterator, or such white space is forbidden. No check occurs if there is a line wrap at the iterator, as in
 
 for \(Iterator foo = very.long.line.iterator \(\);
       foo.hasNext \(\);
@@ -236,23 +236,23 @@ u: (NoWhitespaceAfter) Checks that there is no whitespace after a token. More sp
 
 The check processes ARRAY_DECLARATOR and INDEX_OP tokens specially from other tokens. Actually it is checked that there is no whitespace before this tokens, not after them. Space after the ANNOTATIONS before ARRAY_DECLARATOR and INDEX_OP will be ignored.
 
-u: (No Whitespace After) Checks that there is no whitespace after a token. More specifically, it checks that it is not followed by whitespace, or \(if linebreaks are allowed \) all characters on the line after are whitespace. To forbid linebreaks after a token, set property allowLineBreaks to false.
+u: (no whitespace after) Checks that there is no whitespace after a token. More specifically, it checks that it is not followed by whitespace, or \(if linebreaks are allowed \) all characters on the line after are whitespace. To forbid linebreaks after a token, set property allowLineBreaks to false.
 
 The check processes ARRAY_DECLARATOR and INDEX_OP tokens specially from other tokens. Actually it is checked that there is no whitespace before this tokens, not after them. Space after the ANNOTATIONS before ARRAY_DECLARATOR and INDEX_OP will be ignored.
 
 u: (NoWhitespaceBefore) Checks that there is no whitespace before a token. More specifically, it checks that it is not preceded with whitespace, or \(if linebreaks are allowed \) all characters on the line before are whitespace. To allow linebreaks before a token, set property allowLineBreaks to true. No check occurs before semi-colons in empty for loop initializers or conditions.
 
-u: (No Whitespace Before) Checks that there is no whitespace before a token. More specifically, it checks that it is not preceded with whitespace, or \(if linebreaks are allowed \) all characters on the line before are whitespace. To allow linebreaks before a token, set property allowLineBreaks to true. No check occurs before semi-colons in empty for loop initializers or conditions.
+u: (no whitespace before) Checks that there is no whitespace before a token. More specifically, it checks that it is not preceded with whitespace, or \(if linebreaks are allowed \) all characters on the line before are whitespace. To allow linebreaks before a token, set property allowLineBreaks to true. No check occurs before semi-colons in empty for loop initializers or conditions.
 
-u: (Whitespace) Checks that there is no whitespace before a token. More specifically, it checks that it is not preceded with whitespace, or \(if linebreaks are allowed \) all characters on the line before are whitespace. To allow linebreaks before a token, set property allowLineBreaks to true. No check occurs before semi-colons in empty for loop initializers or conditions.
+u: (whitespace) Checks that there is no whitespace before a token. More specifically, it checks that it is not preceded with whitespace, or \(if linebreaks are allowed \) all characters on the line before are whitespace. To allow linebreaks before a token, set property allowLineBreaks to true. No check occurs before semi-colons in empty for loop initializers or conditions.
 
 u: (OperatorWrap) Checks the policy on how to wrap lines on operators.
 
-u: (Operator Wrap) Checks the policy on how to wrap lines on operators.
+u: (operator wrap) Checks the policy on how to wrap lines on operators.
 
 u: (WhitespaceAfter) Checks that a token is followed by whitespace.
 
-u: (Whitespace After) Checks that a token is followed by whitespace.
+u: (whitespace after) Checks that a token is followed by whitespace.
 
 u: (WhitespaceAround) Checks that a token is surrounded by whitespace. Empty constructor, method, class, enum, interface, loop bodies (blocks), lambdas of the form
 
@@ -286,7 +286,7 @@ try \{
 
 With this property turned off, this raises violation because the beginning of the catch block \( left curly bracket \) is not separated from the end of the catch block \( right curly bracket \).
 
-u: (Whitespace Around) Checks that a token is surrounded by whitespace. Empty constructor, method, class, enum, interface, loop bodies (blocks), lambdas of the form
+u: (whitespace around) Checks that a token is surrounded by whitespace. Empty constructor, method, class, enum, interface, loop bodies (blocks), lambdas of the form
 
 public MyClass \(\) \{\}      // empty constructor
 public void func \(\) \{\}    // empty method
@@ -320,32 +320,11 @@ With this property turned off, this raises violation because the beginning of th
 
 u: (MethodParamPad) Checks the padding between the identifier of a method definition, constructor definition, method call, or constructor invocation; and the left parenthesis of the parameter list. That is, if the identifier and left parenthesis are on the same line, checks whether a space is required immediately after the identifier or such a space is forbidden. If they are not on the same line, reports an error, unless configured to allow line breaks. To allow linebreaks after the identifier, set property allowLineBreaks to true.
 
-u: (Method Param Pad) Checks the padding between the identifier of a method definition, constructor definition, method call, or constructor invocation; and the left parenthesis of the parameter list. That is, if the identifier and left parenthesis are on the same line, checks whether a space is required immediately after the identifier or such a space is forbidden. If they are not on the same line, reports an error, unless configured to allow line breaks. To allow linebreaks after the identifier, set property allowLineBreaks to true.
+u: (method param pad) Checks the padding between the identifier of a method definition, constructor definition, method call, or constructor invocation; and the left parenthesis of the parameter list. That is, if the identifier and left parenthesis are on the same line, checks whether a space is required immediately after the identifier or such a space is forbidden. If they are not on the same line, reports an error, unless configured to allow line breaks. To allow linebreaks after the identifier, set property allowLineBreaks to true.
 
-u: (GenericWhitespace) Checks that the whitespace around the Generic tokens \(angle brackets \) "<" and ">" are correct to the typical convention. The convention is not configurable.
+u: (GenericWhitespace) Checks that the whitespace around the Generic tokens \(angle brackets \) "&lt;" and ">" are correct to the typical convention. The convention is not configurable.
 
-Left angle bracket \("<"\):
-
-should be preceded with whitespace only in generic methods definitions.
-should not be preceded with whitespace when it is precede method name or following type name.
-should not be followed with whitespace in all cases.
-Right angle bracket \(">"\):
-
-should not be preceded with whitespace in all cases.
-should be followed with whitespace in almost all cases, except diamond operators and when preceding method name.
-Examples with correct spacing:
-
-public void <K, V extends Number> boolean foo \(K, V \) \{\} // Generic methods definitions
-class name<T1, T2, ..., Tn> \{\}                         // Generic type definition
-OrderedPair<String, Box<Integer>> p;                   // Generic type reference
-boolean same = Util.<Integer, String>compare \( p1, p2 \);  // Generic preceded method name
-Pair<Integer, String> p1 = new Pair<> \( 1, "apple" \);     // Diamond operator
-List<T> list = ImmutableList.Builder<T>::new;          // Method reference
-sort \( list, Comparable::<String>compareTo \);             // Method reference
-
-u: (Generic Whitespace) Checks that the whitespace around the Generic tokens \(angle brackets \) "<" and ">" are correct to the typical convention. The convention is not configurable.
-
-Left angle bracket \("<"\):
+Left angle bracket \("&lt;"\):
 
 should be preceded with whitespace only in generic methods definitions.
 should not be preceded with whitespace when it is precede method name or following type name.
@@ -356,17 +335,38 @@ should not be preceded with whitespace in all cases.
 should be followed with whitespace in almost all cases, except diamond operators and when preceding method name.
 Examples with correct spacing:
 
-public void <K, V extends Number> boolean foo \(K, V \) \{\} // Generic methods definitions
-class name<T1, T2, ..., Tn> \{\}                         // Generic type definition
-OrderedPair<String, Box<Integer>> p;                   // Generic type reference
-boolean same = Util.<Integer, String>compare \( p1, p2 \);  // Generic preceded method name
-Pair<Integer, String> p1 = new Pair<> \( 1, "apple" \);     // Diamond operator
-List<T> list = ImmutableList.Builder<T>::new;          // Method reference
-sort \( list, Comparable::<String>compareTo \);             // Method reference
+public void &lt;K, V extends Number> boolean foo \(K, V \) \{\} // Generic methods definitions
+class name&lt;T1, T2, ..., Tn> \{\}                         // Generic type definition
+OrderedPair&lt;String, Box&lt;Integer>> p;                   // Generic type reference
+boolean same = Util.&lt;Integer, String>compare \( p1, p2 \);  // Generic preceded method name
+Pair&lt;Integer, String> p1 = new Pair<> \( 1, "apple" \);     // Diamond operator
+List&lt;T> list = ImmutableList.Builder&lt;T>::new;          // Method reference
+sort \( list, Comparable::&lt;String>compareTo \);             // Method reference
+
+u: (generic whitespace) Checks that the whitespace around the Generic tokens \(angle brackets \) "&lt;" and ">" are correct to the typical convention. The convention is not configurable.
+
+Left angle bracket \("&lt;"\):
+
+should be preceded with whitespace only in generic methods definitions.
+should not be preceded with whitespace when it is precede method name or following type name.
+should not be followed with whitespace in all cases.
+Right angle bracket \(">"\):
+
+should not be preceded with whitespace in all cases.
+should be followed with whitespace in almost all cases, except diamond operators and when preceding method name.
+Examples with correct spacing:
+
+public void &lt;K, V extends Number> boolean foo \(K, V \) \{\} // Generic methods definitions
+class name&lt;T1, T2, ..., Tn> \{\}                         // Generic type definition
+OrderedPair&lt;String, Box&lt;Integer>> p;                   // Generic type reference
+boolean same = Util.&lt;Integer, String>compare \( p1, p2 \);  // Generic preceded method name
+Pair&lt;Integer, String> p1 = new Pair<> \( 1, "apple" \);     // Diamond operator
+List&lt;T> list = ImmutableList.Builder&lt;T>::new;          // Method reference
+sort \( list, Comparable::&lt;String>compareTo \);             // Method reference
 
 u: (ParenPad) Checks the policy on the padding of parentheses; i.e. whether a space is required after a left parenthesis and before a right parenthesis, or such spaces are forbidden. No check occurs at the right parenthesis after an empty for iterator, at the left parenthesis before an empty for initialization, or at the right parenthesis of a try-with-resources resource specification where the last resource variable has a trailing semi-colon. Use Check EmptyForIteratorPad to validate empty for iterators and EmptyForInitializerPad to validate empty for initializers. Typecasts are also not checked, as there is TypecastParenPad to validate them.
 
-u: (Paren Pad) Checks the policy on the padding of parentheses; i.e. whether a space is required after a left parenthesis and before a right parenthesis, or such spaces are forbidden. No check occurs at the right parenthesis after an empty for iterator, at the left parenthesis before an empty for initialization, or at the right parenthesis of a try-with-resources resource specification where the last resource variable has a trailing semi-colon. Use Check EmptyForIteratorPad to validate empty for iterators and EmptyForInitializerPad to validate empty for initializers. Typecasts are also not checked, as there is TypecastParenPad to validate them.
+u: (paren pad) Checks the policy on the padding of parentheses; i.e. whether a space is required after a left parenthesis and before a right parenthesis, or such spaces are forbidden. No check occurs at the right parenthesis after an empty for iterator, at the left parenthesis before an empty for initialization, or at the right parenthesis of a try-with-resources resource specification where the last resource variable has a trailing semi-colon. Use Check EmptyForIteratorPad to validate empty for iterators and EmptyForInitializerPad to validate empty for initializers. Typecasts are also not checked, as there is TypecastParenPad to validate them.
 
 u: (ModifierOrder) Checks that the order of modifiers conforms to the suggestions in the Java Language specification, sections 8.1.1, 8.3.1, 8.4.3 and 9.4. The correct order is:
 
@@ -383,7 +383,7 @@ synchronized
 native
 strictfp
 
-u: (Modifier Order) Checks that the order of modifiers conforms to the suggestions in the Java Language specification, sections 8.1.1, 8.3.1, 8.4.3 and 9.4. The correct order is:
+u: (modifier order) Checks that the order of modifiers conforms to the suggestions in the Java Language specification, sections 8.1.1, 8.3.1, 8.4.3 and 9.4. The correct order is:
 
 public
 protected
@@ -681,7 +681,7 @@ class PackagePrivateClass \{
 
 <div class="source">
 <pre>
-package a;
+package a ;
 public class ClassExample \{
   protected class ProtectedInnerClass \{
     public ProtectedInnerClass \(\) \{\}
@@ -694,9 +694,9 @@ public class ClassExtending extends ClassExample \{
   ProtectedInnerClass pc = new ProtectedInnerClass \(\);
 \}
         </pre></div>
-      </div>
+      </div></div>
 
-u: (Redundant Modifier) <p>
+u: (redundant modifier) <p>
           Checks that the order of modifiers conforms to the suggestions in
           the <a class="externalLink" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html">Java
           Language specification, sections 8.1.1, 8.3.1, 8.4.3</a> and <a class="externalLink" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html">
@@ -836,7 +836,7 @@ u: (Redundant Modifier) <p>
           <a href="config.html#TreeWalker">TreeWalker</a>
         </p>
       </div>
-    </div>
+    
 
 
 <div class="section">
@@ -979,7 +979,7 @@ class PackagePrivateClass \{
 
 <div class="source">
 <pre>
-package a;
+package a\;
 public class ClassExample \{
   protected class ProtectedInnerClass \{
     public ProtectedInnerClass \(\) \{\}
@@ -992,57 +992,57 @@ public class ClassExtending extends ClassExample \{
   ProtectedInnerClass pc = new ProtectedInnerClass \(\);
 \}
         </pre></div>
-      </div>
+      </div></div></div>
 
 u: (LeftCurly) Checks for the placement of left curly braces \( '\{' \) for code blocks.
 
-u: (Left Curly) Checks for the placement of left curly braces \( '\{' \) for code blocks.
+u: (left curly) Checks for the placement of left curly braces \( '\{' \) for code blocks.
 
 u: (NeedBraces)	Checks for braces around code blocks.
 
-u: (Need Braces)	Checks for braces around code blocks.
+u: (need braces)	Checks for braces around code blocks.
 
 u: (RightCurly) Checks the placement of right curly braces \( \} \) for if-else, try-catch-finally blocks, while-loops, for-loops, method definitions, class definitions, constructor definitions, instance and static initialization blocks.
 
-u: (Right Curly) Checks the placement of right curly braces \( \} \) for if-else, try-catch-finally blocks, while-loops, for-loops, method definitions, class definitions, constructor definitions, instance and static initialization blocks.
+u: (right curly) Checks the placement of right curly braces \( \} \) for if-else, try-catch-finally blocks, while-loops, for-loops, method definitions, class definitions, constructor definitions, instance and static initialization blocks.
 
 u: (MultipleVariableDeclarations) Checks that each variable declaration is in its own statement and on its own line.
-<br>
+<br/>
 Rationale: the Java code conventions chapter 6.1 recommends that declarations should be one per line/statement.
 
-u: (Multiple Variable Declarations) Checks that each variable declaration is in its own statement and on its own line.
-<br>
+u: (multiple variable declarations) Checks that each variable declaration is in its own statement and on its own line.
+<br/>
 Rationale: the Java code conventions chapter 6.1 recommends that declarations should be one per line/statement.
 
 u: (OneStatementPerLine) Checks that there is only one statement per line.
-<br>
+<br/>
 Rationale: It's very difficult to read multiple statements on one line.
-<br>
+<br/>
 In the Java programming language, statements are the fundamental unit of execution. All statements except blocks are terminated by a semicolon. Blocks are denoted by open and close curly braces.
-<br>
+<br/>
 OneStatementPerLineCheck checks the following types of statements: variable declaration statements, empty statements, import statements, assignment statements, expression statements, increment statements, object creation statements, 'for loop' statements, 'break' statements, 'continue' statements, 'return' statements.
 
-u: (One Statement Per Line) Checks that there is only one statement per line.
-<br>
+u: (one statement per line) Checks that there is only one statement per line.
+<br/>
 Rationale: It's very difficult to read multiple statements on one line.
-<br>
+<br/>
 In the Java programming language, statements are the fundamental unit of execution. All statements except blocks are terminated by a semicolon. Blocks are denoted by open and close curly braces.
-<br>
+<br/>
 OneStatementPerLineCheck checks the following types of statements: variable declaration statements, empty statements, import statements, assignment statements, expression statements, increment statements, object creation statements, 'for loop' statements, 'break' statements, 'continue' statements, 'return' statements.
 
 u: (UnnecessaryParentheses) Checks for the use of unnecessary parentheses.
 
-u: (Unnecessary Parentheses) Checks for the use of unnecessary parentheses.
+u: (unnecessary parentheses) Checks for the use of unnecessary parentheses.
 
 u: (ArrayTypeStyle) Checks the style of array type definitions. Some like Java style: public static void main \(String\[\] args\) and some like C style: public static void main \(String args\[\]\).
 
-u: (Array Type Style) Checks the style of array type definitions. Some like Java style: public static void main \(String\[\] args\) and some like C style: public static void main \(String args\[\]\).
+u: (array type style) Checks the style of array type definitions. Some like Java style: public static void main \(String\[\] args\) and some like C style: public static void main \(String args\[\]\).
 
 u: (UpperEll) Checks that long constants are defined with an upper ell. That is ' L' and not 'l'. This is in accordance with the Java Language Specification, Section 3.10.1.
 
 The capital L looks a lot like 1.
 
-u: (Upper Ell) Checks that long constants are defined with an upper ell. That is ' L' and not 'l'. This is in accordance with the Java Language Specification, Section 3.10.1.
+u: (upper ell) Checks that long constants are defined with an upper ell. That is ' L' and not 'l'. This is in accordance with the Java Language Specification, Section 3.10.1.
 
 The capital L looks a lot like 1.
 
@@ -1065,7 +1065,7 @@ Avoid using if statements without using curly braces.
 
             </pre></div>
 
-u: (If Stmts Must Use Braces) <p>
+u: (if stmts must use braces) <p>
 Avoid using if statements without using curly braces.
      </p>
 <p>Example:</p>
@@ -1094,7 +1094,7 @@ public void doSomething \(\) \{
 
             </pre></div>
 
-u: (While Loops Must Use Braces Rule) Avoid using 'while' statements without using curly braces.
+u: (while loops must use braces rule) Avoid using 'while' statements without using curly braces.
 <div class="source"><pre>
 
 public void doSomething \(\) \{
@@ -1121,7 +1121,7 @@ u: (IfElseStmtsMustUseBracesRule) Avoid using if..else statements without using 
 
             </pre></div>
 
-u: (If Else Stmts Must Use Braces Rule) Avoid using if..else statements without using curly braces.
+u: (if else stmts must use braces rule) Avoid using if..else statements without using curly braces.
 <div class="source"><pre>
 
  public void doSomething \(\) \{
@@ -1148,7 +1148,7 @@ public void foo \(\) \{
 
             </pre></div>
 
-u: 	(For Loops Must Use Braces Rule) Avoid using 'for' statements without using curly braces.
+u: 	(for loops must use braces rule) Avoid using 'for' statements without using curly braces.
 <div class="source"><pre>
 
 public void foo \(\) \{
@@ -1161,22 +1161,22 @@ public void foo \(\) \{
 
 u: (SuspiciousOctalEscape) A suspicious octal escape sequence was found inside a String literal. The Java language specification \(section 3.10.6 \) says an octal escape sequence inside a literal String shall consist of a backslash followed by: OctalDigit | OctalDigit OctalDigit | ZeroToThree OctalDigit OctalDigit Any octal escape sequence followed by non-octal digits can be confusing, e.g. "\038" is interpreted as the octal escape sequence "\03" followed by the literal character "8".
 
-u: (Suspicious Octal Escape) A suspicious octal escape sequence was found inside a String literal. The Java language specification \(section 3.10.6 \) says an octal escape sequence inside a literal String shall consist of a backslash followed by: OctalDigit | OctalDigit OctalDigit | ZeroToThree OctalDigit OctalDigit Any octal escape sequence followed by non-octal digits can be confusing, e.g. "\038" is interpreted as the octal escape sequence "\03" followed by the literal character "8".
+u: (suspicious octal escape) A suspicious octal escape sequence was found inside a String literal. The Java language specification \(section 3.10.6 \) says an octal escape sequence inside a literal String shall consist of a backslash followed by: OctalDigit | OctalDigit OctalDigit | ZeroToThree OctalDigit OctalDigit Any octal escape sequence followed by non-octal digits can be confusing, e.g. "\038" is interpreted as the octal escape sequence "\03" followed by the literal character "8".
 
 u: (AvoidUsingOctalValues) Integer literals should not start with zero since this denotes that the rest of literal will be interpreted as an octal value.
 
-u: (Avoid Using Octal Values) Integer literals should not start with zero since this denotes that the rest of literal will be interpreted as an octal value.
+u: (avoid using octal values) Integer literals should not start with zero since this denotes that the rest of literal will be interpreted as an octal value.
 
 u: (AvoidDecimalLiteralsInBigDecimalConstructor) One might assume that "new BigDecimal \(.1 \)" is exactly equal to .1, but it is actually equal to .1000000000000000055511151231257827021181583404541015625. This is so because .1 cannot be represented exactly as a double (or, for that matter, as a binary fraction of any finite length). Thus, the long value that is being passed in to the constructor is not exactly equal to .1, appearances notwithstanding. The (String) constructor, on the other hand, is perfectly predictable: 'new BigDecimal \(".1" \)' is exactly equal to .1, as one would expect. Therefore, it is generally recommended that the \(String \) constructor be used in preference to this one.
 
-u: (Avoid Decimal Literals In Big Decimal Constructor) One might assume that "new BigDecimal \(.1 \)" is exactly equal to .1, but it is actually equal to .1000000000000000055511151231257827021181583404541015625. This is so because .1 cannot be represented exactly as a double (or, for that matter, as a binary fraction of any finite length). Thus, the long value that is being passed in to the constructor is not exactly equal to .1, appearances notwithstanding. The (String) constructor, on the other hand, is perfectly predictable: 'new BigDecimal \(".1" \)' is exactly equal to .1, as one would expect. Therefore, it is generally recommended that the \(String \) constructor be used in preference to this one.
+u: (avoid decimal literals in big decimal constructor) One might assume that "new BigDecimal \(.1 \)" is exactly equal to .1, but it is actually equal to .1000000000000000055511151231257827021181583404541015625. This is so because .1 cannot be represented exactly as a double (or, for that matter, as a binary fraction of any finite length). Thus, the long value that is being passed in to the constructor is not exactly equal to .1, appearances notwithstanding. The (String) constructor, on the other hand, is perfectly predictable: 'new BigDecimal \(".1" \)' is exactly equal to .1, as one would expect. Therefore, it is generally recommended that the \(String \) constructor be used in preference to this one.
 
 # Coding Checkstyle
 u: (EmptyBlock) Checks for empty blocks. This check does not validate sequential blocks.
 
 Sequential blocks won't be checked. Also, no violations for fallthrough.
 
-u: (Empty Block) Checks for empty blocks. This check does not validate sequential blocks.
+u: (empty block) Checks for empty blocks. This check does not validate sequential blocks.
 
 Sequential blocks won't be checked. Also, no violations for fallthrough.
 
@@ -1196,7 +1196,7 @@ This covariant version of equals \(\) does not override the version in the Objec
 
 This kind of bug is not obvious because it looks correct, and in circumstances where the class is accessed through the references of the class type \( rather than a supertype \), it will work correctly. However, the first time it is used in a container, the behavior might be mysterious. For these reasons, this type of bug can elude testing and code inspections.
 
-u: (Covariant Equals) Checks that classes which define a covariant equals \(\) method also override method equals \( Object g \).
+u: (covariant equals) Checks that classes which define a covariant equals \(\) method also override method equals \( Object g \).
 Covariant equals \(\) - method that is similar to equals \( Object \), but with a covariant parameter type \( any subtype of Object \).
 Notice: the enums are also checked, even though they cannot override equals \( Object \). The reason is to point out that implementing equals \(\) in enums is considered an awful practice: it may cause having two different enum values that are equal using covariant enum method, and not equal when compared normally.
 
@@ -1214,11 +1214,11 @@ This kind of bug is not obvious because it looks correct, and in circumstances w
 
 u: (EmptyStatement) Detects empty statements \(standalone ";" semicolon \).
 
-u: (Empty Statement) Detects empty statements \(standalone ";" semicolon \).
+u: (empty statement) Detects empty statements \(standalone ";" semicolon \).
 
 u: (HiddenField)   Checks that a local variable or a parameter does not shadow a field that is defined in the same class.
 
-u: (Hidden Field)   Checks that a local variable or a parameter does not shadow a field that is defined in the same class.
+u: (hidden field)   Checks that a local variable or a parameter does not shadow a field that is defined in the same class.
 
 u: (MagicNumber) Checks that there are no "magic numbers" where a magic number is a numeric literal that is not defined as a constant. By default, -1, 0, 1, and 2 are not considered to be magic numbers.
 
@@ -1231,7 +1231,7 @@ static final double SPECIAL_DIFFERENCE = 4 - Math.PI;
 static final Border STANDARD_BORDER = BorderFactory.createEmptyBorder \(3, 3, 3, 3 \);
 static final Integer ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE = new Integer \( 42 \);
 
-u: (Magic Number) Checks that there are no "magic numbers" where a magic number is a numeric literal that is not defined as a constant. By default, -1, 0, 1, and 2 are not considered to be magic numbers.
+u: (magic number) Checks that there are no "magic numbers" where a magic number is a numeric literal that is not defined as a constant. By default, -1, 0, 1, and 2 are not considered to be magic numbers.
 
 It is fine to have one constant defining multiple numeric literals within one expression:
 
@@ -1246,7 +1246,7 @@ u: (SimplifyBooleanExpressions) Checks for over-complicated boolean expressions.
 
 Rationale: Complex boolean logic makes code hard to understand and maintain.
 
-u: (Simplify Boolean Expressions) Checks for over-complicated boolean expressions. Currently finds code like if \(b == true \), b || true, !false, etc.
+u: (simplify boolean expressions) Checks for over-complicated boolean expressions. Currently finds code like if \(b == true \), b || true, !false, etc.
 
 Rationale: Complex boolean logic makes code hard to understand and maintain.
 
@@ -1261,7 +1261,7 @@ could be written as
 
 return !valid \(\);
 
-u: (Simplify Boolean Returns) Checks for over-complicated boolean return statements. For example the following code
+u: (simplify boolean returns) Checks for over-complicated boolean return statements. For example the following code
 
 if \(valid \(\)\)
   return false;
@@ -1282,7 +1282,7 @@ when they mean
 
 if \("something".equals \(x \) \)
 
-u: (String Literal Equality) Checks that string literals are not used with == or !=.
+u: (string literal equality) Checks that string literals are not used with == or !=.
 
 Rationale: Novice Java programmers often use code like:
 
@@ -1367,7 +1367,7 @@ switch \(a \)
         </pre></div>
       </div>
 
-u: (Avoid Nested Blocks) <p>
+u: (avoid nested blocks) <p>
 		  Finds nested blocks, i.e. blocks that are used freely in the code.
 		</p>
 
@@ -1446,19 +1446,19 @@ u: (DefaultComesLast) Check that the default is after all the cases in a switch 
 
 Rationale: Java allows default anywhere within the switch statement. But it is more readable if it comes after the last case.
 
-u: (Default Comes Last) Check that the default is after all the cases in a switch statement.
+u: (default comes last) Check that the default is after all the cases in a switch statement.
 
 Rationale: Java allows default anywhere within the switch statement. But it is more readable if it comes after the last case.
 
 u: (MissingCtor)  Checks that classes \(except abstract ones \) define a constructor and don't rely on the default one.
 
-u: (Missing Ctor)  Checks that classes \(except abstract ones \) define a constructor and don't rely on the default one.
+u: (missing ctor)  Checks that classes \(except abstract ones \) define a constructor and don't rely on the default one.
 
 u: (FallThrough) Checks for fall-through in switch statements. Finds locations where a case contains Java code but lacks a break, return, throw or continue statement.
 
 The check honors special comments to suppress the warning. By default the text "fallthru", "fall through", "fallthrough", "falls through" and "fallsthrough" are recognized \(case sensitive \). The comment containing these words must be all on one line, and must be on the last non-empty line before the case triggering the warning or on the same line before the case \(ugly, but possible \).
 
-u: (Fall Through) Checks for fall-through in switch statements. Finds locations where a case contains Java code but lacks a break, return, throw or continue statement.
+u: (fall through) Checks for fall-through in switch statements. Finds locations where a case contains Java code but lacks a break, return, throw or continue statement.
 
 The check honors special comments to suppress the warning. By default the text "fallthru", "fall through", "fallthrough", "falls through" and "fallsthrough" are recognized \(case sensitive \). The comment containing these words must be all on one line, and must be on the last non-empty line before the case triggering the warning or on the same line before the case \(ugly, but possible \).
 
@@ -1471,7 +1471,7 @@ Rationale:
 The same notation/habit for C++ and Java \(C++ have global methods, so having "this." do make sense in it to distinguish call of method of class instead of global \).
 Non-IDE development \(ease of refactoring, some clearness to distinguish static and non-static methods \).
 
-u: (Require This) Checks that references to instance variables and methods of the present object are explicitly of the form "this.varName" or "this.methodName \(args\)" and that those references don't rely on the default behavior when "this." is absent.
+u: (require this) Checks that references to instance variables and methods of the present object are explicitly of the form "this.varName" or "this.methodName \(args\)" and that those references don't rely on the default behavior when "this." is absent.
 
 Warning: the Check is very controversial if 'validateOnlyOverlapping' option is set to 'false' and not that actual nowadays.
 
@@ -1506,7 +1506,7 @@ Restriction: Check doesn't check if class is immutable, there's no checking if a
 
 Star imports are out of scope of this Check. So if one of type imported via star import collides with user specified one by its short name - there won't be Check's violation.
 
-u: (Visibility Modifier) Checks visibility of class members. Only static final, immutable or annotated by specified annotation members may be public; other class members must be private unless the property protectedAllowed or packageAllowed is set.
+u: (visibility modifier) Checks visibility of class members. Only static final, immutable or annotated by specified annotation members may be public; other class members must be private unless the property protectedAllowed or packageAllowed is set.
 
 Public members are not flagged if the name matches the public member regular expression \(contains "^serialVersionUID$" by default \).
 
@@ -1545,7 +1545,7 @@ while \( \( line = bufferedReader.readLine\(\) \) != null \) \{
 
 Assignment inside a condition is not a problem here, as the assignment is surrounded by an extra pair of parentheses. The comparison is != null and there is no chance that intention was to write line == reader.readLine \(\).
 
-u: (Inner Assignment) Checks for assignments in subexpressions, such as in String s = Integer.toString \(i = 2 \);.
+u: (inner assignment) Checks for assignments in subexpressions, such as in String s = Integer.toString \(i = 2 \);.
 
 Rationale: With the exception of for iterators and assignment in while idiom, all assignments should occur in their own top-level statement to increase readability. With inner assignments like the one given above, it is difficult to see all places where a variable is set.
 
@@ -1562,7 +1562,7 @@ u: (FileLength) Checks for long source files.
 
 Rationale: If a source file becomes very long it is hard to understand. Therefore long classes should usually be refactored into several individual classes that focus on a specific task.
 
-u: (File Length) Checks for long source files.
+u: (file length) Checks for long source files.
 
 Rationale: If a source file becomes very long it is hard to understand. Therefore long classes should usually be refactored into several individual classes that focus on a specific task.
 
@@ -1570,13 +1570,13 @@ u: (MethodLength) Checks for long methods.
 
 Rationale: If a method becomes very long it is hard to understand. Therefore long methods should usually be refactored into several individual methods that focus on a specific task.
 
-u: (Method Length) Checks for long methods.
+u: (method length) Checks for long methods.
 
 Rationale: If a method becomes very long it is hard to understand. Therefore long methods should usually be refactored into several individual methods that focus on a specific task.
 
 u: (ParameterNumber) Checks the number of parameters that a method or constructor has. The default allowable number of parameters is 7. To change the number of allowable parameters, set property max.
 
-u: (Parameter Number) Checks the number of parameters that a method or constructor has. The default allowable number of parameters is 7. To change the number of allowable parameters, set property max.
+u: (parameter number) Checks the number of parameters that a method or constructor has. The default allowable number of parameters is 7. To change the number of allowable parameters, set property max.
 
 # Coding PMD
 u: (ForLoopShouldBeWhileLoop) Some for loops can be simplified to while loops - this makes them more concise.
@@ -1591,7 +1591,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (For Loop Should Be While Loop) Some for loops can be simplified to while loops - this makes them more concise.
+u: (for loop should be while loop) Some for loops can be simplified to while loops - this makes them more concise.
 <div class="source"><pre>
 
 public class Foo \{
@@ -1633,7 +1633,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Override Both Equals And Hashcode) Override both public boolean Object.equals \(Object other \), and public int Object.hashCode \(\), or override neither. Even if you are inheriting a hashCode \(\) from a parent class, consider implementing hashCode and explicitly delegating to your superclass.
+u: (override both equals and hashcode) Override both public boolean Object.equals \(Object other \), and public int Object.hashCode \(\), or override neither. Even if you are inheriting a hashCode \(\) from a parent class, consider implementing hashCode and explicitly delegating to your superclass.
 <div class="source"><pre>
 
 // this is bad
@@ -1685,7 +1685,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Double Checked Locking) void method \(\) \{ if \( x == null \) \{ synchronized \( this \)\{ if \( x == null \) \{ x = new | method \(\); \} \} \} 1. The error is when one uses the value assigned within a synchronized section, outside of a synchronized section. if \( x == null \) is outside of synchronized section x = new | method \(\);
+u: (double checked locking) void method \(\) \{ if \( x == null \) \{ synchronized \( this \)\{ if \( x == null \) \{ x = new | method \(\); \} \} \} 1. The error is when one uses the value assigned within a synchronized section, outside of a synchronized section. if \( x == null \) is outside of synchronized section x = new | method \(\);
 
 Very very specific check for double checked locking.
 <div class="source"><pre>
@@ -1725,7 +1725,7 @@ public class Bar \{
 
             </pre></div>
 
-u:(Return From Finally Block) Avoid returning from a finally block - this can discard exceptions.
+u:(return from finally block) Avoid returning from a finally block - this can discard exceptions.
 <div class="source"><pre>
 
 public class Bar \{
@@ -1757,7 +1757,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Unconditional If Statement) Do not use "if" statements that are always true or always false.
+u: (unconditional if statement) Do not use "if" statements that are always true or always false.
 <div class="source"><pre>
 
 public class Foo \{
@@ -1782,7 +1782,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Boolean Instantiation) Avoid instantiating Boolean objects; you can reference Boolean.TRUE, Boolean.FALSE, or call Boolean.valueOf \(\) instead.
+u: (boolean instantiation) Avoid instantiating Boolean objects; you can reference Boolean.TRUE, Boolean.FALSE, or call Boolean.valueOf \(\) instead.
 <div class="source"><pre>
 
 public class Foo \{
@@ -1809,7 +1809,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Collapsible If Statements) Sometimes two 'if' statements can be consolidated by separating their conditions with a boolean short-circuit operator.
+u: (collapsible if statements) Sometimes two 'if' statements can be consolidated by separating their conditions with a boolean short-circuit operator.
 <div class="source"><pre>
 
 public class Foo \{
@@ -1850,7 +1850,7 @@ if executed \)
 
             </pre></div>
 
-u: (Class Cast Exception With To Array) if you need to get an array of a class from your Collection, you should pass an array of the desidered class as the parameter of the toArray method. Otherwise you will get a ClassCastException.
+u: (class cast exception with to array) if you need to get an array of a class from your Collection, you should pass an array of the desidered class as the parameter of the toArray method. Otherwise you will get a ClassCastException.
 <div class="source"><pre>
 
 import java.util.ArrayList;
@@ -1887,7 +1887,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Misplaced Null Check) The null check here is misplaced. if the variable is null you'll get a NullPointerException. Either the check is useless \(the variable will never be "null"\) or it's incorrect.
+u: (misplaced null check) The null check here is misplaced. if the variable is null you'll get a NullPointerException. Either the check is useless \(the variable will never be "null"\) or it's incorrect.
 <div class="source"><pre>
 
 public class Foo \{
@@ -1916,7 +1916,7 @@ class Foo \{
 
             </pre></div>
 
-u: (Broken Null Check) The null check is broken since it will throw a NullPointerException itself. It is likely that you used || instead of && or vice versa.
+u: (broken null check) The null check is broken since it will throw a NullPointerException itself. It is likely that you used || instead of && or vice versa.
 <div class="source"><pre>
 
 class Foo \{
@@ -1957,13 +1957,13 @@ u: (AvoidMultipleUnaryOperators) Using multiple unary operators may be a bug, an
 
             </pre></div>
 
-u: (Avoid Multiple Unary Operators) Using multiple unary operators may be a bug, and/or is confusing. Check the usage is not a bug, or consider simplifying the expression.
+u: (avoid multiple unary operators) Using multiple unary operators may be a bug, and/or is confusing. Check the usage is not a bug, or consider simplifying the expression.
 <div class="source"><pre>
 
             // These are typo bugs, or at best needlessly complex and confusing:
             int i = - -1;
             int j = + - +1;
-            int z = ~~2;
+            int z = \~\~2;
             boolean b = !!true;
             boolean c = !!!true;
 
@@ -1975,7 +1975,7 @@ u: (Avoid Multiple Unary Operators) Using multiple unary operators may be a bug,
             boolean c = false;
 
             // And these just make your brain hurt:
-            int i = ~-2;
+            int i = \~-2;
             int j = -~7;
 
 
@@ -2000,7 +2000,7 @@ for \(int i = 0; i &lt; 10; i++ \) \{
 
         </pre></div>
 
-u: (Avoid Branching Statement As Last In Loop) Using a branching statement as the last part of a loop may be a bug, and/or is confusing. Ensure that the usage is not a bug, or consider using another approach.
+u: (avoid branching statement as last in loop) Using a branching statement as the last part of a loop may be a bug, and/or is confusing. Ensure that the usage is not a bug, or consider using another approach.
 <div class="source"><pre>
   // unusual use of branching statement in a loop
 for \(int i = 0; i &lt; 10; i++ \) \{
@@ -2028,7 +2028,7 @@ new Thread \(\).run \(\); // same violation
 
       </pre></div>
 
-u: (Dont Call Thread Run) Explicitly calling Thread.run \(\) method will execute in the caller's thread of control. Instead, call Thread.start \(\) for the intended behavior.
+u: (do not call thread run) Explicitly calling Thread.run \(\) method will execute in the caller's thread of control. Instead, call Thread.start \(\) for the intended behavior.
 <div class="source">
 <pre>
 Thread t = new Thread \(\);
@@ -2054,7 +2054,7 @@ public class Count \{
 
     </pre></div>
 
-u: (Dont Use Float Type For Loop Indices) Don’t use floating point for loop indices. If you must use floating point, use double unless you’re certain that float provides enough precision and you have a compelling performance need (space or time).
+u: (do not use float type for loop indices) Don’t use floating point for loop indices. If you must use floating point, use double unless you’re certain that float provides enough precision and you have a compelling performance need (space or time).
 <div class="source">
 <pre>
 public class Count \{
@@ -2086,7 +2086,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Switch Stmts Should Have Default)  Switch statements should have a default label.
+u: (switch stmts should have default)  Switch statements should have a default label.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2154,7 +2154,7 @@ class Bar \{
 
             </pre></div>
 
-u: (Equals Null)  Inexperienced programmers sometimes confuse comparison concepts and use equals \(\) to compare to null.
+u: (equals null)  Inexperienced programmers sometimes confuse comparison concepts and use equals \(\) to compare to null.
 <div class="source"><pre>
 
 class Bar \{
@@ -2182,7 +2182,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Instantiation To Get Class) Avoid instantiating an object just to call getClass \(\) on it; use the .class public member instead.
+u: (instantiation to get class) Avoid instantiating an object just to call getClass \(\) on it; use the .class public member instead.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2208,7 +2208,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Idempotent Operations) Avoid idempotent operations - they are have no effect.
+u: (idempotent operations) Avoid idempotent operations - they are have no effect.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2237,7 +2237,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Missing Static Method In Non Instantiatable Class) A class that has private constructors and does not have any static methods or fields cannot be used.
+u: (missing static method in non instantiatable class) A class that has private constructors and does not have any static methods or fields cannot be used.
 <div class="source"><pre>
 
 /* This class is unusable, since it cannot be
@@ -2266,7 +2266,7 @@ class Foo \{
 
             </pre></div>
 
-u: (Simplify Conditional) No need to check for null before an instanceof; the instanceof keyword returns false when given a null argument.
+u: (simplify conditional) No need to check for null before an instanceof; the instanceof keyword returns false when given a null argument.
 <div class="source"><pre>
 
 class Foo \{
@@ -2281,7 +2281,7 @@ class Foo \{
 
 u: (SingularField) This field is used in only one method and the first usage is assigning a value to the field. This probably means that the field can be changed to a local variable.
 
-u: (Singular Field) This field is used in only one method and the first usage is assigning a value to the field. This probably means that the field can be changed to a local variable.
+u: (singular field) This field is used in only one method and the first usage is assigning a value to the field. This probably means that the field can be changed to a local variable.
 
 u: (TooFewBranchesForASwitchStatement) Swith are designed complex branches, and allow branches to share treatement. Using a switch for only a few branches is ill advised, as switches are not as easy to understand as if. In this case, it's most likely is a good idea to use a if statement instead, at least to increase code readability.
 <div class="source"><pre class="prettyprint"><span class="pln">
@@ -2300,7 +2300,7 @@ u: (TooFewBranchesForASwitchStatement) Swith are designed complex branches, and 
 
         </span></pre></div>
 
-u: (Too Few Branches For A Switch Statement) Swith are designed complex branches, and allow branches to share treatement. Using a switch for only a few branches is ill advised, as switches are not as easy to understand as if. In this case, it's most likely is a good idea to use a if statement instead, at least to increase code readability.
+u: (too few branches for a switch statement) Swith are designed complex branches, and allow branches to share treatement. Using a switch for only a few branches is ill advised, as switches are not as easy to understand as if. In this case, it's most likely is a good idea to use a if statement instead, at least to increase code readability.
 <div class="source"><pre class="prettyprint"><span class="pln">
 </span><span class="com">// With a minimumNumberCaseForASwitch of 3</span><span class="pln">
 </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pln"> </span><span class="pun">\{</span><span class="pln">
@@ -2332,7 +2332,7 @@ u: (LogicInversion) Use opposite operator instead of negating the whole expressi
 
     </span></pre></div>
 
-u: (Logic Inversion) Use opposite operator instead of negating the whole expression with a logic complement operator.
+u: (logic inversion) Use opposite operator instead of negating the whole expression with a logic complement operator.
 <div class="source"><pre class="prettyprint"><span class="pln">
 </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> bar</span><span class="pun">\(</span><span class="kwd">int</span><span class="pln"> a</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> b</span><span class="pun">)</span><span class="pln"> </span><span class="pun">\{</span><span class="pln">
 
@@ -2361,7 +2361,7 @@ public void doSomething \(\) \{
 
             </pre></div>
 
-u: (Empty Catch Block) Empty Catch Block finds instances where an exception is caught, but nothing is done. In most circumstances, this swallows an exception which should either be acted on or reported.
+u: (empty catch block) Empty Catch Block finds instances where an exception is caught, but nothing is done. In most circumstances, this swallows an exception which should either be acted on or reported.
 <div class="source"><pre>
 
 public void doSomething \(\) \{
@@ -2389,7 +2389,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Empty If Stmt) Empty If Statement finds instances where a condition is checked but nothing is done about it.
+u: (empty if stmt) Empty If Statement finds instances where a condition is checked but nothing is done about it.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2417,7 +2417,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Empty While Stmt) Empty While Statement finds all instances where a while statement does nothing. If it is a timing loop, then you should use Thread.sleep \(\) for it; if it's a while loop that does a lot in the exit expression, rewrite it to make it clearer.
+u: (empty while stmt) Empty While Statement finds all instances where a while statement does nothing. If it is a timing loop, then you should use Thread.sleep \(\) for it; if it's a while loop that does a lot in the exit expression, rewrite it to make it clearer.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2446,7 +2446,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Empty Try Block) Avoid empty try blocks - what's the point?
+u: (empty try block) Avoid empty try blocks - what's the point?
 <div class="source"><pre>
 
 public class Foo \{
@@ -2477,7 +2477,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Empty Finally Block) Avoid empty finally blocks - these can be deleted.
+u: (empty finally block) Avoid empty finally blocks - these can be deleted.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2508,7 +2508,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Empty Switch Statements) Avoid empty switch statements.
+u: (empty switch statements) Avoid empty switch statements.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2537,7 +2537,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Empty Synchronized Block) Avoid empty synchronized blocks - they're useless.
+u: (empty synchronized block) Avoid empty synchronized blocks - they're useless.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2564,7 +2564,7 @@ public class Foo \{
 
     </pre></div>
 
-u: (Empty Initializer) An empty initializer was found.
+u: (empty initializer) An empty initializer was found.
 <div class="source">
 <pre>
 public class Foo \{
@@ -2592,7 +2592,7 @@ public class Foo \{
 
     </pre></div>
 
-u: (Empty Statement Block) Empty block statements serve no purpose and should be removed.
+u: (empty statement block) Empty block statements serve no purpose and should be removed.
 <div class="source"><pre>
 public class Foo \{
 
@@ -2619,7 +2619,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Empty Static Initializer) An empty static initializer serve no purpose and should be removed.
+u: (empty static initializer) An empty static initializer serve no purpose and should be removed.
 <div class="source"><pre>
 
 public class Foo \{
@@ -2637,7 +2637,7 @@ import java.lang.String;
 import java.lang.*;
 public class Foo \{\}
 
-u: (Duplicate Imports) Avoid duplicate import statements.
+u: (duplicate imports) Avoid duplicate import statements.
 Example:
 import java.lang.String;
 import java.lang.*;
@@ -2660,7 +2660,7 @@ import java.lang.*;
 
 public class Foo \{\}
 
-u: (Dont Import Java Lang) Avoid importing anything from the package 'java.lang'. These classes are automatically imported \(JLS 7.5.3 \).
+u: (do not import "java.lang") Avoid importing anything from the package 'java.lang'. These classes are automatically imported \(JLS 7.5.3 \).
 
 Example:
 
@@ -2687,7 +2687,7 @@ Example:
 import java.io.File;
 public class Foo \{\}
 
-u: (Unused Imports) Avoid unused import statements.
+u: (unused imports) Avoid unused import statements.
 
 Example:
 
@@ -2706,7 +2706,7 @@ Example:
  import foo.*; // or this
  public class Bar\{\}
 
-u: (Import From Same Package) No need to import a type that lives in the same package.
+u: (import from same package) No need to import a type that lives in the same package.
 
 Example:
 
@@ -2731,7 +2731,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Suspicious Hashcode Method Name) The method name and return type are suspiciously close to hashCode \(\), which may mean you are intending to override the hashCode \(\) method.
+u: (suspicious hashcode method name) The method name and return type are suspiciously close to hashCode \(\), which may mean you are intending to override the hashCode \(\) method.
 
 <p>Example:</p>
 
@@ -2759,7 +2759,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Avoid Throwing Null Pointer Exception) Avoid throwing a NullPointerException - it's confusing because most people will assume that the virtual machine threw it. Consider using an IllegalArgumentException instead; this will be clearly seen as a programmer-initiated exception.
+u: (avoid throwing null pointer exception) Avoid throwing a NullPointerException - it's confusing because most people will assume that the virtual machine threw it. Consider using an IllegalArgumentException instead; this will be clearly seen as a programmer-initiated exception.
 <p>Example:</p>
 <div class="source"><pre>
 public class Foo \{
@@ -2786,7 +2786,7 @@ u: (AvoidRethrowingException) Catch blocks that merely rethrow a caught exceptio
 
             </pre></div>
 
-u: (Avoid Rethrowing Exception) Catch blocks that merely rethrow a caught exception only add to code size and runtime complexity.
+u: (avoid rethrowing exception) Catch blocks that merely rethrow a caught exception only add to code size and runtime complexity.
 <div class="source"><pre>
   public class Foo \{
    void bar \(\) \{
@@ -2808,7 +2808,7 @@ u: (DoNotExtendJavaLangError) Errors are system exceptions. Do not extend them.
 
             </pre></div>
 
-u: (Do Not Extend Java Lang Error) Errors are system exceptions. Do not extend them.
+u: (do not extend "java.lang.error") Errors are system exceptions. Do not extend them.
 
 <div class="source"><pre>
         public class Foo extends Error \{ \}
@@ -2840,7 +2840,7 @@ u: (DoNotThrowExceptionInFinally) Throwing exception in a finally block is confu
 
             </pre></div>
 
-u: (Do Not Throw Exception In Finally) Throwing exception in a finally block is confusing. It may mask exception or a defect of the code, it also render code cleanup uninstable. Note: This is a PMD implementation of the Lint4j rule "A throw in a finally block"
+u: (do not throw exception in finally) Throwing exception in a finally block is confusing. It may mask exception or a defect of the code, it also render code cleanup uninstable. Note: This is a PMD implementation of the Lint4j rule "A throw in a finally block"
 
 <div class="source"><pre>
 
@@ -2865,7 +2865,7 @@ u: (Do Not Throw Exception In Finally) Throwing exception in a finally block is 
 
 </pre></div>
 
-u: (Avoid Throwing New Instance Of Same Exception) Catch blocks that merely rethrow a caught exception wrapped inside a new instance of the same type only add to code size and runtime complexity.
+u: (avoid throwing new instance of same exception) Catch blocks that merely rethrow a caught exception wrapped inside a new instance of the same type only add to code size and runtime complexity.
 
 <div class="source"><pre>
     public class Foo \{
@@ -2910,7 +2910,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (String Instantiation) Avoid instantiating String objects; this is usually unnecessary.
+u: (string instantiation) Avoid instantiating String objects; this is usually unnecessary.
 
 <div class="source"><pre>
 
@@ -2937,7 +2937,7 @@ u: (UnnecessaryCaseChange) Using equalsIgnoreCase \(\) is faster than using toUp
 
             </pre></div>
 
-u: (Unnecessary Case Change) Using equalsIgnoreCase \(\) is faster than using toUpperCase/toLowerCase \(\).equals \(\)
+u: (unnecessary case change) Using equalsIgnoreCase \(\) is faster than using toUpperCase/toLowerCase \(\).equals \(\)
 
 <div class="source"><pre>
 
@@ -2963,7 +2963,7 @@ u: (UnnecessaryConversionTemporary) Avoid the use temporary objects when convert
 
       </span></pre></div>
 
-u: (Unnecessary Conversion Temporary) Avoid the use temporary objects when converting primitives to Strings. Use the static conversion methods on the wrapper classes instead.
+u: (unnecessary conversion temporary) Avoid the use temporary objects when converting primitives to Strings. Use the static conversion methods on the wrapper classes instead.
 <div class="source"><pre class="prettyprint"><span class="pln">
 </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> convert</span><span class="pun">\(</span><span class="kwd">int</span><span class="pln"> x</span><span class="pun">\)</span><span class="pln"> </span><span class="pun">\{</span><span class="pln">
 </span><span class="typ">String</span><span class="pln"> foo </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Integer</span><span class="pun">\(</span><span class="pln">x</span><span class="pun">\).</span><span class="pln">toString</span><span class="pun">\(\);</span><span class="pln">	</span><span class="com">// this wastes an object</span><span class="pln">
@@ -2985,7 +2985,7 @@ u: (UnnecessaryReturn) Avoid the use of unnecessary return statements.
 
       </span></pre></div>
 
-u: (Unnecessary Return) Avoid the use of unnecessary return statements.
+u: (unnecessary return) Avoid the use of unnecessary return statements.
 
 <div class="source"><pre class="prettyprint"><span class="pln">
 </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pln"> </span><span class="pun">\{</span><span class="pln">
@@ -3010,7 +3010,7 @@ u: (UnnecessaryFinalModifier) When a class has the final modifier, all the metho
 
       </span></pre></div>
 
-u: (Unnecessary Final Modifier) When a class has the final modifier, all the methods are automatically final and do not need to be tagged as such.
+u: (unnecessary final modifier) When a class has the final modifier, all the methods are automatically final and do not need to be tagged as such.
 
 <div class="source"><pre class="prettyprint"><span class="pln">
 </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pln"> </span><span class="pun">\{</span><span class="pln">
@@ -3039,7 +3039,7 @@ u: (UselessOverridingMethod) The overriding method merely calls the same method 
 </span><span class="pun">\}</span><span class="pln">
         </span></pre></div>
 
-u: (Useless Overriding Method) The overriding method merely calls the same method defined in a superclass.
+u: (useless overriding method) The overriding method merely calls the same method defined in a superclass.
 
 <div class="source"><pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> foo</span><span class="pun">\(</span><span class="typ">String</span><span class="pln"> bar</span><span class="pun">\)</span><span class="pln"> </span><span class="pun">\{</span><span class="pln">
   </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">foo</span><span class="pun">\(</span><span class="pln">bar</span><span class="pun">\);</span><span class="pln">      </span><span class="com">// why bother overriding?</span><span class="pln">
@@ -3073,7 +3073,7 @@ u: (UselessOperationOnImmutable) An operation on an Immutable object \(String, B
 
       </span></pre></div>
 
-u: (Useless Operation On Immutable) An operation on an Immutable object \(String, BigDecimal or BigInteger \) won't change the object itself since the result of the operation is a new object. Therefore, ignoring the operation result is an error.
+u: (useless operation on immutable) An operation on an Immutable object \(String, BigDecimal or BigInteger \) won't change the object itself since the result of the operation is a new object. Therefore, ignoring the operation result is an error.
 
 <div class="source"><pre class="prettyprint"><span class="pln">
 </span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">math</span><span class="pun">.*;</span><span class="pln">
@@ -3132,7 +3132,7 @@ u: (UnusedNullCheckInEquals) After checking an object reference for null, you sh
 
 			</span></pre></div>
 
-u: (Unused Null Check In Equals) After checking an object reference for null, you should invoke equals\(\) on that object rather than passing it to another object's equals\(\) method.
+u: (unused null check in equals) After checking an object reference for null, you should invoke equals\(\) on that object rather than passing it to another object's equals\(\) method.
 
 <div class="source"><pre class="prettyprint"><span class="pln">
 </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Test</span><span class="pln"> </span><span class="pun">\{</span><span class="pln">
@@ -3189,7 +3189,7 @@ public class Something \{
 
             </pre></div>
 
-u: (Unused Private Field) Detects when a private field is declared and/or assigned a value, but not used.
+u: (unused private field) Detects when a private field is declared and/or assigned a value, but not used.
 
 <div class="source"><pre>
 
@@ -3218,7 +3218,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Unused Local Variable)  Detects when a local variable is declared and/or assigned, but not used.
+u: (unused local variable)  Detects when a local variable is declared and/or assigned, but not used.
 
 <div class="source"><pre>
 
@@ -3242,7 +3242,7 @@ public class Something \{
 
             </pre></div>
 
-u: (Unused Private Method) Unused Private Method detects when a private method is declared but is unused.
+u: (unused private method) Unused Private Method detects when a private method is declared but is unused.
 
 <div class="source"><pre>
 
@@ -3265,7 +3265,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Unused Formal Parameter) Avoid passing parameters to methods or constructors and then not using those parameters.
+u: (unused formal parameter) Avoid passing parameters to methods or constructors and then not using those parameters.
 
 <div class="source"><pre>
 
@@ -3292,7 +3292,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Excessive Method Length) Violations of this rule usually indicate that the method is doing too much. Try to reduce the method size by creating helper methods and removing any copy/pasted code.
+u: (excessive method length) Violations of this rule usually indicate that the method is doing too much. Try to reduce the method size by creating helper methods and removing any copy/pasted code.
 
 <div class="source"><pre>
 
@@ -3322,7 +3322,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Excessive Parameter List) Long parameter lists can indicate that a new object should be created to wrap the numerous parameters. Basically, try to group the parameters together.
+u: (excessive parameter list) Long parameter lists can indicate that a new object should be created to wrap the numerous parameters. Basically, try to group the parameters together.
 
 <div class="source"><pre>
 
@@ -3350,7 +3350,7 @@ public class Foo \{
 
             </pre></div>
 
-u: (Excessive Class Length) Long Class files are indications that the class may be trying to do too much. Try to break it down, and reduce the size to something manageable.
+u: (excessive class length) Long Class files are indications that the class may be trying to do too much. Try to break it down, and reduce the size to something manageable.
 
 <div class="source"><pre>
 
@@ -3377,7 +3377,7 @@ public class Person \{
 
             </pre></div>
 
-u: (TooManyFields) Classes that have too many fields could be redesigned to have fewer fields, possibly through some nested object grouping of some of the information. For example, a class with city/state/zip fields could instead have one Address field.
+u: (too many fields) Classes that have too many fields could be redesigned to have fewer fields, possibly through some nested object grouping of some of the information. For example, a class with city/state/zip fields could instead have one Address field.
 
 <div class="source"><pre>
 
@@ -3409,7 +3409,7 @@ public int checkReturnTag \(final int aTagIndex,
                           int aLineNo\)
 The classpath may need to be configured to locate the class information. The classpath configuration is dependent on the mechanism used to invoke Checkstyle.
 
-u: (Javadoc Method)  Checks the Javadoc of a method or constructor. By default, does not check for unused throws. To allow documented java.lang.RuntimeExceptions that are not declared, set property allowUndeclaredRTE to true. The scope to verify is specified using the Scope class and defaults to Scope.PRIVATE. To verify another scope, set property scope to a different scope.
+u: (javadoc method)  Checks the Javadoc of a method or constructor. By default, does not check for unused throws. To allow documented java.lang.RuntimeExceptions that are not declared, set property allowUndeclaredRTE to true. The scope to verify is specified using the Scope class and defaults to Scope.PRIVATE. To verify another scope, set property scope to a different scope.
 
 Error messages about parameters and type parameters for which no param tags are present can be suppressed by defining property allowMissingParamTags. Error messages about exceptions which are declared to be thrown, but for which no throws tag is present can be suppressed by defining property allowMissingThrowsTags. Error messages about methods which return non-void but for which no return tag is present can be suppressed by defining property allowMissingReturnTag.
 
@@ -3431,7 +3431,7 @@ Does not perform checks for author and version tags for inner classes, as they s
 
 Error messages about type parameters for which no param tags are present can be suppressed by defining property allowMissingParamTags.
 
-u: (Javadoc Type) Checks Javadoc comments for class and interface definitions. By default, does not check for author or version tags. The scope to verify is specified using the Scope class and defaults to Scope.PRIVATE. To verify another scope, set property scope to one of the Scope constants. To define the format for an author tag or a version tag, set property authorFormat or versionFormat respectively to a regular expression.
+u: (javadoc type) Checks Javadoc comments for class and interface definitions. By default, does not check for author or version tags. The scope to verify is specified using the Scope class and defaults to Scope.PRIVATE. To verify another scope, set property scope to one of the Scope constants. To define the format for an author tag or a version tag, set property authorFormat or versionFormat respectively to a regular expression.
 
 Does not perform checks for author and version tags for inner classes, as they should be redundant because of outer class.
 
@@ -3439,7 +3439,7 @@ Error messages about type parameters for which no param tags are present can be 
 
 u: (JavadocVariable) Checks that variables have Javadoc comments. Ignores serialVersionUID fields.
 
-u: (Javadoc Variable) Checks that variables have Javadoc comments. Ignores serialVersionUID fields.
+u: (javadoc variable) Checks that variables have Javadoc comments. Ignores serialVersionUID fields.
 
 # Documentation PMD
 u: (UncommentedEmptyMethod) Uncommented Empty Method finds instances where a method does not contain statements, but there is no comment. By explicitly commenting empty methods it is easier to distinguish between intentional \(commented \) and unintentional empty methods.
@@ -3449,7 +3449,7 @@ u: (UncommentedEmptyMethod) Uncommented Empty Method finds instances where a met
 
              </pre></div>
 
-u: (Uncommented Empty Method) Uncommented Empty Method finds instances where a method does not contain statements, but there is no comment. By explicitly commenting empty methods it is easier to distinguish between intentional \(commented \) and unintentional empty methods.
+u: (uncommented empty method) Uncommented Empty Method finds instances where a method does not contain statements, but there is no comment. By explicitly commenting empty methods it is easier to distinguish between intentional \(commented \) and unintentional empty methods.
 
 <div class="source"><pre>
 //MethodDeclaration/Block \[ count \(BlockStatement \) = 0 and \@containsComment = 'false' \]
@@ -3466,7 +3466,7 @@ public Foo \(\) \{
 
             </pre></div>
 
-u: (Uncommented Empty Constructor) Uncommented Empty Constructor finds instances where a constructor does not contain statements, but there is no comment. By explicitly commenting empty constructors it is easier to distinguish between intentional \(commented \) and unintentional empty constructors.
+u: (uncommented empty constructor) Uncommented Empty Constructor finds instances where a constructor does not contain statements, but there is no comment. By explicitly commenting empty constructors it is easier to distinguish between intentional \(commented \) and unintentional empty constructors.
 <div class="source"><pre>
 
 public Foo \(\) \{
@@ -3491,7 +3491,7 @@ public class Foo extends TestCase \{
 
             </pre></div>
 
-u: (JUnit Static Suite) The suite \(\) method in a JUnit test needs to be both public and static.
+u: (JUnit static suite) The suite \(\) method in a JUnit test needs to be both public and static.
 
 <div class="source"><pre>
 
@@ -3517,7 +3517,7 @@ public class Foo extends TestCase \{
 
             </pre></div>
 
-u: (JUnit Spelling) 	Some JUnit framework methods are easy to misspell.
+u: (JUnit spelling) 	Some JUnit framework methods are easy to misspell.
 
 <div class="source"><pre>
 
@@ -3546,7 +3546,7 @@ public class Foo extends TestCase \{
 
             </pre></div>
 
-u: (JUnit Assertions Should Include Message) JUnit assertions should include a message - i.e., use the three argument version of assertEquals \(\), not the two argument version.
+u: (JUnit assertions should include message) JUnit assertions should include a message - i.e., use the three argument version of assertEquals \(\), not the two argument version.
 
 <div class="source"><pre>
 
@@ -3578,7 +3578,7 @@ public class CarTest \{
 
             </pre></div>
 
-u: (JUnit Test Class Needs Test Case) Test classes end with the suffix Test. Having a non-test class with that name is not a good practice, since most people will assume it is a test case. Test classes have test methods named testXXX.
+u: (JUnit test class needs test case) Test classes end with the suffix Test. Having a non-test class with that name is not a good practice, since most people will assume it is a test case. Test classes have test methods named testXXX.
 
 <div class="source"><pre>
 
@@ -3609,7 +3609,7 @@ public class FooTest extends TestCase \{
 
             </pre></div>
 
-u: (Use Assert Same Instead Of Assert True) This rule detects JUnit assertions in object references equality. These assertions should be made by more specific methods, like assertSame, assertNotSame.
+u: (use assert same instead of assert true) This rule detects JUnit assertions in object references equality. These assertions should be made by more specific methods, like assertSame, assertNotSame.
 
 <div class="source"><pre>
 
@@ -3641,7 +3641,7 @@ u: (UseAssertNullInsteadOfAssertTrue) This rule detects JUnit assertions in obje
 
             </pre></div>
 
-u: (Use Assert Null Instead Of Assert True) This rule detects JUnit assertions in object references equality. These assertions should be made by more specific methods, like assertNull, assertNotNull.
+u: (use assert null instead of assert true) This rule detects JUnit assertions in object references equality. These assertions should be made by more specific methods, like assertNull, assertNotNull.
 
 <div class="source"><pre>
 
@@ -3672,7 +3672,7 @@ public class SimpleTest extends TestCase \{
 
             </pre></div>
 
-u: (Simplify Boolean Assertion) Avoid negation in an assertTrue or assertFalse test. For example, rephrase: assertTrue \( !expr \); as: assertFalse \( expr \);
+u: (simplify boolean assertion) Avoid negation in an assertTrue or assertFalse test. For example, rephrase: assertTrue \( !expr \); as: assertFalse \( expr \);
 
 <div class="source"><pre>
 

@@ -135,8 +135,8 @@ That depends. Do you want find the documentation for a method or for a class?
 u: READ_CLASS_DOCS (how * read * class * documentation)
 At the very top of the page, you can find the full name of the class and the parents of the class. Take a look at this example for the Scanner class:
 <div class="mlcode">
-java.lang.Object
-&nbsp;   java.util.Scanner
+java.lang.Object<br/>
+&nbsp;   java.util.Scanner<br/>
 </div>
 This means that if you want to import this class, you should say <code>import java.util.Scanner;</code>. It also means that Scanner is a subclass of the Object class. If you can't find documentation for a method in one class, check it's parent.
 <ul id="choices">
@@ -179,7 +179,7 @@ The documentation for a methods has 5 parts, in this order: (1) the method heade
 	a: P1 (1)
 	The first part of a method's documentation is the method header. It looks like this:
 	<div class="mlcode">
-	public String substring(int beginIndex, int endIndex)
+	public String substring(int beginIndex, int endIndex)<br/>
 	</div>
 	This tells us a lot about the method.
 	<ul>
@@ -206,7 +206,7 @@ The documentation for a methods has 5 parts, in this order: (1) the method heade
 	a: P2 (2)
 	The second part of a method's documentation is a description of how to use the method. It looks like this:
 	<div class="mlcode">
-	Returns a string that is a substring of this string. The substring begins at the specified beginIndex and extends to the character at index endIndex - 1. Thus the length of the substring is endIndex-beginIndex.
+	Returns a string that is a substring of this string. The substring begins at the specified beginIndex and extends to the character at index endIndex - 1. Thus the length of the substring is endIndex-beginIndex.<br/>
 	</div>
 	If you don't know how to use a method, you should read this. It will tell you the basics of what you need to know to use the method.
 	<ul id="choices">
@@ -227,9 +227,9 @@ The documentation for a methods has 5 parts, in this order: (1) the method heade
 	a: P3 (3)
 	The third part of a method's documentation is a description of what each parameter. It looks like this:
 	<div class="mlcode">
-	Parameters:
-	beginIndex - the beginning index, inclusive.
-	endIndex - the ending index, exclusive.
+	Parameters:<br/>
+	beginIndex - the beginning index, inclusive.<br/>
+	endIndex - the ending index, exclusive.<br/>
 	</div>
 	This tells you what each parameter is used for and the kind of values that should be used for it. If you are confused about what a parameter does, you should look at this section.
 	<ul id="choices">
@@ -250,8 +250,8 @@ The documentation for a methods has 5 parts, in this order: (1) the method heade
 	a: P4 (4)
 	The forth part of a method's documentation is a description of what the method returns. It looks like this:
 	<div class="mlcode">
-	Returns:
-	the specified substring.
+	Returns:<br/>
+	the specified substring.<br/>
 	</div>
 	This tells you what the method returns. If you are confused about what a method returns, you should look here. It doesn't just tell you the return type, it also tells you what the value means.
 	<ul id="choices">
@@ -272,8 +272,8 @@ The documentation for a methods has 5 parts, in this order: (1) the method heade
 	a: P5 (5)
 	The fifth and last part of a method's documentation is a list of all the exceptions this method can throw. It looks like this:
 	<div class="mlcode">
-	Throws:
-	IndexOutOfBoundsException - if the beginIndex is negative, or endIndex is larger than the length of this String object, or beginIndex is larger than endIndex.
+	Throws:<br/>
+	IndexOutOfBoundsException - if the beginIndex is negative, or endIndex is larger than the length of this String object, or beginIndex is larger than endIndex.<br/>
 	</div>
 	This tells you why the method will throw certain exceptions. If you are getting an exception and you don't know why, you should look here and then use the information to try and fix the problem. 
 	<ul id="choices">

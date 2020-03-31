@@ -43,7 +43,7 @@ u: (how * use * array)
 u: 2D (how * [create make] * [2d "two dimensional" "2 dimensional"] array)
 Making a 2D array is very similar to making a normal array. Here is the basic structure:
 <div class="mlcode">
-/*type*/[][] /*name for array*/ = new /*type*/[/*number of rows*/][/*number of columns*/];
+/*type*/[][] /*name for array*/ = new /*type*/[/*number of rows*/][/*number of columns*/];<br/>
 </div>
 <ul id="choices">
 <li>Could you give me an example?</li>
@@ -54,12 +54,12 @@ Making a 2D array is very similar to making a normal array. Here is the basic st
 	a: (example)
 	So, if you wanted to make an array of <code>int</code>s called <code>array</code> that has 2 rows and 3 columns, you want say this:
 	<div class="mlcode">
-	int[][] array = new int[2][3];
+	int[][] array = new int[2][3];<br/>
 	</div>
 	You can visualize the array like this:
 	<div class="mlcode">
-	0 0 0 
-	0 0 0 
+	0 0 0 <br/>
+	0 0 0 <br/>
 	</div>
 	Even though this representation isn't 100% accurate to what's going on, it's very helpful to think about 2D arrays like this.
 	<ul id="choices">
@@ -84,7 +84,7 @@ This is the basic structure of how to make an array:
 	a: (example)
 	So, if you wanted to make an array of <code>int</code>s called <code>array</code> with size 5, you want say this:
 	<div class="mlcode">
-	int[] array = new int[5];
+	int[] array = new int[5];<br/>
 	</div>
 	Now, <code>array</code> can hold 5 <code>int</code>s. The way that you create arrays is very similar to the way you create other Objects. You have to use the <code>new</code> keyword and say the type of the variable twice, once before the equals sign and once after and the size of the array is kind of like a parameter. 
 	<ul id="choices">
@@ -96,7 +96,7 @@ This is the basic structure of how to make an array:
 	a: (tell me more)
 	You can also create arrays using an initializer list like this:
 	<div class="mlcode">
-	int[] array = {1, 2, 3, 4, 5};
+	int[] array = {1, 2, 3, 4, 5};<br/>
 	</div>
 	That line will create an array of length 5 that holds the number 1 through 5. This is useful if you know exactly what you want to go in your array.
 	<ul id="choices">
@@ -109,8 +109,8 @@ This is the basic structure of how to make an array:
 u: ACCESS (how * access * array *)
 When you want to access an element from an array, remember what arrays are: they are sequences for data points. Each data point has a number or position associated with it. So, to access a specific data point from an array, you'll need its position in the array. For example:
 <div class="mlcode">
-int elementZero = array[0];
-array[1] = 2;
+int elementZero = array[0];<br/>
+array[1] = 2;<br/>
 </div>
 The first line of code will store whatever value is in the first position of the array into the variable <code>elementZero</code>. Then, it will store the value 2 into the array at the second position in the array. You can think of each position in the array as a separate variable that you can use to store values. In the above example, you could replace <code>array[0]</code> with a new variable <code>arrayPosition0</code> and it would function exactly the same.
 <ul id="choices">
@@ -146,15 +146,15 @@ Sadly, in Java, you cannot change the size of an array once it is created. If yo
 	a: (example)
 	Yes! So, pretend you declare an array like this:
 	<div class="mlcode">
-	int[] array = {1, 2, 3};
+	int[] array = {1, 2, 3};<br/>
 	</div>
 	But, then, you realize the array isn't big enough to store 5, your favorite number! So, you make a new bigger array and copy everything over like this:
 	<div class="mlcode">
-	int[] biggerArray = new int[5];
-	
-	for (int i = 0; i < array.length; i++) {
-	&nbsp;   biggerArray[i] = array[i]; //Each element in array is added to biggerArray
-	}
+	int[] biggerArray = new int[5];<br/>
+	<br/>
+	for (int i = 0; i < array.length; i++) {<br/>
+	&nbsp;   biggerArray[i] = array[i]; //Each element in array is added to biggerArray<br/>
+	}<br/>
 	</div>
 	Now, the everything that was in <code>array</code> is in <code>biggerArray</code> and you have space for 5! <br/>
 	This is more helpful when you're dealing with arrays that may lose or gain elements dynamically. 

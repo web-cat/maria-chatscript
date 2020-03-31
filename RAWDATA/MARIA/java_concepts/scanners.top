@@ -19,20 +19,20 @@ A Scanner is a class in Java that makes it easier to deal with text input. It ma
 u: (how * scanner * work)
 You can think of a Scanner like a pointer. When you create a Scanner, the pointer starts by pointing before the first word. When we call <code>next()</code>, it moves the pointer forward and returns the word that the pointer moved over. Here's an example:
 <div class="mlcode">
-Scanner scan = new Scanner("I love programming!");
-// Our Scanner looks like this:
-// "I love programming!"
-// \^ <- This is our pointer.
-scan.next();  // = "I"
-// "I love programming!"
-//  \^
-scan.next();  // = "love"
-// "I love programming!"
-//        \^
-scan.next();  // = "programming!"
-// "I love programming!"
-//                     \^
-// Now our pointer is at the end of the String. There is no next!
+Scanner scan = new Scanner("I love programming!");<br/>
+// Our Scanner looks like this:<br/>
+// "I love programming!"<br/>
+// \^ <- This is our pointer.<br/>
+scan.next();  // = "I"<br/>
+// "I love programming!"<br/>
+//  \^<br/>
+scan.next();  // = "love"<br/>
+// "I love programming!"<br/>
+//        \^<br/>
+scan.next();  // = "programming!"<br/>
+// "I love programming!"<br/>
+//                     \^<br/>
+// Now our pointer is at the end of the String. There is no next!<br/>
 </div>
 <ul id="choices">
 <li>How do I use a Scanner?</li>
@@ -43,7 +43,7 @@ scan.next();  // = "programming!"
 #! Give me an example of how to use a Scanner.
 u: EXAMPLE (example * scanner)
 Ok, here's an example of how to use a Scanner. First, let's come up with a situation when we might need a scanner. Let's say that we want to count the number of times the word "cool" shows up in a String. A Scanner will be perfect for this!
-<ul>
+<ul id="choices">
 <li>Ok, go on.</li>
 <li>Stop.</li>
 </ul>
@@ -57,11 +57,11 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 	a: (~yes)
 	So, first thing it first. Let's set up out method:
 	<div class="mlcode">
-	public int countCool(String str) {
-	&nbsp;   
-	}
+	public int countCool(String str) {<br/>
+	&nbsp;   <br/>
+	}<br/>
 	</div>
-	<ul>
+	<ul id="choices">
 	<li>Ok, go on.</li>
 	<li>Stop.</li>
 	</ul>
@@ -74,9 +74,9 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 		b: (~yes)
 		Now, we'll need to create our Scanner. But, before we can use a Scanner, we need to import it! So, at the top of our class, we'll need to add this line:
 		<div class="mlcode">
-		import java.util.Scanner;
+		import java.util.Scanner;<br/>
 		</div>
-		<ul>
+		<ul id="choices">
 		<li>Ok, go on.</li>
 		<li>Stop.</li>
 		</ul>
@@ -89,11 +89,11 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 			c: (~yes)
 			Now, we can create our Scanner! We want to count the number of times "cool" appears in <code>str</code>, so when we create our Scanner, we'll pass <code>str</code> as a parameter:
 			<div class="mlcode">
-			public int countCool(String str) {
-			&nbsp;   Scanner scan = new Scanner(str);
-			}
+			public int countCool(String str) {<br/>
+			&nbsp;   Scanner scan = new Scanner(str);<br/>
+			}<br/>
 			</div>
-			<ul>
+			<ul id="choices">
 			<li>Ok, go on.</li>
 			<li>Stop.</li>
 			</ul>
@@ -106,14 +106,14 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 				d: (~yes)
 				So, if we want to count the number of times "cool" appears in <code>str</code>, we'll could use a loop. Basically, as long as there is another word in the Scanner, we will keep going through our loop and keep checking for "cool". We want this loop to run while there is another thing in the Scanner. We can use the <code>hasNext()</code> method for this!
 				<div class="mlcode">
-				public int countCool(String str) {
-				&nbsp;   Scanner scan = new Scanner(str);
-				&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner
-				&nbsp;   
-				&nbsp;   }
-				}
+				public int countCool(String str) {<br/>
+				&nbsp;   Scanner scan = new Scanner(str);<br/>
+				&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner<br/>
+				&nbsp;   <br/>
+				&nbsp;   }<br/>
+				}<br/>
 				</div>
-				<ul>
+				<ul id="choices">
 				<li>Ok, go on.</li>
 				<li>Stop.</li>
 				</ul>
@@ -126,17 +126,17 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 					e: (~yes)
 					Awesome! So, we only want to count a word if it is "cool". So, we'll want to add an if statement to our code. We want to know if the next word in the Scanner is "cool". We can use the <code>next()</code> method to get the next thing from the Scanner.
 					<div class="mlcode">
-					public int countCool(String str) {
-					&nbsp;   Scanner scan = new Scanner(str);
-					&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner
-					&nbsp;       String nextWord = scan.next();
-					&nbsp;       \if (nextWord.equals("cool")) {
-					&nbsp;           
-					&nbsp;       }
-					&nbsp;   }
-					}
+					public int countCool(String str) {<br/>
+					&nbsp;   Scanner scan = new Scanner(str);<br/>
+					&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner<br/>
+					&nbsp;       String nextWord = scan.next();<br/>
+					&nbsp;       \if (nextWord.equals("cool")) {<br/>
+					&nbsp;           <br/>
+					&nbsp;       }<br/>
+					&nbsp;   }<br/>
+					}<br/>
 					</div>
-					<ul>
+					<ul id="choices">
 					<li>Ok, go on.</li>
 					<li>Stop.</li>
 					</ul>
@@ -149,19 +149,19 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 						f: (~yes)
 						We're almost there! Now, we just need to add a counter to count the number of times "cool" shows up in our String.
 						<div class="mlcode">
-						public int countCool(String str) {
-						&nbsp;   Scanner scan = new Scanner(str);
-						&nbsp;   int count = 0;
-						&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner
-						&nbsp;       String nextWord = scan.next();
-						&nbsp;       \if (nextWord.equals("cool")) {
-						&nbsp;           count++;
-						&nbsp;       }
-						&nbsp;   }
-						&nbsp;   return count;
-						}
+						public int countCool(String str) {<br/>
+						&nbsp;   Scanner scan = new Scanner(str);<br/>
+						&nbsp;   int count = 0;<br/>
+						&nbsp;   while (scan.hasNext()) {  // while there is a next word in the Scanner<br/>
+						&nbsp;       String nextWord = scan.next();<br/>
+						&nbsp;       \if (nextWord.equals("cool")) {<br/>
+						&nbsp;           count++;<br/>
+						&nbsp;       }<br/>
+						&nbsp;   }<br/>
+						&nbsp;   return count;<br/>
+						}<br/>
 						</div>
-						<ul>
+						<ul id="choices">
 						<li>Ok, go on.</li>
 						<li>Stop.</li>
 						</ul>
@@ -200,7 +200,7 @@ Ok, here's an example of how to use a Scanner. First, let's come up with a situa
 u: CREATE (how * [create make] * scanner)
 Let's say you want to make a Scanner for a String, you would do that like this: 
 <div class="mlcode">
-Scanner s = new Scanner("1 2 3 4");
+Scanner s = new Scanner("1 2 3 4");<br/>
 </div>
 Make sure to import the Scanner class at the top of your Java file with this: <code>import java.util.Scanner;</code>
 <ul id="choices">
@@ -253,9 +253,9 @@ The <code>next()</code> method is a method you call on a Scanner. It gets the ne
 	a: (example)
 	For example:
 	<div class="mlcode">
-	Scanner scan = new Scanner("I love programming!");
-	String str1 = scan.next();  // str1 = "I"
-	String str2 = scan.next();  // str2 = "love"
+	Scanner scan = new Scanner("I love programming!");<br/>
+	String str1 = scan.next();  // str1 = "I"<br/>
+	String str2 = scan.next();  // str2 = "love"<br/>
 	</div>
 	<ul id="choices">
 	<li>Show me the documentation!</li>
@@ -300,16 +300,16 @@ The <code>hasNext()</code> method is a method you call on a Scanner. It will eit
 	a: (example)
 	For example:
 	<div class="mlcode">
-	Scanner scan = new Scanner("I love programming!");
-	\if (scan.hasNext()) {  // The Scanner has 3 words in it. So, this is true.
-	&nbsp;   System.out.println("foo");
-	}
-	scan.next();
-	scan.next();
-	scan.next();  // Now the Scanner is empty. 
-	\if (scan.hasNext()) {  // This is false.
-	&nbsp;   System.out.println("bar");
-	}
+	Scanner scan = new Scanner("I love programming!");<br/>
+	\if (scan.hasNext()) {  // The Scanner has 3 words in it. So, this is true.<br/>
+	&nbsp;   System.out.println("foo");<br/>
+	}<br/>
+	scan.next();<br/>
+	scan.next();<br/>
+	scan.next();  // Now the Scanner is empty. <br/>
+	\if (scan.hasNext()) {  // This is false.<br/>
+	&nbsp;   System.out.println("bar");<br/>
+	}<br/>
 	</div>
 	This code will print out "foo" but not "bar".
 	<ul id="choices">
@@ -355,10 +355,10 @@ The <code>nextInt()</code> method is a method you call on a Scanner. It is simil
 	a: (example)
 	For example:
 	<div class="mlcode">
-	Scanner scan = new Scanner("Total: 329 lines");
-	String str1 = scan.next();   // str1 = "Total:"
-	int lines = scan.nextInt();  // lines = 329
-	int i2 = scan.nextInt();     // Error! The next thing in the Scanner is a String!
+	Scanner scan = new Scanner("Total: 329 lines");<br/>
+	String str1 = scan.next();   // str1 = "Total:"<br/>
+	int lines = scan.nextInt();  // lines = 329<br/>
+	int i2 = scan.nextInt();     // Error! The next thing in the Scanner is a String!<br/>
 	</div>
 	This code will print out "foo" but not "bar".
 	<ul id="choices">
@@ -404,14 +404,14 @@ The <code>hasNextInt()</code> method is a method you call on a Scanner. It is si
 	a: (example)
 	Here's an example:
 	<div class="mlcode">
-	Scanner scan = new Scanner("Total: 329 lines");
-	\if (scan.hasNextInt()) {  // False because the first thing in the Scanner is a String. 
-	&nbsp;   System.out.println("foo");
-	}
-	scan.next();  // Now the next thing is an int, 329.
-	\if (scan.hasNextInt()) {  // This is false.
-	&nbsp;   System.out.println("bar");
-	}
+	Scanner scan = new Scanner("Total: 329 lines");<br/>
+	\if (scan.hasNextInt()) {  // False because the first thing in the Scanner is a String. <br/>
+	&nbsp;   System.out.println("foo");<br/>
+	}<br/>
+	scan.next();  // Now the next thing is an int, 329.<br/>
+	\if (scan.hasNextInt()) {  // This is false.<br/>
+	&nbsp;   System.out.println("bar");<br/>
+	}<br/>
 	</div>
 	This code will print out "bar" but not "foo". 
 	<ul id="choices">
@@ -457,10 +457,10 @@ The <code>nextDouble()</code> method is a method you call on a Scanner. It is si
 	a: (example)
 	Here's an example:
 	<div class="mlcode">
-	Scanner scan = new Scanner("Total: 32.9 points");
-	String str1 = scan.next();   // str1 = "Total:"
-	double points = scan.nextDouble();  // lines = 32.9
-	double d2 = scan.nextDouble();      // Error! The next thing in the Scanner is a String!
+	Scanner scan = new Scanner("Total: 32.9 points");<br/>
+	String str1 = scan.next();   // str1 = "Total:"<br/>
+	double points = scan.nextDouble();  // lines = 32.9<br/>
+	double d2 = scan.nextDouble();      // Error! The next thing in the Scanner is a String!<br/>
 	</div>
 	<ul id="choices">
 	<li>Show me the documentation!</li>
@@ -505,14 +505,14 @@ The <code>hasNextDouble()</code> method is a method you call on a Scanner. It is
 	a: (example)
 	Here's an example:
 	<div class="mlcode">
-	Scanner scan = new Scanner("Total: 32.9 points");
-	\if (scan.hasNextDouble()) {  // False because the first thing in the Scanner is a String. 
-	&nbsp;   System.out.println("foo");
-	}
-	scan.next();  // Now the next thing is an double, 32.9.
-	\if (scan.hasNextDouble()) {  // This is false.
-	&nbsp;   System.out.println("bar");
-	}
+	Scanner scan = new Scanner("Total: 32.9 points");<br/>
+	\if (scan.hasNextDouble()) {  // False because the first thing in the Scanner is a String. <br/>
+	&nbsp;   System.out.println("foo");<br/>
+	}<br/>
+	scan.next();  // Now the next thing is an double, 32.9.<br/>
+	\if (scan.hasNextDouble()) {  // This is false.<br/>
+	&nbsp;   System.out.println("bar");<br/>
+	}<br/>
 	</div>
 	This code will print out "bar" but not "foo". 
 	<ul id="choices">
@@ -562,8 +562,8 @@ The <code>nextLine()</code> method is a method you call on a Scanner. It is simi
 	</pre>
 	Then, I can use the Scanner like this:
 	<div class="mlcode">
-	String str1 = scan.nextLine();  // str1 = "1/6/2020: 5"
-	String str2 = scan.nextLine();  // str2 = "1/7/2020: 7"
+	String str1 = scan.nextLine();  // str1 = "1/6/2020: 5"<br/>
+	String str2 = scan.nextLine();  // str2 = "1/7/2020: 7"<br/>
 	</div>
 	<ul id="choices">
 	<li>Show me the documentation!</li>
@@ -612,14 +612,14 @@ The <code>hasNextLine()</code> method is a method you call on a Scanner. It is s
 	</pre>
 	Then, we can use the Scanner like this:
 	<div class="mlcode">
-	\if (scan.hasNextLine()) {  // True, there are 2 lines left in the Scanner.
-	&nbsp;   System.out.println("foo");
-	}
-	scan.nextLine();  
-	scan.nextLine();  // We use up both lines from the Scanner. Now it is empty.
-	\if (scan.hasNextLine()) {  // This is false.
-	&nbsp;   System.out.println("bar");
-	}
+	\if (scan.hasNextLine()) {  // True, there are 2 lines left in the Scanner.<br/>
+	&nbsp;   System.out.println("foo");<br/>
+	}<br/>
+	scan.nextLine();  <br/>
+	scan.nextLine();  // We use up both lines from the Scanner. Now it is empty.<br/>
+	\if (scan.hasNextLine()) {  // This is false.<br/>
+	&nbsp;   System.out.println("bar");<br/>
+	}<br/>
 	</div>
 	This code will print out "foo" but not "bar". 
 	<ul id="choices">

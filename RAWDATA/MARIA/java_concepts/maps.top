@@ -82,7 +82,7 @@ The two most important methods when using HashMaps are <code>put()</code> and <c
 		b: (go on)
 		Ok, so first I'll need to create my HashMap. I'll do that like this:
 		<div class="mlcode">
-		HashMap&lt;String, Double&gt; grades = new HashMap&lt;String, Double&gt;();
+		HashMap&lt;String, Double&gt; grades = new HashMap&lt;String, Double&gt;();<br/>
 		</div>
 		I need to tell Java what type of things I'll be storing in the Map. The keys (the students' names) will be Strings and the values (their grades) will be a double. So, after the second <code>HashMap</code> but before the parentheses, I'll put <code>&lt;String, Double&gt;</code> to tell Java about the types. 
 		<ul id="choices">
@@ -115,9 +115,9 @@ The two most important methods when using HashMaps are <code>put()</code> and <c
 			c: MORE_HASHMAP_EXAMPLE (go on)
 			Ok, so now that I've created the HashMap, I can add some students and some grades to it like this: 
 			<div class="mlcode">
-			grades.put("Tom", 99.6);
-			grades.put("Jim", 76.3);
-			grades.put("Zim", 43.2);
+			grades.put("Tom", 99.6);<br/>
+			grades.put("Jim", 76.3);<br/>
+			grades.put("Zim", 43.2);<br/>
 			</div>
 			Now, if I ever want to get the grade of a student, I can just use the name and the map will tell me their grade.
 			<ul id="choices">
@@ -132,9 +132,9 @@ The two most important methods when using HashMaps are <code>put()</code> and <c
 				d: (go on)
 				So now, let's say I want to change the grade of Tom. First, I need to get his grade, then I need to put in his updates grade. I can do that like this:
 				<div class="mlcode">
-				double tomsGrade = grades.get("Tom");
-				tomsGrade = (tomsGrade + 98) / 2;
-				grades.put("Tom", tomsGrade);
+				double tomsGrade = grades.get("Tom");<br/>
+				tomsGrade = (tomsGrade + 98) / 2;<br/>
+				grades.put("Tom", tomsGrade);<br/>
 				</div>
 				Notice how you also use <code>put()</code> to update values in the map.
 				<ul id="choices">
@@ -149,8 +149,8 @@ The two most important methods when using HashMaps are <code>put()</code> and <c
 					e: (go on)
 					Ok now, let's say I want to get Tom's final grade and print it out. I can do that like this:
 					<div class="mlcode">
-					double tomsFinalGrade = grades.get("Tom");
-					System.out.println(tomsFinalGrade);
+					double tomsFinalGrade = grades.get("Tom");<br/>
+					System.out.println(tomsFinalGrade);<br/>
 					</div>
 					And, that's it!
 					<ul id="choices">

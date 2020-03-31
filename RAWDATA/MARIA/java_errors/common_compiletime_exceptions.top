@@ -11,7 +11,7 @@ topic: ~common_compiletime_exceptions keep repeat [what why exception error ~hel
 u: INCOMPATIBLE_TYPE (~helpwith * ~incompatibletype)
 The error can happen for many reasons but the basic idea is that Java was expecting one type and it found another. You need to change the found type into the expected type. For example, if Java gives me this error:
 <div class="mlcode">
-Incompatible types: java.lang.String cannot be converted to int
+Incompatible types: java.lang.String cannot be converted to int<br/>
 </div>
 This means I need to change the String on the highlighted line into an int.
 <ul id="choices">
@@ -30,7 +30,7 @@ This means I need to change the String on the highlighted line into an int.
 		b: (~yes)
 		Ok, make sure that the type of the variable is correct. For example:
 		<div class="mlcode">
-		int i = "hi";
+		int i = "hi";<br/>
 		</div>
 		This code will not work because the I said that <code>i</code> was an int, but then I tried to give it a String value. Make sure you're not doing this. You may have to scroll up to find where you declared the variable. In this case, I either need to change <code>i</code> to be a String (<code>String i = "hi";</code>) or change "hi" to a number (<code>int i = 2;</code>).
 		<ul id="choices">
@@ -53,7 +53,7 @@ This means I need to change the String on the highlighted line into an int.
 			c: (~yes)
 			Ok, make sure the method returns the type of thing you expect. For example:
 			<div class="mlcode">
-			\if (Random.nextInt())
+			\if (Random.nextInt())<br/>
 			</div>
 			In this code, I'm trying to use <code>nextInt()</code> in the if statement, but <code>nextInt()</code> returns an int and only booleans can be used inside an if statement. So, I would need to change the if statement to: <code>if (Random.nextInt() == 1)</code>. Look up the documentation for the method your using to find out what type of thing the method returns.
 			<ul id="choices">

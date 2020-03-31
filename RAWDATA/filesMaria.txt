@@ -25,6 +25,7 @@ RAWDATA/MARIA/java_errors/common_compiletime_exceptions.top
 RAWDATA/MARIA/not_programming/fun.top
 RAWDATA/MARIA/not_programming/general_knowledge.top
 RAWDATA/MARIA/not_programming/greetings.top
+RAWDATA/MARIA/not_programming/more_general_knowledge.top
 
 RAWDATA/MARIA/programming_concepts/debugging.top
 RAWDATA/MARIA/programming_concepts/programming.top

@@ -7,8 +7,8 @@ topic: ~strings keep repeat [string java how what when split substring]
 u: SUBSTRING ([how what] * substring)
 The <code>substring( /* begin index */ , /* end index */ )</code> method is in the String class. It must be called on a String. It takes two parameters, a start index and an end index. The end index is not included in the substring, but the start index is. For example, in the following code, <code>substr</code> will be "ello". 
 <div class="mlcode">
-String str = "Hello.";
-String substr = str.substring(1, 5);  // substr = "ello"
+String str = "Hello.";<br/>
+String substr = str.substring(1, 5);  // substr = "ello"<br/>
 </div>
 Notice how <code>substr</code> does not contain the character at index 5 (the period). Would you like to try an example question on using the <code>substring()</code> method?
 <ul id="choices">
@@ -170,10 +170,10 @@ First, you'll need to get the number by itself. For example, if you have a Strin
 u: SPLIT (how * use * split)
 The <code>split( /* thing to split by */ )</code> method will split a string by the string you put in the parentheses. The result is an array of all the pieces of the original string. Here's an example:
 <div class="mlcode">
-String start = "1/1/2020";
-String[] end = start.split("/");  // Split the string by slashes.
-// end = {"1", "1", "2020"}
-String month = end[0];  // month = "1"
+String start = "1/1/2020";<br/>
+String[] end = start.split("/");  // Split the string by slashes.<br/>
+// end = {"1", "1", "2020"}<br/>
+String month = end[0];  // month = "1"<br/>
 </div>
 I split the String by the slashes, so the result was all the numbers around the slashes. Remember that the result is an array!
 <ul id="choices">

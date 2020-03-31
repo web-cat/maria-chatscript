@@ -18,7 +18,7 @@ The <code>abstract</code> keyword is used make abstract classes and methods. You
 u: (assert)
 You'll probably never use this word. But, if you're curious, it is used to make assertions (like the ones you make in test files) in a less refined way. You use it like this:
 <div class="mlcode">
-assert /*condition*/ : /*message to print if condition is false*/
+assert /*condition*/ : /*message to print if condition is false*/<br/>
 </div>
 Java should also generate a runtime error if the condition is false. However, in most cases, you should use methods like assertEquals(), assertTrue(), and assertFalse().
 <ul id="choices">
@@ -38,13 +38,13 @@ The <code>boolean</code> keyword is used to create boolean variables. Pretty sim
 u: (break)
 The <code>break</code> keyword is used to in a few places. In a <code>switch</code> statement, they are used to separate different cases if you don't want code to fall through. It is also used in loops to break out of the loop. This allows you to end a loop before the loop condition is false. For example, in the following loop, the loop will end when <code>i == 2</code>, instead of when <code>i == 5</code>, as you would expect.
 <div class="mlcode">
-for(int i = 0; i < 5; i++)
-{
-   if (i == 2)
-   {
-      break; 
-   }
-}
+for(int i = 0; i < 5; i++)<br/>
+{<br/>
+   if (i == 2)<br/>
+   {<br/>
+      break; <br/>
+   }<br/>
+}<br/>
 </div>
 It is generally bad practice to use break statements in loops.
 <ul id="choices">
@@ -57,16 +57,16 @@ It is generally bad practice to use break statements in loops.
 	a: (tell me more)
 	Interestingly, you can name loops in Java and you can use <code>break</code> statements to break out of specific loops. This makes <code>break</code> statements almost able to do everything <code>goto</code> statements are able to do. Here's an example:
 	<div class="mlcode">
-	outer: //name for outer loop
-	for(int i = 0; i < 5; i++)
-	{
-	   inner:
-	   for(int j = 0; j < 5; j++)
-	   {
-		  System.out.println("foo");
-	      break outer;
-	   }
-	}
+	outer: //name for outer loop<br/>
+	for(int i = 0; i < 5; i++)<br/>
+	{<br/>
+	   inner:<br/>
+	   for(int j = 0; j < 5; j++)<br/>
+	   {<br/>
+		  System.out.println("foo");<br/>
+	      break outer;<br/>
+	   }<br/>
+	}<br/>
 	</div>
 	Here, "foo" is only printed once, because we break out of the outer loop after we first get into the inner loop. If we omitted the <code>outer</code> from the <code>break</code> statement, then, "foo" would be printed 5 times because we would only break out of the inner loop.
 	<ul id="choices">
@@ -122,19 +122,19 @@ The <code>class</code> keyword is used to define classes.
 u: (continue)
 The <code>continue</code> keyword is used in loops. It is similar to <code>break</code> but, when it is used, the loop does not exit. Instead, the loop's current iteration will end and it will move on to the next iteration. For example, in the following code, only the numbers 1 and 3 will be printed because the <code>continue</code> makes the loop miss the print statement that would have printed 2:
 <div class="mlcode">
-for (int i = 1; i <= 3; i++)
-{
-   if (i == 2)
-   {
-      continue;
-   }
-   System.out.println(i);
-}
+for (int i = 1; i <= 3; i++)<br/>
+{<br/>
+   if (i == 2)<br/>
+   {<br/>
+      continue;<br/>
+   }<br/>
+   System.out.println(i);<br/>
+}<br/>
 </div>
 <div class="mlcode">
-OUTPUT:
-1
-3
+OUTPUT:<br/>
+1<br/>
+3<br/>
 </div>
 <ul id="choices">
 ^feedback_options()
@@ -153,7 +153,7 @@ The <code>default</code> keyword is used in a few interesting places.
 u: (extends)
 To make one class a subclass of another class, you use <code>extends</code>, like this:
 <div class="mlcode">
-public class Class extends AnotherClass
+public class Class extends AnotherClass<br/>
 </div>
 This means that Class will get access to all of the methods defined in AnotherClass. You can also do this with interfaces.
 <ul id="choices">
@@ -167,7 +167,7 @@ This means that Class will get access to all of the methods defined in AnotherCl
 	a: (generics)
 	Ah yes, you're right. You can use it one other place: with generics. When defining a generic type, you can say that the type must be a subclass of some other class. For example, if I want my type T to be a subclass of Integer, so I can use Integer methods on it, I would declare my generic type like this:
 	<div class="mlcode">
-	&lt;T extends Integer>
+	&lt;T extends Integer><br/>
 	</div>
 	<ul id="choices">
 	^feedback_options()
@@ -194,7 +194,7 @@ The keyword <code>finally</code> is used after a try-catch statement. You should
 u: (final)
 Basically, you use <code>final</code> to create constants like this:
 <div class="mlcode">
-final int one = 1;
+final int one = 1;<br/>
 </div>
 Now, <code>one</code>'s value cannot be changed from 1. 
 <ul id="choices">
@@ -247,17 +247,17 @@ u: (float)
 u: (for)
 \<code>for</code> is used to declare for loops. There are two different types of for loops. Iterative for loops that look like this:
 <div class="mlcode">
-for (int i = 0; i < NUMBER_OF_TIMES_TO_RUN; i++)
-{
-&emsp;/* Take some action. */
-}
+for (int i = 0; i < NUMBER_OF_TIMES_TO_RUN; i++)<br/>
+{<br/>
+&emsp;/* Take some action. */<br/>
+}<br/>
 </div>
 And, for-each loops that look like this:
 <div class="mlcode">
-for (/* Type of thing in collection */ element : COLLECTION_NAME)
-{
-&emsp;/* Take some action. */
-}
+for (/* Type of thing in collection */ element : COLLECTION_NAME)<br/>
+{<br/>
+&emsp;/* Take some action. */<br/>
+}<br/>
 </div>
 <ul id="choices">
 ^feedback_options()
@@ -268,10 +268,10 @@ for (/* Type of thing in collection */ element : COLLECTION_NAME)
 u: (if)
 You use <code>if</code> to make choices in your code. You can do stuff like this:
 <div class="mlcode">
-if (counter < 5)
-{
-&emsp;System.out.println("Too low!");
-}
+if (counter < 5)<br/>
+{<br/>
+&emsp;System.out.println("Too low!");<br/>
+}<br/>
 </div>
 In this case, <code>"Too low!"</code> will only be printed out if <code>counter</code> is less than 5. Otherwise, nothing will happen.
 <ul id="choices">
@@ -283,7 +283,7 @@ In this case, <code>"Too low!"</code> will only be printed out if <code>counter<
 u: (implements)
 When you are declaring a class, you can make it implement an interface by using the <code>implements</code> keyword in the class declaration. It will look like this:
 <div class="mlcode">
-public class Class implements Interface
+public class Class implements Interface<br/>
 </div>
 This means that Class must provide a definition for all the methods listed in Interface.
 <ul id="choices">
@@ -316,10 +316,10 @@ You use <code>import</code> to use code written in other places. For example, if
 u: (instanceof)
 \<code>instanceof</code> is a binary operator like + or -. You use it to find out if an object is an instance of a certain class. It will return either <code>true</code> or <code>false</code>. To better understand, let's look at this example:
 <div class="mlcode">
-Jeroo pete = new Jeroo();
-
-System.out.println(pete instanceof Jeroo); // prints true
-System.out.println(pete instanceof Island); // prints false
+Jeroo pete = new Jeroo();<br/>
+<br/>
+System.out.println(pete instanceof Jeroo); // prints true<br/>
+System.out.println(pete instanceof Island); // prints false<br/>
 </div>
 <ul id="choices">
 <li>How does it work with superclasses?</li>
@@ -330,10 +330,10 @@ System.out.println(pete instanceof Island); // prints false
 	a: (superclasses)
 	\<code>instanceof</code> will also return <code>true</code> for any type that is superclass of the object's type. Again, let's look at an example:
 	<div class="mlcode">
-	Jeroo pete = new Jeroo();
-
-	System.out.println(pete instanceof Actor); // prints true
-	System.out.println(pete instanceof Object); // prints true
+	Jeroo pete = new Jeroo();<br/>
+<br/>
+	System.out.println(pete instanceof Actor); // prints true<br/>
+	System.out.println(pete instanceof Object); // prints true<br/>
 	</div>
 	<ul id="choices">
 	^feedback_options()
@@ -366,7 +366,7 @@ u: (int)
 u: (interface)
 The <code>interface</code> keyword is used to declare an interface. Interfaces are declared in a very similar way to classes. For example, if I want to declare an interface called Pet, I would write this in a new Java file:
 <div class="mlcode">
-public interface Pet
+public interface Pet<br/>
 </div>
 <ul id="choices">
 <li>What is an interface?</li>
@@ -401,9 +401,9 @@ u: (long)
 u: (new)
 The <code>new</code> keyword is used to create a new instance of an object. This word is used once every time a new object is created. This means that to figure out the number of objects that are created in a certain piece of code, you can simply count the number of <code>new</code>s! For example:
 <div class="mlcode">
-Object obj1 = new Object(); // New object!
-Object obj2 = obj1;         // No new object.
-obj1 = new Object();        // New object!
+Object obj1 = new Object(); // New object!<br/>
+Object obj2 = obj1;         // No new object.<br/>
+obj1 = new Object();        // New object!<br/>
 </div>
 This code instantiates 2 new objects. No new object is created for <code>obj2</code>, because it simply points to the already existing object <code>obj1</code>. A new object is created in the third line because the old <code>obj1</code> still exists, we have just lost access to it because we changed the value of the variable <code>obj1</code>.
 <ul id="choices">

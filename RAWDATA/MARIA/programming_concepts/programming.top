@@ -43,10 +43,10 @@ Java is a popular programming language with precise, verbose syntax.
 u: ([what how when why] * ["off-by-one" "off by one" offbyone] error)
 An off-by-one error is a bug that can happen when a loop runs one too many or one too few times. If Web-CAT is telling you that you have an off-by-one error in one of your for loops, you may need to change <code>&lt;</code> to <code>&lt;=</code> or change <code>&lt;=</code> to <code>&lt;</code>. You can also try add one or subtracting one from the bound. Like this:
 <div class="mlcode">
-for (int i = 0; i < variable; i++)
-// becomes
-for (int i = 0; i < variable + 1; i++)
-// or
-for (int i = 0; i < variable - 1; i++)
+for (int i = 0; i < variable; i++)<br/>
+// becomes<br/>
+for (int i = 0; i < variable + 1; i++)<br/>
+// or<br/>
+for (int i = 0; i < variable - 1; i++)<br/>
 </div>
 <div class="feedback-info" data-feedback-type="answer"></div>
